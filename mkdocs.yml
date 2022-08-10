@@ -1,0 +1,19 @@
+site_name: Técnicas de Programação
+
+theme:
+  name: active-handout-theme
+  language: pt
+  features:
+    - navigation.tabs
+    - header.autohide
+
+docs_dir: content
+site_dir: docs
+
+markdown_extensions:
+  - admonition
+  - progress-button
+
+nav:
+  - 'Home': index.md
+  - sobre.md
