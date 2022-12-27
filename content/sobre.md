@@ -1,1 +1,31 @@
 # Sobre a Disciplina
+
+O curso está organizado em Módulos, cada um focado em uma Técnica de Programação específica. Idealmente, os 4 pontos abaixo são abordados em todos os módulos:
+
+* introdução a uma técnica de resolução de problemas usando computação
+* aplicações da técnica estudada em diferentes problemas
+* estudo de propriedades computacionais da técnica estudada
+* atividade prática de implementação em Java
+
+Todas as atividades práticas de implementação (APS) serão entregues via repositório no GitHub. Uma página específica em cada módulo é dedicada a explicar a composição de nota de cada APS.
+
+## Aprovação
+
+A nota final é calculada com a seguinte fórmula
+
+```
+sldkfjsd
+```
+
+Algumas condições são necessárias para aprovação
+
+1. toda APS deve ser entregues na data combinada e obter nota maior ou igual a 5
+2. ambas notas de prova devem ser maiores ouigual a 4,5
+
+Caso algum desses critérios não seja cumprido, as seguintes segundas chances são permitidas
+
+1. para cada APS entregue com atraso será descontado 0,5 da média final das APS
+   * é permitido um atraso sem desconto de nota
+   * descontos de nota não diminuem a nota para menos que 5
+2. o aluno que ficar com menos que 4,5 em uma das provas pode fazer uma prova delta no dia da SUB
+   * ficar com menos de 4,5 em ambas provas implica em reprovação

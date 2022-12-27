@@ -1,13 +1,9 @@
 # Técnicas de Programação
 
+TODO: explicar curso
 
-asd
-sdfldskjfdsfff
+TODO: plano de aulas
 
-sdfkljsdklfds
+TODO: aprovação
 
-!!! progress "Continuar"
-
-sdklfjksdl
-
-ldskfjlsjl
+TODO: equipladke
