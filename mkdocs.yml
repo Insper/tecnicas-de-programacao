@@ -23,6 +23,7 @@ nav:
   - Módulos:
     - "01 - ADT":
       - modulos/01-ADT/index.md
+      - modulos/01-ADT/aps.md
     - "02 - Busca em vetor":
       - modulos/02-Busca-Vetor/index.md
     - "03 - Ordenação":
