@@ -23,6 +23,10 @@ nav:
   - Módulos:
     - "01 - ADT":
       - modulos/01-ADT/index.md
+      - "Aulas":
+        - modulos/01-ADT/arrays-e-listas.md
+        - modulos/01-ADT/listas-e-dicionarios.md
+        - modulos/01-ADT/implementacoes-adt.md
       - modulos/01-ADT/aps.md
     - "02 - Busca em vetor":
       - modulos/02-Busca-Vetor/index.md
