@@ -1,21 +1,6 @@
+INHERIT: active-handout.yml
+
 site_name: Técnicas de Programação
-
-theme:
-  name: active-handout-theme
-  language: pt
-  features:
-    - navigation.tabs
-    - header.autohide
-
-docs_dir: content
-site_dir: docs
-
-plugins:
-  - active-handout
-
-markdown_extensions:
-  - admonition
-  - active-handout-plugins
 
 nav:
   - 'Home': index.md
@@ -23,6 +8,10 @@ nav:
   - Módulos:
     - "01 - ADT":
       - modulos/01-ADT/index.md
+      - "ADTs":
+        - modulos/01-ADT/array.md
+        - modulos/01-ADT/list.md
+        - modulos/01-ADT/map.md
       - "Aulas":
         - modulos/01-ADT/arrays-e-listas.md
         - modulos/01-ADT/listas-e-dicionarios.md

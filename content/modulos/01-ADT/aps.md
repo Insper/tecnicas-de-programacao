@@ -2,7 +2,7 @@
 
 A tarefa para entrega deste módulo será implementar algumas estruturas de dados comuns. Todas elas já tem implementações equivalentes (e mais bem feitas) na biblioteca padrão de Java. Nosso objetivo aqui é ter um olhar aprofundado em como elas poderiam ser implementadas e o quanto nossa implementação se aproxima da referência da JVM.
 
-# Lista
+## Lista
 
 Uma lista é uma sequência de elementos que pode ser acessada via um índice em que `0` representa o primeiro elemento. É possível adicionar e remover elementos de uma lista, assim como calcular seu tamanho.
 
@@ -13,7 +13,7 @@ Nossa implementação de lista é definida usando a interface `InsperList`, que 
 - **Remoção**:
   - Em qualquer lugar com o método `remove`
 - **Acesso a elementos**:
-  - Via índice usando o método `at`
+  - Via índice usando o método `get` e `set`
   - Checagem se possui um elemento com o método `indexOf`
   - Tamanho da lista com método o `size()`
 
@@ -21,12 +21,14 @@ Você deverá criar uma classe `InsperArrayList` que implementa a interface `Ins
 
 !!! warning
     Sua implementação deverá usar *Generics* e ser feita usando um array simples (uma variável do tipo `T[]`). Ou seja, sua implementação **não** pode usar ArrayList, LinkedList ou qualquer outra classe de armazenamento de dados da JVM.
-    
-A restrição acima implica que será necessário aumentar/diminuir o espaço de armazenamento dos dados conforme elementos são inseridos/removidos da lista 
+
+A rubrica **Básico** leva em conta que a lista tem `capacidade=100` sempre.
 
 ### Avançado
 
-A maneira mais correta de indicar que um método falhou é lançar uma exceção. Os métodos `at`, `insert` e `remove` podem receber índices inválidos e/ou `null` em seus argumentos. Lance as execeções descritas nos comentários presentes na definição da interface `InsperList`.
+Implemente o redimensionamento do `Array` nos métodos `insert` e `remove`. Seu vetor deve começar com capacidade `100` e dobrar de tamanho sempre que encher. Ao remover elementos, o `Array` deverá ter seu tamanho diminuido pela metade se o tamanho do vetor for menor que 25% da capacidade.
+
+A maneira mais correta de indicar que um método falhou é lançar uma exceção. Os métodos `get`, `set`, `insert` e `remove` podem receber índices inválidos e/ou `null` em seus argumentos. Lance as execeções descritas nos comentários presentes na definição da interface `InsperList`.
 
 ## Conjunto
 

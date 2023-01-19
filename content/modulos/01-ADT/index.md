@@ -15,11 +15,12 @@ Novos recursos de Java usados neste módulo:
 
 Se você não se lembra, pode ser uma boa olhar de novo os seguintes recursos:
 
-- [listas](../00-java/arraylist.md)
-- [dicionários](../00-java/map.md)
+- [listas em Java](../00-java/arraylist.md)
+- [dicionários em Java](../00-java/map.md)
 
 ## Resumo das ADTs
 
+- [Arrays](array.md)
 - [Listas](list.md)
 - [Mapeamentos](map.md)
 
