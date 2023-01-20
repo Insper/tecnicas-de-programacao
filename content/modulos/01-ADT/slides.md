@@ -70,7 +70,7 @@ Tipo de dados mais primitivo e representa uma coleção de objetos contínua ind
 
 
 ```
-PARA CADA i = 0 ATÉ TAMANHO(A) FAÇA
+PARA i = 0 ATÉ TAMANHO(A) FAÇA
     SE A[i] = valor ENTÃO
         RETORNE Verdadeiro
     FIM
