@@ -28,7 +28,23 @@ Vamos agora iniciar a implementação de uma *Estrutura de Dados* que implemente
 
 ## Vetor dinâmico
 
-O vetor dinâmico é uma *ED* que permite implementar as operações do tipo `List` usando um `Array`. As operações mais interessantes do vetor são `INSERE` e `REMOVE`. Vamos trabalhar nelas agora.
+O vetor dinâmico é uma *ED* que permite implementar as operações do tipo `List` usando um `Array`. Vamos iniciar relembrando os conceitos que acabamos de discutir.
+
+!!! important
+    Como o vetor dinâmico implementa toda a ADT `List`, nesse guia iremos usar a letra `L` quando nos referirmos a um vetor dinâmico.
+
+!!! exercise long id_adt_lista_capacidade_tamanho_relembrar
+    Quais são os atributos que o vetor dinâmico possui? Para que servem?
+
+    !!! answer
+        Nossa *ED* vetor dinâmico tem três atributos.
+
+        - `Array` *A* para guardar os dados
+        - *capacidade*: número máximo de elementos que podem ser guardados *A*. Sempre igual a `TAMANHO(A)`
+        - *tamanho*: número de elementos efetivamente guardados em *A*. Sempre igual a `TAMANHO(L)`.
+
+
+As operações mais interessantes do vetor são `INSERE` e `REMOVE`. Vamos trabalhar nelas agora.
 
 !!! important
     Dado que usaremos um `Array` para implementar `List`, teremos sempre um tamanho máximo fixo para nossos dados. Nessas próximas seções vamos sempre supor que existem espaços vazios disponíveis para inserir mais dados.
@@ -37,15 +53,10 @@ O vetor dinâmico é uma *ED* que permite implementar as operações do tipo `Li
 
 Vamos primeiro rever a descrição de ˋINSEREˋ:
 
-> insere o valor `V` na lista `L` na posição `i`. Os elementos a partir da posição `i` são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.
+!!! note "Definição"
+    insere o valor `V` na lista `L` na posição `i`. Os elementos a partir da posição `i` são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.
 
-Com base nessa descrição, responda as perguntas.
-
-
-!!! progress
-    Continuar
-
-Como já pudemos perceber, " empurrar" todos elementos para a direita é uma operação importante na inserção. De fato, a inserção se resume, basicamente, a uma atribuição e ao algoritmo de deslocar todos os elementos.
+O primeiro passo do algoritmo é "empurrar" todos elementos para a direita. Vamos inicialmente supor que a lista `L` tem espaço para colocar o elemento `V` na posição `i`. Ou seja, é verdade que `TAMANHO(L) + 1 < capacidade = TAMANHO(A)`.
 
 !!! exercise long id_algoritmo_desloca_array
     Vamos rascunhar uma primeira versão desse algoritmo. Assim como nos nossos outros exercícios, deixaremos bem definido o nome da função e seus argumentos: `DESLOCA_DIREITA(L, N, i)`. 
@@ -90,7 +101,7 @@ Como já pudemos perceber, " empurrar" todos elementos para a direita é uma ope
     Continuar
 
 
-O algoritmo é bem simples: começamos na posição seguinte ao `i` e vamos copiando o valor do índice anterior.
+O algoritmo é bem simples: começamos no elemento `N` e descemos até a posição `i+1` copiando o valor do índice anterior. Note que atribuímos a `L[N]`, o que significa que `TAMANHO(L)=N+1`.
 
 ```
 DESLOCA_DIREITA(L, N, i)
@@ -103,7 +114,7 @@ FIM
 Com essa rotina podemos implementar facilmente a inserção.
 
 !!! exercise long id_lista_insercao_algo
-    Escreva o algoritmo de inserção abaixo. Você deve usar a função `DESLOCA_DIREITA` criada acima.
+    Escreva o algoritmo de inserção abaixo. Você deve usar a função `DESLOCA_DIREITA` criada acima. Não vamos mexer na `capacidade` de `A`, somente no `tamanho` de `L`.
     
     !!! answer
     
@@ -121,7 +132,7 @@ Note que a etapa de tradução do algoritmo acima para Java não é exatamente t
 
 ### Remoção
 
-O algoritmo de remoção é muito parecido com a inserção, mas agora faz o deslocamento à esquerda.
+O algoritmo de remoção é muito parecido com a inserção, mas agora faz o deslocamento à esquerda. Note que novamente não vamos mexer na `capacidade` de `A`, somente no `tamanho` de `L`.
 
 !!! exercise long id_algo_desloca_esquera
     Escreva o algoritmo `DESLOCA_ESQUERDA` que receba as entradas abaixo. 
@@ -189,18 +200,7 @@ O algoritmo de remoção é muito parecido com a inserção, mas agora faz o des
     
 ### Redimensionamento
 
-Na discussão no início da aula o professor apresentou a ideia de *capacidade* e *tamanho* de uma lista. Vamos revisar esses conceitos nas próximas perguntas.
-
-!!! exercise long id_adt_lista_capacidade_tamanho_relembrar
-    Resuma o que você lembra no campo abaixo.
-
-    !!! answer
-        Nossa *ED* vetor dinâmico tem três atributos:
-
-        - `Array` *A* para guardar os dados
-        - *capacidade*: número máximo de elementos que podem ser guardados *A*. Sempre igual a `TAMANHO(A)`
-        - *tamanho*: número de elementos efetivamente guardados em *A*.
-
+Vamos agora analizar a situação das variáveis `capacidade` e `tamanho` quando realizamos inserções e remoções.
 
 !!! exercise choice id_adt_lista_capacidade_tamanho_relacao
     Em relação a capacidade e tamanho, é correto afirmar que sempre `capacidade <= tamanho`?
@@ -226,7 +226,9 @@ Na discussão no início da aula o professor apresentou a ideia de *capacidade* 
 
 
 !!! exercise choice id_adt_lista_capacidade_tamanho_remocao
-    Em um dado momento nosso vetor dinâmico tem `capacidade=8` e `tamanho=7`. Após a remoção de um elemento, quais serão os valores dessas duas quantidades?
+    Em um dado momento nosso
+
+Davos: Brasil marca presença, especialmente no palco ambiental, mas poderia ir além vetor dinâmico tem `capacidade=8` e `tamanho=7`. Após a remoção de um elemento, quais serão os valores dessas duas quantidades?
 
     - [X] capacidade=8, tamanho=6
     - [ ] capacidade=7, tamanho=6
@@ -234,13 +236,59 @@ Na discussão no início da aula o professor apresentou a ideia de *capacidade* 
     - [ ] capacidade=7, tamanho=7
 
     !!! answer
-        Neste caso, como o `Array`que usamos em nosso vetor está quase cheio (6/8 posições ocupadas) a capacidade se mantém. Assim como na inserção, a remoção sempre mexe no tamanho do vetor.
+        Neste caso, como o `Array` que usamos em nosso vetor está quase cheio (6/8 posições ocupadas) a capacidade se mantém. Assim como na inserção, a remoção sempre mexe no tamanho do vetor.
 
 !!! progress
     Continuar
 
-Agora que já relembramos os conceitos mais importantes, vamos modificar o algoritmo `INSERE` para permitir que a lista cresça de tamanho. Nossa estratégia executar o seguintes passos **logo no início** de `INSERE`
+Agora que já relembramos os conceitos mais importantes, vamos modificar o algoritmo `INSERE` para permitir que a lista cresça de tamanho. Nossa estratégia será executar o seguintes passos **logo no início** de `INSERE`.
 
+* Entrada:
+    * `Lista L`
+* Saída:
+
+```
+REDIMENSIONA_SE_PRECISAR(L)
+
+A = Array com dados de L
+N = TAMANHO(L)
+C = TAMANHO(A)
+
+SE C == N ENTÃO
+    A_NOVO = NOVO_ARRAY(2 * N)
+    PARA CADA i=0 ATÉ N FAÇA
+        A_NOVO[i] = A[i]
+    FIM
+
+    Array de dados de L = A_NOVO
+FIM
+```
+
+!!! exercise choice id_adt_lista_capacidade_tamanho_redimensiona1
+    Em um dado momento nosso vetor dinâmico tem `capacidade=8` e `tamanho=8`. Após a inserção de um novo elemento, quais serão os valores dessas duas quantidades?
+
+    - [X] capacidade=16, tamanho=9
+    - [ ] capacidade=16, tamanho=8
+    - [ ] capacidade=8, tamanho=9
+    - [ ] capacidade=8, tamanho=8
+
+    !!! answer
+        O `Array` está cheio, então precisamos aumentá-lo. Nosso algoritmo acima dobra a capacidade do array de `L`. Logo, a nova capacidade de `L` é 16 enquanto o tamanho de `L` só aumenta 1 (que é o novo elemento inserido).
+
+
+!!! exercise choice id_adt_lista_capacidade_tamanho_redimensiona2
+    Em um dado momento nosso vetor dinâmico tem `capacidade=16` e `tamanho=15`. Após a inserção de um novo elemento, quais serão os valores dessas duas quantidades?
+
+    - [X] capacidade=16, tamanho=16
+    - [ ] capacidade=16, tamanho=15
+    - [ ] capacidade=8, tamanho=16
+    - [ ] capacidade=8, tamanho=15
+
+    !!! answer
+        A checagem de lista cheia ocorre no início de `INSERE`, mas o `Array` de dados de `Lista` só fica cheio ao fim de `INSERE`. Logo, não há redimensionamento.
+
+
+A mesma estratégia pode ser usada na remoção, desta vez para diminuir a capacidade pela metade se o tamanho for menor que 1/4 da capacidade. A parte final desse guia será implementar essa lógica na [APS deste módulo](aps.md)
 
 
 
