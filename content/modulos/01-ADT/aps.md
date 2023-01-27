@@ -4,23 +4,20 @@ A tarefa para entrega deste módulo será implementar algumas estruturas de dado
 
 ## Lista
 
-Uma lista é uma sequência de elementos que pode ser acessada via um índice em que `0` representa o primeiro elemento. É possível adicionar e remover elementos de uma lista, assim como calcular seu tamanho.
-
-Nossa implementação de lista é definida usando a interface `InsperList`, que acompanha o código inicial da APS. Segue um resumo das operações suportadas por este tipo.
+Nossa implementação de lista é definida usando a interface `InsperList`, que segue de perto a ADT [List](list.md) que estudamos na [Aula 01](arrays-e-listas.md). Segue um resumo das operações suportadas por este tipo.
 
 - **Inserção**:
   - Em qualquer lugar com o método `insert`
 - **Remoção**:
-  - Em qualquer lugar com o método `remove`
+  - da primeira ocorrência de um elemento com o método `remove`
 - **Acesso a elementos**:
   - Via índice usando o método `get` e `set`
-  - Checagem se possui um elemento com o método `indexOf`
   - Tamanho da lista com método o `size()`
 
 Você deverá criar uma classe `InsperArrayList` que implementa a interface `InsperList` no local apontado no código da APS. 
 
 !!! warning
-    Sua implementação deverá usar *Generics* e ser feita usando um array simples (uma variável do tipo `T[]`). Ou seja, sua implementação **não** pode usar ArrayList, LinkedList ou qualquer outra classe de armazenamento de dados da JVM.
+    Sua implementação deverá usar *Generics* e ser feita usando um array simples (uma variável do tipo `Object[]`). Ou seja, sua implementação **não** pode usar ArrayList, LinkedList ou qualquer outra classe de armazenamento de dados da JVM.
 
 A rubrica **Básico** leva em conta que a lista tem `capacidade=100` sempre.
 

@@ -8,15 +8,11 @@ No primeiro módulo do curso iremos estudar *Tipos Abstratos de Dados* (ADT - *A
 
 ## Java
 
-Novos recursos de Java usados neste módulo:
+Recursos de Java usados neste módulo:
 
 - [arrays](../00-java/arrays.md)
 - [interfaces](../00-java/Interfaces.md)
 
-Se você não se lembra, pode ser uma boa olhar de novo os seguintes recursos:
-
-- [listas em Java](../00-java/arraylist.md)
-- [dicionários em Java](../00-java/map.md)
 
 ## Resumo das ADTs
 

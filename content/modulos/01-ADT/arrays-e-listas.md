@@ -226,9 +226,7 @@ Vamos agora analizar a situação das variáveis `capacidade` e `tamanho` quando
 
 
 !!! exercise choice id_adt_lista_capacidade_tamanho_remocao
-    Em um dado momento nosso
-
-Davos: Brasil marca presença, especialmente no palco ambiental, mas poderia ir além vetor dinâmico tem `capacidade=8` e `tamanho=7`. Após a remoção de um elemento, quais serão os valores dessas duas quantidades?
+    Em um dado momento nosso vetor dinâmico tem `capacidade=8` e `tamanho=7`. Após a remoção de um elemento, quais serão os valores dessas duas quantidades?
 
     - [X] capacidade=8, tamanho=6
     - [ ] capacidade=7, tamanho=6
