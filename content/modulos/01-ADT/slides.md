@@ -68,7 +68,6 @@ Tipo de dados mais primitivo e representa uma coleção de objetos contínua ind
     - `Verdadeiro` se o array contém o elemento `V`
     - `Falso` caso contrário
 
-
 ```
 PARA i = 0 ATÉ TAMANHO(A) FAÇA
     SE A[i] = valor ENTÃO
