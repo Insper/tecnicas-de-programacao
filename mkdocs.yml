@@ -6,6 +6,12 @@ nav:
   - 'Home': index.md
   - sobre.md
   - Módulos:
+    - "00 - Algoritmos":
+      - modulos/00-Algoritmos/index.md
+      - "Java":
+        - modulos/00-Algoritmos/java/instalacao.md
+        - modulos/00-Algoritmos/java/primeiro-contato.md
+        - modulos/00-Algoritmos/java/entrada-saida.md
     - "01 - ADT":
       - modulos/01-ADT/index.md
       - "ADTs":

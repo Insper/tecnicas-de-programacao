@@ -1,6 +1,6 @@
 # Introdução
 
-No primeiro módulo do curso iremos estudar *Tipos Abstratos de Dados* (ADT - *Abstract Data Types*) e sua importância na criação de algoritmos.
+No segundo módulo do curso iremos estudar *Tipos Abstratos de Dados* (ADT - *Abstract Data Types*) e sua importância na criação de algoritmos.
 
 !!! pdf
     ![](slides.pdf)
@@ -10,8 +10,8 @@ No primeiro módulo do curso iremos estudar *Tipos Abstratos de Dados* (ADT - *A
 
 Recursos de Java usados neste módulo:
 
-- [arrays](../00-java/arrays.md)
-- [interfaces](../00-java/Interfaces.md)
+- [arrays](../00-Algoritmos/java/arrays.md)
+- [interfaces](../00-Algoritmos/java/interfaces.md)
 
 
 ## Resumo das ADTs
@@ -28,4 +28,3 @@ Recursos de Java usados neste módulo:
 - [APS 01](aps.md)
 
 
-<!--  -->

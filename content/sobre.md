@@ -9,12 +9,24 @@ O curso está organizado em Módulos, cada um focado em uma Técnica de Programa
 
 Todas as atividades práticas de implementação (APS) serão entregues via repositório no GitHub. Uma página específica em cada módulo é dedicada a explicar a composição de nota de cada APS.
 
+## Entregas
+
+Todos os exercícios serão entregues usando Github Classroom. Cada aluno terá um repositório individual (e privado) que será usado durante todo o semestre. Ele terá um projeto Maven pré-configurado e as APS consistirão em modificar partes específicas indicadas no enunciado e código.
+
+TODO: link para classroom aqui
+
+## Horários
+
+- **QUA**: 13:30
+- **SEX**: 13:30
+- Atendimento **QUA** 15:45
+
 ## Aprovação
 
 A nota final é calculada com a seguinte fórmula
 
 ```
-sldkfjsd
+NF = 35%APS + 25%PI + 40%PF
 ```
 
 Algumas condições são necessárias para aprovação
