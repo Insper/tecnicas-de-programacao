@@ -60,6 +60,15 @@
 
 > descrição de um algoritmo usando estruturas de controle simplificadas com o objetivo de ser legível para pessoas. Pode incluir trechos em linguagem natural e fórmulas matemáticas se isso ajudar a compreensão.
 
+-----
+
+TODO: continuar a partir daqui
+
+
+------
+
+# Burocracias
+
 ------
 
 # Organização do curso
@@ -90,10 +99,6 @@ NF = 35%APS + 25%PI + 40%PF
 
 **PF**
 
--------
-
-# Burocracias
-
 ------------
 
 # Horários
@@ -113,5 +118,3 @@ NF = 35%APS + 25%PI + 40%PF
 4. Empregar estruturas de dados lineares (listas, matrizes, pilhas, filas, mapeamentos, conjuntos) para resolver problemas computacionais de maneira eficiente
 5. Identificar como estratégias computacionais clássicas (busca, ordenação, otimização) podem ser adaptadas para resolver novos problemas computacionais
 6. Estimar a complexidade computacional de um algoritmo usando uma argumentação informal baseada na contagem de vezes que uma linha executa
-
-------
