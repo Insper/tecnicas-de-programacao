@@ -11,9 +11,8 @@ Todas as atividades práticas de implementação (APS) serão entregues via repo
 
 ## Entregas
 
-Todos os exercícios serão entregues usando Github Classroom. Cada aluno terá um repositório individual (e privado) que será usado durante todo o semestre. Ele terá um projeto Maven pré-configurado e as APS consistirão em modificar partes específicas indicadas no enunciado e código.
+Todos os exercícios serão entregues usando Github Classroom. Cada aluno terá um repositório individual (e privado) que será usado durante todo o semestre. Ele terá um projeto Maven pré-configurado e as APS consistirão em modificar partes específicas indicadas no enunciado e código. Veja o [guia de configuração das entregas](modulos/00-Algoritmos/entregas.md). 
 
-TODO: link para classroom aqui
 
 ## Horários
 

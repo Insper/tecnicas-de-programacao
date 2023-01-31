@@ -2,12 +2,18 @@ INHERIT: active-handout.yml
 
 site_name: Técnicas de Programação
 
+extra:
+  custom_variables:
+    repo_aps: https://github.com/Insper/tecprog-aps
+    repo_aps_git: git@github.com:Insper/tecprog-aps.git
+
 nav:
   - 'Home': index.md
   - sobre.md
   - Módulos:
     - "00 - Algoritmos":
       - modulos/00-Algoritmos/index.md
+      - modulos/00-Algoritmos/entregas.md
       - "Java":
         - modulos/00-Algoritmos/java/instalacao.md
         - modulos/00-Algoritmos/java/primeiro-contato.md
