@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      
+        <title>APS - Técnicas de Programação</title>
+      
+    
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <script>
+      // SETUP GLOBAL CONSTANTS
+      var base_url = '../../..';
+      
+      var telemetryEnabled = false;
+      var backendUrl = "";
+      var courseSlug = "";
+      
+      
+      var dashboardEnabled = false;
+      var tagTree = {};
+      
+
+      // SETUP PLUGIN
+      window.initialized = false;
+      if (!window.initializers) window.initializers = [];
+      window.registerInitializer = (initialize) => {
+        if (window.initialized) initialize();
+        else window.initializers.push(initialize);
+      };
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://unpkg.com/hyperscript.org"></script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="ah-main-container">
+      <header class="ah-header">
+        <button class="ah-menu-btn ah-button ah-button--borderless"
+                aria-label="toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+</svg>
+        </button>
+        <a href="../../.."
+           title="Técnicas de Programação"
+           class="ah-logo"
+           aria-label="Técnicas de Programação">
+          Técnicas de Programação
+        </a>
+        <div class="ah-header--right">
+          
+          
+          
+          <button id="resetHandoutButton">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+</svg></span>
+          </button>
+          
+
+          
+        </div>
+      </header>
+      <nav class="ah-navigation preload">
+        <div class="ah-nav-container">
+          <button class="ah-menu-btn ah-button ah-button--borderless close-menu"
+                  aria-label="close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+</svg>
+          </button>
+          <ul class="ah-nav-body">
+            
+              
+  
+    <li>
+      <a href="../../..">Home</a>
+    </li>
+  
+
+            
+              
+  
+    <li>
+      <a href="../../../sobre/">Sobre a Disciplina</a>
+    </li>
+  
+
+            
+              
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Módulos</span>
+    <ul>
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">00 - Algoritmos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/">Introdução</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/entregas/">Entregas da disciplina</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Java</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/instalacao/">Instalação (Java)</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/primeiro-contato/">Primeiro contato</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/entrada-saida/">Entrada saida</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">01 - ADT</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">ADTs</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../array/">Array</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../list/">List</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../map/">Map</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../arrays-e-listas/">Aula 01 - arrays e Listas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../listas-e-dicionarios/">Aula 02 - Dicionários</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../implementacoes-adt/">Implementacoes adt</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">APS</span>
+      <ul>
+        
+          <li class="ah-toc-item">
+            <a href="#aps">APS</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#lista">Lista</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#dicionario-map">Dicionário (Map)</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">02 - Busca em vetor</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">03 - Ordenação</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">04 - Sistemas Lineares</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../04-Sistemas-Lineares/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">05 - Busca em Texto</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">06 - Caminhos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">07 - Mochila</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../07-Mochila/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+            
+          </ul>
+        </div>
+      </nav>
+      <main class="ah-content ah-typeset">
+        
+          <div class="ah-title-box">
+            <ul class="ah-breadcrumbs">
+              
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>01 - ADT</li>
+                  
+                
+                <li>APS</li>
+            </ul>
+            
+            
+          </div>
+          <section class="progress-section show">
+<h1 id="aps">APS</h1>
+<p>A tarefa para entrega deste módulo será implementar algumas estruturas de dados comuns. Todas elas já tem implementações equivalentes (e mais bem feitas) na biblioteca padrão de Java. Nosso objetivo aqui é ter um olhar aprofundado em como elas poderiam ser implementadas e o quanto nossa implementação se aproxima da referência da JVM.</p>
+<h2 id="lista">Lista</h2>
+<p>Nossa implementação de lista é definida usando a interface <code>InsperList</code>, que segue de perto a ADT <a href="../list/">List</a> que estudamos na <a href="../arrays-e-listas/">Aula 01</a>. Segue um resumo das operações suportadas por este tipo.</p>
+<ul>
+<li><strong>Inserção</strong>:</li>
+<li>Em qualquer lugar com o método <code>add</code></li>
+<li><strong>Remoção</strong>:</li>
+<li>da primeira ocorrência de um elemento com o método <code>remove</code></li>
+<li><strong>Acesso a elementos</strong>:</li>
+<li>Via índice usando o método <code>get</code> e <code>set</code></li>
+<li>Tamanho da lista com método o <code>size()</code></li>
+</ul>
+<p>Você deverá criar uma classe <code>InsperArrayList</code> que implementa a interface <code>InsperList</code> no local apontado no código da APS. </p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Sua implementação deverá usar <em>Generics</em> e ser feita usando um array simples (uma variável do tipo <code>Object[]</code>). Ou seja, sua implementação <strong>não</strong> pode usar ArrayList, LinkedList ou qualquer outra classe de armazenamento de dados da JVM.</p>
+</div>
+<p>Não se esqueça que você deverá implementar o redimensionamento do <code>Array</code> nos métodos <code>insert</code> e <code>remove</code>. Seu vetor deve começar com capacidade <code>8</code> e seguir o algoritmo estudado em aula. Ao remover elementos, o <code>Array</code> deverá ter seu tamanho diminuido pela metade se o tamanho do vetor for menor que 25% da capacidade.</p>
+<h3 id="avancado">Avançado</h3>
+<p>A maneira mais correta de indicar que um método falhou é lançar uma exceção. Os métodos <code>get</code>, <code>set</code>, <code>insert</code> e <code>remove</code> podem receber índices inválidos e/ou <code>null</code> em seus argumentos. Leia o código dos testes e lance as exceções adequadas.</p>
+<h2 id="dicionario-map">Dicionário (<em>Map</em>)</h2>
+<p>Nossa implementação de lista é definida usando a interface <code>InsperMap</code>, que segue de perto a ADT <a href="../map/">Map</a>. Você deverá implementar a classe <code>TwoListMap</code> seguindo os algoritmos que estudamos na <a href="../listas-e-dicionarios/">Aula 02</a>. Essa classe deverá seguir a interface <code>InsperMap</code>. </p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Sua implementação deverá usar variáveis do tipo <code>InsperList</code> para guardar as listas de chaves. Ou seja, sua implementação <strong>não</strong> pode usar ArrayList, LinkedList ou qualquer outra classe de armazenamento de dados da JVM.</p>
+</div>
+<h3 id="avancado_1">Avançado</h3>
+<p>Assim como em <code>InsperList</code>, lance as exceções adequadas ao receber dados inválidos em <code>get</code>, <code>set</code> e <code>remove</code>. </p>
+<!---TODO: definir quais dessas realmente vão ser pedidas. Tem coisas demais aqui que não usaremos inicialmente... -->
+
+<!-- 
+
+## Conjunto
+
+O tipo *conjunto* representa uma coleção de valores sem ordem nem repetição. É possível listar todos os elementos de um conjunto, assim como adicionar, remover e checar se um elemento específico pertence ao conjunto.
+
+A descrição completa do tipo de dados está na interface `InsperSet`. Você deverá implementar uma classe `InsperListSet` no local apontado no código da APS. Sua implementação deverá usar um `InsperArrayList` para armazenar os dados.
+
+### Avançado
+
+As operações de união e interseção entre conjuntos são importantes em diversos problemas. A interface `InsperSetAvancado` descreve métodos para estas operações. Implemente essa interface na sua classe `InsperListSet`.
+
+## Pilha
+
+A estrutura Pilha é usada em diversas situações em que necessitamos armazenar elementos em ordem e percorrê-los na ordem oposta a que foram armazenados. Em inglês usa-se muito a sigla **LIFO**, que significa *Last In, First Out* (último a entrar, primeiro a sair). 
+
+Suas principais operações são 
+
+- adicionar no topo da pilha
+- remover do topo da pilha
+- verificar se a pilha está vazia
+
+Implemente uma classe `InsperListStack` que obedece a interface `InsperStack` definida no código da APS. Você deve usar seu tipo `InsperArrayList` para armazenar os dados. 
+
+### Avançado
+
+Implemente o método `parentesesBalanceados` na classe `UsosStack` usando sua classe `InsperListStack`. A cada vez que um parêntese é aberto (usando os caracteres `(`, `[` ou `{`) você deve empilhá-lo. Quando um caractere de fechamento de parêntese for encontrado você deve compará-lo com o topo da pilha. Se forem correspondentes então continue. Se não forem retorne `false`
+
+Ao final do texto a pilha deverá estar vazia.
+
+## Fila
+
+Filas são muito usadas em situações em que várias pessoas/programas desejam acessar um único recurso. Por exemplo, programas que desejam enviar/receber dados da internet entram em uma fila para terem acesso a placa de rede. Filas também são usadas em sistemas de compra de ingressos em shows. Em inglês usa-se muito a sigla **FIFO** - *First in, First out* (primeiro a entrar, primeiro a sair). Em geral não é desejável que uma fila tenha tamanho infinito. Por isso filas são criadas com um tamanho máximo de capacidade.
+
+As principais operações de uma fila são 
+
+- criar fila com tamanho máximo `N`
+- entrar no fim da fila com `enqueue`
+- sair do começo da fila com `dequeue`
+- checar se a fila está cheia/vazia com `isFull`/`isEmpty`
+
+Assim como nos outros tipos de dados, implemente a interface `InsperQueue` na classe indicada no código da APS usando o tipo `InsperList`. 
+
+### Avançado
+
+A maneira mais correta de indicar erros nos métodos `enqueue`/`dequeue` é que eles lancem exceções quando a fila estiver cheia/vazia. Implemente esta funcionalidade.  -->
+
+
+
+</section>
+        
+      </main>
+      <footer class="ah-footer ah-typeset">
+        <div class="ah-footer-nav">
+          
+            <a href="../implementacoes-adt/"
+               class="ah-prev"
+               title="Implementacoes adt">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Implementacoes adt</span>
+            </a>
+          
+          
+            <a href="../../02-Busca-Vetor/"
+               class="ah-next"
+               title="Index">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">Index</span>
+            </a>
+          
+        </div>
+      </footer>
+    </div>
+    
+      
+    
+  </body>
+</html>
