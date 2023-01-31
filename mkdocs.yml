@@ -18,6 +18,9 @@ nav:
         - modulos/00-Algoritmos/java/instalacao.md
         - modulos/00-Algoritmos/java/primeiro-contato.md
         - modulos/00-Algoritmos/java/entrada-saida.md
+        - modulos/00-Algoritmos/java/strings.md
+        - modulos/00-Algoritmos/java/arrays.md
+        - modulos/00-Algoritmos/java/interfaces.md
     - "01 - ADT":
       - modulos/01-ADT/index.md
       - "ADTs":

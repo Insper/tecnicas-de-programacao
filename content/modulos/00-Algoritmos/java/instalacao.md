@@ -39,7 +39,7 @@ Qualquer ferramenta com suporte a projetos Maven vai ser suficiente nesta discip
     Não daremos suporte específico a configuração das ferramentas abaixo. Claro que tentaremos ajudar no setup, mas isso não fará parte das atividades de aula.
 
 - [VSCode](https://code.visualstudio.com/docs/languages/java) - se já seguiu o guia acima, usar o pacote de extensões recomendadas
-- [Eclipse](https://www.eclipse.org/downloads/) -
+- [Eclipse](https://www.eclipse.org/downloads/) - muito tradicional e conhecida no mercado
 - [IntelliJ Idea](https://www.jetbrains.com/idea/download) - a versão Free/Community é suficiente para esta disciplina
 
 Cada editor tem sua configuração específica, mas para facilitar estamos usando um gerenciador de compilação e projeto (Maven) muito popular e com excelente suporte de ferramentas.
