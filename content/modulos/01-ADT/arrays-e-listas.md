@@ -17,8 +17,8 @@ Vamos agora iniciar a implementação de uma *Estrutura de Dados* que implemente
 2. utilizar um Tipo de Dados mais simples (`Array`) para implementar outro tipo mais complexo (`Lista`)
 
 !!! tip
-    * Um *Tipo de Dados* somente define quais operações existem e quais são suas entradas e saídas.
-    * Uma *Estrutura de Dados (ED)* descreve também algoritimos para cada uma das operações suportadas.
+    * Um *Tipo de Dados* somente define quais operações existem e quais são suas entradas e saídas. Ou seja, aqui definimos **o quê** deve ser feito. 
+    * Uma *Estrutura de Dados (ED)* descreve também algoritimos para cada uma das operações suportadas. Ou seja, aqui temos também **como** cada operação deve ser realizada.
 
     Dessa maneira, podemos pensar na *ED* como uma descrição detalhada (em termos de algoritmos) de como uma *ADT* poderia ser implementada.
 
