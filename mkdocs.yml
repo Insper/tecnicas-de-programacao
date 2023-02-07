@@ -14,10 +14,12 @@ nav:
     - "00 - Algoritmos":
       - modulos/00-Algoritmos/index.md
       - modulos/00-Algoritmos/entregas.md
+      - modulos/00-Algoritmos/pseudo-codigo-e-java.md
+      - modulos/00-Algoritmos/algoritmos-com-arrays-e-strings.md
       - "Java":
+        - modulos/00-Algoritmos/java/index.md
         - modulos/00-Algoritmos/java/instalacao.md
         - modulos/00-Algoritmos/java/primeiro-contato.md
-        - modulos/00-Algoritmos/java/entrada-saida.md
         - modulos/00-Algoritmos/java/strings.md
         - modulos/00-Algoritmos/java/arrays.md
         - modulos/00-Algoritmos/java/interfaces.md
@@ -30,7 +32,6 @@ nav:
       - "Aulas":
         - modulos/01-ADT/arrays-e-listas.md
         - modulos/01-ADT/listas-e-dicionarios.md
-        - modulos/01-ADT/implementacoes-adt.md
       - modulos/01-ADT/aps.md
     - "02 - Busca em vetor":
       - modulos/02-Busca-Vetor/index.md

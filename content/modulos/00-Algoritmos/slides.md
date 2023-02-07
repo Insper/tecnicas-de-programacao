@@ -62,8 +62,20 @@
 
 -----
 
-TODO: continuar a partir daqui
+# Como descrever a solução de um problema?
 
+**Escrever solução de maneira que uma pessoa sem conhecimento específico do algoritmo em questão consiga simular sua execução**
+
+------
+
+# Estratégias de solução de problemas computacionais
+
+- estruturas de dados
+- divisão e conquista
+- buscas por largura e profundidade
+- backtracking
+
+**Adaptar algoritmos clássicos que usem essas estratégias para resolver novos problemas**
 
 ------
 
@@ -112,9 +124,15 @@ NF = 35%APS + 25%PI + 40%PF
 
 # Objetivos de Aprendizagem (formal)
 
-1. Implementar em Java um algoritmo descrito em pseudo-código
+1. Implementar em Java um algoritmo descrito em alto nível
 2. Empregar Backtracking para resolver problemas computacionais
 3. Empregar a técnica Divisão e Conquista para resolver problemas computacionais
 4. Empregar estruturas de dados lineares (listas, matrizes, pilhas, filas, mapeamentos, conjuntos) para resolver problemas computacionais de maneira eficiente
 5. Identificar como estratégias computacionais clássicas (busca, ordenação, otimização) podem ser adaptadas para resolver novos problemas computacionais
 6. Estimar a complexidade computacional de um algoritmo usando uma argumentação informal baseada na contagem de vezes que uma linha executa
+
+----
+
+# Atividades: Módulo 00-Algoritmos
+
+(mostrar site e projeto configurado do VSCode)

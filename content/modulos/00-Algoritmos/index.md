@@ -5,17 +5,18 @@ No primeiro módulo do curso iremos fazer uma introdução a Algoritmos e Java.
 !!! pdf
     ![](slides.pdf)
 
-## Java
-
-- [Instalação](java/instalacao.md)
-- [Primeiro contato](java/primeiro-contato.md)
-- [Condicionais](java/condicionais.md)
-- [Loops](java/loops.md)
-- [Arrays](java/arrays.md)
+!!! warning
+    Antes de continuar é importante [configurar seu repositório de entregas](entregas.md). Os códigos de suporte para as atividades e exemplos são disponibilizados via esse repositório.
 
 ## Atividades
 
-- [Aulas 01 e 02](pseudo-codigo-e-java.md)
-- [Aula 03](aps.md)
+- [Atividade 01](pseudo-codigo-e-java.md)
+- [Atividade 02](algoritmos-com-arrays-e-strings.md)
 
+## Java
 
+Os guias de Java estão no menu do lado esquerdo. Eles serão referenciados dentro das atividades de aula. 
+
+## Entregas
+
+Todos os exercícios de código deste módulo são para entrega.

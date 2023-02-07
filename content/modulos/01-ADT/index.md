@@ -24,7 +24,9 @@ Recursos de Java usados neste módulo:
 
 - [Aula 01](arrays-e-listas.md)
 - [Aula 02](listas-e-dicionarios.md)
-- [Aula 03](implementacoes-adt.md)
+
+## Entregas
+
 - [APS 01](aps.md)
 
 

@@ -33,7 +33,7 @@ Nossa implementação de lista é definida usando a interface `InsperMap`, que s
 
 ## Exercícios
 
-Vamos agora resolver dois exercícios práticos simples usando nossas novas Estruturas de Dados. Pode ser útil ver o guia de [String em Java](../00-Algoritmos/java/strings.md) antes de continuar.
+Vamos agora resolver dois exercícios práticos simples usando nossas novas Estruturas de Dados. Pode ser útil rever o guia de [Strings](../00-Algoritmos/java/strings.md) antes de continuar.
 
 
 !!! exercise 

@@ -1,6 +1,6 @@
 # Array
 
-Tipo de dados mais primitivo e representa uma coleção de objetos contínua indexada por um número Winteiro começando em `0`. Tem tamanho fixo.
+Tipo de dados composto mais primitivo e representa uma coleção de objetos contínua indexada por um número inteiro começando em `0`. Tem tamanho fixo.
 
 - `NOVO_ARRAY(N)` - cria array com capacidade `N>0`
 - `TAMANHO(A)`- devolve o número de elementos do array
