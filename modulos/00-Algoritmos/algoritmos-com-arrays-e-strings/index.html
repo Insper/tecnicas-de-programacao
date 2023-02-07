@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      
+        <title>Algoritmos com dados compostos - Técnicas de Programação</title>
+      
+    
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <script>
+      // SETUP GLOBAL CONSTANTS
+      var base_url = '../../..';
+      
+      var telemetryEnabled = false;
+      var backendUrl = "";
+      var courseSlug = "";
+      
+      
+      var dashboardEnabled = false;
+      var tagTree = {};
+      
+
+      // SETUP PLUGIN
+      window.initialized = false;
+      if (!window.initializers) window.initializers = [];
+      window.registerInitializer = (initialize) => {
+        if (window.initialized) initialize();
+        else window.initializers.push(initialize);
+      };
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://unpkg.com/hyperscript.org"></script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="ah-main-container">
+      <header class="ah-header">
+        <button class="ah-menu-btn ah-button ah-button--borderless"
+                aria-label="toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+</svg>
+        </button>
+        <a href="../../.."
+           title="Técnicas de Programação"
+           class="ah-logo"
+           aria-label="Técnicas de Programação">
+          Técnicas de Programação
+        </a>
+        <div class="ah-header--right">
+          
+          
+          
+          <button id="resetHandoutButton">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+</svg></span>
+          </button>
+          
+
+          
+        </div>
+      </header>
+      <nav class="ah-navigation preload">
+        <div class="ah-nav-container">
+          <button class="ah-menu-btn ah-button ah-button--borderless close-menu"
+                  aria-label="close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+</svg>
+          </button>
+          <ul class="ah-nav-body">
+            
+              
+  
+    <li>
+      <a href="../../..">Home</a>
+    </li>
+  
+
+            
+              
+  
+    <li>
+      <a href="../../../sobre/">Sobre a Disciplina</a>
+    </li>
+  
+
+            
+              
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Módulos</span>
+    <ul>
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">00 - Algoritmos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Introdução</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../entregas/">Entregas da disciplina</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../pseudo-codigo-e-java/">Primeiros algoritmos</a>
+    </li>
+  
+
+      
+        
+  
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Algoritmos com dados compostos</span>
+      <ul>
+        
+          <li class="ah-toc-item">
+            <a href="#algoritmos-com-dados-compostos">Algoritmos com dados compostos</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#arrays">Arrays</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#strings">Strings</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#extras">Extras</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Java</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../java/">Referência</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/instalacao/">Instalação (Java)</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/primeiro-contato/">Primeiro contato</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/strings/">Strings</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/arrays/">Arrays</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/interfaces/">Interfaces</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">01 - ADT</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">ADTs</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/array/">Array</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/list/">List</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/map/">Map</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/arrays-e-listas/">Aula 01 - arrays e Listas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/listas-e-dicionarios/">Aula 02 - Dicionários</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">02 - Busca em vetor</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">03 - Ordenação</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">04 - Sistemas Lineares</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../04-Sistemas-Lineares/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">05 - Busca em Texto</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">06 - Caminhos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">07 - Mochila</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../07-Mochila/">Index</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+            
+          </ul>
+        </div>
+      </nav>
+      <main class="ah-content ah-typeset">
+        
+          <div class="ah-title-box">
+            <ul class="ah-breadcrumbs">
+              
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>00 - Algoritmos</li>
+                  
+                
+                <li>Algoritmos com dados compostos</li>
+            </ul>
+            
+            
+          </div>
+          <section class="progress-section show">
+<h1 id="algoritmos-com-dados-compostos">Algoritmos com dados compostos</h1>
+<p>Até o momento todos nosso algoritmos usavam dados "simples": cada variável guarda somente um valor. Agora vamos desenvolver algoritmos com dados compostos: cada variável guarda uma coleção de valores. Os tipos compostos mais básicos são o <em>Array</em> e <em>Strings</em>.</p>
+<h2 id="arrays">Arrays</h2>
+<p>Quando representamos algoritmos o tipo mais básico de dados compostos que temos é o <em>Array</em>, que representa uma coleção de objetos do mesmo tipo contínua indexada por um número inteiro começando em <code>0</code>. Tem tamanho fixo. As seguintes operações estão disponíveis em um <code>Array</code>.</p>
+<ul>
+<li><code>NOVO_ARRAY(N)</code> - cria array com capacidade <code>N&gt;0</code></li>
+<li><code>TAMANHO(A)</code>- devolve o número de elementos do array</li>
+<li><code>A[i]</code> - devolve o elemento de índice <code>i</code>. Se <code>i&lt;0</code> ou <code>i&gt;TAMANHO(A)</code> dá erro</li>
+</ul>
+<p>Vejamos então como escrever essas operações com Pseudo-código e com Java:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pseudo código</label><label for="__tabbed_1_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Cria array com 10 int
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ARR ← NOVO_ARRAY(10)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># Acessa elementos do array
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>ARR[0] ← 5
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>ARR[1] ← ARR[0] + 2;
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a># tamanho do array. Nunca muda
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>N ← TAMANHO(ARR) # 10
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Cria array com 10 int</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">var</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Acessa elementos do array</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">// tamanho do array. Nunca muda</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kd">var</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="c1">// 10</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>A operação mais comum com um <em>array</em> é <em>percorrer o array, passando por todos os elementos</em>. Podemos fazer isso de duas maneiras:</p>
+<ol>
+<li>
+<p><strong>Percorrer usando índice</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Pseudo código</label><label for="__tabbed_2_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PARA CADA I=0 ATÉ TAMANHO(ARR) FAÇA
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    # FAZ ALGO COM ARR[I] AQUI
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>FIM
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="c1">// faz algo com arr[i] aqui</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li>acesso via índice do elemento atual (variável <code>i</code>)</li>
+<li>especialmente útil para acessar elementos vizinhos (via <code>i+1</code> ou <code>i-1</code>)</li>
+</ul>
+</li>
+<li>
+<p><strong>Percorrer elemento a elemento</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Pseudo código</label><label for="__tabbed_3_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PARA CADA ITEM EM ARR FAÇA
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    # FAZ ALGO COM ITEM AQUI
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>FIM
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="c1">// faz algo com item aqui</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li>só acessa o elemento atual</li>
+<li>mais legível</li>
+</ul>
+</li>
+</ol>
+<p>Vamos agora usar esses novos conceitos em exercícios de Arrays.</p>
+<h3 id="entregador-mais-proximo">Entregador mais próximo</h3>
+<p>Para desenvolver um aplicativo de entrega de comida, é útil saber qual entregador está mais próximo do restaurante. Faça uma função que recebe as coordenadas <em>x, y</em> de um restaurante, uma lista de coordenadas <em>x</em> e uma lista de coordenadas <em>y</em> de entregadores. Sua função deve devolver o índice do entregador mais próximo do restaurante.</p>
+<p><strong>Observação 1:</strong> a distância de um ponto $(x_1, y_1)$ a outro ponto $(x_2, y_2)$ é dada por $\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_entregadores_entrada" id="algoritmo_array_entregadores_entrada_0">
+<p class="admonition-title">Exercício 1</p>
+<form class="exercise-form">
+<p>Qual são os dados de entrada? Escreva seus nomes e tipos na ordem que seriam recebidos. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<ul>
+<li><code>FRACIONÁRIOS X e Y</code> - coordenadas do restaurante</li>
+<li><code>ARRAY de FRACIONÁRIOS XE</code> - lista de coordenadas x dos entregadores</li>
+<li><code>ARRAY de FRACIONÁRIOS YE</code> - lista de coordenadas y dos entregadores</li>
+</ul>
+<p>A posição de um entregador <code>I</code> é <code>(XE[i], YE[i])</code></p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_entregadores_saida" id="algoritmo_array_entregadores_saida_0">
+<p class="admonition-title">Exercício 2</p>
+<form class="exercise-form">
+<p>Qual são os dados de saída? Escreva seus nomes e tipos, indicando se são retorno de função ou <code>PRINT</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>O programa devolve um <code>INTEIRO</code> com o índice do entregador mais próximo.</p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_entregadores_algoritmo" id="algoritmo_array_entregadores_algoritmo_0">
+<p class="admonition-title">Exercício 3</p>
+<form class="exercise-form">
+<p>Agora escreva abaixo um pseudo-código (no modelo acima) que resolva o exercício acima. Chame seu algoritmo de <code>ENTREGADOR_MAIS_PROXIMO</code>. Você pode supor que existe uma função <code>DIST(X1, Y1, X2, Y2)</code> que calcula a distância entre dois pontos. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ENTREGADOR_MAIS_PROXIMO(X, Y, XE, YE)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    MAIS_PROXIMO ← 0
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    DIST_MAIS_PROXIMO ← DIST(X, Y, XE[0], YE[0])
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    PARA CADA I=1 ATÉ N FAÇA
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        DIST ← DIST(X, Y, XE[i], YE[i])
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        SE DIST &lt; DIST_MAIS_PROXIMO ENTÃO
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            DIST_MAIS_PROXIMO ← DIST
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            MAIS_PROXIMO ← I
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        FIM 
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    FIM
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    DEVOLVE MAIS_PROXIMO
+</code></pre></div>
+</div>
+</div>
+<div class="admonition exercise self  self-progress" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_entregadores_java" id="algoritmo_array_entregadores_java_0">
+<p class="admonition-title">Exercício 4</p>
+<form class="exercise-form">
+<p>Vamos agora implementar esse algoritmo em Java. Preencha o esqueleto na classe <code>br.edu.insper.tecprog.aps0.EntregadorMaisProximo</code>, implemente o algoritmo acima e rode os testes.</p>
+<p><strong>Lembrete</strong>: você precisará criar a função <code>DIST</code> em Java também, já que ela não existe nativamente. Ela não precisa ser necessariamente uma função, mas o cálculo precisa ser feito em algum lugar. </p>
+<div class="form-elements">
+<input type="hidden" name="data" value="OK" />
+<input class="ah-button ah-button--primary" type="submit" name="Enviar" value="Marcar como feito" />
+</div>
+</form>
+</div>
+<h3 id="diferenca-de-listas">Diferença de listas</h3>
+<p>Faça uma função que recebe 2 listas de inteiros e retorna uma nova lista com os elementos da primeira lista que não estão na segunda lista.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_diff_listas_entrada" id="algoritmo_array_diff_listas_entrada_0">
+<p class="admonition-title">Exercício 5</p>
+<form class="exercise-form">
+<p>Qual são os dados de entrada? Escreva seus nomes e tipos na ordem que seriam recebidos. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<ul>
+<li><code>ARRAY de INTEIRO A1</code></li>
+<li><code>ARRAY de INTEIRO A2</code></li>
+</ul>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_diff_listas_saida" id="algoritmo_array_diff_listas_saida_0">
+<p class="admonition-title">Exercício 6</p>
+<form class="exercise-form">
+<p>Qual são os dados de saída? Escreva seus nomes e tipos, indicando se são retorno de função ou <code>PRINT</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>O programa devolve um <code>ARRAY de INTEIRO</code> com os valores que estão na primeira lista e não estão na segunda.</p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_diff_listas_algoritmo" id="algoritmo_array_diff_listas_algoritmo_0">
+<p class="admonition-title">Exercício 7</p>
+<form class="exercise-form">
+<p>Agora escreva abaixo um pseudo-código (no modelo acima) que resolva o exercício acima. Chame seu algoritmo de <code>DIFF_LISTAS</code>. </p>
+<p><strong>Dica</strong>: 
+- arrays precisam ser criados com tamanho fixo, mas esse tamanho pode ser definido dentro do programa
+- tente primeiro contar quantos elementos de A1 não estão em A2</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>DIFF_LISTAS(A1, A2)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    COUNT_DIFF ← 0
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    PARA CADA I=0 ATÉ TAMANHO(A1) FAÇA
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        ESTA_EM_A2 = Falso
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        PARA CADA J=0 ATÉ TAMANHO(A2) FAÇA
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>            SE A1[I] = A2[J] ENTÃO
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>                ESTA_EM_A2 = Verdadeiro
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>            FIM
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        FIM
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        SE NÃO ESTA_EM_A2 ENTÃO
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>            COUNT_DIFF ← COUNT_DIFF + 1
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        FIM
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    FIM
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    ARR_DIFF = NOVO_ARRAY(COUNT_DIFF)
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    COUNT ← 0
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    PARA CADA I=0 ATÉ TAMANHO(A1) FAÇA
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        ESTA_EM_A2 = Falso
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        PARA CADA J=0 ATÉ TAMANHO(A2) FAÇA
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>            SE A1[I] = A2[J] ENTÃO
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>                ESTA_EM_A2 = Verdadeiro
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>            FIM
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>        FIM
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>        SE NÃO ESTA_EM_A2 ENTÃO
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>            ARR_DIFF[COUNT] = A1[I]
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>            COUNT ← COUNT + 1
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        FIM
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    FIM
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>    DEVOLVE ARR_DIFF
+</code></pre></div>
+</div>
+</div>
+<div class="admonition exercise self  self-progress" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_diff_listas_java" id="algoritmo_array_diff_listas_java_0">
+<p class="admonition-title">Exercício 8</p>
+<form class="exercise-form">
+<p>Vamos agora implementar esse algoritmo em Java. Preencha o esqueleto na classe <code>br.edu.insper.tecprog.aps0.DiffListas</code>, implemente o algoritmo acima e rode os testes.</p>
+<div class="form-elements">
+<input type="hidden" name="data" value="OK" />
+<input class="ah-button ah-button--primary" type="submit" name="Enviar" value="Marcar como feito" />
+</div>
+</form>
+</div>
+<h3 id="valor-da-nota-fiscal">Valor da nota fiscal</h3>
+<p>Faça uma função que recebe duas listas com informações de uma nota fiscal e devolve o preço total da nota. A nota fiscal é representada pelas duas listas, uma com preços de produtos e outra com a respectiva quantidade de itens comprados daquele produto. Você pode assumir que só é possível comprar quantidades inteiras de um produto. </p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_valor_nota_entrada" id="algoritmo_array_valor_nota_entrada_0">
+<p class="admonition-title">Exercício 9</p>
+<form class="exercise-form">
+<p>Qual são os dados de entrada? Escreva seus nomes e tipos na ordem que seriam recebidos. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<ul>
+<li><code>ARRAY de FRACIONÁRIO P</code> - contém os preços unitários de cada produto comprado.</li>
+<li><code>ARRAY de INTEIRO Q</code> - contém as quantidades de cada produto comprado. </li>
+</ul>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_valor_nota_saida" id="algoritmo_array_valor_nota_saida_0">
+<p class="admonition-title">Exercício 10</p>
+<form class="exercise-form">
+<p>Qual são os dados de saída? Escreva seus nomes e tipos, indicando se são retorno de função ou <code>PRINT</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>O programa devolve um <code>FRACIONÁRIO</code> com o valor final da nota.</p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_valor_nota_algoritmo" id="algoritmo_array_valor_nota_algoritmo_0">
+<p class="admonition-title">Exercício 11</p>
+<form class="exercise-form">
+<p>Agora escreva abaixo um pseudo-código (no modelo acima) que resolva o exercício acima. Chame seu algoritmo de <code>VALOR_DA_NOTA</code>. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>VALOR_DA_NOTA(P, Q)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    VALOR_TOTAL ← 0
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    PARA CADA I=0 ATÉ TAMANHO(P) FAÇA
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        VALOR_TOTAL ← VALOR_TOTAL + P[I] * Q[I]
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    FIM
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    DEVOLVE VALOR_TOTAL
+</code></pre></div>
+</div>
+</div>
+<div class="admonition exercise self  self-progress" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_valor_nota_java" id="algoritmo_array_valor_nota_java_0">
+<p class="admonition-title">Exercício 12</p>
+<form class="exercise-form">
+<p>Vamos agora implementar esse algoritmo em Java. Preencha o esqueleto na classe <code>br.edu.insper.tecprog.aps0.ValorDaNota</code>, implemente o algoritmo acima e rode os testes.</p>
+<div class="form-elements">
+<input type="hidden" name="data" value="OK" />
+<input class="ah-button ah-button--primary" type="submit" name="Enviar" value="Marcar como feito" />
+</div>
+</form>
+</div>
+<h2 id="strings">Strings</h2>
+<p>Strings em Java possuem recursos muito parecidos com o que já conhecemos de Python. Veja alguns exemplos introdutórios abaixo.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Pseudo código</label><label for="__tabbed_4_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>S ← &quot;Bla bla bla&quot;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a># mostra no terminal
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>PRINT(&quot;Valor de s:&quot; + S)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a># cópia de trechos da string
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>bla1 ← SUBSTRING(S, 0, 3) # Bla
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>bla3 ← SUBSTRING(S, 8) # Vai até o fim se não passar o segundo
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>LOWER ← LOWERCASE(S)
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a># checa se a string é vazia
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>v ← EH_VAZIO(S)
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a># checa se a string é só de espaços em branco
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>v ← SO_ESPACOS(S)
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a># checa se duas strings são iguais
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>igual ← S = bla1
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bla bla bla&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">// mostra no terminal</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor de s: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">// cópia de um trecho da String</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">String</span><span class="w"> </span><span class="n">bla1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Bla</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">String</span><span class="w"> </span><span class="n">bla3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w"> </span><span class="c1">// bla - vai até o fim da String se não passar o segundo</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="n">String</span><span class="w"> </span><span class="n">lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// bla bla bla</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="c1">// checa se é string vazia</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">s</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c1">// checa se a string é só de espaços em branco</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="n">s</span><span class="p">.</span><span class="na">isBlank</span><span class="p">()</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="c1">// checa se duas strings são iguais</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">igual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">bla1</span><span class="p">);</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Nunca use <code>==</code> para comparar Strings. O correto é sempre usar o método <code>equals()</code>. Isso na verdade vale para todos objetos em Java. </p>
+</div>
+<p>Em Pseudo código vamos tratar <code>String</code> sempre como um array, porém na implementação em Java existem algumas diferenças importantes.</p>
+<h3 id="string-vs-char">String vs Char</h3>
+<p>Em Java a String é uma sequência de <code>char</code>, um objeto que representa um único caractere. Quando queremos representar um único caractere usando aspas simples (por exemplo, <code>'a'</code>). Quando queremos uma sequência de <code>char</code> sempre usamos aspas duplas (por exemplo, <code>"texto"</code>)</p>
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// só um caractere</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">// substitui toda ocorrência da letra &#39;a&#39; por &#39;e&#39;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">String</span><span class="w"> </span><span class="n">ble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Ble ble ble</span>
+</code></pre></div>
+<div class="admonition exercise choice  tag-choice-exercise" data-answer-idx="1" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/java_char_string_equals" id="java_char_string_equals_0">
+<p class="admonition-title">Exercício 13</p>
+<form class="exercise-form">
+<p>A expressão <code>'a' == "a"</code> é avaliada como </p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    <code>true</code>
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    <code>false</code>
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Uma string de tamanho 1 (com um só caractere) é diferente de do caractere sozinho em si. A expressão continuaria <code>false</code> se tentássemos algo do tipo <code>"a".equals('a')</code>, já que nesse caso os tipos são diferentes. </p>
+</div>
+</div>
+<p>Algumas operações corriqueiras com strings são:</p>
+<ol>
+<li>
+<p><strong>Percorrer caracteres usando índice</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Pseudo código</label><label for="__tabbed_5_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>PARA CADA I=0 ATÉ TAMANHO(S) FAÇA
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    # FAZ ALGO COM S[I] AQUI
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>FIM
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="c1">// faz algo com c aqui</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li>pode acessar vizinhos</li>
+<li>tem índice e caractere ao mesmo tempo</li>
+</ul>
+</li>
+<li>
+<p><strong>Processar por linhas</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Pseudo código</label><label for="__tabbed_6_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>PARA CADA LINE EM DIVIDE(S, &quot;\n&quot;) FAÇA
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    # FAZ ALGO COM LINE AQUI
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>FIM
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="c1">// usa line aqui</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Separar por espaços em branco</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Pseudo código</label><label for="__tabbed_7_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>PARA CADA ITEM EM DIVIDE(S, &quot;\s&quot;) FAÇA
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    # FAZ ALGO COM ITEM AQUI
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>FIM
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\s&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="c1">// usa word aqui</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<p>A operação <code>DIVIDE(S, P)</code> divide uma string pelo padrão <code>P</code>, retornando um <code>ARRAY</code> de <code>String</code> com as partes de <code>S</code>. Padrões comuns são <code>"\n"</code> (linhas) e <code>"\s"</code> (espaços).</p>
+<p>Java tem uma extensa documentação online. Todos os métodos de <em>String</em> podem ser vistos <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html">neste link</a>.</p>
+<p>Vamos agora praticar com alguns exercícios. </p>
+<h3 id="palavras-iguais">Palavras iguais</h3>
+<p>De acordo com o Novo Acordo Ortográfico da Língua Portuguesa, usa-se o hífen em compostos que têm palavras iguais ou quase iguais, sem elementos de ligação. Faça uma função que recebe uma string e devolve <code class="language-java highlight"><span class="kc">true</span></code> se ela for composta por duas palavras iguais ou <code class="language-java highlight"><span class="kc">false</span></code>, caso contrário.</p>
+<p>Por exemplo, sua função deve devolver <code class="language-java highlight"><span class="kc">true</span></code> para as seguintes entradas: <code class="language-java highlight"><span class="s">&quot;pega-pega&quot;</span></code>, <code class="language-java highlight"><span class="s">&quot;cri-cri&quot;</span></code>, <code class="language-java highlight"><span class="s">&quot;zum-zum.</span></code></p>
+<p>Alguns exemplos para os quais sua função deve devolver <code class="language-java highlight"><span class="kc">false</span></code> são: <code class="language-java highlight"><span class="s">&quot;zigue-zague&quot;</span></code>, <code class="language-java highlight"><span class="s">&quot;pingue-ongue&quot;</span></code>, <code>#!"java "abobrinha"</code>.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_palavras_iguais_entrada" id="algoritmo_string_palavras_iguais_entrada_0">
+<p class="admonition-title">Exercício 14</p>
+<form class="exercise-form">
+<p>Qual são os dados de entrada? Escreva seus nomes e tipos na ordem que seriam recebidos. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<ul>
+<li><code>STRING S</code> - palavra a ser processada</li>
+</ul>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_palavras_iguais_saida" id="algoritmo_string_palavras_iguais_saida_0">
+<p class="admonition-title">Exercício 15</p>
+<form class="exercise-form">
+<p>Qual são os dados de saída? Escreva seus nomes e tipos, indicando se são retorno de função ou <code>PRINT</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>O programa devolve </p>
+<ul>
+<li>Verdadeiro se a <code>S</code> for formada por duas palavras iguais separadas por hífen</li>
+<li>Falso caso contrário</li>
+</ul>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_palavras_iguais_algoritmo" id="algoritmo_string_palavras_iguais_algoritmo_0">
+<p class="admonition-title">Exercício 16</p>
+<form class="exercise-form">
+<p>Agora escreva abaixo um pseudo-código (no modelo acima) que resolva o exercício acima. Chame seu algoritmo de <code>PALAVRAS_IGUAIS</code>. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>PALAVRAS_IGUAIS(S)
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    PARTES ← DIVIDE(S, &quot;-&quot;)
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    SE TAMANHO(PARTES) != 2 ENTÃO
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        DEVOLVA FALSO
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    FIM
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    DEVOLVE PARTES[0] = PARTES[1]
+</code></pre></div>
+</div>
+</div>
+<div class="admonition exercise self  self-progress" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_palavras_iguais_java" id="algoritmo_string_palavras_iguais_java_0">
+<p class="admonition-title">Exercício 17</p>
+<form class="exercise-form">
+<p>Vamos agora implementar esse algoritmo em Java. Preencha o esqueleto na classe <code>br.edu.insper.tecprog.aps0.PalavrasIguais</code>, implemente o algoritmo acima e rode os testes.</p>
+<div class="form-elements">
+<input type="hidden" name="data" value="OK" />
+<input class="ah-button ah-button--primary" type="submit" name="Enviar" value="Marcar como feito" />
+</div>
+</form>
+</div>
+<h3 id="lista-celulares">Lista celulares</h3>
+<p>O departamento de marketing da sua empresa está interessado em obter apenas os números de telefone celular, separando-os dos telefones fixos. Para simplificar esta operação serão considerados números de celular apenas aqueles que, após o código de área, iniciarem com o dígito adicional 9.</p>
+<p>Você recebeu a tarefa de obter uma lista com os números de celular, sem o código de área. Entretanto, o cadastro de telefones do departamento de marketing não está padronizado e existem números seguindo 3 formatos distintos:</p>
+<ol>
+<li>Números completos (13 ou 14 caracteres), incluindo o código do país (+55) e o código de área (ex: 11);</li>
+<li>Número contendo apenas o código de área (10 ou 11 caracteres);</li>
+<li>Número sem código de área (8 ou 9 caracteres).</li>
+</ol>
+<p>Faça uma função que recebe uma lista de números de telefone e retorna uma lista contendo apenas os telefones celulares. Cada telefone da lista de entrada (recebida como argumento da sua função) pode estar em qualquer um dos 3 formatos acima. Os telefones da lista de saída (retornada pela sua função) devem conter apenas os dígitos do telefone, removendo o código do país e código de área se for necessário.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_celular_entrada" id="algoritmo_string_celular_entrada_0">
+<p class="admonition-title">Exercício 18</p>
+<form class="exercise-form">
+<p>Qual são os dados de entrada? Escreva seus nomes e tipos na ordem que seriam recebidos.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<ul>
+<li><code>ARRAY de STRING T</code> - lista de telefones a serem processados</li>
+</ul>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_celular_saida" id="algoritmo_string_celular_saida_0">
+<p class="admonition-title">Exercício 19</p>
+<form class="exercise-form">
+<p>Qual são os dados de saída? Escreva seus nomes e tipos, indicando se são retorno de função ou <code>PRINT</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>O programa devolve um <code>ARRAY de STRING</code> contendo somente os números de celular sem código de área.</p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_celular_algoritmo" id="algoritmo_string_celular_algoritmo_0">
+<p class="admonition-title">Exercício 20</p>
+<form class="exercise-form">
+<p>Agora escreva abaixo um pseudo-código (no modelo acima) que resolva o exercício acima. Chame seu algoritmo de <code>CELULARES</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>CELULARES(T)
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    COUNT_CELULARES ← 0
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    PARA CADA ITEM EM T FAÇA
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>        DIGITO1 ← VAZIO
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>        SE TAMANHO(ITEM) = 14 ENTÃO
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>            DIGITO1 ← ITEM[5]
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>            SE DIGITO1 = &quot;9&quot; ENTÃO
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>                COUNT_CELULARES ← COUNT_CELULARES + 1
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>            FIM
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>        FIM
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>        SE TAMANHO(ITEM) = 11 ENTÃO
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>            DIGITO1 ← ITEM[2]
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>            SE DIGITO1 = &quot;9&quot; ENTÃO
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>                COUNT_CELULARES ← COUNT_CELULARES + 1
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>            FIM
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>        FIM
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>        SE TAMANHO(ITEM) = 9 ENTÃO
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>            DIGITO1 ← ITEM[0]
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>            SE DIGITO1 = &quot;9&quot; ENTÃO
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>                COUNT_CELULARES ← COUNT_CELULARES + 1
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>            FIM
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>        FIM
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>    FIM
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>    LISTA_CELULAR ← NOVO_ARRAY(COUNT_CELULARES)
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>    NUM_CELULARES ← 0
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>    PARA CADA ITEM EM T FAÇA
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>        DIGITO1 ← VAZIO
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>        SE TAMANHO(ITEM) = 14 ENTÃO
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>            DIGITO1 ← ITEM[5]
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>            SE DIGITO1 = &quot;9&quot; ENTÃO
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>                LISTA_CELULAR[NUM_CELULARES] ← SUBSTRING(ITEM, 5)
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>                NUM_CELULARES ← NUM_CELULARES + 1
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>            FIM
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>        FIM
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>        SE TAMANHO(ITEM) = 11 ENTÃO
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a>            DIGITO1 ← ITEM[2]
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>            SE DIGITO1 = &quot;9&quot; ENTÃO
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>                LISTA_CELULAR[NUM_CELULARES] ← SUBSTRING(ITEM, 2)
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>                NUM_CELULARES ← NUM_CELULARES + 1
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>            FIM
+<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>        FIM
+<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>
+<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a>        SE TAMANHO(ITEM) = 9 ENTÃO
+<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>            DIGITO1 ← ITEM[0]
+<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>            SE DIGITO1 = &quot;9&quot; ENTÃO
+<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>                LISTA_CELULAR[NUM_CELULARES] ← ITEM
+<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>                NUM_CELULARES ← NUM_CELULARES + 1
+<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>            FIM
+<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a>        FIM
+<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a>    FIM
+<a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a>
+<a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a>    DEVOLVE LISTA_CELULAR
+</code></pre></div>
+</div>
+</div>
+<div class="admonition exercise self  self-progress" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_celular_java" id="algoritmo_string_celular_java_0">
+<p class="admonition-title">Exercício 21</p>
+<form class="exercise-form">
+<p>Vamos agora implementar esse algoritmo em Java. Preencha o esqueleto na classe <code>br.edu.insper.tecprog.aps0.FiltraCelulares</code>, implemente o algoritmo acima e rode os testes.</p>
+<div class="form-elements">
+<input type="hidden" name="data" value="OK" />
+<input class="ah-button ah-button--primary" type="submit" name="Enviar" value="Marcar como feito" />
+</div>
+</form>
+</div>
+<h2 id="extras">Extras</h2>
+<h3 id="diferenca-de-listas-ii">Diferença de listas (II)</h3>
+<p>Nosso algoritmo ficou um bocado grande. Vamos tentar deixá-lo mais fácil de ler. </p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_diff_listas_algoritmo_extra1" id="algoritmo_array_diff_listas_algoritmo_extra1_0">
+<p class="admonition-title">Exercício 22</p>
+<form class="exercise-form">
+<p>Reescreva o algoritmo da resposta anterior supondo que existe um algoritmo <code>ARRAY_CONTEM(EL, ARR)</code> que checa se <code>ARR</code> contém o elemento <code>EL</code>. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_diff_listas_algoritmo_extra2" id="algoritmo_array_diff_listas_algoritmo_extra2_0">
+<p class="admonition-title">Exercício 23</p>
+<form class="exercise-form">
+<p>Escreva o algoritmo <code>ARRAY_CONTEM(EL, ARR)</code> no espaço abaixo. Não se esqueça de especificá-lo completamente incluindo os tipos de entrada e saída.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<h3 id="valor-da-nota-fiscal-ii">Valor da nota fiscal (II)</h3>
+<p>O programa atual só aceita quantidades inteiras de produtos. </p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_array_valor_nota_extra" id="algoritmo_array_valor_nota_extra_0">
+<p class="admonition-title">Exercício 24</p>
+<form class="exercise-form">
+<p>Qual seriam as modificações necessárias para que sua implementação aceite produtos vendidos por quilo?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<h3 id="lista-celulares-ii">Lista celulares (II)</h3>
+<p>Nosso algoritmo ficou grande e repetitivo.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise" data-slug="modulos/00-Algoritmos/algoritmos-com-arrays-e-strings/algoritmo_string_celular_extra" id="algoritmo_string_celular_extra_0">
+<p class="admonition-title">Exercício 25</p>
+<form class="exercise-form">
+<p>Divida o algoritmo acima em funções de modo a diminuir a quantidade de repetição de código.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+
+
+</section>
+        
+      </main>
+      <footer class="ah-footer ah-typeset">
+        <div class="ah-footer-nav">
+          
+            <a href="../pseudo-codigo-e-java/"
+               class="ah-prev"
+               title="Primeiros algoritmos">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Primeiros algoritmos</span>
+            </a>
+          
+          
+            <a href="../java/"
+               class="ah-next"
+               title="Referência">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">Referência</span>
+            </a>
+          
+        </div>
+      </footer>
+    </div>
+    
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+  </body>
+</html>
