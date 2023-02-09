@@ -2,6 +2,10 @@
 
 Bem vindo ao material de Técnicas de Programação (2023/1). Por aqui você encontrará todo o material de apoio da disciplina, incluindo links para entrega das atividades e um [calendário do semestre](sobre.md#calendario-do-semestre).
 
+Nossa disciplina tem um mascote: o **javaporco**. Ele foi escolhido em homenagem à qualidade do código Java desenvolvido nessa disciplina. (Créditos: [javaporco](https://flickr.com/photos/luizmrocha/4777371771), [lama](https://commons.wikimedia.org/wiki/File:Mud_closeup.jpg))
+
+![](javaporco.png)
+
 ## Links importantes
 
 * [Blackboard da disciplina](https://insper.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_42093_1&handle=cp_announcements&mode=cpview): usado somente para avisos e notas. 

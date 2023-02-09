@@ -5,7 +5,7 @@ site_name: Técnicas de Programação
 extra:
   custom_variables:
     repo_aps: https://github.com/Insper/tecprog-aps
-    repo_aps_git: git@github.com:Insper/tecprog-aps.git
+    repo_aps_git: https://github.com/Insper/tecprog-aps.git
 
 nav:
   - 'Home': index.md
