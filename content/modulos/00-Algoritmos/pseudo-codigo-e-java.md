@@ -425,7 +425,7 @@ Escreva uma função que recebe um número $n$ e devolve o valor de $n! = 1\cdot
     !!! answer
         ```
         FATORIAL(N)
-            FAT ← 0
+            FAT ← 1
 
             PARA CADA I=1 ATÉ N+1 FAÇA
                 FAT ← FAT * I

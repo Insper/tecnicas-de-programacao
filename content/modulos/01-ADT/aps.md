@@ -35,6 +35,20 @@ Nossa implementação de lista é definida usando a interface `InsperMap`, que s
 
 Vamos agora resolver dois exercícios práticos simples usando nossas novas Estruturas de Dados. Pode ser útil rever o guia de [Strings](../00-Algoritmos/java/strings.md) antes de continuar.
 
+!!! exercise
+    O departamento de marketing da sua empresa está interessado em obter apenas os números de telefone celular, separando-os dos telefones fixos. Para simplificar esta operação serão considerados números de celular apenas aqueles que, após o código de área, iniciarem com o dígito adicional 9.
+
+    Você recebeu a tarefa de obter uma lista com os números de celular, sem o código de área. Entretanto, o cadastro de telefones do departamento de marketing não está padronizado e existem números seguindo 3 formatos distintos:
+
+    1. Números completos (13 ou 14 caracteres), incluindo o código do país (+55) e o código de área (ex: 11);
+    2. Número contendo apenas o código de área (10 ou 11 caracteres);
+    3. Número sem código de área (8 ou 9 caracteres).
+
+    Faça uma função que recebe uma lista de números de telefone e retorna uma lista contendo apenas os telefones celulares. Cada telefone da lista de entrada (recebida como argumento da sua função) pode estar em qualquer um dos 3 formatos acima. Os telefones da lista de saída (retornada pela sua função) devem conter apenas os dígitos do telefone, removendo o código do país e código de área se for necessário.
+
+    **Refaça seu algoritmo anterior usando o tipo `InsperList`**
+
+
 
 !!! exercise 
     Uma das primeiras coisas que precisamos checar para ver se um programa Java é válido é se os parênteses estão balanceados. Ou seja, se todo `(`, `[` e `{` que é aberto é eventualmente fechado *respeitando a ordem de abertura*. Ou seja, `({)}` é inválido pois `)`fechou antes dos parênteses abertos após seu a abertura inicial correspondente. 
