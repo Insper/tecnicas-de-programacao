@@ -54,7 +54,7 @@ As operações mais interessantes do vetor são `INSERE` e `REMOVE`. Vamos traba
 Vamos primeiro rever a descrição de ˋINSEREˋ:
 
 !!! note "Definição"
-    insere o valor `V` na lista `L` na posição `i`. Os elementos a partir da posição `i` são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.
+    insere o valor `V` na lista `L` na posição `i`. Os elementos a partir da posição `i` (inclusive) são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.
 
 O primeiro passo do algoritmo é "empurrar" todos elementos para a direita. Vamos inicialmente supor que a lista `L` tem espaço para colocar o elemento `V` na posição `i`. Ou seja, é verdade que `TAMANHO(L) + 1 < capacidade = TAMANHO(A)`.
 
@@ -63,7 +63,7 @@ O primeiro passo do algoritmo é "empurrar" todos elementos para a direita. Vamo
 
     * Entrada: 
         * Lista `L`
-        * ˋN=TAMANHO(L)ˋ
+        * `N=TAMANHO(L)`
         * `i` é a posição que será liberada
     * Saída:
         * `L` é modificado diretamente. a função não retorna nada. O valor `L[i]` não importa, então manteremos ele igual.
@@ -139,7 +139,7 @@ O algoritmo de remoção é muito parecido com a inserção, mas agora faz o des
     
     * Entrada: 
         * Lista `L`
-        * ˋN=TAMANHO(L)ˋ
+        * `N=TAMANHO(L)`
         * `i` é a posição que será liberada
     * Saída:
         * `L` é modificado diretamente. a função não retorna nada.
@@ -153,23 +153,23 @@ O algoritmo de remoção é muito parecido com a inserção, mas agora faz o des
     ```
     - 
     ```
-    Entrada: L = [1], i=0
-    Saída: L = []
+    Entrada: L = [1, VAZIO, VAZIO], i=0
+    Saída: L = [VAZIO, VAZIO, VAZIO]
     ```
     - 
     ```
-    Entrada: L = [1], i=1
-    Saída: L = [1]
+    Entrada: L = [1, VAZIO, VAZIO ], i=1
+    Saída: L = [1, VAZIO, VAZIO ]
     ```
     - 
     ```
     Entrada: L = [1, 2, 3], i=0
-    Saída: L = [2, 3]
+    Saída: L = [2, 3, VAZIO]
     ```
     - 
     ```
     Entrada: L = [1, 2, 3], i=1
-    Saída: L = [1, 3]
+    Saída: L = [1, 3, VAZIO]
     ```
 
 

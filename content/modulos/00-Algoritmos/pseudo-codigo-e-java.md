@@ -1,3 +1,7 @@
+---
+show_reset_button: true
+---
+
 # Primeiros algoritmos
 
 Neste roteiro iremos criar nossos primeiros algoritmos em Pseudo-Código e explorar sua "tradução" para Java. Conforme o roteiro avança haverá leituras (curtas) recomendadas sobre sintaxe e semântica de Java.
