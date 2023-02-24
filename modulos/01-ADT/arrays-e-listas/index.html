@@ -313,48 +313,7 @@
         
   
     <li>
-      <a href="../../02-Busca-Vetor/">Introdução</a>
-    </li>
-  
-
-      
-        
-  <li class="ah-togglable-item">
-    <span class="ah-togglable-handle">Aulas</span>
-    <ul>
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/busca-frente-tras/">Buscas básicas</a>
-    </li>
-  
-
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/busca-binaria-exemplo/">Busca binária (I)</a>
-    </li>
-  
-
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/busca-binaria-geral/">Busca binária (II)</a>
-    </li>
-  
-
-      
-    </ul>
-  </li>
-
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/aps/">Aps</a>
+      <a href="../../02-Busca-Vetor/">Index</a>
     </li>
   
 
@@ -544,7 +503,7 @@
 <p>Vamos primeiro rever a descrição de ˋINSEREˋ:</p>
 <div class="admonition note">
 <p class="admonition-title">Definição</p>
-<p>insere o valor <code>V</code> na lista <code>L</code> na posição <code>i</code>. Os elementos a partir da posição <code>i</code> (inclusive) são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.</p>
+<p>insere o valor <code>V</code> na lista <code>L</code> na posição <code>i</code>. Os elementos a partir da posição <code>i</code> são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.</p>
 </div>
 <p>O primeiro passo do algoritmo é "empurrar" todos elementos para a direita. Vamos inicialmente supor que a lista <code>L</code> tem espaço para colocar o elemento <code>V</code> na posição <code>i</code>. Ou seja, é verdade que <code>TAMANHO(L) + 1 &lt; capacidade = TAMANHO(A)</code>.</p>
 <div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/01-ADT/arrays-e-listas/algoritmo_desloca_array" id="algoritmo_desloca_array_0">
@@ -636,7 +595,7 @@
 <ul>
 <li>Entrada: <ul>
 <li>Lista <code>L</code></li>
-<li><code>N=TAMANHO(L)</code></li>
+<li>ˋN=TAMANHO(L)ˋ</li>
 <li><code>i</code> é a posição que será liberada</li>
 </ul>
 </li>
@@ -650,17 +609,17 @@
 <li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Entrada: L = [], i=0
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Saída: L = []
 </code></pre></div></li>
-<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Entrada: L = [1, VAZIO, VAZIO], i=0
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Saída: L = [VAZIO, VAZIO, VAZIO]
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Entrada: L = [1], i=0
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Saída: L = []
 </code></pre></div></li>
-<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Entrada: L = [1, VAZIO, VAZIO ], i=1
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Saída: L = [1, VAZIO, VAZIO ]
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Entrada: L = [1], i=1
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Saída: L = [1]
 </code></pre></div></li>
 <li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Entrada: L = [1, 2, 3], i=0
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Saída: L = [2, 3, VAZIO]
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Saída: L = [2, 3]
 </code></pre></div></li>
 <li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Entrada: L = [1, 2, 3], i=1
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Saída: L = [1, 3, VAZIO]
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Saída: L = [1, 3]
 </code></pre></div></li>
 </ul>
 <div class="form-elements">
