@@ -42,6 +42,9 @@ nav:
       - modulos/02-Busca-Vetor/aps.md
     - "03 - Ordenação":
       - modulos/03-Ordenacao/index.md
+      - "Aulas":
+        - modulos/03-Ordenacao/ordenacao-simples.md
+      - modulos/03-Ordenacao/aps.md
     - "04 - Sistemas Lineares":
       - modulos/04-Sistemas-Lineares/index.md
     - "05 - Busca em Texto":

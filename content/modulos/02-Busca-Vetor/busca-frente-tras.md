@@ -33,7 +33,7 @@ Uma solução igualmente válida é começar pelo fim do `Array`. Não há nada 
     Em algoritmos é comum explorar várias ideias para resolver o mesmo problema, mesmo que elas sejam equivalentes ou que não existe uma razão particular para escolher uma ou outra.
 
 !!! exercise long
-    Escreva um algoritmo `ENCONTRA_BUG_FIM(A)` que encontra o índice do primeiro commit com problema. Você deve iniciar a busca pelo índice 0.
+    Escreva um algoritmo `ENCONTRA_BUG_FIM(A)` que encontra o índice do primeiro commit com problema. Você deve iniciar a busca pelo índice `TAMANHO(A) - 1` e buscar por um valor `0`.
 
     !!! answer
         ```
@@ -44,7 +44,7 @@ Uma solução igualmente válida é começar pelo fim do `Array`. Não há nada 
                 I ← I - 1
             FIM
 
-            DEVOLVA I
+            DEVOLVA I+1
         ```
 
 
