@@ -7,9 +7,9 @@ Nessa primeira atividade vamos entender um algoritmo simulando seu funcionamento
 ```
 BUBBLE_SORT(A)
     N ← TAMANHO(A)
-    FEZ_TROCA ← FALSO
+    FEZ_TROCA ← VERDADEIRO
 
-    ENQUANTO NÃO FEZ_TROCA FAÇA
+    ENQUANTO FEZ_TROCA FAÇA
         FEZ_TROCA ← FALSO
         PARA CADA I ← 0 ATÉ N-1 FAÇA
             SE A[I] > A[I+1] ENTÃO
@@ -108,8 +108,8 @@ Vamos agora simular essa ideia para entendê-la melhor.
         A lista abaixo está ordenada pelo índice do elemento analisado
 
         0. O menor elemento de A é 2, então fazemos a troca entre o índice `0` e o índice `3`. `A = [2, 5, 4, 3]`
-        1. O menor elemento de A (a partir do índice 1) é 3. É feita troca entre os índices `1` e `3`. `A = [2, 3, 5, 4]`
-        2. O menor elemento de A (a partir do índice 2) é 4. É feita troca entre os índices `2` e `3`. `A = [2, 3, 4, 5]`
+        1. O menor elemento de A (a partir do índice 1) é 3. É feita troca entre os índices `1` e `3`. `A = [2, 3, 4, 5]`
+        2. O menor elemento de A (a partir do índice 2) é 4. É feita troca entre os índices `2` e `2`. `A = [2, 3, 4, 5]`
 
         Quando chegamos no índice `3` a porção restante de `A` só tem um elemento, então terminamos aqui. 
 
@@ -141,7 +141,7 @@ Vamos agora simular essa ideia para entendê-la melhor.
     !!! answer
         A lista abaixo está ordenada pelo índice do elemento analisado
 
-        0. O menor elemento de A (a partir do índice 0)é -1. É feita troca entre os índices `0` e `4`. `A = [-1, 7, 12, 0, 3, 4, 8]`
+        0. O menor elemento de A (a partir do índice 0) é -1. É feita troca entre os índices `0` e `4`. `A = [-1, 7, 12, 0, 3, 4, 8]`
         1. O menor elemento de A (a partir do índice 1) é 0. É feita troca entre os índices `1` e `3`. `A = [-1, 0, 12, 7, 3, 4, 8]`
         2. O menor elemento de A (a partir do índice 2) é 3. É feita troca entre os índices `2` e `4`. `A = [-1, 0, 3, 7, 12, 4, 8]`
         3. O menor elemento de A (a partir do índice 3) é 4. É feita troca entre os índices `3` e `5`. `A = [-1, 0, 3, 4, 12, 7, 8]`
