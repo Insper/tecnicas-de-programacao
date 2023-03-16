@@ -377,6 +377,22 @@
   
 
       
+        
+  
+    <li>
+      <a href="../quick-sort/">Quick sort</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../merge-sort.md">None</a>
+    </li>
+  
+
+      
     </ul>
   </li>
 
@@ -481,6 +497,111 @@
           </div>
           
             <section class="progress-section show">
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<h1 id="tecnicas-de-programacao">Técnicas de Programação</h1>
+<h2 id="divisao-e-conquista">Divisão e Conquista</h2>
+<hr />
+<h1 id="ordenacao-ate-agora">Ordenação até agora</h1>
+<ul>
+<li>Bubble Sort</li>
+<li>Selection Sort</li>
+</ul>
+<hr />
+<h1 id="bubble-sort">Bubble Sort</h1>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BUBBLE_SORT(A)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    N ← TAMANHO(A)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    FEZ_TROCA ← VERDADEIRO
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ENQUANTO FEZ_TROCA FAÇA
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        FEZ_TROCA ← FALSO
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        PARA CADA I ← 0 ATÉ N-1 FAÇA
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            SE A[I] &gt; A[I+1] ENTÃO
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                TROQUE OS VALORES DE A[I] E A[I+1]
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                FEZ_TROCA ← VERDADEIRO
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            FIM
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        FIM
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    FIM
+</code></pre></div>
+<hr />
+<h1 id="bubble-sort_1">Bubble Sort</h1>
+<p><strong>Características</strong>:</p>
+<ul>
+<li>melhor caso =&gt; loop de fora dá uma volta, de dentro faz <code>N</code> iterações</li>
+<li>pior caso =&gt; loop de fora dá <code>N</code> voltas, de dentro faz <code>N</code> iterações</li>
+</ul>
+<p><strong>Pior caso é $N^2$!</strong></p>
+<hr />
+<h1 id="selection-sort">Selection Sort</h1>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>SELECTION_SORT(A)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    N ← TAMANHO(A)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    PARA I = 0 ATÉ N - 1 FAÇA
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        MENOR_IDX = I
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        PARA J = I+1 ATÉ N FAÇA
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            SE A[J] &lt; A[MENOR_IDX] FAÇA
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                MENOR_IDX = J
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            FIM
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        FIM
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        TROCA VALORES DE A[I] E A[MENOR_IDX]
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    FIM 
+</code></pre></div>
+<hr />
+<h1 id="selection-sort_1">Selection Sort</h1>
+<p><strong>Características</strong>:</p>
+<ul>
+<li>sempre roda igual =&gt; loop externo roda <code>N-1</code> vezes, loop interno roda <code>N-I</code> vezes para o <code>i</code> atual</li>
+</ul>
+<p><strong>Tempo final também é $N^2$!</strong></p>
+<hr />
+<h1 id="selection-sort-vs-bubble-sort">Selection Sort vs Bubble Sort</h1>
+<ul>
+<li>Se já estiver ordenado (ou quase isso), Bubble é melhor</li>
+<li>Selection faz menos escritas no vetor e isso é mais rápido em geral </li>
+<li>No pior caso ambos são iguais, mas o array que atinge o pior caso é diferente para ambos</li>
+</ul>
+<hr />
+<h1 id="divisao-e-conquista_1">Divisão e Conquista</h1>
+<hr />
+<h1 id="ideia-1-quick-sort">Idéia 1: Quick Sort</h1>
+<ol>
+<li>escolha um elemento do vetor (pode ser o primeiro)</li>
+<li>coloque ele no lugar certo<ul>
+<li>índice <code>i</code> tal que todo $A[j] \leq A[i], j &lt; i$</li>
+<li>índice <code>i</code> tal que todo $A[j] \geq A[i], j &gt; i$</li>
+</ul>
+</li>
+<li>ordene a parte à esquerda de <code>i</code></li>
+<li>ordene a parte à direita de <code>i</code></li>
+</ol>
+<hr />
+<h1 id="pratica-1">Prática 1</h1>
+<p><strong>Atividade Quick Sort</strong></p>
+<hr />
+<h1 id="ideia-2-merge-sort">Idéia 2: Merge Sort</h1>
+<ol>
+<li>divida o vetor em duas metades</li>
+<li>ordene a metade da direita</li>
+<li>ordene a metade da esquerda</li>
+<li>mescle as duas metades ordenadas tal que agora o vetor inteiro esteja ordenado</li>
+</ol>
+<hr />
+<h1 id="pratica-2">Prática 2</h1>
+<p><strong>Atividade Merge Sort</strong></p>
+<hr />
+<h1 id="divisao-e-conquista_2">Divisão e Conquista</h1>
+<ol>
+<li>dividir os dados em partes</li>
+<li>executar o algoritmo em cada parte</li>
+<li>combinar os resultados das partes para o vetor inteiro</li>
+</ol>
+<hr />
+<h1 id="aps">APS</h1>
+<p><strong>Implementações dos algoritmos da aula de hoje e testes grandes do problema</strong></p>
 
 
 </section>
