@@ -7,6 +7,9 @@ extra:
     repo_aps: https://github.com/Insper/tecprog-aps
     repo_aps_git: https://github.com/Insper/tecprog-aps.git
 
+extra_javascript:
+  - js/tabs.js
+
 nav:
   - 'Home': index.md
   - sobre.md
