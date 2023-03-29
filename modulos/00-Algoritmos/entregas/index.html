@@ -404,7 +404,7 @@
         
   
     <li>
-      <a href="../../03-Ordenacao/merge-sort.md">None</a>
+      <a href="../../03-Ordenacao/merge-sort/">Merge Sort</a>
     </li>
   
 
@@ -532,18 +532,18 @@
 <p><img alt="" src="../endereco-repo-privado.png" /></p>
 </div>
 <p>Para começar, crie uma pasta nova para seu repositório de entregas e inicialize um repo vazio:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir entregas-tecprog
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> entregas-tecprog
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git init
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>entregas-tecprog
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>entregas-tecprog
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>init
 </code></pre></div>
 <p>Primeiro vamos adicionar o repositório remoto dos arquivos de suporte e baixar o branch <code>main</code> (que contém os arquivos deste semestre)</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git remote add insper https://github.com/Insper/tecprog-aps.git
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git fetch insper
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git checkout main
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>insper<span class="w"> </span>https://github.com/Insper/tecprog-aps.git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>fetch<span class="w"> </span>insper
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
 </code></pre></div>
 <p>Agora vamos adicionar o repositório das suas entregas e já enviar o código de suporte:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git remote add entregas endereco_do_seu_repo_privado
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git push --set-upstream entregas main
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>entregas<span class="w"> </span>endereco_do_seu_repo_privado
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>entregas<span class="w"> </span>main
 </code></pre></div>
 <p>Pronto! Com isso você já deve ter seu repositório local configurado e apontando para dois repositórios remotos:</p>
 <ul>
@@ -551,10 +551,10 @@
 <li><strong>entregas</strong>: este repo é só seu e contém seu trabalho apenas. Aqui irão somente as modificações feitas por você :)</li>
 </ul>
 <p>Você pode checar se tudo deu certo rodando <code>git branch -avv</code>. Você deve ver algo parecido como o abaixo:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>deck@ubuntu-dev:~/Documents/entregas-tecprog$ git branch -avv
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>* main                  <span class="m">7329318</span> <span class="o">[</span>entregas/main<span class="o">]</span> Add readme.md
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  remotes/entregas/main <span class="m">7329318</span> Add readme.md
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  remotes/insper/main   <span class="m">7329318</span> Add readme.md
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>deck@ubuntu-dev:~/Documents/entregas-tecprog$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-avv
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>*<span class="w"> </span>main<span class="w">                  </span><span class="m">7329318</span><span class="w"> </span><span class="o">[</span>entregas/main<span class="o">]</span><span class="w"> </span>Add<span class="w"> </span>readme.md
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>remotes/entregas/main<span class="w"> </span><span class="m">7329318</span><span class="w"> </span>Add<span class="w"> </span>readme.md
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>remotes/insper/main<span class="w">   </span><span class="m">7329318</span><span class="w"> </span>Add<span class="w"> </span>readme.md
 </code></pre></div>
 <div class="admonition exercise self-progress" data-slug="modulos/00-Algoritmos/entregas/exercise_1" id="exercise_1_0">
 <p class="admonition-title">Exercício 1</p>
@@ -574,41 +574,41 @@
 <h2 id="recebendo-atualizacoes-e-novas-aps">Recebendo atualizações e novas APS</h2>
 <p>Ao longo do semestre será liberado código das novas APS e possíveis atualizações nos testes. Siga este guia para atualizar seus arquivos de suporte.</p>
 <p>Vamos iniciar baixando as novidades do repositório de suporte:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git fetch insper
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>insper
 </code></pre></div>
 <p>Vamos então incorporar as novidades no seu repositório local e enviar os novos arquivos pro seu repo privado. </p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git switch main
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git merge insper/main
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git push
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>switch<span class="w"> </span>main
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>merge<span class="w"> </span>insper/main
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git<span class="w"> </span>push
 </code></pre></div>
 <div class="admonition exercise self-progress" data-slug="modulos/00-Algoritmos/entregas/exercise_2" id="exercise_2_0">
 <p class="admonition-title">Exercício 2</p>
 <form class="exercise-form">
 <p>Agora é só verificar que seus commits aparecem no seu repositório privado. Você pode ver isso rodando <code>git log</code>. Algo como o abaixo deve aparecer. Também pode checar online se os commits estão no repositório do <em>Github</em>.</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>commit f0a444787de5bcf6c869cfda043e069a20a3300a <span class="o">(</span>HEAD -&gt; main, entregas/main<span class="o">)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Merge: <span class="m">1996777</span> 0f42021
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Author: Igor Montagner &lt;igordsm@gmail.com&gt;
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Date:   Tue Jan <span class="m">31</span> <span class="m">11</span>:50:35 <span class="m">2023</span> -0300
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>commit<span class="w"> </span>f0a444787de5bcf6c869cfda043e069a20a3300a<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main,<span class="w"> </span>entregas/main<span class="o">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Merge:<span class="w"> </span><span class="m">1996777</span><span class="w"> </span>0f42021
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Author:<span class="w"> </span>Igor<span class="w"> </span>Montagner<span class="w"> </span>&lt;igordsm@gmail.com&gt;
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:50:35<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    Merge
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span>Merge
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>commit 1996777386d12aea6c2869e7943c06e6895e3b08
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Author: Steam Deck User &lt;deck@ubuntu-dev.steamdeck&gt;
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Date:   Tue Jan <span class="m">31</span> <span class="m">11</span>:47:54 <span class="m">2023</span> -0300
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>commit<span class="w"> </span>1996777386d12aea6c2869e7943c06e6895e3b08
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Author:<span class="w"> </span>Steam<span class="w"> </span>Deck<span class="w"> </span>User<span class="w"> </span>&lt;deck@ubuntu-dev.steamdeck&gt;
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:47:54<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    Add meu nome
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span>Add<span class="w"> </span>meu<span class="w"> </span>nome
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>commit 0f420212b147d5f2a60c652b645127f4276624e4 <span class="o">(</span>insper/main<span class="o">)</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Author: Igor Montagner &lt;igordsm@gmail.com&gt;
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>Date:   Tue Jan <span class="m">31</span> <span class="m">11</span>:46:28 <span class="m">2023</span> -0300
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>commit<span class="w"> </span>0f420212b147d5f2a60c652b645127f4276624e4<span class="w"> </span><span class="o">(</span>insper/main<span class="o">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Author:<span class="w"> </span>Igor<span class="w"> </span>Montagner<span class="w"> </span>&lt;igordsm@gmail.com&gt;
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:46:28<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    Adicionando arquivos iniciais para APS01
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span>Adicionando<span class="w"> </span>arquivos<span class="w"> </span>iniciais<span class="w"> </span>para<span class="w"> </span>APS01
 <a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>commit 73293182f28cd7f11796c5c01ccb7231d817554a
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>Author: Igor Montagner &lt;igordsm@gmail.com&gt;
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>Date:   Tue Jan <span class="m">31</span> <span class="m">11</span>:32:50 <span class="m">2023</span> -0300
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>commit<span class="w"> </span>73293182f28cd7f11796c5c01ccb7231d817554a
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>Author:<span class="w"> </span>Igor<span class="w"> </span>Montagner<span class="w"> </span>&lt;igordsm@gmail.com&gt;
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:32:50<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    Add readme.md
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">    </span>Add<span class="w"> </span>readme.md
 </code></pre></div>
 <div class="form-elements">
 <input type="hidden" name="data" value="OK" />
