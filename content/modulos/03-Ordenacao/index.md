@@ -17,6 +17,7 @@ Todos os nossos algoritmos só dependem da ADT `Array`.
 
 - [Aula 01 - Algoritmos simples](ordenacao-simples.md)
 - Aula 02 - Divisão e conquista - [Quick sort](quick-sort.md)
+- Aula 03 - Divisão e conquista II - [Merge sort](merge-sort.md)
 
 ## Entregas
 
