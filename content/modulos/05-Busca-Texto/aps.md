@@ -29,3 +29,20 @@ Somente buscar termos em uma string pode não ser exatamente útil assim. Vamos 
 
 
 Assim como no item anterior, faremos todos os esses códigos processando a string caractere por caractere. **Não é permitido usar as funções de `String`**. Nestes exercícios também não devemos usar expressões regulares. Você pode, porém, usar suas implementações da classe `StringUtils` do exercício anterior.
+
+## Expressões regulares (extra)
+
+Fizemos os códigos acima usando algoritmos muito específicos para cada padrão buscado. Apesar disso ser interessante como exercício de algoritmos não é algo que gostaríamos de usar em softwares "de verdade". Uma maneira mais adequada de processar textos e encontrar correspondências com padrões é usar uma *Expressão Regular*. 
+
+Uma *Expressão Regular* define um padrão a ser buscado em um texto usando caracteres especiais que representam grupos de caracteres. Por exemplo, a expressão "\d\d" buscará por todas ocorrências de dois dígitos um depois do outro. 
+
+!!! tip
+    [Esta tabela](https://docs.oracle.com/javase/tutorial/essential/regex/pre_char_classes.html#CHART) contém diversas classes de caracteres que podemos usar em expressões regulares. 
+
+A tarefa neste item da APS será:
+
+1. Ler o guia da Oracle sobre [expressões regulares em Java](https://www.oracle.com/technical-resources/articles/java/regex.html)
+2. Usar o [regex101](https://regex101.com/) para testar algumas expressões usando as strings de teste dos exercícios da seção acima
+3. Preencher `StringUtilsRE` com código para encontrar os padrões usando expressões regulares. Testes extras para essas funções estão disponíveis no arquivo de testes correspondente. 
+
+
