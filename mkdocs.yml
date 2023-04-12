@@ -57,5 +57,8 @@ nav:
       - modulos/05-Busca-Texto/aps.md
     - "05 - Caminhos":
       - modulos/06-Caminhos/index.md
+      - "Aulas":
+        - modulos/06-Caminhos/seguir-paredes.md
+      - modulos/06-Caminhos/aps.md
     - "06 - Mochila":
       - modulos/07-Mochila/index.md

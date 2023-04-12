@@ -153,7 +153,7 @@ Vamos agora continuar nossa exploração dessa ideia:
 Vamos agora para um caso difícil:
 
 !!! exercise choice
-    No labirinto abaixo, suponha que a parede está posicionada na parede da direita. Qual será o próximo passo do algoritmo?
+    No labirinto abaixo, suponha que a mão está posicionada na parede da direita. Qual será o próximo passo do algoritmo?
 
     ```
     ##########
