@@ -632,101 +632,171 @@
 </ul>
 </div>
 <p>As 4 condições podem ser resumidas em uma só: <strong>existe um caminho entre um dos vizinhos de <code>f</code> até <code>d</code></strong>. Repare que essa ideia não funciona somente no labirinto, mas em qualquer situação em que tenhamos a ideia de nós que estão conectados a outros. Estudaremos essas estruturas e seus algoritmos no próximo semestre. </p>
-<div class="admonition progrress">
-<p class="admonition-title">Progrress</p>
-<p>Continuar</p>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-1"> Continuar </button></div>
 </div>
+</section>
+<section class="progress-section">
 <p>O desenvolvimento de um algoritmo para a busca em profundidade vem direto da definição acima. Vamos tentar destrinchá-la abaixo. Nosso problema será: dado uma casa inicial <code>f</code>, existe caminho até uma casa destino <code>d</code>?</p>
 <p>Um algoritmo para este problema claramente seria recursivo, já que a definição apresentada acima foi apresentada dessa forma. Vamos então definir os seguintes pontos antes de montar esse algoritmo:</p>
 <ol>
 <li>estando em uma casa <code>C</code>, quais são as chamadas recursivas que posso fazer?</li>
 <li>qual seria a base da recursão? Ou seja </li>
 </ol>
-<p>!!! exercise long
-    No labirinto abaixo, queremos sair da casa <code>C</code> e chegar na casa <code>D</code>. Toda casa marcada com <code>.</code> nunca foi visitada, enquanto toda casa marcada com <code>x</code> já foi visitada. </p>
-<div class="language-text highlight"><pre><span></span><code>```
-##########
-#........#
-#..D.....#
-#........#
-#........#
-#........#
-#........#
-#......Cx#
-#.....xxx#
-##########
-```
-
-Seriam feitas chamadas recursivas em quais vizinhos neste caso?
-
-- [x] cima e esquerda
-- [ ] cima, direita, baixo e esquerda
-- [ ] baixo e direita
-- [ ] nenhuma chamada seria feita
-
-!!! answer
-    Somente serão feitas novas chamadas recursivas para os vizinhos não visitados. Casas marcadas com `x` já foram visitadas pelo nosso algoritmo e, portanto, não precisamos novamente iniciar um ramo de recursão para elas.
-
-    Uma sutileza de algoritmos recursivos é que se a casa está marcada por um `x` então ainda podemos não ter visitado todos seus vizinhos, mas com certeza já passamos por ela uma vez e iremos visitar em algum momento futuro.
+<div class="admonition exercise choice tag-choice-exercise" data-answer-idx="0" data-slug="modulos/06-Caminhos/dfs/choice_1" id="choice_1_0">
+<p class="admonition-title">Exercício 3</p>
+<form class="exercise-form">
+<p>No labirinto abaixo, queremos sair da casa <code>C</code> e chegar na casa <code>D</code>. Toda casa marcada com <code>.</code> nunca foi visitada, enquanto toda casa marcada com <code>x</code> já foi visitada. </p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>##########
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>#........#
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>#..D.....#
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>#........#
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>#........#
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>#........#
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>#........#
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>#......Cx#
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>#.....xxx#
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>##########
 </code></pre></div>
-<p>!!! exercise long
-    No labirinto abaixo, queremos sair da casa <code>C</code> e chegar na casa <code>D</code>. Toda casa marcada com <code>.</code> nunca foi visitada, enquanto toda casa marcada com <code>x</code> já foi visitada. </p>
-<div class="language-text highlight"><pre><span></span><code>```
-##########
-#......Cx#
-#..D...xx#
-#......xx#
-#......xx#
-#.....xxx#
-#.xxxxxxx#
-#.xxxxxxx#
-#.xxxxxxx#
-##########
-```
+<p>Seriam feitas chamadas recursivas em quais vizinhos neste caso?</p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    cima, direita, baixo e esquerda
+  </div>
+</label>
 
-Seriam feitas chamadas recursivas em quais vizinhos neste caso?
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    cima e esquerda
+  </div>
+</label>
 
-- [x] somente esquerda
-- [ ] cima, direita, baixo e esquerda
-- [ ] somente cima e baixo
-- [ ] nenhuma chamada seria feita
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="3" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    nenhuma chamada seria feita
+  </div>
+</label>
 
-!!! answer
-    Caso análogo ao anterior.
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="2" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    baixo e direita
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Somente serão feitas novas chamadas recursivas para os vizinhos não visitados. Casas marcadas com <code>x</code> já foram visitadas pelo nosso algoritmo e, portanto, não precisamos novamente iniciar um ramo de recursão para elas. </p>
+<p>Uma sutileza de algoritmos recursivos é que se a casa está marcada por um <code>x</code> então ainda podemos não ter visitado todos seus vizinhos, mas com certeza já passamos por ela uma vez e iremos visitar em algum momento futuro.</p>
+</div>
+</div>
+<div class="admonition exercise choice tag-choice-exercise" data-answer-idx="0" data-slug="modulos/06-Caminhos/dfs/choice_2" id="choice_2_0">
+<p class="admonition-title">Exercício 4</p>
+<form class="exercise-form">
+<p>No labirinto abaixo, queremos sair da casa <code>C</code> e chegar na casa <code>D</code>. Toda casa marcada com <code>.</code> nunca foi visitada, enquanto toda casa marcada com <code>x</code> já foi visitada. </p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>##########
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>#......Cx#
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>#..D...xx#
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>#......xx#
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>#......xx#
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>#.....xxx#
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>#.xxxxxxx#
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>#.xxxxxxx#
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>#.xxxxxxx#
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>##########
 </code></pre></div>
-<p>!!! exercise long
-    No labirinto abaixo, queremos sair da casa <code>C</code> e chegar na casa <code>D</code>. Toda casa marcada com <code>.</code> nunca foi visitada, enquanto toda casa marcada com <code>x</code> já foi visitada. </p>
-<div class="language-text highlight"><pre><span></span><code>```
-##########
-#......xx#
-#..D...xx#
-#......xx#
-#xx....xx#
-#Cx...xxx#
-#xxxxxxxx#
-#xxxxxxxx#
-#xxxxxxxx#
-##########
-```
+<p>Seriam feitas chamadas recursivas em quais vizinhos neste caso?</p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    somente esquerda
+  </div>
+</label>
 
-Seriam feitas chamadas recursivas em quais vizinhos neste caso?
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="3" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    nenhuma chamada seria feita
+  </div>
+</label>
 
-- [ ] cima, baixo e direita
-- [ ] cima, direita, baixo e esquerda
-- [ ] somente cima e baixo
-- [x] nenhuma chamada seria feita
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="2" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    somente cima e baixo
+  </div>
+</label>
 
-!!! answer
-    Se todos os vizinhos já foram visitados então acabamos o trabalho nesta casa! Não fazemos nenhuma chamada recursiva nesse caso.
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    cima, direita, baixo e esquerda
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Caso análogo ao anterior.</p>
+</div>
+</div>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_3" id="long_3_0">
+<p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>No labirinto abaixo, queremos sair da casa <code>C</code> e chegar na casa <code>D</code>. Toda casa marcada com <code>.</code> nunca foi visitada, enquanto toda casa marcada com <code>x</code> já foi visitada. </p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>##########
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>#......xx#
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>#..D...xx#
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>#......xx#
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>#xx....xx#
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>#Cx...xxx#
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>#xxxxxxxx#
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>#xxxxxxxx#
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>#xxxxxxxx#
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>##########
 </code></pre></div>
+<p>Seriam feitas chamadas recursivas em quais vizinhos neste caso?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> cima, baixo e direita</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> cima, direita, baixo e esquerda</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> somente cima e baixo</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> nenhuma chamada seria feita</li>
+</ul>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Se todos os vizinhos já foram visitados então acabamos o trabalho nesta casa! Não fazemos nenhuma chamada recursiva nesse caso. </p>
+</div>
+</div>
 <div>
-<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-1"> Continuar </button></div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-2"> Continuar </button></div>
 </div>
 </section>
 <section class="progress-section">
 <p>Vamos agora definir o critério de parada de nosso algoritmo. </p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_3" id="long_3_0">
-<p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_4" id="long_4_0">
+<p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Estando em uma casa <code>C</code>, em quais situações decidimos não fazer mais chamadas recursivas?</p>
 <div class="form-elements">
@@ -741,7 +811,7 @@ Seriam feitas chamadas recursivas em quais vizinhos neste caso?
 </div>
 </div>
 <div>
-<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-2"> Continuar </button></div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-3"> Continuar </button></div>
 </div>
 </section>
 <section class="progress-section">
@@ -751,8 +821,8 @@ Seriam feitas chamadas recursivas em quais vizinhos neste caso?
 <li>as possíveis chamadas recursivas feitas em cada passo do algoritmo</li>
 </ol>
 <p>Falta agora completarmos para descobrir como devolver resultados desse procedimento recursivo que estamos montando.Lembrando que o algoritmo criado retorna <code>VERDADEIRO</code> se existe caminho entre a fonte e o destino e <code>FALSO</code> caso contrário. Se houver caminho, ele é retornado na lista <code>CAMINHO</code>. </p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_4" id="long_4_0">
-<p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_5" id="long_5_0">
+<p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A partir do critério de parada que determinamos acima, em quais situações a chamada atual devolveria <code>VERDADEIRO</code>? Não se esqueça de considerar as chamadas recursivas em sua resposta.</p>
 <div class="form-elements">
@@ -766,8 +836,8 @@ Seriam feitas chamadas recursivas em quais vizinhos neste caso?
 <p>Claramente a função retorna <code>VERDADEIRO</code> se chegamos no destino. Revisitando a definição da existência de caminhos, também notamos que essa função retorna <code>VERDADEIRO</code> se existe caminho entre algum de seus vizinhos e o destino.</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_5" id="long_5_0">
-<p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_6" id="long_6_0">
+<p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A partir do critério de parada que determinamos acima, em quais situações a chamada atual devolveria <code>FALSO</code>? Não se esqueça de considerar as chamadas recursivas em sua resposta.</p>
 <div class="form-elements">
@@ -782,13 +852,13 @@ Seriam feitas chamadas recursivas em quais vizinhos neste caso?
 </div>
 </div>
 <div>
-<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-3"> Continuar </button></div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-4"> Continuar </button></div>
 </div>
 </section>
 <section class="progress-section">
 <p>Vamos para o exercício final de hoje: escrever a busca em profundidade completa. O algoritmo em si é curto, mas precisamos definir algumas estruturas extras para nos auxiliar.</p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_6" id="long_6_0">
-<p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_7" id="long_7_0">
+<p class="admonition-title">Exercício 9<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o algoritmo recursivo <code>DFS</code>. Você pode usar os seguintes argumentos:</p>
 <ol>
