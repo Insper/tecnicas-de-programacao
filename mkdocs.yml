@@ -59,6 +59,7 @@ nav:
       - modulos/06-Caminhos/index.md
       - "Aulas":
         - modulos/06-Caminhos/seguir-paredes.md
+        - modulos/06-Caminhos/dfs.md
       - modulos/06-Caminhos/aps.md
     - "06 - Mochila":
       - modulos/07-Mochila/index.md

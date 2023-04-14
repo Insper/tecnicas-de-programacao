@@ -12,3 +12,7 @@ Implemente o algoritmo de seguir paredes no arquivo `br.edu.insper.tecprog.aps05
 
 !!! important
     Não se esqueça de olhar os labirintos dos testes e simular seu programa com eles. Alguns podem apresentar situações que não estão nos handouts.
+
+## Busca em Profundidade
+
+Agora vamos implementar a busca em profundidade clássica, que visa encontrar um caminho entre duas casas no labirinto. Por enquanto não estamos procurando a saída do labirinto (ainda). Para isso será necessário modificar `br.edu.insper.tecprog.aps05.DFS`. Os testes disponíveis não são detalhados, então não se esqueça de simular sua implementação usando os exemplos do handout. 
