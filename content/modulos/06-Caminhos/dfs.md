@@ -59,7 +59,7 @@ Vamos então olhar uma generalização deste algoritmo: a busca em profundidade.
 
 As 4 condições podem ser resumidas em uma só: **existe um caminho entre um dos vizinhos de `f` até `d`**. Repare que essa ideia não funciona somente no labirinto, mas em qualquer situação em que tenhamos a ideia de nós que estão conectados a outros. Estudaremos essas estruturas e seus algoritmos no próximo semestre. 
 
-!!! progrress 
+!!! progress 
     Continuar
 
 
@@ -71,7 +71,7 @@ As 4 condições podem ser resumidas em uma só: **existe um caminho entre um do
  1. qual seria a base da recursão? Ou seja 
 
 
- !!! exercise long
+!!! exercise choice
     No labirinto abaixo, queremos sair da casa `C` e chegar na casa `D`. Toda casa marcada com `.` nunca foi visitada, enquanto toda casa marcada com `x` já foi visitada. 
 
     ```
@@ -100,7 +100,7 @@ As 4 condições podem ser resumidas em uma só: **existe um caminho entre um do
         Uma sutileza de algoritmos recursivos é que se a casa está marcada por um `x` então ainda podemos não ter visitado todos seus vizinhos, mas com certeza já passamos por ela uma vez e iremos visitar em algum momento futuro.
 
 
- !!! exercise long
+!!! exercise choice
     No labirinto abaixo, queremos sair da casa `C` e chegar na casa `D`. Toda casa marcada com `.` nunca foi visitada, enquanto toda casa marcada com `x` já foi visitada. 
 
     ```
@@ -129,7 +129,7 @@ As 4 condições podem ser resumidas em uma só: **existe um caminho entre um do
 
 
 
- !!! exercise long
+!!! exercise choice
     No labirinto abaixo, queremos sair da casa `C` e chegar na casa `D`. Toda casa marcada com `.` nunca foi visitada, enquanto toda casa marcada com `x` já foi visitada. 
 
     ```
@@ -201,7 +201,7 @@ Vamos para o exercício final de hoje: escrever a busca em profundidade completa
     2. `fI, fJ` - posição da fonte
     2. `dI, dJ` - posição do destino
     4. `CAMINHO` - lista para armazenar o caminho encontrado. Inclua a fonte e o destino no caminho
-    5. 
+    5.  `VISITADO` - matriz de Posição que indica se um elemento já foi visitado. 
 
     !!! answer
         Será feito na última aula do módulo na lousa. A ideia é iterar aqui entre algoritmo, simulações e implementação. 
