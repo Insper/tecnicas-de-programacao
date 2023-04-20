@@ -18,3 +18,11 @@ Implemente o algoritmo de seguir paredes no arquivo `br.edu.insper.tecprog.aps05
 Agora vamos implementar a busca em profundidade clássica, que visa encontrar um caminho entre duas casas no labirinto. Por enquanto não estamos procurando a saída do labirinto (ainda). Para isso será necessário modificar `br.edu.insper.tecprog.aps05.DFS`. Os testes disponíveis não são detalhados, então não se esqueça de simular sua implementação usando os exemplos do handout. 
 
 Com a DFS encontrando caminhos, vamos então adaptá-la para encontrar a saída do Labirinto! Preenche o arquivo `br.edu.insper.tecprog.aps05.DFSSaida.java` e rode os testes. As modificações para encontrar a saída a partir da DFS "clássica" de encontrar caminhos são pequenas, porém representam bem o tipo de entendimento que queremos ter desses algoritmos clássicos. 
+
+
+## Busca em Largura
+
+
+Seguiremos os mesmos passos da busca em profundidade: primeiro implementaremos a versão clássica, que encontra caminhos entre  dois pontos, e depois a versão que encontra saída. Temos testes simples para a Fila que será usada no código também. 
+
+
