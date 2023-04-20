@@ -495,6 +495,14 @@
             <a href="#busca-em-largura">Busca em Largura</a>
           </li>
           
+          <li class="ah-toc-item">
+            <a href="#a-fila">A fila</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#busca-em-largura-alto-nivel">Busca em Largura - alto nível</a>
+          </li>
+          
         
       </ul>
     </li>
@@ -580,11 +588,49 @@
 <li>em seguida, encontraremos todas as casas acessíveis usando caminhos de tamanho máximo 2</li>
 <li>repetimos essa ideia, encontrando as casas acessíveis usando caminhos cada vez maiores. </li>
 </ol>
-<p>Um ponto importante aparece aqui: <strong>saber as casas acessíveis usando caminhos de tamanho no máximo $n$ nos ajuda a encontrar todas as casas acessíveis usando caminhos de tamanho no máximo $n+1$!</strong></p>
-<p>TODO: falar da fila</p>
-<p>TODO: explicar algoritmo em alto nível</p>
-<p>TODO: pedir para formalizar passos "grandes"</p>
-<p>TODO: implementar direto caminho e depois a saída</p>
+<p>Um ponto importante aparece aqui: <strong>saber as casas acessíveis usando caminhos de tamanho no máximo $n$ nos ajuda a encontrar todas as casas acessíveis usando caminhos de tamanho no máximo $n+1$!</strong> Fazemos isso colocando as casas a serem visitadas em uma Fila.</p>
+<h2 id="a-fila">A fila</h2>
+<p>Usaremos uma ADT para fila com as seguintes opções:</p>
+<ul>
+<li><code>NOVA_FILA()</code></li>
+<li><code>REMOVE_PRIMEIRO(F)</code> - devolve o primeiro elemento da fila e o remove</li>
+<li><code>ADICIONA_NO_FIM(F, EL)</code> - adiciona um elemento no fim da fila</li>
+<li><code>VAZIA(F)</code> - retorna <code>VERDADEIRO</code> se <code>F</code> estiver vazia</li>
+</ul>
+<h2 id="busca-em-largura-alto-nivel">Busca em Largura - alto nível</h2>
+<p>Na última aula fizemos simulações do funcionamento da busca em largura e criamos um pseudo código em alto nível na lousa. Vejamos as variáveis necessárias para seu funcionamento</p>
+<ul>
+<li><code>LABIRINTO L</code></li>
+<li><code>FILA F</code> - guarda a ordem em que visitaremos as casas</li>
+<li><code>DIST</code>- matriz que guarda a distância até a fonte. Tem valor -1 para casas não visitadas</li>
+<li><code>fI, fJ</code> - posição da fonte</li>
+<li><code>dI, dJ</code> - posição do destino</li>
+</ul>
+<p>O algoritmo era parecido com o seguinte:</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BFS(L, fI, fJ, dI, dJ, DIST, F)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ADICIONA_NO_FIM(F, (fI, fJ))
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>DIST[fI][fJ] = 0
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>ENQUANTO NÃO VAZIA(F) FAÇA
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    cI, cJ &lt;- REMOVE_PRIMEIRO(F)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    SE CHEGOU NO DESTINO ENTÃO
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        PARE O LOOP
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    FIM
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    PARA CADA VIZINHO vI, vJ NÃO VISITADO FAÇA
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        DIST[vI][vJ] = DIST[cI][cJ] + 1 # VISITOU 
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        ADICIONA_NO_FIM(F, (vI, vJ))
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    FIM
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>FIM
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>SE CHEGOU NO DESTINO ENTÃO
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    USE A MATRIZ DIST PARA ENCONTRAR O TAMANHO DO CAMINHO
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    RECRIE O CAMINHO &quot;ANDANDO PARA TRÁS&quot; NAS DISTÂNCIAS
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>FIM
+</code></pre></div>
+<p>Seu desafio será transformar esse pseudo código alto nível em uma implementação completa da busca em largura. Volte para o <a href="../aps/">enunciado da APS</a> e use os testes para verificar sua implementação.</p>
 
 
 </section>
