@@ -5,8 +5,8 @@
 
 Vimos na parte expositiva que a mochila binária é um problema complexo e vamos tentar algumas soluções simples para sua resolução. Duas soluções razoáveis e úteis são
 
-1. selecionar os objetos mais caros primeiro
-2. selecionar os objetos mais leves primeiro
+1. selecionar os objetos mais caros primeiro. Se houver empate, selecione o de menor índice primeiro.
+2. selecionar os objetos mais leves primeiro. Se houver empate, selecione o de menor índice primeiro.
 
 Em todos os algoritmos (e implementações deste módulo receberemos como argumentos:
 
@@ -18,10 +18,16 @@ Em todos os algoritmos (e implementações deste módulo receberemos como argume
 A saída de cada algoritmo será
 
 1. `O` - array de `VERDADEIRO/FALSO` indicando se o objeto `I` foi selecionado
+2. `VALOR_TOTAL`
+3. `PESO_TOTAL`, que deverá ser menor que `C`
 
 ## Mais caro primeiro
 
 A ideia desta heurística é não deixar nenhum objeto valioso para trás! Por isso vamos ser ganaciosos e pegar **primeiro os objetos mais caros**! Se um objeto valioso não couber passamos para os mais baratos e prosseguimos até examinar todos objetos.
+
+
+!!! tip
+    Repare que aqui usaremos a mesma ideia do *SLEXSORT*: ordenamos um array de índices com base no valor de outro array (peso ou valor).  
 
 !!! exercise long
     Escreva abaixo um algoritmo em pseudo-código para implementar a heurística descrita acima. 
