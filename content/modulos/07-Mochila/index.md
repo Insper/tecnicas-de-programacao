@@ -6,7 +6,7 @@ Neste módulo iremos trabalhar com a **Mochila Binária**. Iremos explorar diver
 
 - [Primeiras soluções](inicio.md)
 - [Backtracking](backtracking.md)
-- [Mochila Fracionária](fracionária.md)
+- [Melhorando a solução com a Mochila Fracionária](melhorando-solucao.md)
 
 ## Entregas
 

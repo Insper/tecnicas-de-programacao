@@ -9,3 +9,8 @@ Vimos na primeira aula algoritmos que selecionam primeiro os objetos **mais caro
 
 !!! tip
     Você pode usar os métodos da classe [`Arrays`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html) para facilitar sua vida. Em especial, busque como realizar **ordenação indireta** usando este módulo. 
+
+
+## Solução ótima
+
+Agora vamos implementar a solução ótima descrita em aula. Edite o arquivo correspondente no pacote `br.edu.insper.tecprog.aps06` e usar os testes para validar suas soluções.
