@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      
+        <title>Encontrando a melhor solução com Backtracking - Técnicas de Programação</title>
+      
+    
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <script>
+      // SETUP GLOBAL CONSTANTS
+      var base_url = '../../..';
+      
+      var telemetryEnabled = false;
+      var backendUrl = "";
+      var courseSlug = "";
+      
+      
+      var dashboardEnabled = false;
+      var tagTree = {};
+      
+
+      // SETUP PLUGIN
+      window.initialized = false;
+      if (!window.initializers) window.initializers = [];
+      window.registerInitializer = (initialize) => {
+        if (window.initialized) initialize();
+        else window.initializers.push(initialize);
+      };
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://unpkg.com/hyperscript.org"></script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="ah-main-container">
+      <header class="ah-header">
+        <button class="ah-menu-btn ah-button ah-button--borderless"
+                aria-label="toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+</svg>
+        </button>
+        <a href="../../.."
+           title="Técnicas de Programação"
+           class="ah-logo"
+           aria-label="Técnicas de Programação">
+          Técnicas de Programação
+        </a>
+        <div class="ah-header--right">
+          
+          
+          
+          <button id="resetHandoutButton">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+</svg></span>
+          </button>
+          
+
+          
+        </div>
+      </header>
+      <nav class="ah-navigation preload">
+        <div class="ah-nav-container">
+          <button class="ah-menu-btn ah-button ah-button--borderless close-menu"
+                  aria-label="close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+</svg>
+          </button>
+          <ul class="ah-nav-body">
+            
+              
+  
+    <li>
+      <a href="../../..">Home</a>
+    </li>
+  
+
+            
+              
+  
+    <li>
+      <a href="../../../sobre/">Sobre a Disciplina</a>
+    </li>
+  
+
+            
+              
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Módulos</span>
+    <ul>
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">00 - Algoritmos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/">Introdução</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/entregas/">Entregas da disciplina</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Primeiros algoritmos</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com dados compostos</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Java</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/">Referência</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/instalacao/">Instalação (Java)</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/primeiro-contato/">Primeiro contato</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/strings/">Strings</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/arrays/">Arrays</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/interfaces/">Interfaces</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">01 - ADT</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">ADTs</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/array/">Array</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/list/">List</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/map/">Map</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/arrays-e-listas/">Aula 01 - arrays e Listas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/listas-e-dicionarios/">Aula 02 - Dicionários</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">02 - Busca em vetor</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/busca-frente-tras/">Buscas básicas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/busca-binaria-exemplo/">Busca binária (I)</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/busca-binaria-geral/">Busca binária (II)</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">03 - Ordenação</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/ordenacao-simples/">Algoritmos (simples) de ordenação</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/quick-sort/">Quick sort</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/merge-sort/">Merge Sort</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">04 - Busca em Texto</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/busca-simples/">Busca em Strings</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">05 - Caminhos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/seguir-paredes/">Algoritmo de Seguir Paredes</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/dfs/">Busca em Profundidade</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/bfs/">Busca em Largura</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">06 - Mochila</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../inicio/">Primeiras soluções</a>
+    </li>
+  
+
+      
+        
+  
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Encontrando a melhor solução com Backtracking</span>
+      <ul>
+        
+          <li class="ah-toc-item">
+            <a href="#encontrando-a-melhor-solucao-com-backtracking">Encontrando a melhor solução com Backtracking</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+            
+          </ul>
+        </div>
+      </nav>
+      <main class="ah-content ah-typeset">
+        
+          <div class="ah-title-box">
+            <ul class="ah-breadcrumbs">
+              
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>06 - Mochila</li>
+                  
+                
+                  
+                    <li>Aulas</li>
+                  
+                
+                <li>Encontrando a melhor solução com Backtracking</li>
+            </ul>
+            
+            
+          </div>
+          
+            <section class="progress-section show">
+<h1 id="encontrando-a-melhor-solucao-com-backtracking">Encontrando a melhor solução com Backtracking</h1>
+<div><center><embed height="300" src="../slides-backtracking.pdf" type="application/pdf" width="80%"></embed></center></div>
+<p>Neste roteiro iremos responder à pergunta </p>
+<blockquote>
+<p>Dada uma configuração da mochila com as variáveis abaixo, conseguimos uma solução com valor maior que <em>X</em>?</p>
+</blockquote>
+<ol>
+<li><code>N</code> - número de objetos</li>
+<li><code>C</code> - capacidade máxima da nossa mochile</li>
+<li><code>V</code> - array com o **v**alor de cada objeto</li>
+<li><code>P</code> - array com o **p**eso de cada objeto</li>
+</ol>
+<p>Vamos rever algumas características do nosso problema:</p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_1" id="long_1_0">
+<p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Em uma mochila com 13 objetos, quantas são soluções possíveis?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>São $2^13$ soluções possíveis. Note que dependendo das outras variáveis nem todas essas soluções são viáveis. Ou seja, dessas soluções uma porção pode ter peso maior que <code>C</code>.</p>
+</div>
+</div>
+<p>A cada passo do algoritmo decidimos se selecionamos ou não o objeto atual. Se selecionamos, resolvemos um novo problema da mochila com capacidade menor (em função do objeto que acabamos de selecionar) e com somente os objetos restantes. Se não mantemos a capacidade e eliminamos o objeto atual da lista de objetos.</p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_2" id="long_2_0">
+<p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Suponha que já escolhemos $i-1$ objetos e estamos decidindo se selecionamos o objeto $i$, de peso $10$ e valor $5$. Nossa mochila ainda tem $50$ de capacidade e o valor atual é $43$. Os objetos selecionados estão colocados em um array <code>O</code>.</p>
+<p>Se desejarmos <strong>selecionar</strong> o objeto $i$, como nossa solução parcial será modificada?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Precisamos setar <code>O[i] = VERDADEIRO</code>, diminuir a capacidade da mochila em $10$ (resultando em $40$ restantes) e aumentar o valore atual em $5$ (resultando em valor $48$).</p>
+</div>
+</div>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_3" id="long_3_0">
+<p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Suponha que já escolhemos $i-1$ objetos e estamos decidindo se selecionamos o objeto $i$, de peso $10$ e valor $5$. Nossa mochila ainda tem $50$ de capacidade e o valor atual é $43$. Os objetos selecionados estão colocados em um array <code>O</code>.</p>
+<p>Se desejarmos <strong>não selecionar</strong> o objeto $i$, como nossa solução parcial será modificada?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Precisamos somente setar <code>O[i] = FALSO</code>. Como o objeto não foi selecionado, capacidade e valor atual não se modificam.</p>
+</div>
+</div>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-0"> Continuar </button></div>
+</div>
+</section>
+<section class="progress-section">
+<p>Algoritmos de enumeração exaustiva necessitam de uma técnica chamada <strong>Backtracking</strong> para memorizar quais soluções já foram tentadas e quais ainda não foram. Essa técnica consiste em criar algoritmos recursivos que seguem um modelo mais ou menos fixo. Veja abaixo esse modelo:</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BACKTRACKING(...., N, SP, I)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    SE I = N ENTÃO
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        # AQUI SP JÁ É UMA SOLUÇÃO COMPLETA, ENTÃO PODEMOS DEVOLVÊ-LA
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        DEVOLVA UMA CÓPIA DE SP
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    FIM
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    PARA CADA ESCOLHA POSSÍVEL NA ITERAÇÃO I FAÇA
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        # O LOOP ACIMA JÁ CHECA SE AS ESCOLHAS RESPEITAM AS RESTRIÇÕES
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        ADICIONE ESSA ESCOLHA EM SP
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        BACKTRACKING(...., N, SP, I+1)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        REMOVA ESSA ESCOLHA DE SP
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    FIM
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    DEVOLVA A MELHOR SOLUÇÃO RETORNADA NO LOOP ACIMA
+</code></pre></div>
+<ul>
+<li><code>N</code> - tamanho do problema (e também o número máximo de chamadas recursivas que faremos, que é igual ao número de decisões que o algoritmo toma para construir uma solução)</li>
+<li><code>SP</code> - solução parcial levando em conta somente as <code>I-1</code> primeiras iterações</li>
+<li><code>I</code> - iteração atual do algoritmo</li>
+<li>o último passo do algoritmo requer que guardemos a melhor solução dentre as tentadas nas chamadas recursivas. <strong>Não é necessário alocar um array para isso</strong>.</li>
+</ul>
+<p>O seu trabalho hoje será interpretar isso no contexto da <em>Mochila binária</em>.</p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_4" id="long_4_0">
+<p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Adapte o modelo acima para resolver o problema da Mochila. Leve em conta os seguintes pontos</p>
+<ul>
+<li>solução parcial compreende três coisas: <code>Op</code>, <code>Cp</code> e <code>Vp</code> contendo os objetos selecionados até o momento, seu peso total e valor total</li>
+<li><code>i</code> representa o objeto atual, que iremos selecionar ou não</li>
+</ul>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Será feito na lousa depois de um tempo tentando aqui</p>
+</div>
+</div>
+<p>Acabou? Tente implementar seu algoritmo seguindo <a href="../aps/">as instruções na página da APS</a>.</p>
+
+
+</section>
+          
+        
+      </main>
+      <footer class="ah-footer ah-typeset">
+        <div class="ah-footer-nav">
+          
+            <a href="../inicio/"
+               class="ah-prev"
+               title="Primeiras soluções">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Primeiras soluções</span>
+            </a>
+          
+          
+            <a href="../aps/"
+               class="ah-next"
+               title="APS">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">APS</span>
+            </a>
+          
+        </div>
+      </footer>
+    </div>
+    
+      <script src="../../../js/tabs.js"></script>
+    
+  </body>
+</html>
