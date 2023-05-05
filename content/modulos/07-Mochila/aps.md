@@ -14,3 +14,9 @@ Vimos na primeira aula algoritmos que selecionam primeiro os objetos **mais caro
 ## Solução ótima
 
 Agora vamos implementar a solução ótima descrita em aula. Edite o arquivo correspondente no pacote `br.edu.insper.tecprog.aps06` e usar os testes para validar suas soluções.
+
+## Branch and Bound
+
+Os testes finais deste módulo estão nos arquivos `TestGrandeSemBound`, `TestGrandePeso` e `TestGrandeFracionaria`. O primeiro usa a mochila binária simples e servirá para ver o tamanho dos ganhos de cada bound.
+
+Todos os testes devem passar para este item ser válido e devem respeitar os tempos limites de cada bound. As diferenças deverão ser significativas, com o bound usando a Mochila Fracionária tendo os melhores tempos. 

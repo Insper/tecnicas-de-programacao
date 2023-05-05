@@ -11,9 +11,9 @@ Vimos na parte expositiva que a mochila binária é um problema complexo e vamos
 Em todos os algoritmos (e implementações deste módulo receberemos como argumentos:
 
 1. `N` - número de objetos
-1. `C` - capacidade máxima da nossa mochile
-1. `V` - array com o **v**alor de cada objeto
-1. `P` - array com o **p**eso de cada objeto
+1. `C` - capacidade máxima da nossa mochila
+1. `V` - array com o valor de cada objeto
+1. `P` - array com o peso de cada objeto
 
 A saída de cada algoritmo será
 

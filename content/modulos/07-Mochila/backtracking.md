@@ -9,9 +9,9 @@ Neste roteiro iremos responder à pergunta
 > Dada uma configuração da mochila com as variáveis abaixo, conseguimos uma solução com valor maior que *X*?
 
 1. `N` - número de objetos
-1. `C` - capacidade máxima da nossa mochile
-1. `V` - array com o **v**alor de cada objeto
-1. `P` - array com o **p**eso de cada objeto
+1. `C` - capacidade máxima da nossa mochila
+1. `V` - array com o valor de cada objeto
+1. `P` - array com o peso de cada objeto
 
 Vamos rever algumas características do nosso problema:
 
@@ -83,7 +83,7 @@ O seu trabalho hoje será interpretar isso no contexto da *Mochila binária*.
     - `i` representa o objeto atual, que iremos selecionar ou não
 
     !!! answer
-        Será feito na lousa depois de um tempo tentando aqui
+        Será feito na lousa depois de um tempo tentando aqui. Use o botão "Editar" para ajeitar sua solução depois disso. 
 
 Acabou? Tente implementar seu algoritmo seguindo [as instruções na página da APS](aps.md).
 
