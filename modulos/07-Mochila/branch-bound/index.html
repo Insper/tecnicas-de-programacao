@@ -108,7 +108,7 @@
 
             
               
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Módulos</span>
     <ul>
       
@@ -510,7 +510,7 @@
 
       
         
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">06 - Mochila</span>
     <ul>
       
@@ -523,7 +523,7 @@
 
       
         
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Aulas</span>
     <ul>
       
@@ -539,6 +539,30 @@
   
     <li>
       <a href="../backtracking/">Encontrando a melhor solução com Backtracking</a>
+    </li>
+  
+
+      
+        
+  
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Branch and Bound</span>
+      <ul>
+        
+          <li class="ah-toc-item">
+            <a href="#branch-and-bound">Branch and Bound</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#bound-mochila-fracionaria">Bound: mochila fracionária</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#implementacao">Implementação</a>
+          </li>
+          
+        
+      </ul>
     </li>
   
 
@@ -572,6 +596,18 @@
             <ul class="ah-breadcrumbs">
               
                 
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>06 - Mochila</li>
+                  
+                
+                  
+                    <li>Aulas</li>
+                  
+                
                 <li>Branch and Bound</li>
             </ul>
             
@@ -580,12 +616,11 @@
           
             <section class="progress-section show">
 <h1 id="branch-and-bound">Branch and Bound</h1>
-<div><center><embed height="300" src="slides-branch-bound.pdf" type="application/pdf" width="80%"></embed></center></div>
+<div><center><embed height="300" src="../slides-branch-bound.pdf" type="application/pdf" width="80%"></embed></center></div>
 <p>A ideia de algoritmos de <strong>Branch and Bound</strong> é evitar testar soluções que sabemos que vão ser ruins. A ideia básica é a seguinte:</p>
 <p><strong>Sempre que chegarmos em um objeto, calculamos uma estimativa da solução com os objetos que ainda faltam. Se for melhor que a solução ótima atual continua. Senão devolve a solução ótima atual.</strong></p>
 <p>A estimativa mencionada acima vai sempre <strong>superestimar</strong> o valor da solução atual. Ou seja, podemos errar o valor da solução atual para cima, <strong>mas nunca para baixo</strong>. Veremos duas maneiras de fazer isso neste handout.</p>
-<h2 id="bound-1-ignorar-peso">Bound 1: ignorar peso</h2>
-<h2 id="bound-2-mochila-fracionaria">Bound 2: mochila fracionária</h2>
+<h2 id="bound-mochila-fracionaria">Bound: mochila fracionária</h2>
 <p>O algoritmo da mochila fracionário foi apresentado como</p>
 <ol>
 <li>ordenar por "densidade" (valor / peso)</li>
@@ -645,6 +680,20 @@
       <footer class="ah-footer ah-typeset">
         <div class="ah-footer-nav">
           
+            <a href="../backtracking/"
+               class="ah-prev"
+               title="Encontrando a melhor solução com Backtracking">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Encontrando a melhor solução com Backtracking</span>
+            </a>
+          
+          
+            <a href="../aps/"
+               class="ah-next"
+               title="APS">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">APS</span>
+            </a>
           
         </div>
       </footer>
