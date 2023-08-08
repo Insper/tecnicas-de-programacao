@@ -16,9 +16,9 @@ Todos os exercícios serão entregues usando Github Classroom. Cada aluno terá 
 
 ## Horários
 
-- **QUA**: 13:30
-- **SEX**: 13:30
-- Atendimento **QUA** 15:45
+- **TERÇA**: 15:45
+- **SEXTA**: 13:30
+- Atendimento **SEXTA** 07:30
 
 ## Aprovação
 
