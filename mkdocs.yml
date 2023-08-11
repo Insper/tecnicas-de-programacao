@@ -26,45 +26,45 @@ nav:
         - modulos/00-Algoritmos/java/strings.md
         - modulos/00-Algoritmos/java/arrays.md
         - modulos/00-Algoritmos/java/interfaces.md
-    - "01 - ADT":
-      - modulos/01-ADT/index.md
-      - "ADTs":
-        - modulos/01-ADT/array.md
-        - modulos/01-ADT/list.md
-        - modulos/01-ADT/map.md
-      - "Aulas":
-        - modulos/01-ADT/arrays-e-listas.md
-        - modulos/01-ADT/listas-e-dicionarios.md
-      - modulos/01-ADT/aps.md
-    - "02 - Busca em vetor":
-      - modulos/02-Busca-Vetor/index.md
-      - "Aulas":
-        - modulos/02-Busca-Vetor/busca-frente-tras.md
-        - modulos/02-Busca-Vetor/busca-binaria-exemplo.md
-        - modulos/02-Busca-Vetor/busca-binaria-geral.md
-      - modulos/02-Busca-Vetor/aps.md
-    - "03 - Ordenação":
-      - modulos/03-Ordenacao/index.md
-      - "Aulas":
-        - modulos/03-Ordenacao/ordenacao-simples.md
-        - modulos/03-Ordenacao/quick-sort.md
-        - modulos/03-Ordenacao/merge-sort.md
-      - modulos/03-Ordenacao/aps.md
-    - "04 - Busca em Texto":
-      - modulos/05-Busca-Texto/index.md
-      - "Aulas":
-        - modulos/05-Busca-Texto/busca-simples.md
-      - modulos/05-Busca-Texto/aps.md
-    - "05 - Caminhos":
-      - modulos/06-Caminhos/index.md
-      - "Aulas":
-        - modulos/06-Caminhos/seguir-paredes.md
-        - modulos/06-Caminhos/dfs.md
-        - modulos/06-Caminhos/bfs.md
-      - modulos/06-Caminhos/aps.md
-    - "06 - Mochila":
-      - modulos/07-Mochila/index.md
-      - "Aulas":
-          - modulos/07-Mochila/inicio.md
-          - modulos/07-Mochila/backtracking.md
-      - modulos/07-Mochila/aps.md
+    # - "01 - ADT":
+    #   - modulos/01-ADT/index.md
+    #   - "ADTs":
+    #     - modulos/01-ADT/array.md
+    #     - modulos/01-ADT/list.md
+    #     - modulos/01-ADT/map.md
+    #   - "Aulas":
+    #     - modulos/01-ADT/arrays-e-listas.md
+    #     - modulos/01-ADT/listas-e-dicionarios.md
+    #   - modulos/01-ADT/aps.md
+    # - "02 - Busca em vetor":
+    #   - modulos/02-Busca-Vetor/index.md
+    #   - "Aulas":
+    #     - modulos/02-Busca-Vetor/busca-frente-tras.md
+    #     - modulos/02-Busca-Vetor/busca-binaria-exemplo.md
+    #     - modulos/02-Busca-Vetor/busca-binaria-geral.md
+    #   - modulos/02-Busca-Vetor/aps.md
+    # - "03 - Ordenação":
+    #   - modulos/03-Ordenacao/index.md
+    #   - "Aulas":
+    #     - modulos/03-Ordenacao/ordenacao-simples.md
+    #     - modulos/03-Ordenacao/quick-sort.md
+    #     - modulos/03-Ordenacao/merge-sort.md
+    #   - modulos/03-Ordenacao/aps.md
+    # - "04 - Busca em Texto":
+    #   - modulos/05-Busca-Texto/index.md
+    #   - "Aulas":
+    #     - modulos/05-Busca-Texto/busca-simples.md
+    #   - modulos/05-Busca-Texto/aps.md
+    # - "05 - Caminhos":
+    #   - modulos/06-Caminhos/index.md
+    #   - "Aulas":
+    #     - modulos/06-Caminhos/seguir-paredes.md
+    #     - modulos/06-Caminhos/dfs.md
+    #     - modulos/06-Caminhos/bfs.md
+    #   - modulos/06-Caminhos/aps.md
+    # - "06 - Mochila":
+    #   - modulos/07-Mochila/index.md
+    #   - "Aulas":
+    #       - modulos/07-Mochila/inicio.md
+    #       - modulos/07-Mochila/backtracking.md
+    #   - modulos/07-Mochila/aps.md

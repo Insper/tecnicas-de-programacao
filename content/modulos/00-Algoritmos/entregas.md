@@ -2,7 +2,7 @@
 
 Todas as entregas da disciplina serão feita via um repositório Git para cada aluno. Acesse abaixo para aceitar o convite e iniciar seu trabalho. 
 
-[Link de convite](https://classroom.github.com/a/23CvwUVS){ .ah-button }
+[Link de convite](https://classroom.github.com/a/D7tnb0B9){ .ah-button }
 
 ## Primeiro acesso
 

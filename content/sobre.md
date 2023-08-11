@@ -31,7 +31,7 @@ NF = 35%APS + 25%PI + 40%PF
 Algumas condições são necessárias para aprovação
 
 1. toda APS deve ser entregues na data combinada e obter nota maior ou igual a 5
-2. ambas notas de prova devem ser maiores ouigual a 4,5
+2. (PI+PF)/2 deve ser maior ou igual a 5
 
 Caso algum desses critérios não seja cumprido, as seguintes segundas chances são permitidas
 
