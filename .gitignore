@@ -2,3 +2,4 @@ env/
 docs/
 temp/*
 **pyc
+exercise_data.json

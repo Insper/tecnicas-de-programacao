@@ -115,9 +115,9 @@ NF = 35%APS + 25%PI + 40%PF
 
 # Horários
 
-- **QUA**: 13:30
-- **SEX**: 13:30
-- Atendimento **QUA** 15:45
+- **TERÇA**: 15:45
+- **SEXTA**: 13:30
+- Atendimento **SEXTA** 07:30
 
 
 -----
