@@ -30,17 +30,10 @@ NF = 35%APS + 25%PI + 40%PF
 
 Algumas condições são necessárias para aprovação
 
-1. toda APS deve ser entregues na data combinada e obter nota maior ou igual a 5
+1. no máximo uma APS pode: não ser entregue OU ser entregue com atraso OU obter nota inferior a 7.0
 2. (PI+PF)/2 deve ser maior ou igual a 5
 
-Caso algum desses critérios não seja cumprido, as seguintes segundas chances são permitidas
-
-1. para cada APS entregue com atraso será descontado 0,5 da média final das APS
-   * é permitido um atraso sem desconto de nota
-   * descontos de nota não diminuem a nota para menos que 5
-2. o aluno que ficar com menos que 4,5 em uma das provas pode fazer uma prova delta no dia da SUB
-   * ficar com menos de 4,5 em ambas provas implica em reprovação
-
+Caso algum desses critérios não seja cumprido, o aluno será reprovado.
 
 ## Calendário do semestre
 
