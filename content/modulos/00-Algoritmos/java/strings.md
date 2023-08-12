@@ -36,13 +36,13 @@ Strings em Java possuem recursos muito parecidos com o que já conhecemos de Pyt
     String bla1 = s.substring(0, 3); // Bla
     String bla3 = s.substring(8); // bla - vai até o fim da String se não passar o segundo
 
-    String lower = s.toLowerCase(s); // bla bla bla
+    String lower = s.toLowerCase(); // bla bla bla
 
     // checa se é string vazia
-    s.isEmpty()
+    s.isEmpty();
 
     // checa se a string é só de espaços em branco
-    s.isBlank()
+    s.isBlank();
 
     // checa se duas strings são iguais
     boolean igual = s.equals(bla1);
@@ -85,7 +85,7 @@ Algumas operações corriqueiras com strings são:
         ```
     === "Java"
         ```java
-        for (int i = 0; i < s.length; i++) {
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             // faz algo com c aqui
         }
@@ -120,7 +120,7 @@ Algumas operações corriqueiras com strings são:
     === "Java"
 
         ```java
-        for (String word : s.split("\s")) {
+        for (String word : s.split("\\s")) {
             // usa word aqui
         }
         ```
