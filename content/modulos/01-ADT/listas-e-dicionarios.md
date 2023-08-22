@@ -9,10 +9,10 @@ Neste roteiro desenvolveremos juntos os algoritmos necessários para implementar
 
 ## Construindo em cima de outras ADT
 
-Uma das grandes vantagens de definir (e usar) *ADT*s é que podemos construir algoritimos em mais alto nível. Podemos dizer, simplesmente, que vamos usar uma variável do tipo `Array` e/ou `List` e apontar para quais operações são suportadas. Isso nos ajuda a manter os algoritmos compactos e a dar enfoque nas ideias mais importantes para o problema que queremos resolver.
+Uma das grandes vantagens de definir (e usar) *ADTs* é que podemos construir algoritimos em mais alto nível. Podemos dizer, simplesmente, que vamos usar uma variável do tipo `Array` e/ou `List` e apontar para quais operações são suportadas. Isso nos ajuda a manter os algoritmos compactos e a dar enfoque nas ideias mais importantes para o problema que queremos resolver.
 
 !!! tip
-    *ADT*s são conhecimento básico em Computação. Não precisamos repetir, toda vez, o código para implementar o tipo `List`. Basta dizer que está usando esse tipo.
+    *ADTs* são conhecimento básico em Computação. Não precisamos repetir, toda vez, o código para implementar o tipo `List`. Basta dizer que está usando esse tipo.
 
 A implementação mais simples `Map` é usando duas listas:
 
@@ -37,7 +37,7 @@ A implementação mais simples `Map` é usando duas listas:
         Uma maneira fácil de fazer isto é
 
         - `KEYS(M)` = `[ "pastel de queijo", "pastel de carne", "pastel de soja" ]`
-        - `VALUES(M) = `[ 2, 1, 5 ]`
+        - `VALUES(M)` = `[ 2, 1, 5 ]`
 
 !!! exercise long
     Vamos continuar com o exemplo acima.
@@ -47,7 +47,7 @@ A implementação mais simples `Map` é usando duas listas:
         - `VALUES(M) = `[ 2, 1, 5 ]`
     2. Map 2:
         - `KEYS(M)` = `[ "pastel de queijo", "pastel de soja", "pastel de carne" ]`
-        - `VALUES(M) = `[ 2, 5, 1 ]`
+        - `VALUES(M)`` = `[ 2, 5, 1 ]`
 
     Os dois `Map` acima são iguais? Ou seja, eles representam as mesmas associações chave-valor? Justifique.
 

@@ -51,7 +51,7 @@ As operações mais interessantes do vetor são `INSERE` e `REMOVE`. Vamos traba
 
 ### Inserção
 
-Vamos primeiro rever a descrição de ˋINSEREˋ:
+Vamos primeiro rever a descrição de `INSERE`:
 
 !!! note "Definição"
     insere o valor `V` na lista `L` na posição `i`. Os elementos a partir da posição `i` (inclusive) são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.
