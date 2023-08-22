@@ -26,16 +26,16 @@ nav:
         - modulos/00-Algoritmos/java/strings.md
         - modulos/00-Algoritmos/java/arrays.md
         - modulos/00-Algoritmos/java/interfaces.md
-    # - "01 - ADT":
-    #   - modulos/01-ADT/index.md
-    #   - "ADTs":
-    #     - modulos/01-ADT/array.md
-    #     - modulos/01-ADT/list.md
-    #     - modulos/01-ADT/map.md
-    #   - "Aulas":
-    #     - modulos/01-ADT/arrays-e-listas.md
-    #     - modulos/01-ADT/listas-e-dicionarios.md
-    #   - modulos/01-ADT/aps.md
+    - "01 - ADT":
+      - modulos/01-ADT/index.md
+      - "ADTs":
+        - modulos/01-ADT/array.md
+        - modulos/01-ADT/list.md
+        - modulos/01-ADT/map.md
+      - "Aulas":
+        - modulos/01-ADT/arrays-e-listas.md
+        - modulos/01-ADT/listas-e-dicionarios.md
+      - modulos/01-ADT/aps.md
     # - "02 - Busca em vetor":
     #   - modulos/02-Busca-Vetor/index.md
     #   - "Aulas":

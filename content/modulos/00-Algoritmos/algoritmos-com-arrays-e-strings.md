@@ -165,7 +165,7 @@ De acordo com o Novo Acordo Ortográfico da Língua Portuguesa, usa-se o hífen 
 
 Por exemplo, sua função deve devolver `#!java true` para as seguintes entradas: `#!java "pega-pega"`, `#!java "cri-cri"`, `#!java "zum-zum.`
 
-Alguns exemplos para os quais sua função deve devolver `#!java false` são: `#!java "zigue-zague"`, `#!java "pingue-ongue"`, `#!"java "abobrinha"`.
+Alguns exemplos para os quais sua função deve devolver `#!java false` são: `#!java "zigue-zague"`, `#!java "pingue-ongue"`, `#!java "abobrinha"`.
 
 
 !!! exercise long id_algoritmo_string_palavras_iguais_entrada
