@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      
+        <title>Listas e dicionarios - Técnicas de Programação</title>
+      
+    
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <script>
+      // SETUP GLOBAL CONSTANTS
+      var base_url = '../../..';
+      
+      var telemetryEnabled = false;
+      var backendUrl = "";
+      var courseSlug = "";
+      
+      
+      var dashboardEnabled = false;
+      var tagTree = {};
+      
+
+      // SETUP PLUGIN
+      window.initialized = false;
+      if (!window.initializers) window.initializers = [];
+      window.registerInitializer = (initialize) => {
+        if (window.initialized) initialize();
+        else window.initializers.push(initialize);
+      };
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://unpkg.com/hyperscript.org"></script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="ah-main-container">
+      <header class="ah-header">
+        <button class="ah-menu-btn ah-button ah-button--borderless"
+                aria-label="toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+</svg>
+        </button>
+        <a href="../../.."
+           title="Técnicas de Programação"
+           class="ah-logo"
+           aria-label="Técnicas de Programação">
+          Técnicas de Programação
+        </a>
+        <div class="ah-header--right">
+          
+          
+          
+          <button id="resetHandoutButton">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+</svg></span>
+          </button>
+          
+
+          
+        </div>
+      </header>
+      <nav class="ah-navigation preload">
+        <div class="ah-nav-container">
+          <button class="ah-menu-btn ah-button ah-button--borderless close-menu"
+                  aria-label="close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+</svg>
+          </button>
+          <ul class="ah-nav-body">
+            
+              
+  
+    <li>
+      <a href="../../..">Home</a>
+    </li>
+  
+
+            
+              
+  
+    <li>
+      <a href="../../../sobre/">Sobre</a>
+    </li>
+  
+
+            
+              
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Módulos</span>
+    <ul>
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">00 - Algoritmos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/">Index</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/entregas/">Entregas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Pseudo codigo e java</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com arrays e strings</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Java</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/">Index</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/instalacao/">Instalacao</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/primeiro-contato/">Primeiro contato</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/strings/">Strings</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/arrays/">Arrays</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/interfaces/">Interfaces</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">01 - ADT</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">ADTs</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../array/">Array</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../list/">List</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../map/">Map</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../arrays-e-listas/">Arrays e listas</a>
+    </li>
+  
+
+      
+        
+  
+
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Listas e dicionarios</span>
+      <ul>
+        
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#construindo-em-cima-de-outras-adt">Construindo em cima de outras ADT</a>
+              </li>
+            
+        
+      </ul>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../aps/">Aps</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+            
+          </ul>
+        </div>
+      </nav>
+      <main class="ah-content ah-typeset">
+        
+          <div class="ah-title-box">
+            <ul class="ah-breadcrumbs">
+              
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>01 - ADT</li>
+                  
+                
+                  
+                    <li>Aulas</li>
+                  
+                
+                <li></li>
+            </ul>
+            
+            
+          </div>
+          
+            <section class="progress-section show">
+<h1 id="aula-02-dicionarios">Aula 02 - Dicionários</h1>
+<p>Quando começamos a chegar no fim de DevLife usamos cada vez mais Dicionários em nosso código. Os usamos para representar coleções de pares <em>chave-&gt;valor</em> em que para cada <em>chave</em> existe exatamente um valor. Como era possível compor dicionários dentro de dicionários dentro de dicionários (e por aí vai) conseguíamos usá-los para representar hierarquias complexas. O tipo <code>Map</code> representa de maneira abstrata esse tipo de estrutura de dados.</p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Vale a pena revisar as <a href="../map/">operações de dados</a> de um <code>Map</code> antes de prosseguir.</p>
+</div>
+<p>Neste roteiro desenvolveremos juntos os algoritmos necessários para implementar uma <strong>versão simplificada</strong> do <code>Map</code> usando duas <code>List</code>.</p>
+<h2 id="construindo-em-cima-de-outras-adt">Construindo em cima de outras ADT</h2>
+<p>Uma das grandes vantagens de definir (e usar) *ADT*s é que podemos construir algoritimos em mais alto nível. Podemos dizer, simplesmente, que vamos usar uma variável do tipo <code>Array</code> e/ou <code>List</code> e apontar para quais operações são suportadas. Isso nos ajuda a manter os algoritmos compactos e a dar enfoque nas ideias mais importantes para o problema que queremos resolver.</p>
+<div class="admonition tip">
+<p class="admonition-title">Dica 1</p>
+<p>*ADT*s são conhecimento básico em Computação. Não precisamos repetir, toda vez, o código para implementar o tipo <code>List</code>. Basta dizer que está usando esse tipo.</p>
+</div>
+<p>A implementação mais simples <code>Map</code> é usando duas listas:</p>
+<ul>
+<li><code>KEYS(M)</code> é um <code>List</code> contendo uma lista de todas as chaves do <code>Map</code> <code>M</code></li>
+<li><code>VALUES(M)</code> é um <code>List</code> contendo uma lista de todas os valores do <code>Map</code> <code>M</code></li>
+</ul>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/map_ideia_indices" id="map_ideia_indices_0">
+<p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Considere os seguintes pares chave-valor:</p>
+<ul>
+<li>"pastel de queijo" = 2</li>
+<li>"pastel de carne" = 1</li>
+<li>"pastel de soja" = 5</li>
+</ul>
+<p>Como você usaria as duas listas acima (<code>KEYS(M)</code> e <code>VALUES(M)</code>) para armazená-los? Escreva o conteúdo das listas na forma</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- `KEYS(M)` = `[ conteúdo aqui ]`
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- `VALUES(M) = `[ conteúdo aqui ]`
+</code></pre></div>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Uma maneira fácil de fazer isto é</p>
+<ul>
+<li><code>KEYS(M)</code> = <code>[ "pastel de queijo", "pastel de carne", "pastel de soja" ]</code></li>
+<li><code>VALUES(M) =</code>[ 2, 1, 5 ]`</li>
+</ul>
+</div>
+</div>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/long_2" id="long_2_0">
+<p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Vamos continuar com o exemplo acima.</p>
+<ol>
+<li>Map 1:<ul>
+<li><code>KEYS(M)</code> = <code>[ "pastel de queijo", "pastel de carne", "pastel de soja" ]</code></li>
+<li><code>VALUES(M) =</code>[ 2, 1, 5 ]`</li>
+</ul>
+</li>
+<li>Map 2:<ul>
+<li><code>KEYS(M)</code> = <code>[ "pastel de queijo", "pastel de soja", "pastel de carne" ]</code></li>
+<li><code>VALUES(M) =</code>[ 2, 5, 1 ]`</li>
+</ul>
+</li>
+</ol>
+<p>Os dois <code>Map</code> acima são iguais? Ou seja, eles representam as mesmas associações chave-valor? Justifique.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Eles são iguais! O conjunto de chaves de ambos é igual e para toda chave o valor devolvido é o mesmo.</p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/resumo_ideia_map" id="resumo_ideia_map_0">
+<p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Dada as respostas dos exercícios anteriores, como você resumiria a ideia de usar duas listas para implementar o <code>Map</code>?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Próxima seção ;)</p>
+</div>
+</div>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-0"> Continuar </button></div>
+</div>
+</section>
+<section class="progress-section">
+<p>Vamos usar as seguintes convenções a partir de agora</p>
+<ul>
+<li><code>M_K = KEYS(M)</code></li>
+<li><code>M_V = VALUES(M)</code></li>
+</ul>
+<p>A ideia central é <strong>Dada uma associação chave-valor <code>(K, V)</code>, se guardamos a chave <code>K</code> no índice <code>i</code> de <code>M_K</code> guardaremos o valor <code>V</code> no mesmo índice <code>i</code> em <code>M_V</code></strong>. Podemos colocar isso de maneira mais formal: <strong>existe um índice <code>0 &lt;= i &lt; TAMANHO(M_K)</code> tal que <code>M_K[i] = K</code> e <code>M_V[i] = V</code></strong>.</p>
+<p>Vamos agora desenvolver alguns algoritmos simples para nos familiarizarmos com essa dupla de listas.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/map_indexof" id="map_indexof_0">
+<p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Um algoritmo muito útil (e frequentemente disponível) é o <code>indexOf</code>, que devolve o índice da primeira ocorrência de um valor em uma lista.</p>
+<ul>
+<li><strong>Entrada</strong><ul>
+<li><code>List</code> <code>L</code></li>
+<li>valor <code>V</code></li>
+</ul>
+</li>
+<li><strong>Saída</strong>:<ul>
+<li>se a lista tem o valor, retorna o índice da primeira ocorrência</li>
+<li>-1 caso contrário</li>
+</ul>
+</li>
+</ul>
+<p>Escreva o algoritmo <code>indexOf(L, V)</code> em pseudo-código</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>indexOf(L, V)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>PARA i=0 até TAMANHO(L) FAÇA
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    SE L[i] = V FAÇA
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        RETORNE i
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    FIM
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>FIM
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>RETORNE -1
+</code></pre></div>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/get_usando_indexof" id="get_usando_indexof_0">
+<p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Vamos agora trabalhar com as duas listas em conjunto. Use o algoritmo <code>indexOf</code> feito acima para implementar a operação <code>GET</code> do <code>Map</code>:</p>
+<ul>
+<li><code>GET(M, K)</code> - devolve o valor associado a chave <code>K</code>. Se não houver retorna <code>VAZIO</code></li>
+</ul>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>TODO: colocar resposta aqui</p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/set_map" id="set_map_0">
+<p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>A operação <code>SET(M, K, V)</code></p>
+<ul>
+<li>faz uma nova associação chave-valor se a chave já existir, esquecendo a antiga</li>
+<li>adiciona um novo par chave-valor caso contrário</li>
+</ul>
+<p>Escreve um algoritmo que implemente essa operação. Você pode usar todos os algoritmos que já desenvolveu até aqui, incluindo as operações do tipo <code>List</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Esse vai na lousa ;)</p>
+</div>
+</div>
+<p>As operações <code>REMOVE</code> e <code>TAMANHO</code> são variações dos que já foram construídos nessa aula. Para registrar, escreva-os abaixo.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/map_remove" id="map_remove_0">
+<p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Escreva abaixo o algoritmo para <code>REMOVE(M, K)</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/listas-e-dicionarios/map_tamanho" id="map_tamanho_0">
+<p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Escreva abaixo o algoritmo para <code>TAMANHO(M)</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<p>Agora o trabalho será transformar esses algoritmos em implementações <code>Java</code> na <a href="../aps/">APS desse módulo</a></p>
+
+
+</section>
+          
+        
+      </main>
+      <footer class="ah-footer ah-typeset">
+        <div class="ah-footer-nav">
+          
+            <a href="../arrays-e-listas/"
+               class="ah-prev"
+               title="Arrays e listas">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Arrays e listas</span>
+            </a>
+          
+          
+            <a href="../aps/"
+               class="ah-next"
+               title="Aps">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">Aps</span>
+            </a>
+          
+        </div>
+      </footer>
+    </div>
+    
+      <script src="../../../js/tabs.js"></script>
+    
+  </body>
+</html>

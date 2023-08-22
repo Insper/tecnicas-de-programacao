@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      
+        <title>Arrays e listas - Técnicas de Programação</title>
+      
+    
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <script>
+      // SETUP GLOBAL CONSTANTS
+      var base_url = '../../..';
+      
+      var telemetryEnabled = false;
+      var backendUrl = "";
+      var courseSlug = "";
+      
+      
+      var dashboardEnabled = false;
+      var tagTree = {};
+      
+
+      // SETUP PLUGIN
+      window.initialized = false;
+      if (!window.initializers) window.initializers = [];
+      window.registerInitializer = (initialize) => {
+        if (window.initialized) initialize();
+        else window.initializers.push(initialize);
+      };
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://unpkg.com/hyperscript.org"></script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="ah-main-container">
+      <header class="ah-header">
+        <button class="ah-menu-btn ah-button ah-button--borderless"
+                aria-label="toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+</svg>
+        </button>
+        <a href="../../.."
+           title="Técnicas de Programação"
+           class="ah-logo"
+           aria-label="Técnicas de Programação">
+          Técnicas de Programação
+        </a>
+        <div class="ah-header--right">
+          
+          
+          
+          <button id="resetHandoutButton">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+</svg></span>
+          </button>
+          
+
+          
+        </div>
+      </header>
+      <nav class="ah-navigation preload">
+        <div class="ah-nav-container">
+          <button class="ah-menu-btn ah-button ah-button--borderless close-menu"
+                  aria-label="close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+</svg>
+          </button>
+          <ul class="ah-nav-body">
+            
+              
+  
+    <li>
+      <a href="../../..">Home</a>
+    </li>
+  
+
+            
+              
+  
+    <li>
+      <a href="../../../sobre/">Sobre</a>
+    </li>
+  
+
+            
+              
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Módulos</span>
+    <ul>
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">00 - Algoritmos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/">Index</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/entregas/">Entregas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Pseudo codigo e java</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com arrays e strings</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Java</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/">Index</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/instalacao/">Instalacao</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/primeiro-contato/">Primeiro contato</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/strings/">Strings</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/arrays/">Arrays</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../00-Algoritmos/java/interfaces/">Interfaces</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">01 - ADT</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">ADTs</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../array/">Array</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../list/">List</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../map/">Map</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Arrays e listas</span>
+      <ul>
+        
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#vetor-dinamico">Vetor dinâmico</a>
+              </li>
+            
+        
+      </ul>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../listas-e-dicionarios/">Listas e dicionarios</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../aps/">Aps</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+            
+          </ul>
+        </div>
+      </nav>
+      <main class="ah-content ah-typeset">
+        
+          <div class="ah-title-box">
+            <ul class="ah-breadcrumbs">
+              
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>01 - ADT</li>
+                  
+                
+                  
+                    <li>Aulas</li>
+                  
+                
+                <li></li>
+            </ul>
+            
+            
+          </div>
+          
+            <section class="progress-section show">
+<h1 id="aula-01-arrays-e-listas">Aula 01 - arrays e Listas</h1>
+<p>O tipo <code>Array</code> que discutimos na apresentação inicial representa a maneira mais básica de se armazenar dados em linguagens de programação. Ele é, basicamente, uma região de memória em que colocamos um objeto após o outro, em sequência. Como o computador compartilha a memória com diversos programas, precisamos dizer com antecedência o quanto de memória usaremos. Por isso, o <code>Array</code> tem tamanho fixo.</p>
+<p>Gerenciar esse tamanho fixo do array dá trabalho e várias linguagens oferecem implementações do tipo <code>List</code>, que permite inserir e remover elementos. Veja alguns exemplos disso abaixo.</p>
+<ul>
+<li><code>list</code> de Python</li>
+<li><code>ArrayList</code> de Java</li>
+<li><code>std::vector</code> de C++</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Dica 1</p>
+<p>Uma descrição completa do tipo <code>List</code> pode ser vista <a href="../list/">aqui</a></p>
+</div>
+<p>Vamos agora iniciar a implementação de uma <em>Estrutura de Dados</em> que implemente o tipo <code>List</code> usando o tipo <code>Array</code>. Nosso objetivo aqui será</p>
+<ol>
+<li>compreender a implementação das operações do tipo <code>List</code></li>
+<li>utilizar um Tipo de Dados mais simples (<code>Array</code>) para implementar outro tipo mais complexo (<code>Lista</code>)</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Dica 2</p>
+<ul>
+<li>Um <em>Tipo de Dados</em> somente define quais operações existem e quais são suas entradas e saídas. Ou seja, aqui definimos <strong>o quê</strong> deve ser feito. </li>
+<li>Uma <em>Estrutura de Dados (ED)</em> descreve também algoritimos para cada uma das operações suportadas. Ou seja, aqui temos também <strong>como</strong> cada operação deve ser realizada.</li>
+</ul>
+<p>Dessa maneira, podemos pensar na <em>ED</em> como uma descrição detalhada (em termos de algoritmos) de como uma <em>ADT</em> poderia ser implementada.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Existem várias <em>EDs</em> diferentes que podem implementar a mesma <em>ADT</em> e uma mesma <em>ED</em> pode implementar várias <em>ADTs</em> diferentes.</p>
+</div>
+<h2 id="vetor-dinamico">Vetor dinâmico</h2>
+<p>O vetor dinâmico é uma <em>ED</em> que permite implementar as operações do tipo <code>List</code> usando um <code>Array</code>. Vamos iniciar relembrando os conceitos que acabamos de discutir.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Como o vetor dinâmico implementa toda a ADT <code>List</code>, nesse guia iremos usar a letra <code>L</code> quando nos referirmos a um vetor dinâmico.</p>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/arrays-e-listas/adt_lista_capacidade_tamanho_relembrar" id="adt_lista_capacidade_tamanho_relembrar_0">
+<p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Quais são os atributos que o vetor dinâmico possui? Para que servem?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Nossa <em>ED</em> vetor dinâmico tem três atributos.</p>
+<ul>
+<li><code>Array</code> <em>A</em> para guardar os dados</li>
+<li><em>capacidade</em>: número máximo de elementos que podem ser guardados <em>A</em>. Sempre igual a <code>TAMANHO(A)</code></li>
+<li><em>tamanho</em>: número de elementos efetivamente guardados em <em>A</em>. Sempre igual a <code>TAMANHO(L)</code>.</li>
+</ul>
+</div>
+</div>
+<p>As operações mais interessantes do vetor são <code>INSERE</code> e <code>REMOVE</code>. Vamos trabalhar nelas agora.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dado que usaremos um <code>Array</code> para implementar <code>List</code>, teremos sempre um tamanho máximo fixo para nossos dados. Nessas próximas seções vamos sempre supor que existem espaços vazios disponíveis para inserir mais dados.</p>
+</div>
+<h3 id="insercao">Inserção</h3>
+<p>Vamos primeiro rever a descrição de ˋINSEREˋ:</p>
+<div class="admonition note">
+<p class="admonition-title">Definição</p>
+<p>insere o valor <code>V</code> na lista <code>L</code> na posição <code>i</code>. Os elementos a partir da posição <code>i</code> (inclusive) são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.</p>
+</div>
+<p>O primeiro passo do algoritmo é "empurrar" todos elementos para a direita. Vamos inicialmente supor que a lista <code>L</code> tem espaço para colocar o elemento <code>V</code> na posição <code>i</code>. Ou seja, é verdade que <code>TAMANHO(L) + 1 &lt; capacidade = TAMANHO(A)</code>.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/arrays-e-listas/algoritmo_desloca_array" id="algoritmo_desloca_array_0">
+<p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Vamos rascunhar uma primeira versão desse algoritmo. Assim como nos nossos outros exercícios, deixaremos bem definido o nome da função e seus argumentos: <code>DESLOCA_DIREITA(L, N, i)</code>. </p>
+<ul>
+<li>Entrada: <ul>
+<li>Lista <code>L</code></li>
+<li><code>N=TAMANHO(L)</code></li>
+<li><code>i</code> é a posição que será liberada</li>
+</ul>
+</li>
+<li>Saída:<ul>
+<li><code>L</code> é modificado diretamente. a função não retorna nada. O valor <code>L[i]</code> não importa, então manteremos ele igual.</li>
+</ul>
+</li>
+</ul>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Teste seu algoritmo com as seguintes entradas. Estamos supondo que <code>L</code> já tem um elemento vazio disponível no fim. </p>
+<ul>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Entrada: L = [], i=0
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Saída: L = []
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Entrada: L = [1], i=0
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Saída: L = [1, 1]
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Entrada: L = [1], i=1
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Saída: L = [1]
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Entrada: L = [1, 2, 3], i=0
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Saída: L = [1, 1, 2, 3]
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Entrada: L = [1, 2, 3], i=1
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Saída: L = [1, 2, 2, 3]
+</code></pre></div></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-0"> Continuar </button></div>
+</div>
+</section>
+<section class="progress-section">
+<p>O algoritmo é bem simples: começamos no elemento <code>N</code> e descemos até a posição <code>i+1</code> copiando o valor do índice anterior. Note que atribuímos a <code>L[N]</code>, o que significa que <code>TAMANHO(L)=N+1</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>DESLOCA_DIREITA(L, N, i)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>PARA j=N ATÉ i+1 FAÇA
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    L[j] = L[j-1]
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>FIM
+</code></pre></div>
+<p>Com essa rotina podemos implementar facilmente a inserção.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/arrays-e-listas/lista_insercao_algo" id="lista_insercao_algo_0">
+<p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Escreva o algoritmo de inserção abaixo. Você deve usar a função <code>DESLOCA_DIREITA</code> criada acima. Não vamos mexer na <code>capacidade</code> de <code>A</code>, somente no <code>tamanho</code> de <code>L</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>INSERE(L, V, i)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Incrementa TAMANHO(L)
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>N = TAMANHO(L)
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>DESLOCA_DIREITA(L, N, i)
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>L[i] = V
+</code></pre></div>
+</div>
+</div>
+<p>Note que a etapa de tradução do algoritmo acima para Java não é exatamente trivial e depende de um monte de outras definições. Trabalharemos isso na <a href="../aps/">APS deste módulo</a></p>
+<h3 id="remocao">Remoção</h3>
+<p>O algoritmo de remoção é muito parecido com a inserção, mas agora faz o deslocamento à esquerda. Note que novamente não vamos mexer na <code>capacidade</code> de <code>A</code>, somente no <code>tamanho</code> de <code>L</code>.</p>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/arrays-e-listas/algo_desloca_esquera" id="algo_desloca_esquera_0">
+<p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Escreva o algoritmo <code>DESLOCA_ESQUERDA</code> que receba as entradas abaixo. </p>
+<ul>
+<li>Entrada: <ul>
+<li>Lista <code>L</code></li>
+<li><code>N=TAMANHO(L)</code></li>
+<li><code>i</code> é a posição que será liberada</li>
+</ul>
+</li>
+<li>Saída:<ul>
+<li><code>L</code> é modificado diretamente. a função não retorna nada.</li>
+</ul>
+</li>
+</ul>
+<p>Teste seu algoritmo com os seguintes parâmetros.</p>
+<ul>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Entrada: L = [], i=0
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Saída: L = []
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Entrada: L = [1, VAZIO, VAZIO], i=0
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Saída: L = [VAZIO, VAZIO, VAZIO]
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Entrada: L = [1, VAZIO, VAZIO ], i=1
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Saída: L = [1, VAZIO, VAZIO ]
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Entrada: L = [1, 2, 3], i=0
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Saída: L = [2, 3, VAZIO]
+</code></pre></div></li>
+<li><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Entrada: L = [1, 2, 3], i=1
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Saída: L = [1, 3, VAZIO]
+</code></pre></div></li>
+</ul>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Esse será feito na lousa. Aproveite para anotar o resultado.</p>
+</div>
+</div>
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/01-ADT/arrays-e-listas/list_remove_algo" id="list_remove_algo_0">
+<p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Use a função acima para criar o algoritmo da operação <code>REMOVE(L, V)</code>.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>REMOVE(L, V)
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>N = TAMANHO(L)
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>PARA i = 0 ATÉ N FAÇA
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    SE L[i] = V ENTÃO
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        DESLOCA_ESQUERDA(L, N, i)
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        Decrementa TAMANHO(L)
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        RETORNA
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    FIM
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>FIM
+</code></pre></div>
+<p>Esse algoritmo tem duas partes importantes:</p>
+<ol>
+<li>encontrar um índice <code>i</code> tal que <code>L[i] = V</code></li>
+<li>usar o <code>DESLOCA_ESQUERDA</code> para sobrescrever o elemento na posição <code>j</code> e diminuir o tamanho da lista.</li>
+</ol>
+</div>
+</div>
+<h3 id="redimensionamento">Redimensionamento</h3>
+<p>Vamos agora analizar a situação das variáveis <code>capacidade</code> e <code>tamanho</code> quando realizamos inserções e remoções.</p>
+<div class="admonition exercise choice  tag-choice-exercise" data-answer-idx="1" data-slug="modulos/01-ADT/arrays-e-listas/adt_lista_capacidade_tamanho_relacao" id="adt_lista_capacidade_tamanho_relacao_0">
+<p class="admonition-title">Exercício 6</p>
+<form class="exercise-form">
+<p>Em relação a capacidade e tamanho, é correto afirmar que sempre <code>capacidade &lt;= tamanho</code>?</p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    SIM
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    NÃO
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Dado que a capacidade é o número <strong>máximo</strong> de elementos que podem ser guardados no <code>Array</code>, a afirmação é falsa. O contrário é que é verdade: <code>tamanho &lt;= capacidade</code>.</p>
+<p>Pense no <em>tamanho</em> como o número de elementos não vazios do <code>Array</code>, enquanto a capacidade é <code>TAMANHO(Array)</code>.</p>
+</div>
+</div>
+<div class="admonition exercise choice  tag-choice-exercise" data-answer-idx="0" data-slug="modulos/01-ADT/arrays-e-listas/adt_lista_capacidade_tamanho_insercao" id="adt_lista_capacidade_tamanho_insercao_0">
+<p class="admonition-title">Exercício 7</p>
+<form class="exercise-form">
+<p>Em um dado momento nosso vetor dinâmico tem <code>capacidade=8</code> e <code>tamanho=5</code>. Após a inserção de um novo elemento, quais serão os valores dessas duas quantidades?</p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="2" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=5
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="3" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=9, tamanho=6
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=6
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=9, tamanho=5
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Como ainda tem espaço em nosso <code>Array</code>, somente o tamanho aumenta.</p>
+</div>
+</div>
+<div class="admonition exercise choice  tag-choice-exercise" data-answer-idx="0" data-slug="modulos/01-ADT/arrays-e-listas/adt_lista_capacidade_tamanho_remocao" id="adt_lista_capacidade_tamanho_remocao_0">
+<p class="admonition-title">Exercício 8</p>
+<form class="exercise-form">
+<p>Em um dado momento nosso vetor dinâmico tem <code>capacidade=8</code> e <code>tamanho=7</code>. Após a remoção de um elemento, quais serão os valores dessas duas quantidades?</p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=6
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="3" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=7, tamanho=7
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=7, tamanho=6
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="2" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=7
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Neste caso, como o <code>Array</code> que usamos em nosso vetor está quase cheio (6/8 posições ocupadas) a capacidade se mantém. Assim como na inserção, a remoção sempre mexe no tamanho do vetor.</p>
+</div>
+</div>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-1"> Continuar </button></div>
+</div>
+</section>
+<section class="progress-section">
+<p>Agora que já relembramos os conceitos mais importantes, vamos modificar o algoritmo <code>INSERE</code> para permitir que a lista cresça de tamanho. Nossa estratégia será executar o seguintes passos <strong>logo no início</strong> de <code>INSERE</code>.</p>
+<ul>
+<li>Entrada:<ul>
+<li><code>Lista L</code></li>
+</ul>
+</li>
+<li>Saída:</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>REDIMENSIONA_SE_PRECISAR(L)
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>A = Array com dados de L
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>N = TAMANHO(L)
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>C = TAMANHO(A)
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>SE C == N ENTÃO
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    A_NOVO = NOVO_ARRAY(2 * N)
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    PARA CADA i=0 ATÉ N FAÇA
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        A_NOVO[i] = A[i]
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    FIM
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    Array de dados de L = A_NOVO
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>FIM
+</code></pre></div>
+<div class="admonition exercise choice  tag-choice-exercise" data-answer-idx="0" data-slug="modulos/01-ADT/arrays-e-listas/adt_lista_capacidade_tamanho_redimensiona1" id="adt_lista_capacidade_tamanho_redimensiona1_0">
+<p class="admonition-title">Exercício 9</p>
+<form class="exercise-form">
+<p>Em um dado momento nosso vetor dinâmico tem <code>capacidade=8</code> e <code>tamanho=8</code>. Após a inserção de um novo elemento, quais serão os valores dessas duas quantidades?</p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="3" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=8
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=16, tamanho=8
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=16, tamanho=9
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="2" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=9
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>O <code>Array</code> está cheio, então precisamos aumentá-lo. Nosso algoritmo acima dobra a capacidade do array de <code>L</code>. Logo, a nova capacidade de <code>L</code> é 16 enquanto o tamanho de <code>L</code> só aumenta 1 (que é o novo elemento inserido).</p>
+</div>
+</div>
+<div class="admonition exercise choice  tag-choice-exercise" data-answer-idx="0" data-slug="modulos/01-ADT/arrays-e-listas/adt_lista_capacidade_tamanho_redimensiona2" id="adt_lista_capacidade_tamanho_redimensiona2_0">
+<p class="admonition-title">Exercício 10</p>
+<form class="exercise-form">
+<p>Em um dado momento nosso vetor dinâmico tem <code>capacidade=16</code> e <code>tamanho=15</code>. Após a inserção de um novo elemento, quais serão os valores dessas duas quantidades?</p>
+<div class="form-elements">
+<div class="alternative-set">
+  
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="3" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=15
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="2" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=8, tamanho=16
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="1" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=16, tamanho=15
+  </div>
+</label>
+
+<label class="alternative">
+  <div class="content">
+    <input type="radio" name="data" value="0" _="   on click    set alternative to closest .alternative    if alternative matches <:not(.selected)/> then     set selected to false    else     set selected to true    end    remove .selected from .alternative in closest .alternative-set    if selected then     remove .selected from alternative     add @disabled to <input[type='submit']/> in closest .form-elements    else     add .selected to alternative     remove @disabled from <input[type='submit']/> in closest .form-elements    end   end   ">
+    capacidade=16, tamanho=16
+  </div>
+</label>
+
+</div>
+<input class="ah-button ah-button--primary" type="submit" name="sendButton" value="Enviar" disabled />
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>A checagem de lista cheia ocorre no início de <code>INSERE</code>, mas o <code>Array</code> de dados de <code>Lista</code> só fica cheio ao fim de <code>INSERE</code>. Logo, não há redimensionamento.</p>
+</div>
+</div>
+<p>A mesma estratégia pode ser usada na remoção, desta vez para diminuir a capacidade pela metade se o tamanho for menor que &frac14; da capacidade. A parte final desse guia será implementar essa lógica na <a href="../aps/">APS deste módulo</a></p>
+
+
+</section>
+          
+        
+      </main>
+      <footer class="ah-footer ah-typeset">
+        <div class="ah-footer-nav">
+          
+            <a href="../map/"
+               class="ah-prev"
+               title="Map">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Map</span>
+            </a>
+          
+          
+            <a href="../listas-e-dicionarios/"
+               class="ah-next"
+               title="Listas e dicionarios">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">Listas e dicionarios</span>
+            </a>
+          
+        </div>
+      </footer>
+    </div>
+    
+      <script src="../../../js/tabs.js"></script>
+    
+  </body>
+</html>
