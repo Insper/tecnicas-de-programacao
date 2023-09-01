@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Map - Técnicas de Programação</title>
+        <title>Busca binaria geral - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -211,8 +211,91 @@
 
       
         
-  <li class="ah-togglable-item opened">
+  <li class="ah-togglable-item">
     <span class="ah-togglable-handle">01 - ADT</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">ADTs</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/array/">Array</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/list/">List</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/map/">Map</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/arrays-e-listas/">Arrays e listas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/listas-e-dicionarios/">Listas e dicionarios</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/aps/">Aps</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">02 - Busca em vetor</span>
     <ul>
       
         
@@ -225,13 +308,13 @@
       
         
   <li class="ah-togglable-item opened">
-    <span class="ah-togglable-handle">ADTs</span>
+    <span class="ah-togglable-handle">Aulas</span>
     <ul>
       
         
   
     <li>
-      <a href="../array/">Array</a>
+      <a href="../busca-frente-tras/">Busca frente tras</a>
     </li>
   
 
@@ -239,7 +322,7 @@
         
   
     <li>
-      <a href="../list/">List</a>
+      <a href="../busca-binaria-exemplo/">Busca binaria exemplo</a>
     </li>
   
 
@@ -248,11 +331,19 @@
   
 
     <li class="active ah-togglable-item opened">
-      <span class="ah-togglable-handle">Map</span>
+      <span class="ah-togglable-handle">Busca binaria geral</span>
       <ul>
         
           
             
+            
+              <li class="ah-toc-item">
+                <a href="#um-primeiro-algoritmo-recursivo">Um primeiro algoritmo recursivo</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#busca-binaria-recursiva">Busca binária recursiva</a>
+              </li>
             
         
       </ul>
@@ -265,92 +356,9 @@
 
       
         
-  <li class="ah-togglable-item">
-    <span class="ah-togglable-handle">Aulas</span>
-    <ul>
-      
-        
-  
-    <li>
-      <a href="../arrays-e-listas/">Arrays e listas</a>
-    </li>
-  
-
-      
-        
-  
-    <li>
-      <a href="../listas-e-dicionarios/">Listas e dicionarios</a>
-    </li>
-  
-
-      
-    </ul>
-  </li>
-
-      
-        
   
     <li>
       <a href="../aps/">Aps</a>
-    </li>
-  
-
-      
-    </ul>
-  </li>
-
-      
-        
-  <li class="ah-togglable-item">
-    <span class="ah-togglable-handle">02 - Busca em vetor</span>
-    <ul>
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/">Index</a>
-    </li>
-  
-
-      
-        
-  <li class="ah-togglable-item">
-    <span class="ah-togglable-handle">Aulas</span>
-    <ul>
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/busca-frente-tras/">Busca frente tras</a>
-    </li>
-  
-
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/busca-binaria-exemplo/">Busca binaria exemplo</a>
-    </li>
-  
-
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/busca-binaria-geral/">Busca binaria geral</a>
-    </li>
-  
-
-      
-    </ul>
-  </li>
-
-      
-        
-  
-    <li>
-      <a href="../../02-Busca-Vetor/aps/">Aps</a>
     </li>
   
 
@@ -377,11 +385,11 @@
                   
                 
                   
-                    <li>01 - ADT</li>
+                    <li>02 - Busca em vetor</li>
                   
                 
                   
-                    <li>ADTs</li>
+                    <li>Aulas</li>
                   
                 
                 <li></li>
@@ -391,15 +399,77 @@
           </div>
           
             <section class="progress-section show">
-<h1 id="map">Map</h1>
-<p>Um <code>Map</code> é uma mapeamento <strong>chave $\rightarrow$ valor</strong> em que cada chave pode estar a associada a um único valor. Note que um valor pode estar associado a várias chaves, mas cada chave só possui um valor. As seguintes operações são suportadas:</p>
-<ul>
-<li><code>NOVO_MAP()</code> - cria um novo <code>Map</code></li>
-<li><code>SET(M, K, V)</code> - associa o valor <code>V</code> à chave <code>K</code>. Se a chave <code>K</code> já existir substitui o valor.</li>
-<li><code>GET(M, K)</code> - devolve o valor associado a chave <code>K</code>. Se não houver retorna <code>VAZIO</code></li>
-<li><code>REMOVE(M, K)</code> - remove o par com chave <code>K</code>. Se não houver não faz nada.</li>
-<li><code>TAMANHO(M)</code> - devolve o número de chaves que possuem um valor associado</li>
-</ul>
+<h1 id="busca-binaria-ii">Busca binária (II)</h1>
+<p>Uma parte importante do nosso algoritmo de busca binária é que ele parece se autoreferenciar. Veja abaixo:</p>
+<p><code>BUSCA_BINARIA_BUG(A)</code></p>
+<ol>
+<li>seleciona o elemento na posição exatamente no meio do vetor</li>
+<li>se esse elemento for <code>0</code>, continua procurando na metade da da direita do vetor </li>
+<li>se esse elemento for <code>1</code>, continua procurando na metade da esquerda do vetor</li>
+<li>repete esse procedimento até encontrar um elemento que é <code>1</code> e tem um vizinho que é <code>0</code>.</li>
+</ol>
+<p>Quando dizemos <strong>repita esse procedimento</strong> em uma parte específica do array estamos fazendo uma referência circular: nosso algoritmo usa ele mesmo para processar a metade do array que contém o elemento procurado. Essa estratégia de escrita de soluções é chamada de <strong>recursão</strong> em computação. </p>
+<p>Um <strong>algoritmo recursivo</strong> faz uma ou mais chamadas a si mesmo. Ou seja, existe em seu design a ideia de que o algoritmo (inteiro) se repete múltiplas vezes. De uma certa maneira, <strong>recursão é uma técnica que representa a ideia de repetição</strong>, mas diferente de loops estamos repetindo o algoritmo inteiro para resolver um subproblema. </p>
+<h2 id="um-primeiro-algoritmo-recursivo">Um primeiro algoritmo recursivo</h2>
+<p>Vamos começar com um exemplo um pouco artificial de algoritmo recursivo: a busca em array de frente para trás. </p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Não existe vantagem em trabalhar com um algoritmo recursivo para este problema. Ele é usado como exemplo pois é familiar para vocês e simples o suficiente. Iremos ver outros algoritmos recursivos no semestre. </p>
+</div>
+<p>Podemos escrever a busca como a seguinte ideia:</p>
+<ol>
+<li>ou o elemento procurado é o primeiro elemento</li>
+<li>ou ele está no restante do array.</li>
+</ol>
+<p>Ou seja, se encontrei ele no índice <code>0</code> então deu certo. Se não procuro no resto do vetor. <strong>Aqui temos uma repetição do algoritmo, mas para uma parte diferente dos dados!</strong>. Vamos estruturar um pouco mais: nosso algoritmo se chamará <code>BUSCA_RECURSIVA</code>, onde <code>A</code> é um array e <code>V</code> é o valor buscado. </p>
+<ol>
+<li>se <code>A[0] = V</code> DEVOLVA 0</li>
+<li>senão faça a busca no vetor começando do índice <code>1</code>.</li>
+</ol>
+<p>Note que agora faríamos o seguinte:</p>
+<ol>
+<li>se <code>A[1] = V</code> DEVOLVA 1</li>
+<li>senão faça a busca no vetor começando do índice <code>2</code>.</li>
+</ol>
+<p>E assim por diante até acabar o array <code>A</code>. Note que não especificamos o que fazer neste caso. Vamos então adicionar uma condição extra: se chegar no fim do array <code>DEVOLVA 0</code>. Essa condição é chamada de <strong>base da recursão</strong> pois define quando o programa para de chamar a si mesmo.</p>
+<p>Veremos agora uma versão mais formalizada: <code>BUSCA_RECURSIVA(A, V, INDICE)</code>. Sempre começamos com <code>INDICE=0</code> e executamos os seguintes passos:</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BUSCA_RECURSIVA(A, V, INDICE)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    SE INDICE = TAMANHO(A) - 1 ENTÃO 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        DEVOLVA 0
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    FIM
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    SE A[INDICE] = V ENTÃO 
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        DEVOLVA 1
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    FIM
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    DEVOLVA BUSCA_RECURSIVA(A, V, INDICE + 1)
+</code></pre></div>
+<h2 id="busca-binaria-recursiva">Busca binária recursiva</h2>
+<p>Podemos usar essa mesma para a busca binária! Vejamos:</p>
+<p><code>BUSCA_BINARIA_BUG(A)</code></p>
+<ol>
+<li>seleciona o elemento na posição exatamente no meio do vetor</li>
+<li>se esse elemento for <code>0</code>, continua procurando na metade da da direita do vetor </li>
+<li>se esse elemento for <code>1</code>, continua procurando na metade da esquerda do vetor</li>
+<li>repete esse procedimento até encontrar um elemento que é <code>1</code> e tem um vizinho que é <code>0</code>.</li>
+</ol>
+<p>Ao invés de usarmos um loop como fizemos na <a href="../busca-binaria-exemplo/">atividade anterior</a>, que ia até que <code>INICIO = FIM-1</code>, agora podemos fazer os passos <code>2</code> e <code>3</code> chamando a própria busca binária novamente. </p>
+<p>Redefinimos o algoritmo então recebendo <code>INICIO</code> e <code>FIM</code> para ser <code>BUSCA_BINARIA_REC(A, V, INICIO, FIM)</code> e ao fazermos então, nos passos 2 e 3, as chamadas recursivas mudamos o intervalo <code>INICIO-FIM</code> analisado. </p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-geral/long_1" id="long_1_0">
+<p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Tente fazer uma versão recursiva da busca binária abaixo.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Isso será feito em aula na lousa. Use o botão "Editar" para fazer anotações após a discussão. </p>
+</div>
+</div>
 
 
 </section>
@@ -409,19 +479,19 @@
       <footer class="ah-footer ah-typeset">
         <div class="ah-footer-nav">
           
-            <a href="../list/"
+            <a href="../busca-binaria-exemplo/"
                class="ah-prev"
-               title="List">
+               title="Busca binaria exemplo">
               <span class="nav-label">Anterior</span>
-              <span class="nav-title">List</span>
+              <span class="nav-title">Busca binaria exemplo</span>
             </a>
           
           
-            <a href="../arrays-e-listas/"
+            <a href="../aps/"
                class="ah-next"
-               title="Arrays e listas">
+               title="Aps">
               <span class="nav-label">Próximo</span>
-              <span class="nav-title">Arrays e listas</span>
+              <span class="nav-title">Aps</span>
             </a>
           
         </div>
