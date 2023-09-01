@@ -36,13 +36,13 @@ nav:
         - modulos/01-ADT/arrays-e-listas.md
         - modulos/01-ADT/listas-e-dicionarios.md
       - modulos/01-ADT/aps.md
-    # - "02 - Busca em vetor":
-    #   - modulos/02-Busca-Vetor/index.md
-    #   - "Aulas":
-    #     - modulos/02-Busca-Vetor/busca-frente-tras.md
-    #     - modulos/02-Busca-Vetor/busca-binaria-exemplo.md
-    #     - modulos/02-Busca-Vetor/busca-binaria-geral.md
-    #   - modulos/02-Busca-Vetor/aps.md
+    - "02 - Busca em vetor":
+      - modulos/02-Busca-Vetor/index.md
+      - "Aulas":
+        - modulos/02-Busca-Vetor/busca-frente-tras.md
+        - modulos/02-Busca-Vetor/busca-binaria-exemplo.md
+        - modulos/02-Busca-Vetor/busca-binaria-geral.md
+      - modulos/02-Busca-Vetor/aps.md
     # - "03 - Ordenação":
     #   - modulos/03-Ordenacao/index.md
     #   - "Aulas":
