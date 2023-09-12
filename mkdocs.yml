@@ -43,13 +43,13 @@ nav:
         - modulos/02-Busca-Vetor/busca-binaria-exemplo.md
         - modulos/02-Busca-Vetor/busca-binaria-geral.md
       - modulos/02-Busca-Vetor/aps.md
-    # - "03 - Ordenação":
-    #   - modulos/03-Ordenacao/index.md
-    #   - "Aulas":
-    #     - modulos/03-Ordenacao/ordenacao-simples.md
-    #     - modulos/03-Ordenacao/quick-sort.md
-    #     - modulos/03-Ordenacao/merge-sort.md
-    #   - modulos/03-Ordenacao/aps.md
+    - "03 - Ordenação":
+      - modulos/03-Ordenacao/index.md
+      - "Aulas":
+        - modulos/03-Ordenacao/ordenacao-simples.md
+        - modulos/03-Ordenacao/quick-sort.md
+        - modulos/03-Ordenacao/merge-sort.md
+      - modulos/03-Ordenacao/aps.md
     # - "04 - Busca em Texto":
     #   - modulos/05-Busca-Texto/index.md
     #   - "Aulas":
