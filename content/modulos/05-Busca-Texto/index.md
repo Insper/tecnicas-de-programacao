@@ -2,9 +2,6 @@
 
 No quarto módulo do curso iremos estudar algoritmos para processar textos
 
-!!! pdf
-    ![](slides.pdf)
-
 
 ## Java
 
