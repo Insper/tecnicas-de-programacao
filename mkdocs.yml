@@ -50,11 +50,11 @@ nav:
         - modulos/03-Ordenacao/quick-sort.md
         - modulos/03-Ordenacao/merge-sort.md
       - modulos/03-Ordenacao/aps.md
-    # - "04 - Busca em Texto":
-    #   - modulos/05-Busca-Texto/index.md
-    #   - "Aulas":
-    #     - modulos/05-Busca-Texto/busca-simples.md
-    #   - modulos/05-Busca-Texto/aps.md
+    - "04 - Busca em Texto":
+      - modulos/05-Busca-Texto/index.md
+      - "Aulas":
+        - modulos/05-Busca-Texto/busca-simples.md
+      - modulos/05-Busca-Texto/aps.md
     # - "05 - Caminhos":
     #   - modulos/06-Caminhos/index.md
     #   - "Aulas":
