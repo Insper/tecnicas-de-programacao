@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Slides - Técnicas de Programação</title>
+        <title>Aps - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -108,7 +108,7 @@
 
             
               
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Módulos</span>
     <ul>
       
@@ -359,6 +359,64 @@
         
   
     <li>
+      <a href="../../03-Ordenacao/">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/ordenacao-simples/">Ordenacao simples</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/quick-sort/">Quick sort</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/merge-sort/">Merge sort</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/aps/">Aps</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">04 - Busca em Texto</span>
+    <ul>
+      
+        
+  
+    <li>
       <a href="../">Index</a>
     </li>
   
@@ -372,23 +430,7 @@
         
   
     <li>
-      <a href="../ordenacao-simples/">Ordenacao simples</a>
-    </li>
-  
-
-      
-        
-  
-    <li>
-      <a href="../quick-sort/">Quick sort</a>
-    </li>
-  
-
-      
-        
-  
-    <li>
-      <a href="../merge-sort/">Merge sort</a>
+      <a href="../busca-simples/">Busca simples</a>
     </li>
   
 
@@ -399,50 +441,28 @@
       
         
   
-    <li>
-      <a href="../aps/">Aps</a>
-    </li>
-  
 
-      
-    </ul>
-  </li>
-
-      
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Aps</span>
+      <ul>
         
-  <li class="ah-togglable-item">
-    <span class="ah-togglable-handle">04 - Busca em Texto</span>
-    <ul>
-      
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#algoritmos-simples-em-strings">Algoritmos simples em Strings</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#buscando-por-padroes-simples">Buscando por padrões simples</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#expressoes-regulares-extra">Expressões regulares (extra)</a>
+              </li>
+            
         
-  
-    <li>
-      <a href="../../05-Busca-Texto/">Index</a>
-    </li>
-  
-
-      
-        
-  <li class="ah-togglable-item">
-    <span class="ah-togglable-handle">Aulas</span>
-    <ul>
-      
-        
-  
-    <li>
-      <a href="../../05-Busca-Texto/busca-simples/">Busca simples</a>
-    </li>
-  
-
-      
-    </ul>
-  </li>
-
-      
-        
-  
-    <li>
-      <a href="../../05-Busca-Texto/aps/">Aps</a>
+      </ul>
     </li>
   
 
@@ -464,6 +484,14 @@
             <ul class="ah-breadcrumbs">
               
                 
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>04 - Busca em Texto</li>
+                  
+                
                 <li></li>
             </ul>
             
@@ -471,111 +499,47 @@
           </div>
           
             <section class="progress-section show">
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-
-<h1 id="tecnicas-de-programacao">Técnicas de Programação</h1>
-<h2 id="divisao-e-conquista">Divisão e Conquista</h2>
-<hr />
-<h1 id="ordenacao-ate-agora">Ordenação até agora</h1>
+<h1 id="aps">APS</h1>
+<p>Nesta APS iremos trabalhar com algoritmos simples para processamento de textos e buscas em textos. </p>
+<h2 id="algoritmos-simples-em-strings">Algoritmos simples em Strings</h2>
+<p>Iniciaremos esse módulo (re)implementando algoritmos simples para processar textos.</p>
 <ul>
-<li>Bubble Sort</li>
-<li>Selection Sort</li>
+<li>sufixo</li>
+<li>prefixo</li>
+<li>indexOf - encontra o primeiro índice em uma string aparece em outra. Se não encontrar retorna -1</li>
+<li>lastIndexOf - igual o acima, mas encontra a última ocorrência</li>
+<li>replace - devolve uma cópia da string recebida substituindo a primeira ocorrência do termo pelo valor passado.</li>
+<li>replace - igual acima, mas substitui todas ocorrências</li>
 </ul>
-<hr />
-<h1 id="bubble-sort">Bubble Sort</h1>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BUBBLE_SORT(A)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    N ← TAMANHO(A)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    FEZ_TROCA ← VERDADEIRO
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ENQUANTO FEZ_TROCA FAÇA
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        FEZ_TROCA ← FALSO
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        PARA CADA I ← 0 ATÉ N-1 FAÇA
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            SE A[I] &gt; A[I+1] ENTÃO
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                TROQUE OS VALORES DE A[I] E A[I+1]
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                FEZ_TROCA ← VERDADEIRO
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            FIM
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        FIM
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    FIM
-</code></pre></div>
-<hr />
-<h1 id="bubble-sort_1">Bubble Sort</h1>
-<p><strong>Características</strong>:</p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Esses algoritmos são muito clássicos e podem ser tanto encontrados na internet quanto completados por ferramentas como <em>chatGPT</em> e <em>Github Copilot</em>. A ideia dessa APS é <strong>não usar essas ferramentas</strong>, já que estamos reimplementando essas coisas de propósito para aprender a trabalhar com strings. </p>
+</div>
+<p>Implemente essas funções na classe <code>br.edu.insper.tecprog.aps04.StringUtils</code>. Em todas as funções você não pode usar os métodos da classe <code>String</code>, tendo em todos os casos que passar caractere a caractere nas strings usando um (ou mais)  <code>for</code></p>
+<h2 id="buscando-por-padroes-simples">Buscando por padrões simples</h2>
+<p>Somente buscar termos em uma string pode não ser exatamente útil assim. Vamos agora criar pequenos programas que buscam por padrões em texto. Os seguintes programas devem ser feitos</p>
 <ul>
-<li>melhor caso =&gt; loop de fora dá uma volta, de dentro faz <code>N</code> iterações</li>
-<li>pior caso =&gt; loop de fora dá <code>N</code> voltas, de dentro faz <code>N</code> iterações</li>
-</ul>
-<p><strong>Pior caso é $N^2$!</strong></p>
-<hr />
-<h1 id="selection-sort">Selection Sort</h1>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>SELECTION_SORT(A)
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    N ← TAMANHO(A)
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    PARA I = 0 ATÉ N - 1 FAÇA
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        MENOR_IDX = I
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        PARA J = I+1 ATÉ N FAÇA
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            SE A[J] &lt; A[MENOR_IDX] FAÇA
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                MENOR_IDX = J
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            FIM
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        FIM
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        TROCA VALORES DE A[I] E A[MENOR_IDX]
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    FIM 
-</code></pre></div>
-<hr />
-<h1 id="selection-sort_1">Selection Sort</h1>
-<p><strong>Características</strong>:</p>
-<ul>
-<li>sempre roda igual =&gt; loop externo roda <code>N-1</code> vezes, loop interno roda <code>N-I</code> vezes para o <code>i</code> atual</li>
-</ul>
-<p><strong>Tempo final também é $N^2$!</strong></p>
-<hr />
-<h1 id="selection-sort-vs-bubble-sort">Selection Sort vs Bubble Sort</h1>
-<ul>
-<li>Se já estiver ordenado (ou quase isso), Bubble é melhor</li>
-<li>Selection faz menos escritas no vetor e isso é mais rápido em geral </li>
-<li>No pior caso ambos são iguais, mas o array que atinge o pior caso é diferente para ambos</li>
-</ul>
-<hr />
-<h1 id="divisao-e-conquista_1">Divisão e Conquista</h1>
-<hr />
-<h1 id="ideia-1-quick-sort">Idéia 1: Quick Sort</h1>
-<ol>
-<li>escolha um elemento do vetor (pode ser o primeiro)</li>
-<li>coloque ele no lugar certo<ul>
-<li>índice <code>i</code> tal que todo $A[j] \leq A[i], j &lt; i$</li>
-<li>índice <code>i</code> tal que todo $A[j] \geq A[i], j &gt; i$</li>
+<li>sumário - encontra todos os cabeçalhos de nível 1 em arquivos Markdown e retorna uma lista deles</li>
+<li>tiraTags - recebe uma string com código HTML e devolve somente o texto, sem tags HTML</li>
+<li>emailsInsper - recebe uma string e devolve uma lista com todos emails Insper dentro dessa string.<ul>
+<li><strong>Dica</strong>: comece procurando por um caractere '@' e depois olhe para os lados esquerdo e direito desse caractere.</li>
 </ul>
 </li>
-<li>ordene a parte à esquerda de <code>i</code></li>
-<li>ordene a parte à direita de <code>i</code></li>
-</ol>
-<hr />
-<h1 id="pratica-1">Prática 1</h1>
-<p><strong>Atividade Quick Sort</strong></p>
-<hr />
-<h1 id="ideia-2-merge-sort">Idéia 2: Merge Sort</h1>
+</ul>
+<p>Assim como no item anterior, faremos todos os esses códigos processando a string caractere por caractere. <strong>Não é permitido usar as funções de <code>String</code></strong>. Nestes exercícios também não devemos usar expressões regulares. Você pode, porém, usar suas implementações da classe <code>StringUtils</code> do exercício anterior.</p>
+<h2 id="expressoes-regulares-extra">Expressões regulares (extra)</h2>
+<p>Fizemos os códigos acima usando algoritmos muito específicos para cada padrão buscado. Apesar disso ser interessante como exercício de algoritmos não é algo que gostaríamos de usar em softwares "de verdade". Uma maneira mais adequada de processar textos e encontrar correspondências com padrões é usar uma <em>Expressão Regular</em>. </p>
+<p>Uma <em>Expressão Regular</em> define um padrão a ser buscado em um texto usando caracteres especiais que representam grupos de caracteres. Por exemplo, a expressão "\d\d" buscará por todas ocorrências de dois dígitos um depois do outro. </p>
+<div class="admonition tip">
+<p class="admonition-title">Dica 1</p>
+<p><a href="https://docs.oracle.com/javase/tutorial/essential/regex/pre_char_classes.html#CHART">Esta tabela</a> contém diversas classes de caracteres que podemos usar em expressões regulares. </p>
+</div>
+<p>A tarefa neste item da APS será:</p>
 <ol>
-<li>divida o vetor em duas metades</li>
-<li>ordene a metade da direita</li>
-<li>ordene a metade da esquerda</li>
-<li>mescle as duas metades ordenadas tal que agora o vetor inteiro esteja ordenado</li>
+<li>Ler o guia da Oracle sobre <a href="https://www.oracle.com/technical-resources/articles/java/regex.html">expressões regulares em Java</a></li>
+<li>Usar o <a href="https://regex101.com/">regex101</a> para testar algumas expressões usando as strings de teste dos exercícios da seção acima</li>
+<li>Preencher <code>StringUtilsRE</code> com código para encontrar os padrões usando expressões regulares. Testes extras para essas funções estão disponíveis no arquivo de testes correspondente. </li>
 </ol>
-<hr />
-<h1 id="pratica-2">Prática 2</h1>
-<p><strong>Atividade Merge Sort</strong></p>
-<hr />
-<h1 id="divisao-e-conquista_2">Divisão e Conquista</h1>
-<ol>
-<li>dividir os dados em partes</li>
-<li>executar o algoritmo em cada parte</li>
-<li>combinar os resultados das partes para o vetor inteiro</li>
-</ol>
-<hr />
-<h1 id="aps">APS</h1>
-<p><strong>Implementações dos algoritmos da aula de hoje e testes grandes do problema</strong></p>
 
 
 </section>
@@ -584,6 +548,13 @@ img[alt~="center"] {
       </main>
       <footer class="ah-footer ah-typeset">
         <div class="ah-footer-nav">
+          
+            <a href="../busca-simples/"
+               class="ah-prev"
+               title="Busca simples">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Busca simples</span>
+            </a>
           
           
         </div>
