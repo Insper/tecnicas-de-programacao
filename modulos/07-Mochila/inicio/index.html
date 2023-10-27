@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Busca frente tras - Técnicas de Programação</title>
+        <title>Inicio - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -294,43 +294,27 @@
 
       
         
-  <li class="ah-togglable-item opened">
+  <li class="ah-togglable-item">
     <span class="ah-togglable-handle">02 - Busca em vetor</span>
     <ul>
       
         
   
     <li>
-      <a href="../">Index</a>
+      <a href="../../02-Busca-Vetor/">Index</a>
     </li>
   
 
       
         
-  <li class="ah-togglable-item opened">
+  <li class="ah-togglable-item">
     <span class="ah-togglable-handle">Aulas</span>
     <ul>
       
         
   
-
-    <li class="active ah-togglable-item opened">
-      <span class="ah-togglable-handle">Busca frente tras</span>
-      <ul>
-        
-          
-            
-            
-              <li class="ah-toc-item">
-                <a href="#comecando-do-inicio">Começando do início</a>
-              </li>
-            
-              <li class="ah-toc-item">
-                <a href="#comecando-do-fim">Começando do fim</a>
-              </li>
-            
-        
-      </ul>
+    <li>
+      <a href="../../02-Busca-Vetor/busca-frente-tras/">Busca frente tras</a>
     </li>
   
 
@@ -338,7 +322,7 @@
         
   
     <li>
-      <a href="../busca-binaria-exemplo/">Busca binaria exemplo</a>
+      <a href="../../02-Busca-Vetor/busca-binaria-exemplo/">Busca binaria exemplo</a>
     </li>
   
 
@@ -346,7 +330,7 @@
         
   
     <li>
-      <a href="../busca-binaria-geral/">Busca binaria geral</a>
+      <a href="../../02-Busca-Vetor/busca-binaria-geral/">Busca binaria geral</a>
     </li>
   
 
@@ -358,7 +342,7 @@
         
   
     <li>
-      <a href="../aps/">Aps</a>
+      <a href="../../02-Busca-Vetor/aps/">Aps</a>
     </li>
   
 
@@ -526,27 +510,47 @@
 
       
         
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">06 - Mochila</span>
     <ul>
       
         
   
     <li>
-      <a href="../../07-Mochila/">Index</a>
+      <a href="../">Index</a>
     </li>
   
 
       
         
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Aulas</span>
     <ul>
       
         
   
-    <li>
-      <a href="../../07-Mochila/inicio/">Inicio</a>
+
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Inicio</span>
+      <ul>
+        
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#mais-caro-primeiro">Mais caro primeiro</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#mais-leve-primeiro">Mais leve primeiro</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#analisando-nossas-solucoes">Analisando nossas soluções</a>
+              </li>
+            
+        
+      </ul>
     </li>
   
 
@@ -554,7 +558,7 @@
         
   
     <li>
-      <a href="../../07-Mochila/backtracking/">Backtracking</a>
+      <a href="../backtracking/">Backtracking</a>
     </li>
   
 
@@ -566,7 +570,7 @@
         
   
     <li>
-      <a href="../../07-Mochila/aps/">Aps</a>
+      <a href="../aps/">Aps</a>
     </li>
   
 
@@ -593,7 +597,7 @@
                   
                 
                   
-                    <li>02 - Busca em vetor</li>
+                    <li>06 - Mochila</li>
                   
                 
                   
@@ -607,44 +611,36 @@
           </div>
           
             <section class="progress-section show">
-<h1 id="buscas-basicas">Buscas básicas</h1>
-<p>Já fizemos busca por valores em um Array quando implementamos o <a href="../../01-ADT/map/">Map</a>. Vamos então criar dois algoritmos para resolver esse problema em específico: buscar o primeiro <code>1</code> em vetores com o abaixo.</p>
-<p><img alt="" src="../array-bug-1.png" /></p>
-<h2 id="comecando-do-inicio">Começando do início</h2>
-<p>Temos a tendência de começar a percorrer um <code>Array</code> pelo índice <code>0</code>. Vamos explorar a busca </p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/02-Busca-Vetor/busca-frente-tras/long_1" id="long_1_0">
-<p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
-<form class="exercise-form">
-<p>Escreva um algoritmo <code>ENCONTRA_BUG(A)</code> que encontra o índice do primeiro commit com problema. Você deve iniciar a busca pelo índice 0.</p>
-<div class="form-elements">
-<div class="grow-wrap"><textarea name="data"></textarea></div>
-
-<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
-</div>
-</form>
-<div class="admonition answer no-indent">
-<p class="admonition-title">Resposta</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ENCONTRA_BUG(A)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    I ← 0
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    ENQUANTO A[I] != 1 E I &lt; TAMANHO(A) FAÇA
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        I ← I + 1
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    FIM
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    DEVOLVA I
-</code></pre></div>
-</div>
-</div>
-<h2 id="comecando-do-fim">Começando do fim</h2>
-<p>Uma solução igualmente válida é começar pelo fim do <code>Array</code>. Não há nada que torne essa escolha melhor ou pior do que a anterior, então iremos fazê-la também. </p>
+<h1 id="primeiras-solucoes">Primeiras soluções</h1>
+<div><center><embed height="300" src="../slides-inicio.pdf" type="application/pdf" width="80%"></embed></center></div>
+<p>Vimos na parte expositiva que a mochila binária é um problema complexo e vamos tentar algumas soluções simples para sua resolução. Duas soluções razoáveis e úteis são</p>
+<ol>
+<li>selecionar os objetos mais caros primeiro. Se houver empate, selecione o de menor índice primeiro.</li>
+<li>selecionar os objetos mais leves primeiro. Se houver empate, selecione o de menor índice primeiro.</li>
+</ol>
+<p>Em todos os algoritmos (e implementações deste módulo receberemos como argumentos:</p>
+<ol>
+<li><code>N</code> - número de objetos</li>
+<li><code>C</code> - capacidade máxima da nossa mochila</li>
+<li><code>V</code> - array com o valor de cada objeto</li>
+<li><code>P</code> - array com o peso de cada objeto</li>
+</ol>
+<p>A saída de cada algoritmo será</p>
+<ol>
+<li><code>O</code> - array de <code>VERDADEIRO/FALSO</code> indicando se o objeto <code>I</code> foi selecionado</li>
+<li><code>VALOR_TOTAL</code></li>
+<li><code>PESO_TOTAL</code>, que deverá ser menor que <code>C</code></li>
+</ol>
+<h2 id="mais-caro-primeiro">Mais caro primeiro</h2>
+<p>A ideia desta heurística é não deixar nenhum objeto valioso para trás! Por isso vamos ser ganaciosos e pegar <strong>primeiro os objetos mais caros</strong>! Se um objeto valioso não couber passamos para os mais baratos e prosseguimos até examinar todos objetos.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica 1</p>
-<p>Em algoritmos é comum explorar várias ideias para resolver o mesmo problema, mesmo que elas sejam equivalentes ou que não existe uma razão particular para escolher uma ou outra.</p>
+<p>Repare que aqui usaremos a mesma ideia do <em>SLEXSORT</em>: ordenamos um array de índices com base no valor de outro array (peso ou valor).  </p>
 </div>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/02-Busca-Vetor/busca-frente-tras/long_2" id="long_2_0">
-<p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/inicio/long_1" id="long_1_0">
+<p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
-<p>Escreva um algoritmo <code>ENCONTRA_BUG_FIM(A)</code> que encontra o índice do primeiro commit com problema. Você deve iniciar a busca pelo índice <code>TAMANHO(A) - 1</code> e buscar por um valor <code>0</code>.</p>
+<p>Escreva abaixo um algoritmo em pseudo-código para implementar a heurística descrita acima. </p>
 <div class="form-elements">
 <div class="grow-wrap"><textarea name="data"></textarea></div>
 
@@ -653,21 +649,42 @@
 </form>
 <div class="admonition answer no-indent">
 <p class="admonition-title">Resposta</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ENCONTRA_BUG_FIM(A)
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    I ← TAMANHO(A) - 1
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    ENQUANTO A[I] != 0 E I &gt;= 0 FAÇA
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        I ← I - 1
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    FIM
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    DEVOLVA I+1
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MAIS_CARO(N, C, V, P)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>IDS &lt;- NOVO_ARRAY(N) TAL QUE IDS[I] = I
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>O &lt;- NOVO_ARRAY(N) INICIALIZADO COM FALSO
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>ORDENA IDS DECRESCENTE USANDO COMO CHAVE O ARRAY V
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>PESO_TOTAL &lt;- 0
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>VALOR_TOTAL &lt;- 0
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>PARA CADA I DE 0 ATÉ N-1 FAÇA
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    SE P[IDS[I]] + PESO_TOTAL &lt; C ENTÃO
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        O[IDS[I]] = VERDADEIRO
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        PESO_TOTAL &lt;- PESO_TOTAL + P[IDS[I]] 
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        VALOR_TOTAL &lt;- VALOR_TOTAL + V[IDS[I]]
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    FIM
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>FIM
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>DEVOLVA O
 </code></pre></div>
 </div>
 </div>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/02-Busca-Vetor/busca-frente-tras/long_3" id="long_3_0">
-<p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-0"> Continuar </button></div>
+</div>
+</section>
+<section class="progress-section">
+<p>No algoritmo acima o passo <code>ORDENAR IDS USANDO COMO CHAVE O ARRAY V</code> usa a ideia de <strong>ordenação indireta</strong>. Ao invés de ordenar <code>IDS</code> por seu valor, o faremos usando o valor de segundo array. Quando formos comparar os índices <code>I</code> e <code>J</code> de <code>IDS</code> faremos a comparação entre <code>V[IDS[I]</code> e <code>V[IDS[J]]</code>. Ou seja, no fim <code>IDS</code> contém os índices de elementos de <code>V</code> tal que a ordem desses elementos é (de)cresente. </p>
+<div class="admonition tip">
+<p class="admonition-title">Dica 2</p>
+<p>Esse truque é muito útil quando precisamos ordenar uma lista de elementos mas não podemos mexer no array/lista que guarda esses elementos.</p>
+</div>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/inicio/long_2" id="long_2_0">
+<p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
-<p>Por conta das características do nosso problema o algoritmo pode ser um pouco mais simples que a busca anterior. O que você notou de diferente em relação ao <code>INDEXOF</code> feito na atividade do <em>Map</em>?</p>
+<p>Quantos passos são feitos neste algoritmo? Qual é a operação mais cara feita?</p>
 <div class="form-elements">
 <div class="grow-wrap"><textarea name="data"></textarea></div>
 
@@ -676,9 +693,97 @@
 </form>
 <div class="admonition answer no-indent">
 <p class="admonition-title">Resposta</p>
-<p>Discutido em sala. Use o botão <code>editar</code> para adicionar seu resumo da discussão após ela acontecer. </p>
+<p>A operação mais cara é a ordenação, que faz uma quantidade de passos proporcional a $n\log n$.</p>
 </div>
 </div>
+<h2 id="mais-leve-primeiro">Mais leve primeiro</h2>
+<p>Vamos testar uma abordagem oposta: <strong>quantidade agora é o foco</strong>. Por isso vamos ser práticos e pegar <strong>o maior número de objetos possível</strong>! Começaremos agora pelos objetos mais leves e vamos torcer para que a quantidade grande de objetos selecionados resulte em uma mochila com alto valor.</p>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/inicio/long_3" id="long_3_0">
+<p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Escreva abaixo um algoritmo em pseudo-código para implementar a heurística descrita acima. </p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>MAIS_LEVE(N, C, V, P)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>IDS &lt;- NOVO_ARRAY(N) TAL QUE IDS[I] = I
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>O &lt;- NOVO_ARRAY(N) INICIALIZADO COM FALSO
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>ORDENA IDS CRESCENTE USANDO COMO CHAVE O ARRAY P
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>PESO_TOTAL &lt;- 0
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>VALOR_TOTAL &lt;- 0
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>PARA CADA I DE 0 ATÉ N-1 FAÇA
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    SE P[IDS[I]] + PESO_TOTAL &lt; C ENTÃO
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        O[IDS[I]] = VERDADEIRO
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        PESO_TOTAL &lt;- PESO_TOTAL + P[IDS[I]] 
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        VALOR_TOTAL &lt;- VALOR_TOTAL + V[IDS[I]]
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    FIM
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>FIM
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>DEVOLVA O
+</code></pre></div>
+</div>
+</div>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-1"> Continuar </button></div>
+</div>
+</section>
+<section class="progress-section">
+<p>Você deve ter percebido que as mudanças foram mínimas! Isso ocorre pois só mudamos o critério de preenchimento da mochila. O algoritmo em sí é o mesmo.</p>
+<h2 id="analisando-nossas-solucoes">Analisando nossas soluções</h2>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/inicio/long_4" id="long_4_0">
+<p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Crie uma entrada em que a heurística do mais valioso seja muito melhor que a do mais leve. Escreva abaixo as saídas de cada programa.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/inicio/long_5" id="long_5_0">
+<p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Crie uma entrada em que a heurística do mais leve seja muito melhor que a do mais valioso. Escreva abaixo as saídas de cada programa.</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/inicio/long_6" id="long_6_0">
+<p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Com base nas suas respostas acima, em quais situações a heurística do mais valioso é melhor?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/inicio/long_7" id="long_7_0">
+<p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Com base nas suas respostas acima, em quais situações a heurística do mais leve é melhor?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+</div>
+<p>Agora que já entendemos melhor nossas soluções, siga para a implementação na <a href="../aps/">página da APS</a></p>
 
 
 </section>
@@ -696,11 +801,11 @@
             </a>
           
           
-            <a href="../busca-binaria-exemplo/"
+            <a href="../backtracking/"
                class="ah-next"
-               title="Busca binaria exemplo">
+               title="Backtracking">
               <span class="nav-label">Próximo</span>
-              <span class="nav-title">Busca binaria exemplo</span>
+              <span class="nav-title">Backtracking</span>
             </a>
           
         </div>
