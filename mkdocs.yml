@@ -62,9 +62,9 @@ nav:
         - modulos/06-Caminhos/dfs.md
         - modulos/06-Caminhos/bfs.md
       - modulos/06-Caminhos/aps.md
-    # - "06 - Mochila":
-    #   - modulos/07-Mochila/index.md
-    #   - "Aulas":
-    #       - modulos/07-Mochila/inicio.md
-    #       - modulos/07-Mochila/backtracking.md
-    #   - modulos/07-Mochila/aps.md
+    - "06 - Mochila":
+      - modulos/07-Mochila/index.md
+      - "Aulas":
+          - modulos/07-Mochila/inicio.md
+          - modulos/07-Mochila/backtracking.md
+      - modulos/07-Mochila/aps.md
