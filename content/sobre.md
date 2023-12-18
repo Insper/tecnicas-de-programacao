@@ -7,34 +7,33 @@ O curso está organizado em Módulos, cada um focado em uma Técnica de Programa
 * estudo de propriedades computacionais da técnica estudada
 * atividade prática de implementação em Java
 
-Todas as atividades práticas de implementação (APS) serão entregues via repositório no GitHub. Uma página específica em cada módulo é dedicada a explicar a composição de nota de cada APS.
-
-## Entregas
-
-Todos os exercícios serão entregues usando Github Classroom. Cada aluno terá um repositório individual (e privado) que será usado durante todo o semestre. Ele terá um projeto Maven pré-configurado e as APS consistirão em modificar partes específicas indicadas no enunciado e código. Veja o [guia de configuração das entregas](modulos/00-Algoritmos/entregas.md). 
+Teremos exercícios teóricos e de implementação. Toda a parte de avaliação e acompanhamento da disciplina estará na [área do curso no PrairieLearn]({{ PL_url_course }}). Em cada módulo a pontuação dos trabalhos é explicada com detalhes.
 
 
 ## Horários
 
-- **TERÇA**: 15:45
+- **QUARTA**: 13:30
 - **SEXTA**: 13:30
-- Atendimento **SEXTA** 07:30
+- Atendimento **SEXTA** 08:00
 
 ## Aprovação
 
 A nota final é calculada com a seguinte fórmula
 
 ```
-NF = 35%APS + 25%PI + 40%PF
+NF = 25%APS + 25%PI + 50%PF
 ```
 
 Algumas condições são necessárias para aprovação
 
-1. no máximo uma APS pode: não ser entregue OU ser entregue com atraso OU obter nota inferior a 7.0
-2. (PI+PF)/2 deve ser maior ou igual a 5
+1. `(PI+2*PF)/3 >= 5` 
+2. `PI >= 3.5 E PF >= 3.5`
 
-Caso algum desses critérios não seja cumprido, o aluno será reprovado.
+Caso a primeira condição seja verdade mas não a segunda, será possível fazer uma avaliação `DELTA` com o conteúdo da prova com nota `< 3.5`. Casos excepcionais podem ser considerados para `DELTA`
 
-## Calendário do semestre
+!!! warning "Atenção"
+    A prova `DELTA` é no mesmo dia e horário da `SUB`. Ou seja, se não fez uma das provas não tem `DELTA`.
 
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=America%2FSao_Paulo&mode=AGENDA&showTabs=1&showCalendars=0&showTz=0&showPrint=0&showDate=1&hl=pt_BR&title&src=NjRlM2RhZWVjMTcyZjg0MmZhMjdiYmU4MjliZGE1MDIyODU4OGQwOWFlNmUyYWY1OWNjNTUxZDYxZTBkMDhmNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+
+

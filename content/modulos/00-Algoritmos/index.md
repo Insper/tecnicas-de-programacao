@@ -5,9 +5,6 @@ No primeiro módulo do curso iremos fazer uma introdução a Algoritmos e Java.
 !!! pdf
     ![](slides.pdf)
 
-!!! warning
-    Antes de continuar é importante [configurar seu repositório de entregas](entregas.md). Os códigos de suporte para as atividades e exemplos são disponibilizados via esse repositório.
-
 ## Atividades
 
 - [Atividade 01](pseudo-codigo-e-java.md)
@@ -19,4 +16,4 @@ Os guias de Java estão no menu do lado esquerdo. Eles serão referenciados dent
 
 ## Entregas
 
-Todos os exercícios de código deste módulo são para entrega.
+Todos os exercícios de código deste módulo são para entrega e estão disponíveis na área da matéria do PrairieLearn.
