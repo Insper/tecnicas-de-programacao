@@ -6,6 +6,14 @@ Nossa disciplina tem um mascote: o **javaporco**. Ele foi escolhido em homenagem
 
 ![](javaporco.png)
 
+!!! people "Equipe 2024"
+    - ![Igor](css/igor.png) **Igor Montagner** *Professor*
+    - **Eduardo Vaz** *Ninja*
+    - **Alexandre Magno** *Ninja*
+    
+!!! people "Oferecimentos anteriores"
+    - ![Maciel](css/maciel.jpg) **Maciel Vidal** *Professor*
+
 ## Links importantes
 
 * [Blackboard da disciplina](https://insper.blackboard.com/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_44410_1&handle=cp_announcements&mode=cpview): usado somente para avisos e notas. 

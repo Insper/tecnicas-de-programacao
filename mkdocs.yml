@@ -7,7 +7,11 @@ extra:
     PL_url_course: TODO
 
 extra_javascript:
-  - js/tabs.js
+  - js/cc.js
+
+extra_css:
+  - css/components.css
+
 
 nav:
   - 'Home': index.md
