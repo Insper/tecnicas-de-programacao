@@ -10,11 +10,14 @@ O curso está organizado em Módulos, cada um focado em uma Técnica de Programa
 Teremos exercícios teóricos e de implementação. Toda a parte de avaliação e acompanhamento da disciplina estará na [área do curso no PrairieLearn]({{ PL_url_course }}). Em cada módulo a pontuação dos trabalhos é explicada com detalhes.
 
 
-## Horários
+## Horários e datas
 
 - **QUARTA**: 13:30
 - **SEXTA**: 13:30
 - Atendimento **SEXTA** 08:00
+
+Os temas das aulas estão disponíveis no arquivo [datas.ics](datas.ics), que pode ser importado no Google Calendar, Outlook e afins. Isso pode ajudar na organização pessoal de vocês e vale bastante a pena. Feriados e provas também estão inclusos. 
+
 
 ## Aprovação
 
@@ -33,7 +36,5 @@ Caso a primeira condição seja verdade mas não a segunda, será possível faze
 
 !!! warning "Atenção"
     A prova `DELTA` é no mesmo dia e horário da `SUB`. Ou seja, se não fez uma das provas não tem `DELTA`.
-
-
 
 
