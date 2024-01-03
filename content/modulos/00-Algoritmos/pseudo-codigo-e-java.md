@@ -12,6 +12,8 @@ Neste roteiro iremos criar nossos primeiros algoritmos em Pseudo-Código e explo
     - [Java no PrairieLearn](java/infra.md): básico da infra usada na disciplina.
     - [Primeiro contato com Java](java/primeiro-contato.md) 
 
+    Feitos esses dois guias, abre o *Módulo 0* no PrairieLearn e vá fazendo os exercícios. Cada exercício de código tem um workspace no PrairieLearn com testes automatizados que checam sua implementação.
+
 
 ## O esqueleto de um algoritmo
 
@@ -53,8 +55,7 @@ NOVO_TEXTO := LER_TEXTO()
 
 Vamos aplicar esse formato para dois problemas simples e já implementá-los em Java.
 
-!!! warning
-    Aqui pode ser útil reler o [modelo de exercício em Java](java/primeiro-contato.md#implementando-uma-funcao)
+TODO: PAREI REVISÃO AQUI
 
 ### Área do triângulo
 

@@ -4,7 +4,7 @@ site_name: Técnicas de Programação
 
 extra:
   custom_variables:
-    PL_url_course: TODO
+    PL_url_course: https://us.prairielearn.com/pl/course_instance/146836
 
 extra_javascript:
   - js/cc.js
