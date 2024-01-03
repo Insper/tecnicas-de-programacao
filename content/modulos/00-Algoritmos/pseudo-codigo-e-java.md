@@ -6,15 +6,12 @@ show_reset_button: true
 
 Neste roteiro iremos criar nossos primeiros algoritmos em Pseudo-Código e explorar sua "tradução" para Java. Conforme o roteiro avança haverá leituras (curtas) recomendadas sobre sintaxe e semântica de Java.
 
-!!! warning
-    São requisitos para esta aula ser capaz de rodar códigos em Java. Os seguintes roteiros já devem estar cumpridos
+!!! warning "Pré-requisitos"
+    Esta aula é feita em conjunto com os exercício no PrairieLearn. Você precisa ter feito as seguintes atividades antes de prosseguir:
 
-    - [Instalação](java/instalacao.md)
-    - [Primeiro contato](java/primeiro-contato.md)
+    - [Java no PrairieLearn](java/infra.md): básico da infra usada na disciplina.
+    - [Primeiro contato com Java](java/primeiro-contato.md) 
 
-    Além disso, todos os exercícios desse módulo são para entrega. Portanto, é bom já [configurar o repositório de entregas](entregas.md).
-
-Agora que já temos um primeiro contato com Java, iremos escrever
 
 ## O esqueleto de um algoritmo
 
@@ -37,16 +34,20 @@ Todo algoritmo é formado pelo seguinte "esqueleto":
 NOME_DO_ALGORITMO(I, S1)
 
 # Atribuições e operações matemáticas
-MAIS_UM ← I + 1
+MAIS_UM := I + 1
 
 # Saída de texto
 PRINT(MAIS_UM)
 
 # Entrada de dados
-NOVO_INT ← LER_INTEIRO()
-NOVO_FLOAT ← LER_FRACIONARIO()
-NOVO_TEXTO ← LER_TEXTO()
+NOVO_INT := LER_INTEIRO()
+NOVO_FLOAT := LER_FRACIONARIO()
+NOVO_TEXTO := LER_TEXTO()
 ```
+
+
+!!! warning "Atenção" 
+    Usamos `:=` para atribuição e `=` para comparações.
 
 --------
 
@@ -122,15 +123,15 @@ $$d = \frac{v^2}{2g} \left(1 + \sqrt{1 + \frac{2g y_0 }{ v^2 (\sin(\theta) )^2 }
         ```
         DISTANCIA_LANCAMENTO(V, THETA, Y0)
 
-        G ← 9.8
+        G := 9.8
 
-        PARTE1 ← (V * V) / (2 * G)
+        PARTE1 := (V * V) / (2 * G)
 
         SENO_THETA = SENO(THETA)
-        PARTE2_1 ← (2 * G * Y0) / (V * V * SENO_THETA * SENO_THETA)
-        PARTE2_2 ← 1 + RAIZ(1 + PARTE2_1)
+        PARTE2_1 := (2 * G * Y0) / (V * V * SENO_THETA * SENO_THETA)
+        PARTE2_2 := 1 + RAIZ(1 + PARTE2_1)
         
-        PARTE3 ← SENO(2 * THETA)
+        PARTE3 := SENO(2 * THETA)
         
         DEVOLVE PARTE1 * PARTE2_2 * PARTE_3
         ```
@@ -182,7 +183,7 @@ Expressamos a ideia de condicional em Pseudo código como abaixo. A tradução J
 
 !!! warning
     - Não se esqueça que em java os valores booleanos são `#!java true` e `#!java false` (com letras minúsculas).
-    - Em pseudo código usamos `=` para comparar, já que a atribuição usa ←
+    - Em pseudo código usamos `=` para comparar, já que a atribuição usa :=
     - Em Java usamos `==` para comparar `int`, `double` e `boolean`
     - Se o tipo não for um dos acima, usamos o método `equals()`
 
@@ -269,8 +270,8 @@ onde $g=9.8 m/s^2$. Os possíveis valores de retorno são `'Muito perto'`, `'Mui
         ```
         ACERTOU_JACA(V, THETA)
 
-        G ← 9.8
-        DISTANCIA ← (V*V * SENO(2*THETA)) / G
+        G := 9.8
+        DISTANCIA := (V*V * SENO(2*THETA)) / G
 
         SE DISTANCIA < 98 ENTÃO
             DEVOLVA "Muito perto"
@@ -329,12 +330,12 @@ Escreva uma função que recebe um número e devolve a quantidade de vezes que o
     !!! answer
         ```
         QUANTOS UNS(N)
-            CONTADOR ← 0
+            CONTADOR := 0
 
             ENQUANTO N > 0 FAÇA
                 DIGITO = N % 10 # resto da divisão de N por 10 
                 SE DIGITO = 1 ENTÃO
-                    CONTADOR ← CONTADOR + 1
+                    CONTADOR := CONTADOR + 1
                 FIM
                 N = N / 10
             FIM
@@ -394,10 +395,10 @@ Faça uma função que recebe o valor de $n$ e retorna o resultado da fórmula a
     !!! answer
         ```
         CALCULA_PI(N)
-            PI_2 ← 0
+            PI_2 := 0
 
             PARA CADA I=1 ATÉ N+1 FAÇA
-                PI_2 ← PI_2 + 6 / (I * I)
+                PI_2 := PI_2 + 6 / (I * I)
             FIM 
             
             DEVOLVE RAIZ(PI_2)
@@ -429,10 +430,10 @@ Escreva uma função que recebe um número $n$ e devolve o valor de $n! = 1\cdot
     !!! answer
         ```
         FATORIAL(N)
-            FAT ← 1
+            FAT := 1
 
             PARA CADA I=1 ATÉ N+1 FAÇA
-                FAT ← FAT * I
+                FAT := FAT * I
             FIM
 
             DEVOLVE FAT
