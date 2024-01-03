@@ -55,7 +55,6 @@ NOVO_TEXTO := LER_TEXTO()
 
 Vamos aplicar esse formato para dois problemas simples e já implementá-los em Java.
 
-TODO: PAREI REVISÃO AQUI
 
 ### Área do triângulo
 
@@ -85,7 +84,7 @@ Faça uma função que calcula a área de um triângulo de base b e altura h, el
         ```
 
 !!! exercise self id_algoritmo_pemdas_triangulo_java
-    Vamos agora implementar esse algoritmo em Java. Preencha o esqueleto na classe `br.edu.insper.tecprog.aps0.Triangulo`, implemente o algoritmo acima e rode os testes.
+    Vamos agora implementar esse algoritmo em Java. Abra o exercício *Área do Triângulo* no PrairieLearn e converta o algoritmo desenvolvido acima para Java. A função já está pronta, é só ir e completar.
 
     **Dicas**: 
 
@@ -93,6 +92,8 @@ Faça uma função que calcula a área de um triângulo de base b e altura h, el
     - após cada linha você deve colocar um `;`. Isso significa que a instrução atual acabou e a próxima deve ser lida
 
 ### Lançamento de Projétil
+
+TODO: PAREI REVISÃO AQUI
 
 Faça uma função que calcule a distância alcançada por um projétil lançado com velocidade $v$ em um ângulo $\theta$, de uma altura $y_0$. A distância é dada pela fórmula. Use $g=9.8$.
 

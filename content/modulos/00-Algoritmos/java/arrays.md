@@ -13,14 +13,14 @@ Vejamos então como escrever essas operações com Pseudo-código e com Java:
 
     ```
     # Cria array com 10 int
-    ARR ← NOVO_ARRAY(10)
+    ARR := NOVO_ARRAY(10)
 
     # Acessa elementos do array
-    ARR[0] ← 5
-    ARR[1] ← ARR[0] + 2;
+    ARR[0] := 5
+    ARR[1] := ARR[0] + 2;
 
     # tamanho do array. Nunca muda
-    N ← TAMANHO(ARR) # 10
+    N := TAMANHO(ARR) # 10
     ```
 
 === "Java"

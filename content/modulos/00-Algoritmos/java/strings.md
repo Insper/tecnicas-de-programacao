@@ -4,25 +4,25 @@ Strings em Java possuem recursos muito parecidos com o que já conhecemos de Pyt
 
 === "Pseudo código" 
     ```
-    S ← "Bla bla bla"
+    S := "Bla bla bla"
 
     # mostra no terminal
     PRINT("Valor de s:" + S)
 
     # cópia de trechos da string
-    bla1 ← SUBSTRING(S, 0, 3) # Bla
-    bla3 ← SUBSTRING(S, 8) # Vai até o fim se não passar o segundo
+    bla1 := SUBSTRING(S, 0, 3) # Bla
+    bla3 := SUBSTRING(S, 8) # Vai até o fim se não passar o segundo
 
-    LOWER ← LOWERCASE(S)
+    LOWER := LOWERCASE(S)
 
     # checa se a string é vazia
-    v ← EH_VAZIO(S)
+    v := EH_VAZIO(S)
 
     # checa se a string é só de espaços em branco
-    v ← SO_ESPACOS(S)
+    v := SO_ESPACOS(S)
     
     # checa se duas strings são iguais
-    igual ← S = bla1
+    igual := S = bla1
     ```
 
 === "Java"

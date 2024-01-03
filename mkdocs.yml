@@ -19,16 +19,14 @@ nav:
   - Módulos:
     - "00 - Algoritmos":
       - modulos/00-Algoritmos/index.md
-      # - modulos/00-Algoritmos/entregas.md
-      # - modulos/00-Algoritmos/pseudo-codigo-e-java.md
+      - modulos/00-Algoritmos/pseudo-codigo-e-java.md
       # - modulos/00-Algoritmos/algoritmos-com-arrays-e-strings.md
-      # - "Java":
-      #   - modulos/00-Algoritmos/java/index.md
-      #   - modulos/00-Algoritmos/java/instalacao.md
-      #   - modulos/00-Algoritmos/java/primeiro-contato.md
-      #   - modulos/00-Algoritmos/java/strings.md
-      #   - modulos/00-Algoritmos/java/arrays.md
-      #   - modulos/00-Algoritmos/java/interfaces.md
+      - "Java":
+        - modulos/00-Algoritmos/java/index.md
+        - modulos/00-Algoritmos/java/primeiro-contato.md
+        - modulos/00-Algoritmos/java/strings.md
+        - modulos/00-Algoritmos/java/arrays.md
+        - modulos/00-Algoritmos/java/interfaces.md
     # - "01 - ADT":
     #   - modulos/01-ADT/index.md
     #   - "ADTs":
