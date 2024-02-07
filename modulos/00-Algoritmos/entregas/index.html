@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      
+        <title>Entregas da disciplina - Técnicas de Programação</title>
+      
+    
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+    <script>
+      // SETUP GLOBAL CONSTANTS
+      var base_url = '../../..';
+      
+      var telemetryEnabled = false;
+      var backendUrl = "";
+      var courseSlug = "";
+      
+      
+      var dashboardEnabled = false;
+      var tagTree = {};
+      
+
+      // SETUP PLUGIN
+      window.initialized = false;
+      if (!window.initializers) window.initializers = [];
+      window.registerInitializer = (initialize) => {
+        if (window.initialized) initialize();
+        else window.initializers.push(initialize);
+      };
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://unpkg.com/hyperscript.org"></script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="../../../assets/js/main.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="ah-main-container">
+      <header class="ah-header">
+        <button class="ah-menu-btn ah-button ah-button--borderless"
+                aria-label="toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+</svg>
+        </button>
+        <a href="../../.."
+           title="Técnicas de Programação"
+           class="ah-logo"
+           aria-label="Técnicas de Programação">
+          Técnicas de Programação
+        </a>
+        <div class="ah-header--right">
+          
+          
+          
+          <button id="resetHandoutButton">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+</svg></span>
+          </button>
+          
+
+          
+        </div>
+      </header>
+      <nav class="ah-navigation preload">
+        <div class="ah-nav-container">
+          <button class="ah-menu-btn ah-button ah-button--borderless close-menu"
+                  aria-label="close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+  <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+  <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+</svg>
+          </button>
+          <ul class="ah-nav-body">
+            
+              
+  
+    <li>
+      <a href="../../..">Home</a>
+    </li>
+  
+
+            
+              
+  
+    <li>
+      <a href="../../../sobre/">Sobre a Disciplina</a>
+    </li>
+  
+
+            
+              
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Módulos</span>
+    <ul>
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">00 - Algoritmos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Introdução</a>
+    </li>
+  
+
+      
+        
+  
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Entregas da disciplina</span>
+      <ul>
+        
+          <li class="ah-toc-item">
+            <a href="#entregas-da-disciplina">Entregas da disciplina</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#primeiro-acesso">Primeiro acesso</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#recebendo-atualizacoes-e-novas-aps">Recebendo atualizações e novas APS</a>
+          </li>
+          
+        
+      </ul>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../pseudo-codigo-e-java/">Primeiros algoritmos</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../algoritmos-com-arrays-e-strings/">Algoritmos com dados compostos</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Java</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../java/">Referência</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/instalacao/">Instalação (Java)</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/primeiro-contato/">Primeiro contato</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/strings/">Strings</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/arrays/">Arrays</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/interfaces/">Interfaces</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">01 - ADT</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">ADTs</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/array/">Array</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/list/">List</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/map/">Map</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/arrays-e-listas/">Aula 01 - arrays e Listas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/listas-e-dicionarios/">Aula 02 - Dicionários</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../01-ADT/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">02 - Busca em vetor</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/busca-frente-tras/">Buscas básicas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/busca-binaria-exemplo/">Busca binária (I)</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/busca-binaria-geral/">Busca binária (II)</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../02-Busca-Vetor/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">03 - Ordenação</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/ordenacao-simples/">Algoritmos (simples) de ordenação</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/quick-sort/">Quick sort</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/merge-sort/">Merge Sort</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">04 - Busca em Texto</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/busca-simples/">Busca em Strings</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../05-Busca-Texto/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">05 - Caminhos</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/seguir-paredes/">Algoritmo de Seguir Paredes</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/dfs/">Busca em Profundidade</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/bfs/">Busca em Largura</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../06-Caminhos/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">06 - Mochila</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../07-Mochila/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../07-Mochila/inicio/">Primeiras soluções</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../../07-Mochila/backtracking/">Encontrando a melhor solução com Backtracking</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+        
+  
+    <li>
+      <a href="../../07-Mochila/aps/">APS</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+            
+          </ul>
+        </div>
+      </nav>
+      <main class="ah-content ah-typeset">
+        
+          <div class="ah-title-box">
+            <ul class="ah-breadcrumbs">
+              
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>00 - Algoritmos</li>
+                  
+                
+                <li>Entregas da disciplina</li>
+            </ul>
+            
+            
+          </div>
+          
+            <section class="progress-section show">
+<h1 id="entregas-da-disciplina">Entregas da disciplina</h1>
+<p>Todas as entregas da disciplina serão feita via um repositório Git para cada aluno. Acesse abaixo para aceitar o convite e iniciar seu trabalho. </p>
+<p><a class="ah-button" href="https://classroom.github.com/a/23CvwUVS">Link de convite</a></p>
+<h2 id="primeiro-acesso">Primeiro acesso</h2>
+<p>Todo o código de suporte da disciplina está público no repositório <a href="https://github.com/Insper/tecprog-aps">Tecnicas de Programação APS</a>. Nesse guia iremos configurar seu repositório privado para acompanhar esse repo público.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Você deve ter recebido um repo novo privado. Copie o endereço do seu repo abaixo. Ele será usado no restante do guia. </p>
+<p><img alt="" src="../endereco-repo-privado.png" /></p>
+</div>
+<p>Para começar, crie uma pasta nova para seu repositório de entregas e inicialize um repo vazio:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>entregas-tecprog
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>entregas-tecprog
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>init
+</code></pre></div>
+<p>Primeiro vamos adicionar o repositório remoto dos arquivos de suporte e baixar o branch <code>main</code> (que contém os arquivos deste semestre)</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>insper<span class="w"> </span>https://github.com/Insper/tecprog-aps.git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>fetch<span class="w"> </span>insper
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+</code></pre></div>
+<p>Agora vamos adicionar o repositório das suas entregas e já enviar o código de suporte:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>entregas<span class="w"> </span>endereco_do_seu_repo_privado
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>entregas<span class="w"> </span>main
+</code></pre></div>
+<p>Pronto! Com isso você já deve ter seu repositório local configurado e apontando para dois repositórios remotos:</p>
+<ul>
+<li><strong>insper</strong>: este repo contém todo o código de suporte para as atividades. É compartilhado por toda a sala e ninguém tem permissão de dar push nele.</li>
+<li><strong>entregas</strong>: este repo é só seu e contém seu trabalho apenas. Aqui irão somente as modificações feitas por você :)</li>
+</ul>
+<p>Você pode checar se tudo deu certo rodando <code>git branch -avv</code>. Você deve ver algo parecido como o abaixo:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>deck@ubuntu-dev:~/Documents/entregas-tecprog$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-avv
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>*<span class="w"> </span>main<span class="w">                  </span><span class="m">7329318</span><span class="w"> </span><span class="o">[</span>entregas/main<span class="o">]</span><span class="w"> </span>Add<span class="w"> </span>readme.md
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>remotes/entregas/main<span class="w"> </span><span class="m">7329318</span><span class="w"> </span>Add<span class="w"> </span>readme.md
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>remotes/insper/main<span class="w">   </span><span class="m">7329318</span><span class="w"> </span>Add<span class="w"> </span>readme.md
+</code></pre></div>
+<div class="admonition exercise self-progress" data-slug="modulos/00-Algoritmos/entregas/exercise_1" id="exercise_1_0">
+<p class="admonition-title">Exercício 1</p>
+<form class="exercise-form">
+<p>Para testar, edite o arquivo <code>README.md</code> e </p>
+<ul>
+<li>adicione seu nome no local indicado</li>
+<li>faça um commit</li>
+<li>envie as modificações para seu repositório privado com <code>git push</code></li>
+</ul>
+<div class="form-elements">
+<input type="hidden" name="data" value="OK" />
+<input class="ah-button ah-button--primary" type="submit" name="Enviar" value="Marcar como feito" />
+</div>
+</form>
+</div>
+<h2 id="recebendo-atualizacoes-e-novas-aps">Recebendo atualizações e novas APS</h2>
+<p>Ao longo do semestre será liberado código das novas APS e possíveis atualizações nos testes. Siga este guia para atualizar seus arquivos de suporte.</p>
+<p>Vamos iniciar baixando as novidades do repositório de suporte:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>insper
+</code></pre></div>
+<p>Vamos então incorporar as novidades no seu repositório local e enviar os novos arquivos pro seu repo privado. </p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>switch<span class="w"> </span>main
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>merge<span class="w"> </span>insper/main
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git<span class="w"> </span>push
+</code></pre></div>
+<div class="admonition exercise self-progress" data-slug="modulos/00-Algoritmos/entregas/exercise_2" id="exercise_2_0">
+<p class="admonition-title">Exercício 2</p>
+<form class="exercise-form">
+<p>Agora é só verificar que seus commits aparecem no seu repositório privado. Você pode ver isso rodando <code>git log</code>. Algo como o abaixo deve aparecer. Também pode checar online se os commits estão no repositório do <em>Github</em>.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>commit<span class="w"> </span>f0a444787de5bcf6c869cfda043e069a20a3300a<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main,<span class="w"> </span>entregas/main<span class="o">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Merge:<span class="w"> </span><span class="m">1996777</span><span class="w"> </span>0f42021
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Author:<span class="w"> </span>Igor<span class="w"> </span>Montagner<span class="w"> </span>&lt;igordsm@gmail.com&gt;
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:50:35<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span>Merge
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>commit<span class="w"> </span>1996777386d12aea6c2869e7943c06e6895e3b08
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Author:<span class="w"> </span>Steam<span class="w"> </span>Deck<span class="w"> </span>User<span class="w"> </span>&lt;deck@ubuntu-dev.steamdeck&gt;
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:47:54<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span>Add<span class="w"> </span>meu<span class="w"> </span>nome
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>commit<span class="w"> </span>0f420212b147d5f2a60c652b645127f4276624e4<span class="w"> </span><span class="o">(</span>insper/main<span class="o">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Author:<span class="w"> </span>Igor<span class="w"> </span>Montagner<span class="w"> </span>&lt;igordsm@gmail.com&gt;
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:46:28<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span>Adicionando<span class="w"> </span>arquivos<span class="w"> </span>iniciais<span class="w"> </span>para<span class="w"> </span>APS01
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>commit<span class="w"> </span>73293182f28cd7f11796c5c01ccb7231d817554a
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>Author:<span class="w"> </span>Igor<span class="w"> </span>Montagner<span class="w"> </span>&lt;igordsm@gmail.com&gt;
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>Date:<span class="w">   </span>Tue<span class="w"> </span>Jan<span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">11</span>:32:50<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-0300
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">    </span>Add<span class="w"> </span>readme.md
+</code></pre></div>
+<div class="form-elements">
+<input type="hidden" name="data" value="OK" />
+<input class="ah-button ah-button--primary" type="submit" name="Enviar" value="Marcar como feito" />
+</div>
+</form>
+</div>
+
+
+</section>
+          
+        
+      </main>
+      <footer class="ah-footer ah-typeset">
+        <div class="ah-footer-nav">
+          
+            <a href="../"
+               class="ah-prev"
+               title="Introdução">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Introdução</span>
+            </a>
+          
+          
+            <a href="../pseudo-codigo-e-java/"
+               class="ah-next"
+               title="Primeiros algoritmos">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">Primeiros algoritmos</span>
+            </a>
+          
+        </div>
+      </footer>
+    </div>
+    
+      <script src="../../../js/tabs.js"></script>
+    
+  </body>
+</html>
