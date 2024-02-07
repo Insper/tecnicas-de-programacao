@@ -14,7 +14,7 @@ Teremos exercícios teóricos e de implementação. Toda a parte de avaliação 
 
 - **QUARTA**: 13:30
 - **SEXTA**: 13:30
-- Atendimento **SEXTA** 08:00
+- Atendimento **SEGUNDA** 09:45
 
 Os temas das aulas estão disponíveis no arquivo [datas.ics](datas.ics), que pode ser importado no Google Calendar, Outlook e afins. Isso pode ajudar na organização pessoal de vocês e vale bastante a pena. Feriados e provas também estão inclusos. 
 

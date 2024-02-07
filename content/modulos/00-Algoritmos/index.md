@@ -2,13 +2,15 @@
 
 No primeiro módulo do curso iremos fazer uma introdução a Algoritmos e Java.
 
-!!! pdf
-    ![](slides.pdf)
+<center>
+<embed width="500" height="400" src="slides.html"></embed>
+</center>
+
 
 ## Atividades
 
 - [Atividade 01](pseudo-codigo-e-java.md)
-- [Atividade 02](algoritmos-com-arrays-e-strings.md)
+<!-- - [Atividade 02](algoritmos-com-arrays-e-strings.md)-->
 
 ## Java
 

@@ -2,8 +2,8 @@
 
 Usaremos um tipo especial de exercício chamado **Workspace**, em que abriremos um ambiente do VSCode já configurado para programar. A princípio será um ambiente quase idêntico ao que seria instalado no PC de vocês, porém acessível via Browser e pré-configurado. 
 
-
-<ah-button primary href="{{ PL_url_course }}">Entrar no PrairieLearn</ah-button>
+[Entrar no PrairieLearn]({{ PL_url_course }}){ .ah-button .ah-button--primary}
+<!--<ah-button primary href="{{ PL_url_course }}">Entrar no PrairieLearn</ah-button>-->
 
 Você deve ver o *Módulo 0* já disponível e com entrega para 16/02. Ao entrar nele haverão diversos exercícios de codificação. Vamos entrar no primeiro deles: *Hello World*. Depois de ler o enunciado é só ir em *Open Worspace* para que, depois de alguns segundos, a seguinte tela seja aberta.
 

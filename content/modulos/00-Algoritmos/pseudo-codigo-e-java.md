@@ -12,7 +12,7 @@ Neste roteiro iremos criar nossos primeiros algoritmos em Pseudo-Código e explo
     - [Java no PrairieLearn](java/infra.md): básico da infra usada na disciplina.
     - [Primeiro contato com Java](java/primeiro-contato.md) 
 
-    Feitos esses dois guias, abre o *Módulo 0* no PrairieLearn e vá fazendo os exercícios. Cada exercício de código tem um workspace no PrairieLearn com testes automatizados que checam sua implementação.
+    Feitos esses dois guias, abra o *Módulo 0 - parte 1* no PrairieLearn e siga o handout. Cada problema tem um exercício de implementação em Java no PrairieLearn com testes automatizados que checam sua solução.
 
 
 ## O esqueleto de um algoritmo
@@ -92,8 +92,6 @@ Faça uma função que calcula a área de um triângulo de base b e altura h, el
     - após cada linha você deve colocar um `;`. Isso significa que a instrução atual acabou e a próxima deve ser lida
 
 ### Lançamento de Projétil
-
-TODO: PAREI REVISÃO AQUI
 
 Faça uma função que calcule a distância alcançada por um projétil lançado com velocidade $v$ em um ângulo $\theta$, de uma altura $y_0$. A distância é dada pela fórmula. Use $g=9.8$.
 
@@ -399,7 +397,7 @@ Faça uma função que recebe o valor de $n$ e retorna o resultado da fórmula a
         CALCULA_PI(N)
             PI_2 := 0
 
-            PARA CADA I=1 ATÉ N+1 FAÇA
+            PARA CADA I:=1 ATÉ N+1 FAÇA
                 PI_2 := PI_2 + 6 / (I * I)
             FIM 
             

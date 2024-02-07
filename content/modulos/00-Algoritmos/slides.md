@@ -90,24 +90,22 @@
     - exercícios de sala (pseudo código)
     - APS para entregar (código Java)
 
-- Nota final
+- 2 provas (PI e PF) e uma DELTA (no dia da sub).
+- regras completas na [página da disciplina](https://insper.github.io/tecnicas-de-programacao/sobre/)
 
-```
-NF = 35%APS + 25%PI + 40%PF
-```
 
 -------
 
 0. Algoritmos
 1. Tipos Abstratos de Dados
 2. Busca em Arrays
-3. Ordenação
+3. Algoritmos em Strings
 
 **PI**
 
-4. Algoritmos em Strings
+4. Ordenação
 5. Caminhos entre pontos
-7. Otimização com restrições
+6. Otimização com restrições
 
 **PF**
 
@@ -115,9 +113,9 @@ NF = 35%APS + 25%PI + 40%PF
 
 # Horários
 
-- **TERÇA**: 15:45
+- **QUARTA**: 13:30
 - **SEXTA**: 13:30
-- Atendimento **SEXTA** 07:30
+- Atendimento **SEGUNDA**: 09:45
 
 
 -----
