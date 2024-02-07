@@ -110,12 +110,12 @@
 
             
               
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Módulos</span>
     <ul>
       
         
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">00 - Algoritmos</span>
     <ul>
       
@@ -125,6 +125,87 @@
       <a href="../">Index</a>
     </li>
   
+
+      
+        
+  
+
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Pseudo codigo e java</span>
+      <ul>
+        
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#o-esqueleto-de-um-algoritmo">O esqueleto de um algoritmo</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#condicionais">Condicionais</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#loops-i">Loops (I)</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#loops-ii">Loops (II)</a>
+              </li>
+            
+        
+      </ul>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Java</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../java/">Index</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/primeiro-contato/">Primeiro contato</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/strings/">Strings</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/arrays/">Arrays</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../java/interfaces/">Interfaces</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
 
       
     </ul>
@@ -144,6 +225,14 @@
             <ul class="ah-breadcrumbs">
               
                 
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>00 - Algoritmos</li>
+                  
+                
                 <li></li>
             </ul>
             
@@ -154,15 +243,14 @@
 <h1 id="primeiros-algoritmos">Primeiros algoritmos</h1>
 <p>Neste roteiro iremos criar nossos primeiros algoritmos em Pseudo-Código e explorar sua "tradução" para Java. Conforme o roteiro avança haverá leituras (curtas) recomendadas sobre sintaxe e semântica de Java.</p>
 <div class="admonition warning">
-<p class="admonition-title">Atenção</p>
-<p>São requisitos para esta aula ser capaz de rodar códigos em Java. Os seguintes roteiros já devem estar cumpridos</p>
+<p class="admonition-title">Pré-requisitos</p>
+<p>Esta aula é feita em conjunto com os exercício no PrairieLearn. Você precisa ter feito as seguintes atividades antes de prosseguir:</p>
 <ul>
-<li><a href="../java/instalacao/">Instalação</a></li>
-<li><a href="../java/primeiro-contato/">Primeiro contato</a></li>
+<li><a href="../java/infra/">Java no PrairieLearn</a>: básico da infra usada na disciplina.</li>
+<li><a href="../java/primeiro-contato/">Primeiro contato com Java</a> </li>
 </ul>
-<p>Além disso, todos os exercícios desse módulo são para entrega. Portanto, é bom já <a href="entregas.md">configurar o repositório de entregas</a>.</p>
+<p>Feitos esses dois guias, abra o <em>Módulo 0 - parte 1</em> no PrairieLearn e siga o handout. Cada problema tem um exercício de implementação em Java no PrairieLearn com testes automatizados que checam sua solução.</p>
 </div>
-<p>Agora que já temos um primeiro contato com Java, iremos escrever</p>
 <h2 id="o-esqueleto-de-um-algoritmo">O esqueleto de um algoritmo</h2>
 <p>Todo algoritmo é formado pelo seguinte "esqueleto":</p>
 <hr />
@@ -185,22 +273,22 @@
 <div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>NOME_DO_ALGORITMO(I, S1)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># Atribuições e operações matemáticas
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>MAIS_UM ← I + 1
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>MAIS_UM := I + 1
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a># Saída de texto
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>PRINT(MAIS_UM)
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a># Entrada de dados
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>NOVO_INT ← LER_INTEIRO()
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>NOVO_FLOAT ← LER_FRACIONARIO()
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>NOVO_TEXTO ← LER_TEXTO()
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>NOVO_INT := LER_INTEIRO()
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>NOVO_FLOAT := LER_FRACIONARIO()
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>NOVO_TEXTO := LER_TEXTO()
 </code></pre></div>
-<hr />
-<p>Vamos aplicar esse formato para dois problemas simples e já implementá-los em Java.</p>
 <div class="admonition warning">
 <p class="admonition-title">Atenção</p>
-<p>Aqui pode ser útil reler o <a href="../java/primeiro-contato/#implementando-uma-funcao">modelo de exercício em Java</a></p>
+<p>Usamos <code>:=</code> para atribuição e <code>=</code> para comparações.</p>
 </div>
+<hr />
+<p>Vamos aplicar esse formato para dois problemas simples e já implementá-los em Java.</p>
 <h3 id="area-do-triangulo">Área do triângulo</h3>
 <p>Faça uma função que calcula a área de um triângulo de base b e altura h, ela deve receber os valores nesta ordem.</p>
 <div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/00-Algoritmos/pseudo-codigo-e-java/algoritmo_pemdas_triangulo_entrada" id="algoritmo_pemdas_triangulo_entrada_0">
@@ -257,7 +345,7 @@
 <div class="admonition exercise self  self-progress" data-slug="modulos/00-Algoritmos/pseudo-codigo-e-java/algoritmo_pemdas_triangulo_java" id="algoritmo_pemdas_triangulo_java_0">
 <p class="admonition-title">Exercício 4</p>
 <form class="exercise-form">
-<p>Vamos agora implementar esse algoritmo em Java. Preencha o esqueleto na classe <code>br.edu.insper.tecprog.aps0.Triangulo</code>, implemente o algoritmo acima e rode os testes.</p>
+<p>Vamos agora implementar esse algoritmo em Java. Abra o exercício <em>Área do Triângulo</em> no PrairieLearn e converta o algoritmo desenvolvido acima para Java. A função já está pronta, é só ir e completar.</p>
 <p><strong>Dicas</strong>: </p>
 <ul>
 <li><code>DEVOLVE</code> em Java é feito usando <code class="language-java highlight"><span class="k">return</span></code>.</li>
@@ -322,15 +410,15 @@
 <p>Para facilitar a escrita do algoritmo o dividi em três partes, conforme se está antes, dentro ou depois dos parênteses. </p>
 <div class="language-text highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DISTANCIA_LANCAMENTO(V, THETA, Y0)
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>G ← 9.8
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>G := 9.8
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>PARTE1 ← (V * V) / (2 * G)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>PARTE1 := (V * V) / (2 * G)
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>SENO_THETA = SENO(THETA)
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>PARTE2_1 ← (2 * G * Y0) / (V * V * SENO_THETA * SENO_THETA)
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>PARTE2_2 ← 1 + RAIZ(1 + PARTE2_1)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>PARTE2_1 := (2 * G * Y0) / (V * V * SENO_THETA * SENO_THETA)
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>PARTE2_2 := 1 + RAIZ(1 + PARTE2_1)
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>PARTE3 ← SENO(2 * THETA)
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>PARTE3 := SENO(2 * THETA)
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>DEVOLVE PARTE1 * PARTE2_2 * PARTE_3
 </code></pre></div>
@@ -393,7 +481,7 @@
 <p class="admonition-title">Atenção</p>
 <ul>
 <li>Não se esqueça que em java os valores booleanos são <code class="language-java highlight"><span class="kc">true</span></code> e <code class="language-java highlight"><span class="kc">false</span></code> (com letras minúsculas).</li>
-<li>Em pseudo código usamos <code>=</code> para comparar, já que a atribuição usa ←</li>
+<li>Em pseudo código usamos <code>=</code> para comparar, já que a atribuição usa :=</li>
 <li>Em Java usamos <code>==</code> para comparar <code>int</code>, <code>double</code> e <code>boolean</code></li>
 <li>Se o tipo não for um dos acima, usamos o método <code>equals()</code></li>
 </ul>
@@ -533,8 +621,8 @@
 <p class="admonition-title">Resposta</p>
 <div class="language-text highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ACERTOU_JACA(V, THETA)
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>G ← 9.8
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>DISTANCIA ← (V*V * SENO(2*THETA)) / G
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>G := 9.8
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>DISTANCIA := (V*V * SENO(2*THETA)) / G
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>SE DISTANCIA &lt; 98 ENTÃO
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    DEVOLVA &quot;Muito perto&quot;
@@ -624,12 +712,12 @@
 <div class="admonition answer no-indent">
 <p class="admonition-title">Resposta</p>
 <div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>QUANTOS UNS(N)
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    CONTADOR ← 0
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    CONTADOR := 0
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    ENQUANTO N &gt; 0 FAÇA
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        DIGITO = N % 10 # resto da divisão de N por 10 
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        SE DIGITO = 1 ENTÃO
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            CONTADOR ← CONTADOR + 1
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            CONTADOR := CONTADOR + 1
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        FIM
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        N = N / 10
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    FIM
@@ -716,10 +804,10 @@
 <div class="admonition answer no-indent">
 <p class="admonition-title">Resposta</p>
 <div class="language-text highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>CALCULA_PI(N)
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    PI_2 ← 0
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    PI_2 := 0
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    PARA CADA I=1 ATÉ N+1 FAÇA
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        PI_2 ← PI_2 + 6 / (I * I)
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    PARA CADA I:=1 ATÉ N+1 FAÇA
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        PI_2 := PI_2 + 6 / (I * I)
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    FIM 
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    DEVOLVE RAIZ(PI_2)
@@ -783,10 +871,10 @@
 <div class="admonition answer no-indent">
 <p class="admonition-title">Resposta</p>
 <div class="language-text highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>FATORIAL(N)
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    FAT ← 1
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    FAT := 1
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    PARA CADA I=1 ATÉ N+1 FAÇA
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        FAT ← FAT * I
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        FAT := FAT * I
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    FIM
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    DEVOLVE FAT
@@ -812,6 +900,20 @@
       <footer class="ah-footer ah-typeset">
         <div class="ah-footer-nav">
           
+            <a href="../"
+               class="ah-prev"
+               title="Index">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Index</span>
+            </a>
+          
+          
+            <a href="../java/"
+               class="ah-next"
+               title="Index">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">Index</span>
+            </a>
           
         </div>
       </footer>
