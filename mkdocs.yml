@@ -7,7 +7,7 @@ extra:
     PL_url_course: https://us.prairielearn.com/pl/course_instance/146836
 
 extra_javascript:
-  - js/cc.js
+  - js/tab.js
 
 extra_css:
   - css/components.css

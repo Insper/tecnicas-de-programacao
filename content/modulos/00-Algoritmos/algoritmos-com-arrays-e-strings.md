@@ -6,6 +6,9 @@ Até o momento todos nosso algoritmos usavam dados "simples": cada variável gua
 
 Vamos agora usar esses novos conceitos em exercícios de Arrays.
 
+!!! warning
+    Abra o **Módulo 0 - parte 2** no PrairieLearn e faça primeiro os exercícios teóricos de algoritmos no handout e depois a implementação em Java no PrairieLearn. Você deve ir alternando entre algoritmo e implementação. 
+
 ### Entregador mais próximo
 
 Para desenvolver um aplicativo de entrega de comida, é útil saber qual entregador está mais próximo do restaurante. Faça uma função que recebe as coordenadas *x, y* de um restaurante, uma lista de coordenadas *x* e uma lista de coordenadas *y* de entregadores. Sua função deve devolver o índice do entregador mais próximo do restaurante.
