@@ -34,14 +34,14 @@ Para desenvolver um aplicativo de entrega de comida, é útil saber qual entrega
     !!! answer
         ```
         ENTREGADOR_MAIS_PROXIMO(X, Y, XE, YE)
-            MAIS_PROXIMO ← 0
-            DIST_MAIS_PROXIMO ← DIST(X, Y, XE[0], YE[0])
+            MAIS_PROXIMO := 0
+            DIST_MAIS_PROXIMO := DIST(X, Y, XE[0], YE[0])
 
             PARA CADA I=1 ATÉ N FAÇA
-                DIST ← DIST(X, Y, XE[i], YE[i])
+                DIST := DIST(X, Y, XE[i], YE[i])
                 SE DIST < DIST_MAIS_PROXIMO ENTÃO
-                    DIST_MAIS_PROXIMO ← DIST
-                    MAIS_PROXIMO ← I
+                    DIST_MAIS_PROXIMO := DIST
+                    MAIS_PROXIMO := I
                 FIM 
             FIM
 
@@ -81,7 +81,7 @@ Faça uma função que recebe 2 listas de inteiros e retorna uma nova lista com 
     !!! answer
         ```
         DIFF_LISTAS(A1, A2)
-            COUNT_DIFF ← 0
+            COUNT_DIFF := 0
 
             PARA CADA I=0 ATÉ TAMANHO(A1) FAÇA
                 ESTA_EM_A2 = Falso
@@ -91,12 +91,12 @@ Faça uma função que recebe 2 listas de inteiros e retorna uma nova lista com 
                     FIM
                 FIM
                 SE NÃO ESTA_EM_A2 ENTÃO
-                    COUNT_DIFF ← COUNT_DIFF + 1
+                    COUNT_DIFF := COUNT_DIFF + 1
                 FIM
             FIM
 
             ARR_DIFF = NOVO_ARRAY(COUNT_DIFF)
-            COUNT ← 0
+            COUNT := 0
 
             PARA CADA I=0 ATÉ TAMANHO(A1) FAÇA
                 ESTA_EM_A2 = Falso
@@ -107,7 +107,7 @@ Faça uma função que recebe 2 listas de inteiros e retorna uma nova lista com 
                 FIM
                 SE NÃO ESTA_EM_A2 ENTÃO
                     ARR_DIFF[COUNT] = A1[I]
-                    COUNT ← COUNT + 1
+                    COUNT := COUNT + 1
                 FIM
             FIM
 
@@ -142,10 +142,10 @@ Faça uma função que recebe duas listas com informações de uma nota fiscal e
     !!! answer
         ```
         VALOR_DA_NOTA(P, Q)
-            VALOR_TOTAL ← 0
+            VALOR_TOTAL := 0
 
             PARA CADA I=0 ATÉ TAMANHO(P) FAÇA
-                VALOR_TOTAL ← VALOR_TOTAL + P[I] * Q[I]
+                VALOR_TOTAL := VALOR_TOTAL + P[I] * Q[I]
             FIM
 
             DEVOLVE VALOR_TOTAL
@@ -189,7 +189,7 @@ Alguns exemplos para os quais sua função deve devolver `#!java false` são: `#
     !!! answer
         ```
         PALAVRAS_IGUAIS(S)
-            PARTES ← DIVIDE(S, "-")
+            PARTES := DIVIDE(S, "-")
 
             SE TAMANHO(PARTES) != 2 ENTÃO
                 DEVOLVA FALSO
@@ -231,55 +231,55 @@ Faça uma função que recebe uma lista de números de telefone e retorna uma li
     !!! answer
         ```
         CELULARES(T)
-            COUNT_CELULARES ← 0
+            COUNT_CELULARES := 0
 
             PARA CADA ITEM EM T FAÇA
-                DIGITO1 ← VAZIO
+                DIGITO1 := VAZIO
                 SE TAMANHO(ITEM) = 14 ENTÃO
-                    DIGITO1 ← ITEM[5]
+                    DIGITO1 := ITEM[5]
                     SE DIGITO1 = "9" ENTÃO
-                        COUNT_CELULARES ← COUNT_CELULARES + 1
+                        COUNT_CELULARES := COUNT_CELULARES + 1
                     FIM
                 FIM
                 SE TAMANHO(ITEM) = 11 ENTÃO
-                    DIGITO1 ← ITEM[2]
+                    DIGITO1 := ITEM[2]
                     SE DIGITO1 = "9" ENTÃO
-                        COUNT_CELULARES ← COUNT_CELULARES + 1
+                        COUNT_CELULARES := COUNT_CELULARES + 1
                     FIM
                 FIM
 
                 SE TAMANHO(ITEM) = 9 ENTÃO
-                    DIGITO1 ← ITEM[0]
+                    DIGITO1 := ITEM[0]
                     SE DIGITO1 = "9" ENTÃO
-                        COUNT_CELULARES ← COUNT_CELULARES + 1
+                        COUNT_CELULARES := COUNT_CELULARES + 1
                     FIM
                 FIM
             FIM
 
-            LISTA_CELULAR ← NOVO_ARRAY(COUNT_CELULARES)
-            NUM_CELULARES ← 0
+            LISTA_CELULAR := NOVO_ARRAY(COUNT_CELULARES)
+            NUM_CELULARES := 0
             PARA CADA ITEM EM T FAÇA
-                DIGITO1 ← VAZIO
+                DIGITO1 := VAZIO
                 SE TAMANHO(ITEM) = 14 ENTÃO
-                    DIGITO1 ← ITEM[5]
+                    DIGITO1 := ITEM[5]
                     SE DIGITO1 = "9" ENTÃO
-                        LISTA_CELULAR[NUM_CELULARES] ← SUBSTRING(ITEM, 5)
-                        NUM_CELULARES ← NUM_CELULARES + 1
+                        LISTA_CELULAR[NUM_CELULARES] := SUBSTRING(ITEM, 5)
+                        NUM_CELULARES := NUM_CELULARES + 1
                     FIM
                 FIM
                 SE TAMANHO(ITEM) = 11 ENTÃO
-                    DIGITO1 ← ITEM[2]
+                    DIGITO1 := ITEM[2]
                     SE DIGITO1 = "9" ENTÃO
-                        LISTA_CELULAR[NUM_CELULARES] ← SUBSTRING(ITEM, 2)
-                        NUM_CELULARES ← NUM_CELULARES + 1
+                        LISTA_CELULAR[NUM_CELULARES] := SUBSTRING(ITEM, 2)
+                        NUM_CELULARES := NUM_CELULARES + 1
                     FIM
                 FIM
 
                 SE TAMANHO(ITEM) = 9 ENTÃO
-                    DIGITO1 ← ITEM[0]
+                    DIGITO1 := ITEM[0]
                     SE DIGITO1 = "9" ENTÃO
-                        LISTA_CELULAR[NUM_CELULARES] ← ITEM
-                        NUM_CELULARES ← NUM_CELULARES + 1
+                        LISTA_CELULAR[NUM_CELULARES] := ITEM
+                        NUM_CELULARES := NUM_CELULARES + 1
                     FIM
                 FIM
             FIM
