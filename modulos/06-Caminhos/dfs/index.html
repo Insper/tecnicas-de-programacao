@@ -142,6 +142,14 @@
 
       
         
+  
+    <li>
+      <a href="../../00-Algoritmos/algoritmos-basicos-strings/">Algoritmos basicos strings</a>
+    </li>
+  
+
+      
+        
   <li class="ah-togglable-item">
     <span class="ah-togglable-handle">Java</span>
     <ul>
@@ -216,7 +224,7 @@
             <section class="progress-section show">
 <h1 id="busca-em-profundidade">Busca em Profundidade</h1>
 <p>Nossa primeira tentativa de resolver o Labirinto foi <a href="seguir-parede.md">seguir paredes com a mão direita</a>. Apesar de termos resultados positivos, algumas situações inesperadas aparecem.</p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/06-Caminhos/dfs/long_1" id="long_1_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_1" id="long_1_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>É possível resolver o seguinte labirinto com o algoritmo da aula passada?</p>
@@ -240,7 +248,7 @@
 <p>Não dá certo! Ele fica girando na parede do centro e nunca checa na saída, mesmo ela existindo.</p>
 </div>
 </div>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/06-Caminhos/dfs/long_2" id="long_2_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_2" id="long_2_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Suponha agora que desejemos sair da casa <code>o</code>  e chegar na casa <code>X</code>. Isso é possível usando o algoritmo da aula passada?</p>
@@ -474,7 +482,7 @@
 </section>
 <section class="progress-section">
 <p>Vamos agora definir o critério de parada de nosso algoritmo. </p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/06-Caminhos/dfs/long_3" id="long_3_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_3" id="long_3_0">
 <p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Estando em uma casa <code>C</code>, em quais situações decidimos não fazer mais chamadas recursivas?</p>
@@ -500,7 +508,7 @@
 <li>as possíveis chamadas recursivas feitas em cada passo do algoritmo</li>
 </ol>
 <p>Falta agora completarmos para descobrir como devolver resultados desse procedimento recursivo que estamos montando.Lembrando que o algoritmo criado retorna <code>VERDADEIRO</code> se existe caminho entre a fonte e o destino e <code>FALSO</code> caso contrário. Se houver caminho, ele é retornado na lista <code>CAMINHO</code>. </p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/06-Caminhos/dfs/long_4" id="long_4_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_4" id="long_4_0">
 <p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A partir do critério de parada que determinamos acima, em quais situações a chamada atual devolveria <code>VERDADEIRO</code>? Não se esqueça de considerar as chamadas recursivas em sua resposta.</p>
@@ -515,7 +523,7 @@
 <p>Claramente a função retorna <code>VERDADEIRO</code> se chegamos no destino. Revisitando a definição da existência de caminhos, também notamos que essa função retorna <code>VERDADEIRO</code> se existe caminho entre algum de seus vizinhos e o destino.</p>
 </div>
 </div>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/06-Caminhos/dfs/long_5" id="long_5_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_5" id="long_5_0">
 <p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A partir do critério de parada que determinamos acima, em quais situações a chamada atual devolveria <code>FALSO</code>? Não se esqueça de considerar as chamadas recursivas em sua resposta.</p>
@@ -536,7 +544,7 @@
 </section>
 <section class="progress-section">
 <p>Vamos para o exercício final de hoje: escrever a busca em profundidade completa. O algoritmo em si é curto, mas precisamos definir algumas estruturas extras para nos auxiliar.</p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/06-Caminhos/dfs/long_6" id="long_6_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/06-Caminhos/dfs/long_6" id="long_6_0">
 <p class="admonition-title">Exercício 9<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o algoritmo recursivo <code>DFS</code>. Você pode usar os seguintes argumentos:</p>
