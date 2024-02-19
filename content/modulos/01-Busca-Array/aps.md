@@ -7,30 +7,23 @@ Teremos dois tipos de tarefas esta semana:
 
 | Nota | Nível                |
 | ---- | -------------------- |
-| 50%  | Implementação direta |
-| 100% | Problemas            |
+| 70%  | Implementação direta |
+| 30%  | Problemas            |
 
 ## Implementação direta
 
-No nível básico teremos duas tarefas que modificam o arquivo `br.edu.insper.tecprog.aps02.BinarySearchIter.java`. Elas contém as ideias básicas já exploradas neste módulo. 
-
-!!! danger
-    Agora que todos nossos items da Lista são objetos, não podemos mais usar `>. <, ==` para compará-los. Nossa lista exige que os elementos implementem a interface [Comparable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html). Antes de prosseguir, leia a documentação acima e veja como usar o método `compareTo` para comparar dois elementos. 
+No nível básico teremos duas tarefas que modificam o arquivo `br.edu.insper.tecprog.BinarySearchIter.java`. Elas contém as ideias básicas já exploradas neste módulo. 
 
 !!! exercise 
     Saber se um array está ordenado é importante para podermos aplicar a busca binária. Complete a função `#!java boolean ordenado(InsperList l)` para checar se a `l` está ordenado. 
     
-
-
 !!! exercise 
-    Vamos agora implementar a busca binária (iterativa). Complete a função `#! int buscaBinaria(T value)` para retornar o índice do elemento `value` ou `-1` se ele não for encontrado. Se houver repetição, retorne o índice do elemento mais à esquerda. 
+    Vamos agora implementar a busca binária (iterativa). Complete a função `#! int buscaBinaria(int value)` para retornar o índice do elemento `value` ou `-1` se ele não for encontrado. Se houver repetição, retorne o índice do elemento mais à esquerda. 
     
-## Problemas
-
-Aqui teremos três exercícios de código que usam alguma variação da busca binária para resolver um problema. 
-
 !!! exercise 
-    Na [leitura sobre recursão](busca-binaria-geral.md) explicamos como escrever algoritmos que usam a si mesmos. Escreva uma versão recursiva da busca binária. Você deve colocá-la no arquivo `br.edu.insper.tecprog.aps02.BinarySearchRec.java`.
+    Na [leitura sobre recursão](busca-binaria-geral.md) explicamos como escrever algoritmos que usam a si mesmos. Escreva uma versão recursiva da busca binária. Você deve colocá-la no arquivo `br.edu.insper.tecprog.BinarySearchRec.java`.
+
+## Problemas
 
 Os seguintes exercícios foram baseados em problemas de maratona de programação 
 
@@ -57,7 +50,7 @@ Os seguintes exercícios foram baseados em problemas de maratona de programaçã
 
     -----
 
-    Seu trabalho será criar uma função `#!java long sawbladeHeight(int[] trees, int M)` que recebe a altura das árvores e o número `M` de metros de madeira necessário e devolve a menor altura que permite cortar ao menos `M` metros de madeira. Você pode supor que `trees` está ordenado e que a soma de todas as alturas é sempre maior que `M`. Edite o arquivo `br.edu.insper.tecprog.aps02.Eko.java`.
+    Seu trabalho será criar uma função `#!java long sawbladeHeight(int[] trees, int M)` que recebe a altura das árvores e o número `M` de metros de madeira necessário e devolve a menor altura que permite cortar ao menos `M` metros de madeira. Você pode supor que `trees` está ordenado e que a soma de todas as alturas é sempre maior que `M`. Edite o arquivo `br.edu.insper.tecprog.Eko.java`.
 
     Baseado em [EKO](https://www.spoj.com/problems/EKO/en/)
 
