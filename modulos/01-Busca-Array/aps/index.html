@@ -202,6 +202,48 @@
   </li>
 
       
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">01 - Busca em vetor</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Atividades</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../busca-frente-tras/">Buscas básicas</a>
+    </li>
+  
+
+      
+        
+  
+    <li>
+      <a href="../busca-binaria-exemplo/">Busca binária I</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
     </ul>
   </li>
 
@@ -252,7 +294,7 @@
 <p class="admonition-title">Cuidado</p>
 <p>Agora que todos nossos items da Lista são objetos, não podemos mais usar <code>&gt;. &lt;, ==</code> para compará-los. Nossa lista exige que os elementos implementem a interface <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html">Comparable</a>. Antes de prosseguir, leia a documentação acima e veja como usar o método <code>compareTo</code> para comparar dois elementos. </p>
 </div>
-<div class="admonition exercise self-progress" data-slug="modulos/02-Busca-Vetor/aps/exercise_1" id="exercise_1_0">
+<div class="admonition exercise self-progress" data-slug="modulos/01-Busca-Array/aps/exercise_1" id="exercise_1_0">
 <p class="admonition-title">Exercício 1</p>
 <form class="exercise-form">
 <p>Saber se um array está ordenado é importante para podermos aplicar a busca binária. Complete a função <code class="language-java highlight"><span class="kt">boolean</span><span class="w"> </span><span class="nf">ordenado</span><span class="p">(</span><span class="n">InsperList</span><span class="w"> </span><span class="n">l</span><span class="p">)</span></code> para checar se a <code>l</code> está ordenado. </p>
@@ -262,7 +304,7 @@
 </div>
 </form>
 </div>
-<div class="admonition exercise self-progress" data-slug="modulos/02-Busca-Vetor/aps/exercise_2" id="exercise_2_0">
+<div class="admonition exercise self-progress" data-slug="modulos/01-Busca-Array/aps/exercise_2" id="exercise_2_0">
 <p class="admonition-title">Exercício 2</p>
 <form class="exercise-form">
 <p>Vamos agora implementar a busca binária (iterativa). Complete a função <code>int buscaBinaria(T value)</code> para retornar o índice do elemento <code>value</code> ou <code>-1</code> se ele não for encontrado. Se houver repetição, retorne o índice do elemento mais à esquerda. </p>
@@ -274,7 +316,7 @@
 </div>
 <h2 id="problemas">Problemas</h2>
 <p>Aqui teremos três exercícios de código que usam alguma variação da busca binária para resolver um problema. </p>
-<div class="admonition exercise self-progress" data-slug="modulos/02-Busca-Vetor/aps/exercise_3" id="exercise_3_0">
+<div class="admonition exercise self-progress" data-slug="modulos/01-Busca-Array/aps/exercise_3" id="exercise_3_0">
 <p class="admonition-title">Exercício 3</p>
 <form class="exercise-form">
 <p>Na <a href="../busca-binaria-geral/">leitura sobre recursão</a> explicamos como escrever algoritmos que usam a si mesmos. Escreva uma versão recursiva da busca binária. Você deve colocá-la no arquivo <code>br.edu.insper.tecprog.aps02.BinarySearchRec.java</code>.</p>
@@ -285,7 +327,7 @@
 </form>
 </div>
 <p>Os seguintes exercícios foram baseados em problemas de maratona de programação </p>
-<div class="admonition exercise self-progress" data-slug="modulos/02-Busca-Vetor/aps/exercise_4" id="exercise_4_0">
+<div class="admonition exercise self-progress" data-slug="modulos/01-Busca-Array/aps/exercise_4" id="exercise_4_0">
 <p class="admonition-title">Exercício 4</p>
 <form class="exercise-form">
 <p><strong>Enunciado</strong>: Lumberjack Mirko needs to chop down <code>M</code> metres of wood. It is an easy job for him since he has a nifty new woodcutting machine that can take down forests like wildfire. However, Mirko is only allowed to cut a single row of trees.</p>
@@ -325,7 +367,7 @@
       </footer>
     </div>
     
-      <script src="../../../js/tab.js"></script>
+      <script src="../../../js/tabs.js"></script>
     
   </body>
 </html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Busca binaria exemplo - Técnicas de Programação</title>
+        <title>Busca binária I - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -108,7 +108,7 @@
 
             
               
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Módulos</span>
     <ul>
       
@@ -202,6 +202,60 @@
   </li>
 
       
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">01 - Busca em vetor</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Atividades</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../busca-frente-tras/">Buscas básicas</a>
+    </li>
+  
+
+      
+        
+  
+
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Busca binária I</span>
+      <ul>
+        
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#formalizando-a-simulacao">Formalizando a simulação</a>
+              </li>
+            
+        
+      </ul>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
     </ul>
   </li>
 
@@ -214,6 +268,18 @@
           <div class="ah-title-box">
             <ul class="ah-breadcrumbs">
               
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>01 - Busca em vetor</li>
+                  
+                
+                  
+                    <li>Atividades</li>
+                  
                 
                 <li></li>
             </ul>
@@ -232,7 +298,7 @@
 <li>repete esse procedimento até encontrar um elemento que é <code>1</code> e tem um vizinho que é <code>0</code>.</li>
 </ol>
 <p>Vamos começar simulando essas ideias para entender melhor o algoritmo.</p>
-<div class="admonition exercise choice tag-choice-exercise" data-answer-idx="-1" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/choice_1" id="choice_1_0">
+<div class="admonition exercise choice tag-choice-exercise" data-answer-idx="2" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/choice_1" id="choice_1_0">
 <p class="admonition-title">Exercício 1</p>
 <form class="exercise-form">
 <p>Dado o array <code>[0, 0, 0, 1, 0, 1]</code>, conseguimos aplicar a busca binária nele?</p>
@@ -273,7 +339,7 @@
 <p class="admonition-title">Cuidado</p>
 <p>Todos os intervalos nessa seção são abertos no fim. Ou seja, o intervalo <code>0-3</code> contém os índices <code>0,1,2</code>. </p>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/long_1" id="long_1_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/long_1" id="long_1_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p><code>A = [0, 0, 0, 0, 0, 1, 1]</code></p>
@@ -290,7 +356,7 @@
 <p>Logo, a parte que <strong>pode conter</strong> um <code>1</code> começa em <code>4</code> e vai até <code>TAMANHO(A) = 7</code>.</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/long_2" id="long_2_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/long_2" id="long_2_0">
 <p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Continuemos considerando o mesmo <code>A = [0, 0, 0, 0, 0, 1, 1]</code>, mas agora passamos a segunda iteração: simularemos o algoritmo no intervalo <code>4-7</code>.</p>
@@ -307,7 +373,7 @@
 <p>Fazemos isso pois queremos, dentro das repetições, o elemento mais à esquerda. Logo, se o valor é encontrado descartamos tudo o que está à direita mas mantemos o índice atual. </p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/long_3" id="long_3_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/long_3" id="long_3_0">
 <p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Continuemos considerando o mesmo <code>A = [0, 0, 0, 0, 0, 1, 1]</code>, mas agora passamos a terceira iteração: simularemos o algoritmo no intervalo <code>4-6</code>.</p>
@@ -331,7 +397,7 @@
 <li>o índice da metade do intervalo</li>
 </ul>
 <p>Uma maneira de ir construindo o algoritmo aos poucos é nomear esses conceitos. </p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/long_4" id="long_4_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/long_4" id="long_4_0">
 <p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o valor das variáveis abaixo para cada iteração do algoritmo. Ou seja, releia as perguntas anteriores e, para cada uma, identifique na resposta as variáveis abaixo. </p>
@@ -366,7 +432,7 @@
 - <code>MEIO</code>- 5</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/long_5" id="long_5_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/long_5" id="long_5_0">
 <p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo a expressão usada para calcular <code>MEIO</code></p>
@@ -381,7 +447,7 @@
 <p><code>(INICIO + FIM - 1) / 2</code> arredondado para baixo</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/long_6" id="long_6_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/long_6" id="long_6_0">
 <p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Como vimos na simulação, o algoritmo acabou quando chegamos em um intervalo com um só elemento. Como você escreveria essa expressão usando as variáveis <code>INICIO</code> e <code>FIM</code>?</p>
@@ -396,7 +462,7 @@
 <p><code>INICIO = FIM - 1</code> representa um intervalo com um só elemento.</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Busca-Vetor/busca-binaria-exemplo/long_7" id="long_7_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/01-Busca-Array/busca-binaria-exemplo/long_7" id="long_7_0">
 <p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Tente escrever o algoritmo para a busca binária abaixo. Iremos fazê-lo na lousa no fim do período de discussão.</p>
@@ -417,12 +483,19 @@
       <footer class="ah-footer ah-typeset">
         <div class="ah-footer-nav">
           
+            <a href="../busca-frente-tras/"
+               class="ah-prev"
+               title="Buscas básicas">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Buscas básicas</span>
+            </a>
+          
           
         </div>
       </footer>
     </div>
     
-      <script src="../../../js/tab.js"></script>
+      <script src="../../../js/tabs.js"></script>
     
   </body>
 </html>
