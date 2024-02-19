@@ -15,9 +15,9 @@ Temos a tendência de começar a percorrer um `Array` pelo índice `0`. Vamos ex
         ```
         ENCONTRA_BUG(A)
 
-            I ← 0
+            I := 0
             ENQUANTO A[I] != 1 E I < TAMANHO(A) FAÇA
-                I ← I + 1
+                I := I + 1
             FIM
 
             DEVOLVA I
@@ -39,9 +39,9 @@ Uma solução igualmente válida é começar pelo fim do `Array`. Não há nada 
         ```
         ENCONTRA_BUG_FIM(A)
 
-            I ← TAMANHO(A) - 1
+            I := TAMANHO(A) - 1
             ENQUANTO A[I] != 0 E I >= 0 FAÇA
-                I ← I - 1
+                I := I - 1
             FIM
 
             DEVOLVA I+1
