@@ -25,7 +25,7 @@ Em Java temos uma caraterística muito importante: toda variável, argumento de 
 | Tipo da variável | Nome do tipo em Java | Exemplo de declaração          |
 | ---------------- | -------------------- | ------------------------------ |
 | Inteiro          | `int`                | `#!java int valor = 5;`        |
-| Fracionário      | `float`              | `#!java float preco = 0.1;`    |
+| Fracionário      | `float` ou `double`              | `#!java double preco = 0.1;`    |
 | Texto            | `String`             | `#!java String nome = "Igor";` |
 | Booleano         | `boolean`            | `#!java boolean cond = false;` |
 

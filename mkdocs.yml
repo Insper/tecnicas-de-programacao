@@ -7,7 +7,7 @@ extra:
     PL_url_course: https://us.prairielearn.com/pl/course_instance/146836
 
 extra_javascript:
-  - js/cc.js
+  - js/tabs.js
 
 extra_css:
   - css/components.css
@@ -27,7 +27,14 @@ nav:
         - modulos/00-Algoritmos/java/strings.md
         - modulos/00-Algoritmos/java/arrays.md
         - modulos/00-Algoritmos/java/interfaces.md
-    # - "01 - ADT":
+    - "01 - Busca em vetor":
+      - modulos/01-Busca-Array/index.md
+      - "Atividades":
+        - "Buscas básicas": modulos/01-Busca-Array/busca-frente-tras.md
+        - "Busca binária I": modulos/01-Busca-Array/busca-binaria-exemplo.md
+      #   - modulos/01-Busca-Array/busca-binaria-geral.md
+      # - modulos/01-Busca-Array/aps.md
+     # - "01 - ADT":
     #   - modulos/01-ADT/index.md
     #   - "ADTs":
     #     - modulos/01-ADT/array.md
@@ -37,14 +44,7 @@ nav:
     #     - modulos/01-ADT/arrays-e-listas.md
     #     - modulos/01-ADT/listas-e-dicionarios.md
     #   - modulos/01-ADT/aps.md
-    # - "02 - Busca em vetor":
-    #   - modulos/02-Busca-Vetor/index.md
-    #   - "Aulas":
-    #     - modulos/02-Busca-Vetor/busca-frente-tras.md
-    #     - modulos/02-Busca-Vetor/busca-binaria-exemplo.md
-    #     - modulos/02-Busca-Vetor/busca-binaria-geral.md
-    #   - modulos/02-Busca-Vetor/aps.md
-    # - "03 - Ordenação":
+   # - "03 - Ordenação":
     #   - modulos/03-Ordenacao/index.md
     #   - "Aulas":
     #     - modulos/03-Ordenacao/ordenacao-simples.md

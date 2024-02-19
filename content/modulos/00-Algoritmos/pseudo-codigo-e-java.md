@@ -127,7 +127,7 @@ $$d = \frac{v^2}{2g} \left(1 + \sqrt{1 + \frac{2g y_0 }{ v^2 (\sin(\theta) )^2 }
 
         PARTE1 := (V * V) / (2 * G)
 
-        SENO_THETA = SENO(THETA)
+        SENO_THETA := SENO(THETA)
         PARTE2_1 := (2 * G * Y0) / (V * V * SENO_THETA * SENO_THETA)
         PARTE2_2 := 1 + RAIZ(1 + PARTE2_1)
         

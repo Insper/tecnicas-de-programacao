@@ -16,7 +16,7 @@ Vamos começar simulando essas ideias para entender melhor o algoritmo.
 
     - [ ] SIM
     - [ ] NÃO, pois ele tem número par de elementos. Logo não temos um elemento exatamente no meio.
-    - [ ] NÃO, pois ele não está ordenado
+    - [x] NÃO, pois ele não está ordenado
 
     !!! answer
         O fato do tamanho ser par não muda a ideia do algoritmo. Poderíamos usar tanto o elemento `0` como o `1` (ambos no meio do vetor) na divisão que teríamos o mesmo comportamento. Porém, como ele não está ordenado não podemos descartar metade dos valores. 

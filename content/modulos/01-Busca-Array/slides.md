@@ -17,16 +17,16 @@ img[alt~="center"] {
 
 # Algoritmo: sequência de passos (finita) para resolver um problema
 
-------
-
-# Algoritmos
-
-1. escritos em pseudo-código (definido em sala)
+1. escritos em pseudo-código 
 2. focam na resolução do problema e não em detalhes de implementação
-3. usamos ADT quando precisamos armazenar dados
-    - expectativas em relação ao comportamento
-    - expectativas em relação a eficiência
-    - linguagem consistente em relação a turma e a linguagens
+
+------------
+
+# Perguntas importantes
+
+1. Como representar um algoritmo sem código?
+2. Quantas operações esse algoritmo realiza?
+3. Dado um algoritmo incorreto, como mostrar que ele está errado?
 
 ---------
 
