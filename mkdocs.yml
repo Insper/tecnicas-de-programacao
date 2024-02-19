@@ -20,7 +20,8 @@ nav:
     - "00 - Algoritmos":
       - modulos/00-Algoritmos/index.md
       - modulos/00-Algoritmos/pseudo-codigo-e-java.md
-      # - modulos/00-Algoritmos/algoritmos-com-arrays-e-strings.md
+      - modulos/00-Algoritmos/algoritmos-com-arrays-e-strings.md
+      - modulos/00-Algoritmos/algoritmos-basicos-strings.md
       - "Java":
         - modulos/00-Algoritmos/java/index.md
         - modulos/00-Algoritmos/java/primeiro-contato.md
