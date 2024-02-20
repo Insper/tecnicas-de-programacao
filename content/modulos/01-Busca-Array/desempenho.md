@@ -1,7 +1,7 @@
-# Comparação de desempenho
+# Comparando desempenho de algoritmos
 
 <center>
-<embed width="500" height="400" src="slides-desempenho.html"></embed>
+<embed width="500" height="400" src="../slides-desempenho.html"></embed>
 </center>
 
 ## Parte 0 - anotando os algoritmos 

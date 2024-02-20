@@ -1,6 +1,11 @@
 # Buscas básicas
 
-Já fizemos busca por valores em um Array quando implementamos o [Map](../01-ADT/map.md). Vamos então criar dois algoritmos para resolver esse problema em específico: buscar o primeiro `1` em vetores com o abaixo.
+
+<center>
+<embed width="500" height="400" src="../slides.html"></embed>
+</center>
+
+Vamos então criar dois algoritmos para resolver esse problema em específico: buscar o primeiro `1` em vetores com o abaixo.
 
 ![](array-bug-1.png)
 
@@ -16,7 +21,7 @@ Temos a tendência de começar a percorrer um `Array` pelo índice `0`. Vamos ex
         ENCONTRA_BUG(A)
 
             I := 0
-            ENQUANTO A[I] != 1 E I < TAMANHO(A) FAÇA
+            ENQUANTO I < TAMANHO(A) E A[I] != 1 FAÇA
                 I := I + 1
             FIM
 
@@ -40,16 +45,10 @@ Uma solução igualmente válida é começar pelo fim do `Array`. Não há nada 
         ENCONTRA_BUG_FIM(A)
 
             I := TAMANHO(A) - 1
-            ENQUANTO A[I] != 0 E I >= 0 FAÇA
+            ENQUANTO I >= 0 E A[I] != 0 FAÇA
                 I := I - 1
             FIM
 
             DEVOLVA I+1
         ```
 
-
-!!! exercise long 
-    Por conta das características do nosso problema o algoritmo pode ser um pouco mais simples que a busca anterior. O que você notou de diferente em relação ao `INDEXOF` feito na atividade do *Map*?
-
-    !!! answer
-        Discutido em sala. Use o botão `editar` para adicionar seu resumo da discussão após ela acontecer. 

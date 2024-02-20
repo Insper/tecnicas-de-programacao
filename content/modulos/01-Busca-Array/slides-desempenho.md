@@ -46,17 +46,28 @@ img[alt~="center"] {
 
 # Definições
 
-Dado um array de tamanho $n$, seja $f(n)$ o número de operações feitas pela busca sequencial e $g(n)$ o número de operações feitas pela busca binária. 
+Dado um array de tamanho $n$, seja 
 
-1. $f(n) > 0, g(n) > 0 \forall n > 0$
-2. estamos interessados somente no caso em que $n$ é grande
-    - se $n$ é pequeno então vai ser rápido....
-    - pequeno/grande depende de cada problema
+- $f(n)$ o número de operações feitas pela busca sequencial no pior caso
+- $g(n)$ o número de operações feitas pela busca binária no pior caso
 
+$$
+f(n) > 0, g(n) > 0 \quad \forall n > 0
+$$
 
-### **Pergunta**: Conforme $n$ aumenta, $f(n)$ (1) cresce mais rápido, (2) de maneira equivalente ou (3) mais lentamente que $g(n)$?
+---------------------
 
---------------------
+## Definições
+
+**Pergunta**: Conforme $n$ aumenta, $f(n)$ 
+
+1. cresce mais rápido 
+2. de maneira equivalente
+3. mais lentamente
+
+que $g(n)$?
+
+-------------------
 
 # Definições II
 
@@ -103,123 +114,30 @@ $$
 
 -------
 
-No commit mais novo tem bug
 
-```
-67957b0f23425 (HEAD \rightarrow modulo2, origin/main, origin/HEAD, main) pequenas modificações
-6fd3c935d611e Atualização javaporco
-b3892f2f3bd23 PDF dos slides - aula 01
-694b44015206e Módulo 0 - Algoritmos está pronto.
-0c1797563ebfa APS01 - fim
-cabbeafe683c1 Ajustes da APS01
+# Notação $\mathcal{O}$
 
-....
+Dada uma função $g(n)$, dizemos que uma função $f(n)$ é $\mathcal{O}(g(n))$ se e se somente se
 
-465d185d60fd1 Organização do repositório
-27d20a195e9f First
-ddf34a8aa4919 Update README.md
-d18b19257fccc Initial commit
-```
+1. $
+\lim_{n\rightarrow +\infty} \frac{f(n)}{g(n)} < +\infty
+$
 
-No commit mais velho não tem bug
+2. $f$ e $g$ satisfazem $f(n) > 0, g(n) > 0, \quad \forall n > 0$
 
------------
+----
 
-## Bug presente?
+# Classes de algoritmos
 
-![width:600px center](array-bug-1.png)
+- $\mathcal{O}(\log_2 n)$ - dividem a entrada em duas partes e ignoram metade dela a cada iteração
+- $\mathcal{O}(n)$ - olham $c$ vezes para cada elemento da entrada, com $c$ constante
+- $\mathcal{O}(n^2)$ - loop duplo. Exemplo mais comum é olhar novamente para todo array a cada elemento.
 
-- `A[0]` representa o commit mais antigo
-- `A[N-1]` representa o commit mais novo
-- `A[I]` é
-    - `1` se o bug está presente
-    - `0` caso contrário
+Existem diferenças de tempo de execução entre algoritmos da mesma classe, mas essa diferença não depende do tamanho $n$ da entrada. Para algoritmos de classes diferentes a diferença de tempo **aumenta** de maneira dependente de $n$.
 
---------
+-----------------
 
-# Uma primeira solução
-**Em grupos**:
+# Exercício
 
-- handout "Buscas básicas" (10 minutos)
-
-<!--5 minutos + 10 de discussão-\rightarrow
-
---------
-
-# Uma ideia mais sofisticada
-![width:600px center](array-bug-1.png)
-
-Esse vetor tem algo que chama a atenção?
-
-<!--30 min + 15 de discussão-\rightarrow
-
----------
-# Uma ideia mais sofisticada
-
-Estar ordenado significa:
-
-![width:600px center](array-bug-2.png)
-
-$$i \geq j \leftrightarrow A[i] \geq A[j]$$
-
--------
-
-# Uma ideia mais sofisticada
-
-![width:600px center](array-bug-2.png)
-
-Para o índice `i` acima, o que posso dizer dos que estão à sua
-
-- direita?
-- esquerda?
-
---------
-
-# Uma ideia mais sofisticada
-
-![width:600px center](array-bug-2.png)
-
-Para o índice `j` acima, o que posso dizer dos que estão à sua
-
-- direita?
-- esquerda?
-
-----------
-
-# Busca Binária (intuição)
-
-![width:700px center](array-bug-3.png)
-
-## E escolhermos um índice qualquer?
-
-- O que fazer se ele for `0`?
-- E se for `1`?
-
----
-
-# Busca Binária (alto nível)
-
-Vamos considerar a seguinte ideia:
-
-`BUSCA_BINARIA_BUG(A)`
-
-1. seleciona o elemento na posição exatamente no meio do vetor
-2. se esse elemento for `0`, continua procurando na metade da da direita do vetor
-3. se esse elemento for `1`, continua procurando na metade da esquerda do vetor
-4. repete esse procedimento até encontrar um elemento que é `1` e tem um vizinho que é `0`.
-
-------------
-
-# Uma ideia mais sofisticada
-
-**Em grupos**:
-
-- handout "Busca binária" (20 minutos)
-------------
-
-# Próximos passos
-
-<!--Fechamento 5 min-\rightarrow
-
-- expandir essa ideia para buscas com valores quaisquer no vetor
-- resolver exercícios que usem a ideia da busca binária
+1. **Parte 2** do handout
+2. implementações dos algoritmos no PrarieLearn

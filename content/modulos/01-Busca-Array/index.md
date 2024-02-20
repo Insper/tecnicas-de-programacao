@@ -17,6 +17,6 @@ Não usaremos nenhum recurso novo de Java neste módulo. Todos os nossos algorit
 - Aula 01
     - [Buscas básicas](busca-frente-tras.md)
     - [Busca binária (I)](busca-binaria-exemplo.md)
-<!-- - [Aula 02](busca-binaria-geral.md) -->
+- [Aula 02 - Comparando desempenho de algoritmos](desempenho.md)
 
 
