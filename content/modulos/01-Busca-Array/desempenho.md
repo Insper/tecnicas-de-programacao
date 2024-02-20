@@ -7,10 +7,10 @@
 ## Parte 0 - anotando os algoritmos 
 
 !!! exercise long
-  Anote abaixo o algoritmo da `BUSCA_SEQUENCIAL` desenvolvido na lousa
+    Anote abaixo o algoritmo da `BUSCA_SEQUENCIAL` desenvolvido na lousa
 
 !!! exercise long
-  Anote abaixo o algoritmo da `BUSCA_BINARIA` desenvolvido na lousa
+    Anote abaixo o algoritmo da `BUSCA_BINARIA` desenvolvido na lousa
 
 ## Parte 1 - comparando as buscas
 
