@@ -236,6 +236,14 @@
   
 
       
+        
+  
+    <li>
+      <a href="../../01-Busca-Array/desempenho/">Comparando desempenho de algoritmos</a>
+    </li>
+  
+
+      
     </ul>
   </li>
 
@@ -265,18 +273,19 @@
           
             <section class="progress-section show">
 <h1 id="branch-and-bound">Branch and Bound</h1>
-<div><center><embed height="300" src="../slides-branch-bound.pdf" type="application/pdf" width="80%"></embed></center></div>
+<div><center><embed height="300" src="slides-branch-bound.pdf" type="application/pdf" width="80%" /></center></div>
 <p>A ideia de algoritmos de <strong>Branch and Bound</strong> é evitar testar soluções que sabemos que vão ser ruins. A ideia básica é a seguinte:</p>
 <p><strong>Sempre que chegarmos em um objeto, calculamos uma estimativa da solução com os objetos que ainda faltam. Se for melhor que a solução ótima atual continua. Senão devolve a solução ótima atual.</strong></p>
 <p>A estimativa mencionada acima vai sempre <strong>superestimar</strong> o valor da solução atual. Ou seja, podemos errar o valor da solução atual para cima, <strong>mas nunca para baixo</strong>. Veremos duas maneiras de fazer isso neste handout.</p>
-<h2 id="bound-mochila-fracionaria">Bound: mochila fracionária</h2>
+<h2 id="bound-1-ignorar-peso">Bound 1: ignorar peso</h2>
+<h2 id="bound-2-mochila-fracionaria">Bound 2: mochila fracionária</h2>
 <p>O algoritmo da mochila fracionário foi apresentado como</p>
 <ol>
 <li>ordenar por "densidade" (valor / peso)</li>
 <li>para cada objeto, se couber coloque-o inteiro</li>
 <li>se não couber, coloque a maior fração possível</li>
 </ol>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/branch-bound/long_1" id="long_1_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/branch-bound/long_1" id="long_1_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Somente um objeto será incluído com valor fracionário. Essa afirmação é verdadeira ou falsa? Dê um contra-exemplo ou prove que é verdade</p>
@@ -291,7 +300,7 @@
 <p>Será feito na lousa</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/branch-bound/long_2" id="long_2_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/branch-bound/long_2" id="long_2_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Seja $P_i o_i$ o peso do objeto com valor fracionário e $V_i o_i$ o valor que ele adiciona à mochila. É verdade a seguinte afirmação?</p>
