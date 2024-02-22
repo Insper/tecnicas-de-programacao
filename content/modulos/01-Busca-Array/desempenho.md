@@ -49,9 +49,9 @@ Agora vamos tentar contar o número de operações que são feitas para esses al
 Agora finalmente vamos calcular o limite. 
 
 !!! exercise long
-    Calcule o limite $\lim_{n\rightarrow +\infty} \frac{n}{\log_2(n)}. 
+    Calcule o limite $\lim_{n\rightarrow +\infty} \frac{n}{\log_2(n)}$. 
 
-    **Dica**: use a [Regra de L'Hôpital](TODO).
+    **Dica**: use a [Regra de L'Hôpital](https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule).
 
     !!! answer
         Na lousa ;)
