@@ -34,8 +34,10 @@ nav:
         - "Buscas básicas": modulos/01-Busca-Array/busca-frente-tras.md
         - "Busca binária I": modulos/01-Busca-Array/busca-binaria-exemplo.md
         - "Comparando desempenho de algoritmos": modulos/01-Busca-Array/desempenho.md
-     # - "01 - ADT":
-    #   - modulos/01-ADT/index.md
+    - "02 - Estruturas de Dados":
+      - modulos/02-Estruturas-de-Dados/index.md
+      - "Atividades":
+        - modulos/02-Estruturas-de-Dados/arrays-e-listas.md
     #   - "ADTs":
     #     - modulos/01-ADT/array.md
     #     - modulos/01-ADT/list.md

@@ -8,15 +8,16 @@
 
 ------
 
-# Algoritmos
+# Busca por termos em um projeto
 
-- é garantido que acaba
-- dá a resposta correta 100% das vezes
-- cada passo é bem definido
-- dada uma entrada, devolve sempre a mesma resposta
-- independe da linguagem de programação usada
+### Ctrl+Shift+F no VSCode
+### Fuzzy matching
 
---------
+----------
+
+# Soluções com Array?
+
+-------------
 
 # Algoritmos
 
@@ -27,9 +28,9 @@ Precisamos armazenar dados. Até agora sabemos usar os seguintes recursos em Jav
 
 ------
 
-# Problemas
+# Quantas operações são feitas? 
 
-Adicionar no fim da lista: devo usar `list.append` ou `ArrayList.add`?
+E se o código usar `ArrayList` ou `HashMap`?
 
 1. não conhecemos como list/dict/ArrayList/TreeMap funcionam
 2. APIs diferentes dificultam saber exatamente o que queremos dizer
@@ -44,9 +45,16 @@ Nomear uma estrutura para armazenamento de dados e definir
 
 - conjunto de operações válidas
 - restrições na lógica dessas operações
-- *complexidade computacional* ("custo") de cada operação
 
 ## Implementação pode ocorrer em qualquer linguagem
+
+----------
+
+# Estrutura de Dados
+
+- esquema de armazenamento de dados na memória 
+- algoritmos para implementar todas as operações de uma *ADT*
+- *complexidade computacional* de cada operação (notação $\mathcal{O}$)
 
 ----------
 
@@ -57,7 +65,6 @@ Tipo de dados mais primitivo e representa uma coleção de objetos contínua ind
 - `NOVO_ARRAY(N)` - cria array com capacidade `N>0`
 - `TAMANHO(A)`- devolve o número de elementos do array
 - `A[i]` - devolve o elemento de índice `i`. Se `i<0` ou `i>=TAMANHO(A)` dá erro
-
 
 ----
 
@@ -80,17 +87,28 @@ RETORNE Falso
 
 -----
 
+# Desempenho
+
+- Acesso a elemento indexado: $\mathcal{O}(1)$ (tempo constante)
+- Checar se elemento está presente: 
+    - Se ordenado: $\mathcal{O}(\log_2 n)$ (linear)
+    - Caso contrário :$\mathcal{O}(n)$ (linear)
+- Inserção/remoção: não é possível
+
+onde $n=TAMANHO(A)$.
+
+---------
+
 # E para implementar?
 
 - Em Python, o tipo `list` pode ser usado para representar um array
-- Em Java temos o tipo `Array` "de verdade", mas poderíamos usar um `ArrayList` também
+- Em Java temos o tipo `Array` "de verdade", mas poderíamos usar um `ArrayList` inicializado com valor `0`, por exemplo.
 
 ## Todas essas opções respeitam os comportamentos definidos na ADT `Array`
 
 ------------
 
-# Módulo ADT
+# Módulo *Estruturas de dados*
 
-- Arrays e listas: aprendemos a usar array e implementamos o tipo `List`
-- Listas e dicionários: implementamos o tipo `Map` com listas
-- Complexidade computacional: comparar diferentes implementações da mesma ADT.
+- Arrays e Listas 
+- Tabelas de Hash e Dicionários

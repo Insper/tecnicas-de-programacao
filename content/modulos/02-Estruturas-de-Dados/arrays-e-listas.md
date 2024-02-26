@@ -1,4 +1,4 @@
-# Aula 01 - arrays e Listas
+# Aula 01 - O tipo Lista
 
 O tipo `Array` que discutimos na apresentação inicial representa a maneira mais básica de se armazenar dados em linguagens de programação. Ele é, basicamente, uma região de memória em que colocamos um objeto após o outro, em sequência. Como o computador compartilha a memória com diversos programas, precisamos dizer com antecedência o quanto de memória usaremos. Por isso, o `Array` tem tamanho fixo.
 
@@ -8,13 +8,11 @@ Gerenciar esse tamanho fixo do array dá trabalho e várias linguagens oferecem 
 - `ArrayList` de Java
 - `std::vector` de C++
 
-!!! tip
-    Uma descrição completa do tipo `List` pode ser vista [aqui](list.md)
+Nesta aula iremos trabalhar os seguintes objetivos:
 
-Vamos agora iniciar a implementação de uma *Estrutura de Dados* que implemente o tipo `List` usando o tipo `Array`. Nosso objetivo aqui será
-
-1. compreender a implementação das operações do tipo `List`
+1. definir quais operações o tipo `List` suporta
 2. utilizar um Tipo de Dados mais simples (`Array`) para implementar outro tipo mais complexo (`Lista`)
+3. implementar uma Estrutura de Dados completa que implemente `List`
 
 !!! tip
     * Um *Tipo de Dados* somente define quais operações existem e quais são suas entradas e saídas. Ou seja, aqui definimos **o quê** deve ser feito. 
@@ -26,7 +24,19 @@ Vamos agora iniciar a implementação de uma *Estrutura de Dados* que implemente
 !!! important
     Existem várias *EDs* diferentes que podem implementar a mesma *ADT* e uma mesma *ED* pode implementar várias *ADTs* diferentes.
 
-## Vetor dinâmico
+
+## Definição do tipo de dados `List`
+
+O Tipo de dados `List` é uma coleção de valores indexados por um inteiro não negativo (maior ou igual a zero) sem espaços vazios. Essa coleção pode aumentar ou diminuir de tamanho e suporta as seguintes operações:
+
+- `NOVA_LISTA()` - cria nova lista vazia
+- `TAMANHO(L)`- devolve o número de elementos da lista
+- `L[i]` - devolve o elemento de índice `i`. Se `i<0` ou `i>TAMANHO(A)` dá erro
+- `INSERE(L, V, i)` - insere o valor `V` na lista `L` na posição `i`. Os elementos a partir da posição `i` são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.
+- `REMOVE(L, V)` - remove a primeira ocorrência de `V` da lista. Se `V` não estiver presente não faz nada. Os elementos a partir do índice da primeira ocorrência de `V` são "puxados" para a esquerda. Essa operação decrementa o tamanho da lista.
+
+
+## A estrutura de dados *Vetor dinâmico*
 
 O vetor dinâmico é uma *ED* que permite implementar as operações do tipo `List` usando um `Array`. Vamos iniciar relembrando os conceitos que acabamos de discutir.
 
@@ -286,7 +296,11 @@ FIM
         A checagem de lista cheia ocorre no início de `INSERE`, mas o `Array` de dados de `Lista` só fica cheio ao fim de `INSERE`. Logo, não há redimensionamento.
 
 
-A mesma estratégia pode ser usada na remoção, desta vez para diminuir a capacidade pela metade se o tamanho for menor que 1/4 da capacidade. A parte final desse guia será implementar essa lógica na [APS deste módulo](aps.md)
+A mesma estratégia pode ser usada na remoção, desta vez para diminuir a capacidade pela metade se o tamanho for menor que 1/4 da capacidade. 
+
+## Prática
+
+Agora que temos todos os detalhes da nossa implementação da *ED* Vetor Dinâmico basta traduzir isso para Java. Visite o PrairieLearn e implemente os algoritmos discutidos neste handout. 
 
 
 
