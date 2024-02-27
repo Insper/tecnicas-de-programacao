@@ -24,7 +24,7 @@ Recursos de Java usados neste módulo:
 
 ## Atividades
 
-- [Aula 01 - O tipo Lista](arrays-e-listas.md)
+- [Aulas 01 e 02 - O tipo Lista](arrays-e-listas.md)
 
 ## Entregas
 

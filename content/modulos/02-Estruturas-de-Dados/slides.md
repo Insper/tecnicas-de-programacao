@@ -87,12 +87,12 @@ RETORNE Falso
 
 -----
 
-# Desempenho
+# Desempenho (Expectativas)
 
 - Acesso a elemento indexado: $\mathcal{O}(1)$ (tempo constante)
 - Checar se elemento está presente: 
-    - Se ordenado: $\mathcal{O}(\log_2 n)$ (linear)
-    - Caso contrário :$\mathcal{O}(n)$ (linear)
+    - Se ordenado: $\mathcal{O}(\log_2 n)$ 
+    - Caso contrário :$\mathcal{O}(n)$ 
 - Inserção/remoção: não é possível
 
 onde $n=TAMANHO(A)$.
