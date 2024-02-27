@@ -252,6 +252,40 @@
   </li>
 
       
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">02 - Estruturas de Dados</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Atividades</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../arrays-e-listas/">Arrays e listas</a>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
     </ul>
   </li>
 
@@ -277,24 +311,21 @@
 <hr />
 <h1 id="algoritmo-sequencia-de-passos-finita-para-resolver-um-problema">Algoritmo: sequência de passos (finita) para resolver um problema</h1>
 <hr />
-<h1 id="algoritmos">Algoritmos</h1>
-<ul>
-<li>é garantido que acaba</li>
-<li>dá a resposta correta 100% das vezes</li>
-<li>cada passo é bem definido</li>
-<li>dada uma entrada, devolve sempre a mesma resposta</li>
-<li>independe da linguagem de programação usada</li>
-</ul>
+<h1 id="busca-por-termos-em-um-projeto">Busca por termos em um projeto</h1>
+<h3 id="ctrlshiftf-no-vscode">Ctrl+Shift+F no VSCode</h3>
+<h3 id="fuzzy-matching">Fuzzy matching</h3>
 <hr />
-<h1 id="algoritmos_1">Algoritmos</h1>
+<h1 id="solucoes-com-array">Soluções com Array?</h1>
+<hr />
+<h1 id="algoritmos">Algoritmos</h1>
 <p>Precisamos armazenar dados. Até agora sabemos usar os seguintes recursos em Java e Python</p>
 <ul>
 <li>listas, dicionários para dados "puros"</li>
 <li>classes para dados + comportamentos</li>
 </ul>
 <hr />
-<h1 id="problemas">Problemas</h1>
-<p>Adicionar no fim da lista: devo usar <code>list.append</code> ou <code>ArrayList.add</code>?</p>
+<h1 id="quantas-operacoes-sao-feitas">Quantas operações são feitas?</h1>
+<p>E se o código usar <code>ArrayList</code> ou <code>HashMap</code>?</p>
 <ol>
 <li>não conhecemos como list/dict/ArrayList/TreeMap funcionam</li>
 <li>APIs diferentes dificultam saber exatamente o que queremos dizer</li>
@@ -306,9 +337,15 @@
 <ul>
 <li>conjunto de operações válidas</li>
 <li>restrições na lógica dessas operações</li>
-<li><em>complexidade computacional</em> ("custo") de cada operação</li>
 </ul>
 <h2 id="implementacao-pode-ocorrer-em-qualquer-linguagem">Implementação pode ocorrer em qualquer linguagem</h2>
+<hr />
+<h1 id="estrutura-de-dados">Estrutura de Dados</h1>
+<ul>
+<li>esquema de armazenamento de dados na memória </li>
+<li>algoritmos para implementar todas as operações de uma <em>ADT</em></li>
+<li><em>complexidade computacional</em> de cada operação (notação $\mathcal{O}$)</li>
+</ul>
 <hr />
 <h1 id="array">Array</h1>
 <p>Tipo de dados mais primitivo e representa uma coleção de objetos contínua indexada por um número inteiro começando em <code>0</code>. Tem tamanho fixo.</p>
@@ -336,18 +373,29 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>RETORNE Falso
 </code></pre></div>
 <hr />
+<h1 id="desempenho-expectativas">Desempenho (Expectativas)</h1>
+<ul>
+<li>Acesso a elemento indexado: $\mathcal{O}(1)$ (tempo constante)</li>
+<li>Checar se elemento está presente: <ul>
+<li>Se ordenado: $\mathcal{O}(\log_2 n)$ </li>
+<li>Caso contrário :$\mathcal{O}(n)$ </li>
+</ul>
+</li>
+<li>Inserção/remoção: não é possível</li>
+</ul>
+<p>onde $n=TAMANHO(A)$.</p>
+<hr />
 <h1 id="e-para-implementar">E para implementar?</h1>
 <ul>
 <li>Em Python, o tipo <code>list</code> pode ser usado para representar um array</li>
-<li>Em Java temos o tipo <code>Array</code> "de verdade", mas poderíamos usar um <code>ArrayList</code> também</li>
+<li>Em Java temos o tipo <code>Array</code> "de verdade", mas poderíamos usar um <code>ArrayList</code> inicializado com valor <code>0</code>, por exemplo.</li>
 </ul>
 <h2 id="todas-essas-opcoes-respeitam-os-comportamentos-definidos-na-adt-array">Todas essas opções respeitam os comportamentos definidos na ADT <code>Array</code></h2>
 <hr />
-<h1 id="modulo-adt">Módulo ADT</h1>
+<h1 id="modulo-estruturas-de-dados">Módulo <em>Estruturas de dados</em></h1>
 <ul>
-<li>Arrays e listas: aprendemos a usar array e implementamos o tipo <code>List</code></li>
-<li>Listas e dicionários: implementamos o tipo <code>Map</code> com listas</li>
-<li>Complexidade computacional: comparar diferentes implementações da mesma ADT.</li>
+<li>Arrays e Listas </li>
+<li>Tabelas de Hash e Dicionários</li>
 </ul>
 
 
