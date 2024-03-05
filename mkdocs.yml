@@ -39,6 +39,8 @@ nav:
       - "Atividades":
         - modulos/02-Estruturas-de-Dados/arrays-e-listas.md
         - modulos/02-Estruturas-de-Dados/listas-e-dicionarios.md
+    - "10 - Extra": modulos/10-Extra/index.md
+          
     # - "03 - Ordenação":
     #   - modulos/03-Ordenacao/index.md
     #   - "Aulas":
