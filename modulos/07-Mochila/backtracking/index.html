@@ -278,6 +278,14 @@
   
 
       
+        
+  
+    <li>
+      <a href="../../02-Estruturas-de-Dados/listas-e-dicionarios/">Listas e dicionarios</a>
+    </li>
+  
+
+      
     </ul>
   </li>
 
@@ -321,7 +329,7 @@
 <li><code>P</code> - array com o peso de cada objeto</li>
 </ol>
 <p>Vamos rever algumas características do nosso problema:</p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/backtracking/long_1" id="long_1_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_1" id="long_1_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Em uma mochila com 13 objetos, quantas são soluções possíveis?</p>
@@ -337,7 +345,7 @@
 </div>
 </div>
 <p>A cada passo do algoritmo decidimos se selecionamos ou não o objeto atual. Se selecionamos, resolvemos um novo problema da mochila com capacidade menor (em função do objeto que acabamos de selecionar) e com somente os objetos restantes. Se não mantemos a capacidade e eliminamos o objeto atual da lista de objetos.</p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/backtracking/long_2" id="long_2_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_2" id="long_2_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Suponha que já escolhemos $i-1$ objetos e estamos decidindo se selecionamos o objeto $i$, de peso $10$ e valor $5$. Nossa mochila ainda tem $50$ de capacidade e o valor atual é $43$. Os objetos selecionados estão colocados em um array <code>O</code>.</p>
@@ -353,7 +361,7 @@
 <p>Precisamos setar <code>O[i] = VERDADEIRO</code>, diminuir a capacidade da mochila em $10$ (resultando em $40$ restantes) e aumentar o valore atual em $5$ (resultando em valor $48$).</p>
 </div>
 </div>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/backtracking/long_3" id="long_3_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_3" id="long_3_0">
 <p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Suponha que já escolhemos $i-1$ objetos e estamos decidindo se selecionamos o objeto $i$, de peso $10$ e valor $5$. Nossa mochila ainda tem $50$ de capacidade e o valor atual é $43$. Os objetos selecionados estão colocados em um array <code>O</code>.</p>
@@ -400,7 +408,7 @@
 <li>o último passo do algoritmo requer que guardemos a melhor solução dentre as tentadas nas chamadas recursivas. <strong>Não é necessário alocar um array para isso</strong>.</li>
 </ul>
 <p>O seu trabalho hoje será interpretar isso no contexto da <em>Mochila binária</em>.</p>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/07-Mochila/backtracking/long_4" id="long_4_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/07-Mochila/backtracking/long_4" id="long_4_0">
 <p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Adapte o modelo acima para resolver o problema da Mochila. Leve em conta os seguintes pontos</p>
