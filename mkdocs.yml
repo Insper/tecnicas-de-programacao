@@ -38,15 +38,8 @@ nav:
       - modulos/02-Estruturas-de-Dados/index.md
       - "Atividades":
         - modulos/02-Estruturas-de-Dados/arrays-e-listas.md
-    #   - "ADTs":
-    #     - modulos/01-ADT/array.md
-    #     - modulos/01-ADT/list.md
-    #     - modulos/01-ADT/map.md
-    #   - "Aulas":
-    #     - modulos/01-ADT/arrays-e-listas.md
-    #     - modulos/01-ADT/listas-e-dicionarios.md
-    #   - modulos/01-ADT/aps.md
-   # - "03 - Ordenação":
+        - modulos/02-Estruturas-de-Dados/listas-e-dicionarios.md
+    # - "03 - Ordenação":
     #   - modulos/03-Ordenacao/index.md
     #   - "Aulas":
     #     - modulos/03-Ordenacao/ordenacao-simples.md

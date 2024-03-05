@@ -111,4 +111,4 @@ onde $n=TAMANHO(A)$.
 # Módulo *Estruturas de dados*
 
 - Arrays e Listas 
-- Tabelas de Hash e Dicionários
+- Dicionários

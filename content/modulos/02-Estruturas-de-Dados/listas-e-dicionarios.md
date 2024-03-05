@@ -2,8 +2,17 @@
 
 Quando começamos a chegar no fim de DevLife usamos cada vez mais Dicionários em nosso código. Os usamos para representar coleções de pares *chave->valor* em que para cada *chave* existe exatamente um valor. Como era possível compor dicionários dentro de dicionários dentro de dicionários (e por aí vai) conseguíamos usá-los para representar hierarquias complexas. O tipo `Map` representa de maneira abstrata esse tipo de estrutura de dados.
 
-!!! warning
-    Vale a pena revisar as [operações de dados](map.md) de um `Map` antes de prosseguir.
+## O tipo `Map`
+
+
+Um `Map` é uma mapeamento **chave $\rightarrow$ valor** em que cada chave pode estar a associada a um único valor. Note que um valor pode estar associado a várias chaves, mas cada chave só possui um valor. As seguintes operações são suportadas:
+
+- `NOVO_MAP()` - cria um novo `Map`
+- `SET(M, K, V)` - associa o valor `V` à chave `K`. Se a chave `K` já existir substitui o valor.
+- `GET(M, K)` - devolve o valor associado a chave `K`. Se não houver retorna `VAZIO`
+- `REMOVE(M, K)` - remove o par com chave `K`. Se não houver não faz nada.
+- `TAMANHO(M)` - devolve o número de chaves que possuem um valor associado
+
 
 Neste roteiro desenvolveremos juntos os algoritmos necessários para implementar uma **versão simplificada** do `Map` usando duas `List`.
 
@@ -29,8 +38,8 @@ A implementação mais simples `Map` é usando duas listas:
     Como você usaria as duas listas acima (`KEYS(M)` e `VALUES(M)`) para armazená-los? Escreva o conteúdo das listas na forma
 
     ```
-    - `KEYS(M)` = `[ conteúdo aqui ]`
-    - `VALUES(M) = `[ conteúdo aqui ]`
+    - KEYS(M) = [conteúdo aqui ]
+    - VALUES(M) = [ conteúdo aqui ]
     ```
 
     !!! answer
@@ -39,20 +48,22 @@ A implementação mais simples `Map` é usando duas listas:
         - `KEYS(M)` = `[ "pastel de queijo", "pastel de carne", "pastel de soja" ]`
         - `VALUES(M)` = `[ 2, 1, 5 ]`
 
+        A ordem aqui não importa, desde que sejamos consistentes e mantenhamos a equivalência de índices para que as chaves e valores continuem "casadas".
+
 !!! exercise long
     Vamos continuar com o exemplo acima.
 
     1. Map 1:
         - `KEYS(M)` = `[ "pastel de queijo", "pastel de carne", "pastel de soja" ]`
-        - `VALUES(M) = `[ 2, 1, 5 ]`
+        - `VALUES(M)` = `[ 2, 1, 5 ]`
     2. Map 2:
         - `KEYS(M)` = `[ "pastel de queijo", "pastel de soja", "pastel de carne" ]`
-        - `VALUES(M)`` = `[ 2, 5, 1 ]`
+        - `VALUES(M)` = `[ 2, 5, 1 ]`
 
     Os dois `Map` acima são iguais? Ou seja, eles representam as mesmas associações chave-valor? Justifique.
 
     !!! answer
-        Eles são iguais! O conjunto de chaves de ambos é igual e para toda chave o valor devolvido é o mesmo.
+        Eles são iguais! O conjunto de chaves de ambos é igual e para toda chave o valor devolvido é o mesmo. Para um `Map` a ordem não importa, somente a presença da chave e o valor associado a ela.
 
 
 !!! exercise long id_resumo_ideia_map
@@ -69,7 +80,14 @@ Vamos usar as seguintes convenções a partir de agora
 - `M_K = KEYS(M)`
 - `M_V = VALUES(M)`
 
-A ideia central é **Dada uma associação chave-valor `(K, V)`, se guardamos a chave `K` no índice `i` de `M_K` guardaremos o valor `V` no mesmo índice `i` em `M_V`**. Podemos colocar isso de maneira mais formal: **existe um índice `0 <= i < TAMANHO(M_K)` tal que `M_K[i] = K` e `M_V[i] = V`**.
+A ideia central é **Dada uma associação chave-valor `(K, V)`, se guardamos a chave `K` no índice `i` de `M_K` guardaremos o valor `V` no mesmo índice `i` em `M_V`**. 
+
+De maneira mais formal, seja $M$ um `Map`, $N=$`TAMANHO(M_K)` e $(K, V)$ uma associação chave valor presente em `M`, então
+
+
+$$
+(K, V) \in M \Leftrightarrow \exists 0 \leq i < N \;\;\text{ tal que }\;\; M_K[i] = K,\; M_V[i] = V
+$$
 
 Vamos agora desenvolver alguns algoritmos simples para nos familiarizarmos com essa dupla de listas.
 
@@ -78,19 +96,19 @@ Vamos agora desenvolver alguns algoritmos simples para nos familiarizarmos com e
 
     * **Entrada**
         - `List` `L`
-        - valor `V`
+        - valor `VAL`
     * **Saída**:
         - se a lista tem o valor, retorna o índice da primeira ocorrência
         - -1 caso contrário
 
-    Escreva o algoritmo `indexOf(L, V)` em pseudo-código
+    Escreva o algoritmo `indexOf(L, VAL)` em pseudo-código
 
     !!! answer
         ```
-        indexOf(L, V)
+        indexOf(L, VAL)
 
         PARA i=0 até TAMANHO(L) FAÇA
-            SE L[i] = V FAÇA
+            SE L[i] = VAL FAÇA
                 RETORNE i
             FIM
         FIM
@@ -104,7 +122,7 @@ Vamos agora desenvolver alguns algoritmos simples para nos familiarizarmos com e
     - `GET(M, K)` - devolve o valor associado a chave `K`. Se não houver retorna `VAZIO`
 
     !!! answer
-        TODO: colocar resposta aqui
+        Lousa
 
 !!! exercise long id_set_map
     A operação `SET(M, K, V)`
@@ -115,7 +133,7 @@ Vamos agora desenvolver alguns algoritmos simples para nos familiarizarmos com e
     Escreve um algoritmo que implemente essa operação. Você pode usar todos os algoritmos que já desenvolveu até aqui, incluindo as operações do tipo `List`.
 
     !!! answer
-        Esse vai na lousa ;)
+        Lousa
 
 As operações `REMOVE` e `TAMANHO` são variações dos que já foram construídos nessa aula. Para registrar, escreva-os abaixo.
 
@@ -126,4 +144,4 @@ As operações `REMOVE` e `TAMANHO` são variações dos que já foram construí
 !!! exercise long id_map_tamanho
     Escreva abaixo o algoritmo para `TAMANHO(M)`.
 
-Agora o trabalho será transformar esses algoritmos em implementações `Java` na [APS desse módulo](aps.md)
+Agora acesse o PrairieLearn e implemente esse algoritmos no exercício prático. 
