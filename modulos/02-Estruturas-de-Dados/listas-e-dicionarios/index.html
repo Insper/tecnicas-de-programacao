@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Listas e dicionarios - Técnicas de Programação</title>
+        <title>Aula 03 - Dicionários - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -102,7 +102,7 @@
               
   
     <li>
-      <a href="../../../sobre/">Sobre</a>
+      <a href="../../../sobre/">Sobre a Disciplina</a>
     </li>
   
 
@@ -120,7 +120,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/">Index</a>
+      <a href="../../00-Algoritmos/">Introdução</a>
     </li>
   
 
@@ -128,7 +128,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Pseudo codigo e java</a>
+      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Primeiros algoritmos</a>
     </li>
   
 
@@ -136,7 +136,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com arrays e strings</a>
+      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com dados compostos</a>
     </li>
   
 
@@ -144,7 +144,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/algoritmos-basicos-strings/">Algoritmos basicos strings</a>
+      <a href="../../00-Algoritmos/algoritmos-basicos-strings/">Algoritmos básicos em Strings</a>
     </li>
   
 
@@ -157,7 +157,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/java/">Index</a>
+      <a href="../../00-Algoritmos/java/">Referência</a>
     </li>
   
 
@@ -210,14 +210,19 @@
         
   
     <li>
-      <a href="../../01-Busca-Array/">Index</a>
+      <a href="../../01-Busca-Array/">Introdução</a>
     </li>
   
 
       
         
   <li class="ah-togglable-item">
-    <span class="ah-togglable-handle">Atividades</span>
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aula 01</span>
     <ul>
       
         
@@ -236,10 +241,14 @@
   
 
       
+    </ul>
+  </li>
+
+      
         
   
     <li>
-      <a href="../../01-Busca-Array/desempenho/">Comparando desempenho de algoritmos</a>
+      <a href="../../01-Busca-Array/desempenho/">Aula 02 - Comparando desempenho de algoritmos</a>
     </li>
   
 
@@ -260,44 +269,78 @@
         
   
     <li>
-      <a href="../">Index</a>
+      <a href="../">Introdução</a>
     </li>
   
 
       
         
   <li class="ah-togglable-item opened">
-    <span class="ah-togglable-handle">Atividades</span>
+    <span class="ah-togglable-handle">Aulas</span>
     <ul>
       
         
   
     <li>
-      <a href="../arrays-e-listas/">Arrays e listas</a>
+      <a href="../arrays-e-listas/">Aulas 01 e 02 - O tipo Lista</a>
     </li>
   
 
       
         
   
-
     <li class="active ah-togglable-item opened">
-      <span class="ah-togglable-handle">Listas e dicionarios</span>
+      <span class="ah-togglable-handle">Aula 03 - Dicionários</span>
       <ul>
         
+          <li class="ah-toc-item">
+            <a href="#aula-03-dicionarios">Aula 03 - Dicionários</a>
+          </li>
           
-            
-            
-              <li class="ah-toc-item">
-                <a href="#o-tipo-map">O tipo Map</a>
-              </li>
-            
-              <li class="ah-toc-item">
-                <a href="#construindo-em-cima-de-outras-adt">Construindo em cima de outras ADT</a>
-              </li>
-            
+          <li class="ah-toc-item">
+            <a href="#o-tipo-map">O tipo Map</a>
+          </li>
+          
+          <li class="ah-toc-item">
+            <a href="#construindo-em-cima-de-outras-adt">Construindo em cima de outras ADT</a>
+          </li>
+          
         
       </ul>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">03 - Ordenação</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/">Introdução</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../../03-Ordenacao/ordenacao-simples/">01 - Primeiros algoritmos</a>
     </li>
   
 
@@ -340,17 +383,17 @@
                   
                 
                   
-                    <li>Atividades</li>
+                    <li>Aulas</li>
                   
                 
-                <li></li>
+                <li>Aula 03 - Dicionários</li>
             </ul>
             
             
           </div>
           
             <section class="progress-section show">
-<h1 id="aula-02-dicionarios">Aula 02 - Dicionários</h1>
+<h1 id="aula-03-dicionarios">Aula 03 - Dicionários</h1>
 <p>Quando começamos a chegar no fim de DevLife usamos cada vez mais Dicionários em nosso código. Os usamos para representar coleções de pares <em>chave-&gt;valor</em> em que para cada <em>chave</em> existe exatamente um valor. Como era possível compor dicionários dentro de dicionários dentro de dicionários (e por aí vai) conseguíamos usá-los para representar hierarquias complexas. O tipo <code>Map</code> representa de maneira abstrata esse tipo de estrutura de dados.</p>
 <h2 id="o-tipo-map">O tipo <code>Map</code></h2>
 <p>Um <code>Map</code> é uma mapeamento <strong>chave $\rightarrow$ valor</strong> em que cada chave pode estar a associada a um único valor. Note que um valor pode estar associado a várias chaves, mas cada chave só possui um valor. As seguintes operações são suportadas:</p>
@@ -373,7 +416,7 @@
 <li><code>KEYS(M)</code> é um <code>List</code> contendo uma lista de todas as chaves do <code>Map</code> <code>M</code></li>
 <li><code>VALUES(M)</code> é um <code>List</code> contendo uma lista de todas os valores do <code>Map</code> <code>M</code></li>
 </ul>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_ideia_indices" id="map_ideia_indices_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_ideia_indices" id="map_ideia_indices_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Considere os seguintes pares chave-valor:</p>
@@ -402,7 +445,7 @@
 <p>A ordem aqui não importa, desde que sejamos consistentes e mantenhamos a equivalência de índices para que as chaves e valores continuem "casadas".</p>
 </div>
 </div>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/long_2" id="long_2_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/long_2" id="long_2_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Vamos continuar com o exemplo acima.</p>
@@ -430,7 +473,7 @@
 <p>Eles são iguais! O conjunto de chaves de ambos é igual e para toda chave o valor devolvido é o mesmo. Para um <code>Map</code> a ordem não importa, somente a presença da chave e o valor associado a ela.</p>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/resumo_ideia_map" id="resumo_ideia_map_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/resumo_ideia_map" id="resumo_ideia_map_0">
 <p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Dada as respostas dos exercícios anteriores, como você resumiria a ideia de usar duas listas para implementar o <code>Map</code>?</p>
@@ -461,7 +504,7 @@
 (K, V) \in M \Leftrightarrow \exists 0 \leq i &lt; N \;\;\text{ tal que }\;\; M_K[i] = K,\; M_V[i] = V
 $$</p>
 <p>Vamos agora desenvolver alguns algoritmos simples para nos familiarizarmos com essa dupla de listas.</p>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_indexof" id="map_indexof_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_indexof" id="map_indexof_0">
 <p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Um algoritmo muito útil (e frequentemente disponível) é o <code>indexOf</code>, que devolve o índice da primeira ocorrência de um valor em uma lista.</p>
@@ -498,7 +541,7 @@ $$</p>
 </code></pre></div>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/get_usando_indexof" id="get_usando_indexof_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/get_usando_indexof" id="get_usando_indexof_0">
 <p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Vamos agora trabalhar com as duas listas em conjunto. Use o algoritmo <code>indexOf</code> feito acima para implementar a operação <code>GET</code> do <code>Map</code>:</p>
@@ -516,7 +559,7 @@ $$</p>
 <p>Lousa</p>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/set_map" id="set_map_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/set_map" id="set_map_0">
 <p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A operação <code>SET(M, K, V)</code></p>
@@ -537,7 +580,7 @@ $$</p>
 </div>
 </div>
 <p>As operações <code>REMOVE</code> e <code>TAMANHO</code> são variações dos que já foram construídos nessa aula. Para registrar, escreva-os abaixo.</p>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_remove" id="map_remove_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_remove" id="map_remove_0">
 <p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o algoritmo para <code>REMOVE(M, K)</code>.</p>
@@ -548,7 +591,7 @@ $$</p>
 </div>
 </form>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_tamanho" id="map_tamanho_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_tamanho" id="map_tamanho_0">
 <p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o algoritmo para <code>TAMANHO(M)</code>.</p>
@@ -571,17 +614,17 @@ $$</p>
           
             <a href="../arrays-e-listas/"
                class="ah-prev"
-               title="Arrays e listas">
+               title="Aulas 01 e 02 - O tipo Lista">
               <span class="nav-label">Anterior</span>
-              <span class="nav-title">Arrays e listas</span>
+              <span class="nav-title">Aulas 01 e 02 - O tipo Lista</span>
             </a>
           
           
-            <a href="../../10-Extra/"
+            <a href="../../03-Ordenacao/"
                class="ah-next"
-               title="10 - Extra">
+               title="Introdução">
               <span class="nav-label">Próximo</span>
-              <span class="nav-title">10 - Extra</span>
+              <span class="nav-title">Introdução</span>
             </a>
           
         </div>
