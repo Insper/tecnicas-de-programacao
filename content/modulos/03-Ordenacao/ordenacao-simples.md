@@ -81,6 +81,10 @@ Agora vamos ver o algoritmo funcionando por inteiro.
 
         Só roda uma vez, dado que já está ordenado.
 
+Agora que simulamos uma vez, podemos ver um vídeo desse algoritmo funcionando para o array `[ 3 0 1 8 7 2 5 4 6 9 ]`
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Iv3vgjM8Pv4?si=gtTqR-MNNrGmJH-B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 !!! exercise long id_bubble_explicacao
     Agora que você simulou o algoritmo para algumas entradas, consegue explicar **como** ele funciona e **por que** o array chega no fim ordenado? Escreva abaixo
@@ -149,6 +153,11 @@ Vamos agora simular essa ideia para entendê-la melhor.
         5. O menor elemento de A (a partir do índice 5) é 8. É feita troca entre os índices `5` e `6`. `A = [-1, 0, 3, 4, 7, 8, 12]`
 
         Quando chegamos no índice `6` a porção restante de `A` só tem um elemento, então terminamos aqui. 
+
+Novamente, veja um vídeo da simulação para o array `[ 3 0 1 8 7 2 5 4 9 6 ]`
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0-W8OEwLebQ?si=PN9Ro-0npBBedByK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 Agora que já simulamos o algoritmo algumas vezes, vamos escrever o pseudo código dele.
 
