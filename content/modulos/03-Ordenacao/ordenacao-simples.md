@@ -1,4 +1,4 @@
-# Algoritmos (simples) de ordenação
+# 01 - Primeiros Algoritmos (simples) de ordenação
 
 Nessa primeira atividade vamos entender um algoritmo simulando seu funcionamento. 
 
@@ -186,3 +186,9 @@ Os algoritmos acima são bem diferentes entre si.
 
     !!! answer 
         Discutido em sala. Use a opção "Editar" para modificar suas anotações após a discussão. 
+
+!!! exercise long
+    Mostre (usando a aula [01-02 Desempenho](/modulos/01-Busca-Array/desempenho)) que ambos algoritmos crescem de maneira equivalente.
+
+    !!! answer
+        Discutir no atendimento esse aqui ;)

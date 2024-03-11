@@ -1,4 +1,4 @@
-# Aula 01 - O tipo Lista
+# Aulas 01 e 02 - O tipo Lista
 
 O tipo `Array` que discutimos na apresentação inicial representa a maneira mais básica de se armazenar dados em linguagens de programação. Ele é, basicamente, uma região de memória em que colocamos um objeto após o outro, em sequência. Como o computador compartilha a memória com diversos programas, precisamos dizer com antecedência o quanto de memória usaremos. Por isso, o `Array` tem tamanho fixo.
 

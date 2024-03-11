@@ -30,24 +30,24 @@ nav:
         - modulos/00-Algoritmos/java/interfaces.md
     - "01 - Busca em vetor":
       - modulos/01-Busca-Array/index.md
-      - "Atividades":
-        - "Buscas básicas": modulos/01-Busca-Array/busca-frente-tras.md
-        - "Busca binária I": modulos/01-Busca-Array/busca-binaria-exemplo.md
-        - "Comparando desempenho de algoritmos": modulos/01-Busca-Array/desempenho.md
+      - "Aulas":
+        - "Aula 01":
+            - "Buscas básicas": modulos/01-Busca-Array/busca-frente-tras.md
+            - "Busca binária I": modulos/01-Busca-Array/busca-binaria-exemplo.md
+        - "Aula 02 - Comparando desempenho de algoritmos": modulos/01-Busca-Array/desempenho.md
     - "02 - Estruturas de Dados":
       - modulos/02-Estruturas-de-Dados/index.md
-      - "Atividades":
-        - modulos/02-Estruturas-de-Dados/arrays-e-listas.md
-        - modulos/02-Estruturas-de-Dados/listas-e-dicionarios.md
+      - "Aulas":
+        - "Aulas 01 e 02 - O tipo Lista": modulos/02-Estruturas-de-Dados/arrays-e-listas.md
+        - "Aula 03 - Dicionários": modulos/02-Estruturas-de-Dados/listas-e-dicionarios.md
+    - "03 - Ordenação":
+      - modulos/03-Ordenacao/index.md
+      - "Aulas":
+        - "01 - Primeiros algoritmos": modulos/03-Ordenacao/ordenacao-simples.md
+      #   - modulos/03-Ordenacao/quick-sort.md
+      #   - modulos/03-Ordenacao/merge-sort.md
+      # - modulos/03-Ordenacao/aps.md
     - "10 - Extra": modulos/10-Extra/index.md
-          
-    # - "03 - Ordenação":
-    #   - modulos/03-Ordenacao/index.md
-    #   - "Aulas":
-    #     - modulos/03-Ordenacao/ordenacao-simples.md
-    #     - modulos/03-Ordenacao/quick-sort.md
-    #     - modulos/03-Ordenacao/merge-sort.md
-    #   - modulos/03-Ordenacao/aps.md
     # - "04 - Busca em Texto":
     #   - modulos/05-Busca-Texto/index.md
     #   - "Aulas":

@@ -22,7 +22,7 @@ Recursos de Java usados neste módulo:
 - [Mapeamentos](map.md)
 ---> 
 
-## Atividades
+## Aulas
 
 - [Aulas 01 e 02 - O tipo Lista](arrays-e-listas.md)
 - [Aulas 03 e 04 - O tipo Dicionário](listas-e-dicionarios.md)

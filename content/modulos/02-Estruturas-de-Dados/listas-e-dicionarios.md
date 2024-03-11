@@ -1,4 +1,4 @@
-# Aula 02 - Dicionários
+# Aula 03 - Dicionários
 
 Quando começamos a chegar no fim de DevLife usamos cada vez mais Dicionários em nosso código. Os usamos para representar coleções de pares *chave->valor* em que para cada *chave* existe exatamente um valor. Como era possível compor dicionários dentro de dicionários dentro de dicionários (e por aí vai) conseguíamos usá-los para representar hierarquias complexas. O tipo `Map` representa de maneira abstrata esse tipo de estrutura de dados.
 

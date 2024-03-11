@@ -12,7 +12,7 @@ No terceiro módulo do curso iremos estudar o primeiro algoritmo clássico do cu
 
 Não usaremos nenhum recurso novo de Java neste módulo. Todos os nossos algoritmos só dependem de `Array`.
 
-## Atividades
+## Aulas
 
 - Aula 01
     - [Buscas básicas](busca-frente-tras.md)
