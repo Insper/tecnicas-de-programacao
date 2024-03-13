@@ -197,7 +197,12 @@ Os algoritmos acima são bem diferentes entre si.
         Discutido em sala. Use a opção "Editar" para modificar suas anotações após a discussão. 
 
 !!! exercise long
-    Mostre (usando a aula [01-02 Desempenho](/modulos/01-Busca-Array/desempenho)) que ambos algoritmos crescem de maneira equivalente.
+    Mostre (usando a aula [01-02 Desempenho](../../../modulos/01-Busca-Array/desempenho)) que ambos algoritmos crescem de maneira equivalente.
 
     !!! answer
         Discutir no atendimento esse aqui ;)
+
+
+## Entregas
+
+Exercícios do módulo 3 parte 1 no PrairieLearn
