@@ -21,10 +21,6 @@ Iremos explorar algumas soluções clássicas para esse problema
 
 ## Atividades
 
-- [Seguindo paredes com a mão direita](seguir-paredes.md)
-- [Busca em Profundidade](dfs.md)
-- [Busca em Largura](bfs.md)
-
-## Entregas
-
-- [APS 05](aps.md)
+- [Aula 01 - Seguindo paredes com a mão direita](seguir-paredes.md)
+- [Aula 02 - Busca em Profundidade](dfs.md)
+- [Aula 03 - Busca em Largura](bfs.md)

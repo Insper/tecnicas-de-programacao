@@ -1,4 +1,4 @@
-# Algoritmo de Seguir Paredes
+# Aula 01 - Seguindo paredes com a mão direita
 
 
 Nesse handout iremos formalizar duas grandes ideias:

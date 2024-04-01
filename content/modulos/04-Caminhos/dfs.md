@@ -1,4 +1,4 @@
-# Busca em Profundidade
+# Aula 02 - Busca em Profundidade
 
 Nossa primeira tentativa de resolver o Labirinto foi [seguir paredes com a mão direita](seguir-parede.md). Apesar de termos resultados positivos, algumas situações inesperadas aparecem.
 

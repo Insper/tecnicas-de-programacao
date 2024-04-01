@@ -1,4 +1,4 @@
-# Busca em Largura
+# Aula 03 - Busca em Largura
 
 Agora que já implementamos por completo a busca em profundidade (DFS) podemos dar um novo passo na resolução do labirinto: **encontrar a saída mais próxima**.
 

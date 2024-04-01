@@ -44,24 +44,17 @@ nav:
       - modulos/03-Ordenacao/index.md
       - "Aulas":
         - "01 - Primeiros algoritmos": modulos/03-Ordenacao/ordenacao-simples.md
-      #   - modulos/03-Ordenacao/quick-sort.md
-      #   - modulos/03-Ordenacao/merge-sort.md
-      # - modulos/03-Ordenacao/aps.md
-    - "10 - Extra": modulos/10-Extra/index.md
-    # - "04 - Busca em Texto":
-    #   - modulos/05-Busca-Texto/index.md
+        - modulos/03-Ordenacao/quick-sort.md
+        - modulos/03-Ordenacao/merge-sort.md
+    # - "04 - Caminhos":
+    #   - modulos/04-Caminhos/index.md
     #   - "Aulas":
-    #     - modulos/05-Busca-Texto/busca-simples.md
-    #   - modulos/05-Busca-Texto/aps.md
-    # - "05 - Caminhos":
-    #   - modulos/06-Caminhos/index.md
-    #   - "Aulas":
-    #     - modulos/06-Caminhos/seguir-paredes.md
-    #     - modulos/06-Caminhos/dfs.md
-    #     - modulos/06-Caminhos/bfs.md
-    #   - modulos/06-Caminhos/aps.md
+    #     - modulos/04-Caminhos/seguir-paredes.md
+    #     - modulos/04-Caminhos/dfs.md
+    #     - modulos/04-Caminhos/bfs.md
     # - "06 - Mochila":
     #   - modulos/07-Mochila/index.md
     #   - "Aulas":
     #       - modulos/07-Mochila/inicio.md
+    - "10 - Extra": modulos/10-Extra/index.md
 
