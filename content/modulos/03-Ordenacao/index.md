@@ -10,8 +10,8 @@ O problema da APS deste módulo envolve [String](../00-Algoritmos/java/strings.m
 ## Aulas
 
 - [Aula 01 - Primeiros Algoritmos](ordenacao-simples.md)
-<!-- - Aula 02 - Divisão e conquista - [Quick sort](quick-sort.md)
-- Aula 03 - Divisão e conquista II - [Merge sort](merge-sort.md) -->
+- Aula 02 - Divisão e conquista - [Quick sort](quick-sort.md)
+- Aula 03 - Divisão e conquista II - [Merge sort](merge-sort.md)
 
 ## Entregas
 
