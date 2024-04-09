@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Slides desempenho - Técnicas de Programação</title>
+        <title>Backtracking - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -210,7 +210,7 @@
         
   
     <li>
-      <a href="../">Index</a>
+      <a href="../../01-Busca-Array/">Index</a>
     </li>
   
 
@@ -228,7 +228,7 @@
         
   
     <li>
-      <a href="../busca-frente-tras/">Buscas básicas</a>
+      <a href="../../01-Busca-Array/busca-frente-tras/">Buscas básicas</a>
     </li>
   
 
@@ -236,7 +236,7 @@
         
   
     <li>
-      <a href="../busca-binaria-exemplo/">Busca binária I</a>
+      <a href="../../01-Busca-Array/busca-binaria-exemplo/">Busca binária I</a>
     </li>
   
 
@@ -248,7 +248,7 @@
         
   
     <li>
-      <a href="../desempenho/">Aula 02 - Comparando desempenho de algoritmos</a>
+      <a href="../../01-Busca-Array/desempenho/">Aula 02 - Comparando desempenho de algoritmos</a>
     </li>
   
 
@@ -381,120 +381,120 @@
           </div>
           
             <section class="progress-section show">
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
+<h1 id="02-a-solucao-otima">02 - A solução ótima</h1>
+<div><center><embed height="300" src="../slides-backtracking.pdf" type="application/pdf" width="80%" /></center></div>
+<p>Neste roteiro iremos responder à pergunta:</p>
+<div class="admonition info">
+<blockquote>
+<p>Dada uma configuração da mochila com as variáveis abaixo, conseguimos uma solução com valor maior que <em>X</em>?</p>
+</blockquote>
+</div>
+<ol>
+<li><code>N</code> - número de objetos</li>
+<li><code>C</code> - capacidade máxima da nossa mochila</li>
+<li><code>V</code> - array com o valor de cada objeto</li>
+<li><code>P</code> - array com o peso de cada objeto</li>
+</ol>
+<p>Vamos rever algumas características do nosso problema:</p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/05-Mochila/backtracking/long_1" id="long_1_0">
+<p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Em uma mochila com 13 objetos, quantas são soluções possíveis?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
 
-<h1 id="tecnicas-de-programacao">Técnicas de Programação</h1>
-<h2 id="busca-em-vetores">Busca em vetores</h2>
-<hr />
-<h1 id="algoritmo-sequencia-de-passos-finita-para-resolver-um-problema">Algoritmo: sequência de passos (finita) para resolver um problema</h1>
-<ol>
-<li>escritos em pseudo-código </li>
-<li>focam na resolução do problema e não em detalhes de implementação</li>
-</ol>
-<hr />
-<h1 id="perguntas-importantes">Perguntas importantes</h1>
-<ol>
-<li>Como representar um algoritmo sem código?</li>
-<li>Quantas operações esse algoritmo realiza?</li>
-<li>Dado um algoritmo incorreto, como mostrar que ele está errado?</li>
-</ol>
-<hr />
-<h1 id="algoritmos-de-busca">Algoritmos de busca</h1>
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>São $2^{13}$ soluções possíveis. Note que dependendo das outras variáveis nem todas essas soluções são viáveis. Ou seja, dessas soluções uma porção pode ter peso maior que <code>C</code>.</p>
+</div>
+</div>
+<p>A cada passo do algoritmo decidimos se selecionamos ou não o objeto atual. Se selecionamos, resolvemos um novo problema da mochila com capacidade menor (em função do objeto que acabamos de selecionar) e com somente os objetos restantes. Se não mantemos a capacidade e eliminamos o objeto atual da lista de objetos.</p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/05-Mochila/backtracking/long_2" id="long_2_0">
+<p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Suponha que já escolhemos $i-1$ objetos e estamos decidindo se selecionamos o objeto $i$, de peso $10$ e valor $5$. Nossa mochila ainda tem $50$ de capacidade e o valor atual é $43$. Os objetos selecionados estão colocados em um array <code>O</code>.</p>
+<p>Se desejarmos <strong>selecionar</strong> o objeto $i$, como nossa solução parcial será modificada?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Precisamos setar <code>O[i] = VERDADEIRO</code>, diminuir a capacidade da mochila em $10$ (resultando em $40$ restantes) e aumentar o valore atual em $5$ (resultando em valor $48$).</p>
+</div>
+</div>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/05-Mochila/backtracking/long_3" id="long_3_0">
+<p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Suponha que já escolhemos $i-1$ objetos e estamos decidindo se selecionamos o objeto $i$, de peso $10$ e valor $5$. Nossa mochila ainda tem $50$ de capacidade e o valor atual é $43$. Os objetos selecionados estão colocados em um array <code>O</code>.</p>
+<p>Se desejarmos <strong>não selecionar</strong> o objeto $i$, como nossa solução parcial será modificada?</p>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Precisamos somente setar <code>O[i] = FALSO</code>. Como o objeto não foi selecionado, capacidade e valor atual não se modificam.</p>
+</div>
+</div>
+<div>
+<div class="ah-progress-container"><button class="ah-button ah-button--primary progress" id="prog-0"> Continuar </button></div>
+</div>
+</section>
+<section class="progress-section">
+<p>Algoritmos de enumeração exaustiva necessitam de uma técnica chamada <strong>Backtracking</strong> para memorizar quais soluções já foram tentadas e quais ainda não foram. Essa técnica consiste em criar algoritmos recursivos que seguem um modelo mais ou menos fixo. Veja abaixo esse modelo:</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BACKTRACKING(...., N, SP, I)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    SE I = N ENTÃO
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        # AQUI SP JÁ É UMA SOLUÇÃO COMPLETA, ENTÃO PODEMOS DEVOLVÊ-LA
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        DEVOLVA UMA CÓPIA DE SP
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    FIM
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    PARA CADA ESCOLHA POSSÍVEL NA ITERAÇÃO I FAÇA
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        # O LOOP ACIMA JÁ CHECA SE AS ESCOLHAS RESPEITAM AS RESTRIÇÕES
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        ADICIONE ESSA ESCOLHA EM SP
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        BACKTRACKING(...., N, SP, I+1)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        REMOVA ESSA ESCOLHA DE SP
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    FIM
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    DEVOLVA A MELHOR SOLUÇÃO RETORNADA NO LOOP ACIMA
+</code></pre></div>
 <ul>
-<li>busca sequencial</li>
-<li>busca binária</li>
+<li><code>N</code> - tamanho do problema (e também o número máximo de chamadas recursivas que faremos, que é igual ao número de decisões que o algoritmo toma para construir uma solução)</li>
+<li><code>SP</code> - solução parcial levando em conta somente as <code>I-1</code> primeiras iterações</li>
+<li><code>I</code> - iteração atual do algoritmo</li>
+<li>o último passo do algoritmo requer que guardemos a melhor solução dentre as tentadas nas chamadas recursivas. <strong>Não é necessário alocar um array para isso</strong>.</li>
 </ul>
-<hr />
-<h1 id="em-termos-de-numero-de-operacoes-esses-algoritmos-sao-equivalentes">Em termos de número de operações, esses algoritmos são equivalentes?</h1>
-<h2 id="vamos-sempre-contar-o-numero-de-operacoes-no-pior-caso">Vamos sempre contar o número de operações <strong>no pior caso</strong></h2>
-<hr />
-<h1 id="definicoes">Definições</h1>
-<p>Dado um array de tamanho $n$, seja </p>
+<p>O seu trabalho hoje será interpretar isso no contexto da <em>Mochila binária</em>.</p>
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/05-Mochila/backtracking/long_4" id="long_4_0">
+<p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
+<form class="exercise-form">
+<p>Adapte o modelo acima para resolver o problema da Mochila. Leve em conta os seguintes pontos</p>
 <ul>
-<li>$f(n)$ o número de operações feitas pela busca sequencial no pior caso</li>
-<li>$g(n)$ o número de operações feitas pela busca binária no pior caso</li>
+<li>solução parcial compreende três coisas: <code>Op</code>, <code>Cp</code> e <code>Vp</code> contendo os objetos selecionados até o momento, seu peso total e valor total</li>
+<li><code>i</code> representa o objeto atual, que iremos selecionar ou não</li>
 </ul>
-<p>$$
-f(n) &gt; 0, g(n) &gt; 0 \quad \forall n &gt; 0
-$$</p>
-<hr />
-<h2 id="definicoes_1">Definições</h2>
-<p><strong>Pergunta</strong>: Conforme $n$ aumenta, $f(n)$ </p>
-<ol>
-<li>cresce mais rápido </li>
-<li>de maneira equivalente</li>
-<li>mais lentamente</li>
-</ol>
-<p>que $g(n)$?</p>
-<hr />
-<h1 id="definicoes-ii">Definições II</h1>
-<p>Vamos usar limites pra isso!</p>
-<p>$$
-\lim_{n\rightarrow+\infty} \frac{f(n)}{g(n)}
-$$</p>
-<p>Qual o valor desse limite se $f(n)$ for ____ que $g(n)$?</p>
-<ol>
-<li>mais rápido?</li>
-<li>equivalente?</li>
-<li>mais lento?</li>
-</ol>
-<hr />
-<h1 id="definicoes-iii">Definições III</h1>
-<ol>
-<li><strong>mais rápido</strong>:</li>
-</ol>
-<p>$$
-\lim_{n\rightarrow+\infty} \frac{f(n)}{g(n)} = +\infty
-$$
-2. <strong>equivalente</strong></p>
-<p>$$
-0 &lt; \lim_{n\rightarrow+\infty} \frac{f(n)}{g(n)} &lt; +\infty
-$$</p>
-<ol>
-<li><strong>mais lento</strong>:</li>
-</ol>
-<p>$$
-\lim_{n\rightarrow+\infty} \frac{f(n)}{g(n)} = 0
-$$</p>
-<hr />
-<h1 id="exercicio">Exercício</h1>
-<ol>
-<li>escrever juntos os algoritmos "oficiais" das buscas sequenciais e binária</li>
-<li><strong>Parte 1</strong> do handout de hoje. (10-15 minutos)</li>
-<li>Discussão na lousa</li>
-</ol>
-<hr />
-<h1 id="notacao-mathcalo">Notação $\mathcal{O}$</h1>
-<p>Dada uma função $g(n)$, dizemos que uma função $f(n)$ é $\mathcal{O}(g(n))$ se e se somente se</p>
-<ol>
-<li>
-<p>$
-\lim_{n\rightarrow +\infty} \frac{f(n)}{g(n)} &lt; +\infty
-$</p>
-</li>
-<li>
-<p>$f$ e $g$ satisfazem $f(n) &gt; 0, g(n) &gt; 0, \quad \forall n &gt; 0$</p>
-</li>
-</ol>
-<hr />
-<h1 id="classes-de-algoritmos">Classes de algoritmos</h1>
-<ul>
-<li>$\mathcal{O}(\log_2 n)$ - dividem a entrada em duas partes e ignoram metade dela a cada iteração</li>
-<li>$\mathcal{O}(n)$ - olham $c$ vezes para cada elemento da entrada, com $c$ constante</li>
-<li>$\mathcal{O}(n^2)$ - loop duplo. Exemplo mais comum é olhar novamente para todo array a cada elemento.</li>
-</ul>
-<p>Existem diferenças de tempo de execução entre algoritmos da mesma classe, mas essa diferença não depende do tamanho $n$ da entrada. Para algoritmos de classes diferentes a diferença de tempo <strong>aumenta</strong> de maneira dependente de $n$.</p>
-<hr />
-<h1 id="exercicio_1">Exercício</h1>
-<ol>
-<li><strong>Parte 2</strong> do handout</li>
-<li>implementações dos algoritmos no PrarieLearn</li>
-</ol>
+<div class="form-elements">
+<div class="grow-wrap"><textarea name="data"></textarea></div>
+
+<input class="ah-button ah-button--primary" type="submit" value="Enviar"/>
+</div>
+</form>
+<div class="admonition answer no-indent">
+<p class="admonition-title">Resposta</p>
+<p>Será feito na lousa depois de um tempo tentando aqui. Use o botão "Editar" para ajeitar sua solução depois disso. </p>
+</div>
+</div>
+<p>Acabou? Tente implementar seu algoritmo seguindo <a href="../aps/">as instruções na página da APS</a>.</p>
 
 
 </section>
