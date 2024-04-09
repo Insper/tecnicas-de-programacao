@@ -1,4 +1,4 @@
-# Encontrando a melhor solução com Backtracking
+# 02 - A solução ótima
 
 !!! pdf
     ![](../slides-backtracking.pdf)

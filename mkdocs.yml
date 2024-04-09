@@ -44,17 +44,19 @@ nav:
       - modulos/03-Ordenacao/index.md
       - "Aulas":
         - "01 - Primeiros algoritmos": modulos/03-Ordenacao/ordenacao-simples.md
-        - modulos/03-Ordenacao/quick-sort.md
-        - modulos/03-Ordenacao/merge-sort.md
+        - "02 - QuickSort": modulos/03-Ordenacao/quick-sort.md
+        - "03 - MergeSort": modulos/03-Ordenacao/merge-sort.md
     # - "04 - Caminhos":
     #   - modulos/04-Caminhos/index.md
     #   - "Aulas":
     #     - modulos/04-Caminhos/seguir-paredes.md
     #     - modulos/04-Caminhos/dfs.md
     #     - modulos/04-Caminhos/bfs.md
-    # - "06 - Mochila":
-    #   - modulos/07-Mochila/index.md
+    # - "05 - Mochila":
+    #   - modulos/05-Mochila/index.md
     #   - "Aulas":
-    #       - modulos/07-Mochila/inicio.md
+    #       - "01 - Primeiras soluções": modulos/05-Mochila/inicio.md
+    #       - "02 - A solução ótima": modulos/05-Mochila/backtracking.md
+    #       - "03 - Acelerando a solução ótima": modulos/05-Mochila/branch-and-bound.md
     - "10 - Extra": modulos/10-Extra/index.md
 

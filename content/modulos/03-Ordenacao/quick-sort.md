@@ -1,4 +1,4 @@
-# Quick sort
+# 02 - Quick sort
 
 !!! pdf
     ![](../slides.pdf)

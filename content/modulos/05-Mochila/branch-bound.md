@@ -1,4 +1,4 @@
-# Branch and Bound
+# 03 - Acelerando a solução ótima
 
 !!! pdf
     ![](slides-branch-bound.pdf)

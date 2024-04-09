@@ -1,4 +1,4 @@
-# Merge Sort
+# 03 - Merge Sort
 
 Vamos olhar agora para a seguinte ideia:
 
