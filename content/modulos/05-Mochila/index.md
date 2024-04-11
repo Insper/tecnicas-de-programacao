@@ -4,6 +4,6 @@ Neste módulo iremos trabalhar com a **Mochila Binária**. Iremos explorar diver
 
 ## Atividades
 
-- [Primeiras soluções](inicio.md)
-- [Solução ótima](backtracking.md)
-- [Acelerando a solução ótima](branch-bound.md)
+- [01 - Primeiras soluções](inicio.md)
+- [02 - Solução ótima](backtracking.md)
+<!-- - [Acelerando a solução ótima](branch-bound.md) -->
