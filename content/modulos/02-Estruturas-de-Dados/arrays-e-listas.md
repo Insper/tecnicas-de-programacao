@@ -138,7 +138,7 @@ Com essa rotina podemos implementar facilmente a inserção.
         L[i] = V
         ```
 
-Note que a etapa de tradução do algoritmo acima para Java não é exatamente trivial e depende de um monte de outras definições. Trabalharemos isso na [APS deste módulo](aps.md)
+Note que a etapa de tradução do algoritmo acima para Java não é exatamente trivial e depende de um monte de outras definições. Trabalharemos isso no PrairieLearn deste módulo.
 
 ### Remoção
 

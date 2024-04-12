@@ -64,4 +64,4 @@ SE CHEGOU NO DESTINO ENTÃO
 FIM
 ```
 
-Seu desafio será transformar esse pseudo código alto nível em uma implementação completa da busca em largura. Volte para o [enunciado da APS](aps.md) e use os testes para verificar sua implementação.
+Seu desafio será transformar esse pseudo código alto nível em uma implementação completa da busca em largura. Volte para o PrairieLearn e use os testes para verificar sua implementação.

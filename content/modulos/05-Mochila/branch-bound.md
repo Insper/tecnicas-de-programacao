@@ -49,4 +49,4 @@ Com isto em mente, podemos usar a mochila fracionária como um limitante superio
 
 ## Implementação 
 
-Agora que entendemos o que cada bound faz, siga o guia na [página da APS](aps.md) para fazer as tarefas de implementação.
+Agora que entendemos o que cada bound faz, siga o guia no PrairieLearn para fazer as tarefas de implementação.

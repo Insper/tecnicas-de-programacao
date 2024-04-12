@@ -85,6 +85,6 @@ O seu trabalho hoje será interpretar isso no contexto da *Mochila binária*.
     !!! answer
         Será feito na lousa depois de um tempo tentando aqui. Use o botão "Editar" para ajeitar sua solução depois disso. 
 
-Acabou? Tente implementar seu algoritmo seguindo [as instruções na página da APS](aps.md).
+Acabou? Tente implementar seu algoritmo seguindo as instruções no PrairieLearn
 
 

@@ -207,4 +207,4 @@ Vamos para o exercício final de hoje: escrever a busca em profundidade completa
         Será feito na última aula do módulo na lousa. A ideia é iterar aqui entre algoritmo, simulações e implementação. 
 
 
-Agora que já estudamos uma versão inicial da busca em profundidade, vá para a tarefa de implementação na [aps](aps.md).
+Agora que já estudamos uma versão inicial da busca em profundidade, vá para a tarefa de implementação no PrairieLearn

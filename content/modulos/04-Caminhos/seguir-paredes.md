@@ -26,7 +26,7 @@ Usaremos o seguinte formato de texto para a criação do labirinto
 - cada linha contém somente caracteres `'.'` (livre) ou `'#'` (parede)
 - todas as linhas contém o mesmo número de caracteres
 
-Iremos representar o labirinto como um array `boolean casas[][]` em que a posição `casas[i][j]` contém `true` se a casa é parede e `false` caso contrário. Veja o item da ADT na [APS](aps.md) deste módulo para uma descrição mais completa da implementação.
+Iremos representar o labirinto como um array `boolean casas[][]` em que a posição `casas[i][j]` contém `true` se a casa é parede e `false` caso contrário. Veja o item da ADT no PrairieLearn deste módulo para uma descrição mais completa da implementação.
 
 ## Algoritmo de Seguir Paredes
 
@@ -293,4 +293,4 @@ Com essas simulações já é possível criar um algoritmo que implemente essa i
 
 
 
-Agora é hora de partir para implementação. Veja o item deste algoritmo na [APS](aps.md) deste módulo para uma descrição mais completa da implementação.
+Agora é hora de partir para implementação. Veja o item deste algoritmo no PrairieLearn deste módulo para uma descrição mais completa da implementação.

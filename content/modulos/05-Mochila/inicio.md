@@ -119,4 +119,4 @@ Você deve ter percebido que as mudanças foram mínimas! Isso ocorre pois só m
 !!! exercise long
     Com base nas suas respostas acima, em quais situações a heurística do mais leve é melhor?
 
-Agora que já entendemos melhor nossas soluções, siga para a implementação na [página da APS](aps.md)
+Agora que já entendemos melhor nossas soluções, siga para a implementação no PrairieLearn
