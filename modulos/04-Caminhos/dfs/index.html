@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Dfs - Técnicas de Programação</title>
+        <title>Aula 02 - Busca em Profundidade - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -102,7 +102,7 @@
               
   
     <li>
-      <a href="../../../sobre/">Sobre</a>
+      <a href="../../../sobre/">Sobre a Disciplina</a>
     </li>
   
 
@@ -120,7 +120,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/">Index</a>
+      <a href="../../00-Algoritmos/">Introdução</a>
     </li>
   
 
@@ -128,7 +128,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Pseudo codigo e java</a>
+      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Primeiros algoritmos</a>
     </li>
   
 
@@ -136,7 +136,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com arrays e strings</a>
+      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com dados compostos</a>
     </li>
   
 
@@ -144,7 +144,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/algoritmos-basicos-strings/">Algoritmos basicos strings</a>
+      <a href="../../00-Algoritmos/algoritmos-basicos-strings/">Algoritmos básicos em Strings</a>
     </li>
   
 
@@ -157,7 +157,7 @@
         
   
     <li>
-      <a href="../../00-Algoritmos/java/">Index</a>
+      <a href="../../00-Algoritmos/java/">Referência</a>
     </li>
   
 
@@ -210,7 +210,7 @@
         
   
     <li>
-      <a href="../../01-Busca-Array/">Index</a>
+      <a href="../../01-Busca-Array/">Introdução</a>
     </li>
   
 
@@ -269,7 +269,7 @@
         
   
     <li>
-      <a href="../../02-Estruturas-de-Dados/">Index</a>
+      <a href="../../02-Estruturas-de-Dados/">Introdução</a>
     </li>
   
 
@@ -311,7 +311,7 @@
         
   
     <li>
-      <a href="../../03-Ordenacao/">Index</a>
+      <a href="../../03-Ordenacao/">Introdução</a>
     </li>
   
 
@@ -361,7 +361,7 @@
         
   
     <li>
-      <a href="../">Index</a>
+      <a href="../">Introdução</a>
     </li>
   
 
@@ -374,21 +374,21 @@
         
   
     <li>
-      <a href="../seguir-paredes/">Seguir paredes</a>
+      <a href="../seguir-paredes/">Aula 01 - Seguindo paredes com a mão direita</a>
     </li>
   
 
       
         
   
-
     <li class="active ah-togglable-item opened">
-      <span class="ah-togglable-handle">Dfs</span>
+      <span class="ah-togglable-handle">Aula 02 - Busca em Profundidade</span>
       <ul>
         
+          <li class="ah-toc-item">
+            <a href="#aula-02-busca-em-profundidade">Aula 02 - Busca em Profundidade</a>
+          </li>
           
-            
-            
         
       </ul>
     </li>
@@ -398,7 +398,7 @@
         
   
     <li>
-      <a href="../bfs/">Bfs</a>
+      <a href="../bfs/">Aula 03 - Busca em Largura</a>
     </li>
   
 
@@ -419,7 +419,7 @@
         
   
     <li>
-      <a href="../../05-Mochila/">Index</a>
+      <a href="../../05-Mochila/">Introdução</a>
     </li>
   
 
@@ -486,7 +486,7 @@
                     <li>Aulas</li>
                   
                 
-                <li></li>
+                <li>Aula 02 - Busca em Profundidade</li>
             </ul>
             
             
@@ -495,7 +495,7 @@
             <section class="progress-section show">
 <h1 id="aula-02-busca-em-profundidade">Aula 02 - Busca em Profundidade</h1>
 <p>Nossa primeira tentativa de resolver o Labirinto foi <a href="seguir-parede.md">seguir paredes com a mão direita</a>. Apesar de termos resultados positivos, algumas situações inesperadas aparecem.</p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/04-Caminhos/dfs/long_1" id="long_1_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/04-Caminhos/dfs/long_1" id="long_1_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>É possível resolver o seguinte labirinto com o algoritmo da aula passada?</p>
@@ -519,7 +519,7 @@
 <p>Não dá certo! Ele fica girando na parede do centro e nunca checa na saída, mesmo ela existindo.</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/04-Caminhos/dfs/long_2" id="long_2_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/04-Caminhos/dfs/long_2" id="long_2_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Suponha agora que desejemos sair da casa <code>o</code>  e chegar na casa <code>X</code>. Isso é possível usando o algoritmo da aula passada?</p>
@@ -753,7 +753,7 @@
 </section>
 <section class="progress-section">
 <p>Vamos agora definir o critério de parada de nosso algoritmo. </p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/04-Caminhos/dfs/long_3" id="long_3_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/04-Caminhos/dfs/long_3" id="long_3_0">
 <p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Estando em uma casa <code>C</code>, em quais situações decidimos não fazer mais chamadas recursivas?</p>
@@ -779,7 +779,7 @@
 <li>as possíveis chamadas recursivas feitas em cada passo do algoritmo</li>
 </ol>
 <p>Falta agora completarmos para descobrir como devolver resultados desse procedimento recursivo que estamos montando.Lembrando que o algoritmo criado retorna <code>VERDADEIRO</code> se existe caminho entre a fonte e o destino e <code>FALSO</code> caso contrário. Se houver caminho, ele é retornado na lista <code>CAMINHO</code>. </p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/04-Caminhos/dfs/long_4" id="long_4_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/04-Caminhos/dfs/long_4" id="long_4_0">
 <p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A partir do critério de parada que determinamos acima, em quais situações a chamada atual devolveria <code>VERDADEIRO</code>? Não se esqueça de considerar as chamadas recursivas em sua resposta.</p>
@@ -794,7 +794,7 @@
 <p>Claramente a função retorna <code>VERDADEIRO</code> se chegamos no destino. Revisitando a definição da existência de caminhos, também notamos que essa função retorna <code>VERDADEIRO</code> se existe caminho entre algum de seus vizinhos e o destino.</p>
 </div>
 </div>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/04-Caminhos/dfs/long_5" id="long_5_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/04-Caminhos/dfs/long_5" id="long_5_0">
 <p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A partir do critério de parada que determinamos acima, em quais situações a chamada atual devolveria <code>FALSO</code>? Não se esqueça de considerar as chamadas recursivas em sua resposta.</p>
@@ -815,7 +815,7 @@
 </section>
 <section class="progress-section">
 <p>Vamos para o exercício final de hoje: escrever a busca em profundidade completa. O algoritmo em si é curto, mas precisamos definir algumas estruturas extras para nos auxiliar.</p>
-<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/04-Caminhos/dfs/long_6" id="long_6_0">
+<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/04-Caminhos/dfs/long_6" id="long_6_0">
 <p class="admonition-title">Exercício 9<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o algoritmo recursivo <code>DFS</code>. Você pode usar os seguintes argumentos:</p>
@@ -837,7 +837,7 @@
 <p>Será feito na última aula do módulo na lousa. A ideia é iterar aqui entre algoritmo, simulações e implementação. </p>
 </div>
 </div>
-<p>Agora que já estudamos uma versão inicial da busca em profundidade, vá para a tarefa de implementação na <a href="aps.md">aps</a>.</p>
+<p>Agora que já estudamos uma versão inicial da busca em profundidade, vá para a tarefa de implementação no PrairieLearn</p>
 
 
 </section>
@@ -849,17 +849,17 @@
           
             <a href="../seguir-paredes/"
                class="ah-prev"
-               title="Seguir paredes">
+               title="Aula 01 - Seguindo paredes com a mão direita">
               <span class="nav-label">Anterior</span>
-              <span class="nav-title">Seguir paredes</span>
+              <span class="nav-title">Aula 01 - Seguindo paredes com a mão direita</span>
             </a>
           
           
             <a href="../bfs/"
                class="ah-next"
-               title="Bfs">
+               title="Aula 03 - Busca em Largura">
               <span class="nav-label">Próximo</span>
-              <span class="nav-title">Bfs</span>
+              <span class="nav-title">Aula 03 - Busca em Largura</span>
             </a>
           
         </div>
