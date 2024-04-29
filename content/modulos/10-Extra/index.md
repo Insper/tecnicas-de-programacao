@@ -15,17 +15,28 @@ Os seguintes exercícios são úteis para estudar para a PI. Eles não valem not
 !!! tip
     Nestes exercícios vale usar Java "normal", então tomem cuidado para resolver usando as restrições que estamos aplicando na matéria. Isso vai ajudar no estudo. 
 
-**Strings**:
-
-- TBA
-
 **Busca binária**:
 
-- TBA
+- [Insert position](https://leetcode.com/problems/search-insert-position/description/)
+- [Smallest letter greater than target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/)
 
 **Ordenação**:
 
 - [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/description/)
 - [Missing Number](https://leetcode.com/problems/missing-number/description/)
 - [Majority Element](https://leetcode.com/problems/majority-element/description/)
+
+## Preparação para PF
+
+O mesmo agora para a PF :)
+
+**Busca em Profundidade**:
+
+- [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/)
+
+**Busca em Largura**:
+
+- [01-matrix](https://leetcode.com/problems/01-matrix/description/)
+- [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
 
