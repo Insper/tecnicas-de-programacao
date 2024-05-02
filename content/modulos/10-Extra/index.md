@@ -32,10 +32,15 @@ O mesmo agora para a PF :)
 
 **Busca em Profundidade**:
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/k6Z_nTy09hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 - [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/)
 
 **Busca em Largura**:
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xOuCpay7rpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - [01-matrix](https://leetcode.com/problems/01-matrix/description/)
 - [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
