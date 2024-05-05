@@ -520,7 +520,7 @@
 </ol>
 <h2 id="recursao-e-o-algoritmo-quick_sort">Recursão e o algoritmo <code>QUICK_SORT</code></h2>
 <p>Vamos começar lendo essa descrição e notando uma coisa: parece que temos um algoritmo <strong>Recursivo</strong>! Os passos <em>3</em> e <em>4</em> são, essencialmente, aplicar ordenação em subarrays à esquerda e à direita do elemento <strong>pivô</strong>. </p>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_base" id="quick_base_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_base" id="quick_base_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Vimos anteriormente que todo algoritmo recursivo tem uma <strong>base</strong>, que é o caso mais simples que sabemos a resposta e não precisamos rechamar o algoritmo. Qual você imagina que seria o caso base para ordenação?</p>
@@ -543,7 +543,7 @@
 </ol>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_vezes_divisao_melhor_caso" id="quick_vezes_divisao_melhor_caso_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_vezes_divisao_melhor_caso" id="quick_vezes_divisao_melhor_caso_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Neste exercício vamos assumir que o <strong>pivô</strong> divide o array em dois pedaços exatamente iguais toda vez. Nesse caso, para um array de tamanho <code>N=32</code>, quantas vezes precisamos dividir o array em dois pedaços até chegar na base? Em outras palavras, quantas vezes precisamos dividir o veto até chegar em um array de tamanho <code>1</code> (ou <code>2</code>, dependendo da sua resposta acima)?</p>
@@ -562,7 +562,7 @@
 <p class="admonition-title">Dica 1</p>
 <p>Você deve estar vendo que não estamos sendo muito precisos em nossas contas. Isso ocorre pois comparamos eficiência de algoritmos para <code>N</code> muito grande. Nesses casos, se for $\log_2 N$ ou $\log_2 N - 1$ ou até $5 \times \log_2 N$ não faz muita diferença. O valor de $N$ (para $N$ grande) domina todas essas pequenas flutuações. Nas próximas disciplinas de algoritmos iremos escrever isso formalmente.</p>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_vezes_divisao_pior_caso" id="quick_vezes_divisao_pior_caso_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_vezes_divisao_pior_caso" id="quick_vezes_divisao_pior_caso_0">
 <p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Neste exercício vamos assumir que o <strong>pivô</strong> divide o array da pior maneira possível: ele é sempre o menor elemento e fica então com um subarray esquerdo de tamanho <code>0</code> e um subarray direito de tamanho <code>N-1</code>. Nesse caso, quantas vezes iremos dividir o array até chegar no caso base? </p>
@@ -601,7 +601,7 @@
 <li>troque o pivô com o elemento em <code>LUGAR_PIVO</code></li>
 </ol>
 <p>Como anteriormente, vamos simular esse algoritmo para entender melhor seu funcionamento. </p>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona1" id="quick_particiona1_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona1" id="quick_particiona1_0">
 <p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Simule a ideia do particiona para o seguinte array <code>A = [ 6 3 1 2 7 5 4 8 ]</code>. </p>
@@ -631,7 +631,7 @@
 </ul>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona2" id="quick_particiona2_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona2" id="quick_particiona2_0">
 <p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Simule a ideia do particiona para o seguinte array <code>A = [ -2 1 2 3 466 2 ]</code>. </p>
@@ -659,7 +659,7 @@
 </ul>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona3" id="quick_particiona3_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona3" id="quick_particiona3_0">
 <p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Simule a ideia do particiona para o seguinte array <code>A = [ 500 1 2 3 466 2 ]</code>. </p>
@@ -687,7 +687,7 @@
 </ul>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona_algo" id="quick_particiona_algo_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_particiona_algo" id="quick_particiona_algo_0">
 <p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Agora escreva aqui seu algoritmo <code>PARTICIONA</code> baseado nas simulações acima. </p>
@@ -704,7 +704,7 @@
 </div>
 <h1 id="juntando-tudo">Juntando tudo</h1>
 <p>Vamos agora juntar tudo o que fizemos.</p>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_sort_algo" id="quick_sort_algo_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/03-Ordenacao/quick-sort/quick_sort_algo" id="quick_sort_algo_0">
 <p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Agora escreva aqui seu algoritmo <code>QUICK_SORT</code> baseado nas simulações acima. Use o seguinte esqueleto:</p>
