@@ -30,6 +30,9 @@ Os seguintes exercícios são úteis para estudar para a PI. Eles não valem not
 
 O mesmo agora para a PF :)
 
+!!! warning "Atenção!"
+    Depois de revisar os conteúdos e fazer os exercícios abaixo, veja o [simulado da PF](https://us.prairielearn.com/pl/course_instance/146836/assessment/2420204). Ele é baseado em questões passadas de provas e será muito útil na preparação para a PF.
+
 **Busca em Profundidade**:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/k6Z_nTy09hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
