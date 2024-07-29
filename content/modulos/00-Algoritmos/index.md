@@ -11,11 +11,11 @@ No primeiro módulo do curso iremos fazer uma introdução a Algoritmos e Java.
 
 - [:book: Atividade 01 - Iniciando com Java](java/primeiro-contato.md)
 - [:desktop: Atividade 02 - Executando código Java no Prairie Learn](java/infra.md)
-- [:pencil: Atividade 01 - Pseudo-código](pseudo-codigo-e-java.md)
+- [:pencil: Atividade 03 - Pseudo-código](pseudo-codigo-e-java.md)
 - [:book: Atividade 04 - Arrays](java/arrays.md)
-- [:book: Atividade 06 - Strings](java/strings.md)
-- [:pencil: Atividade 07 - Strings e Arrays](algoritmos-com-arrays-e-strings.md)
-- [:desktop: Atividade 08 - Busca em Strings](algoritmos-basicos-strings.md)
+- [:book: Atividade 05 - Strings](java/strings.md)
+- [:pencil: Atividade 06 - Strings e Arrays](algoritmos-com-arrays-e-strings.md)
+- [:desktop: Atividade 07 - Busca em Strings](algoritmos-basicos-strings.md)
 
 ## Entregas
 
