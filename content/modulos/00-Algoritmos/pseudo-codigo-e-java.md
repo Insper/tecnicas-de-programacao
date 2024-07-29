@@ -6,13 +6,14 @@ show_reset_button: true
 
 Neste roteiro iremos criar nossos primeiros algoritmos em Pseudo-Código e explorar sua "tradução" para Java. Conforme o roteiro avança haverá leituras (curtas) recomendadas sobre sintaxe e semântica de Java.
 
+<!-- 
 !!! warning "Pré-requisitos"
     Esta aula é feita em conjunto com os exercício no PrairieLearn. Você precisa ter feito as seguintes atividades antes de prosseguir:
 
     - [Java no PrairieLearn](java/infra.md): básico da infra usada na disciplina.
     - [Primeiro contato com Java](java/primeiro-contato.md) 
 
-    Feitos esses dois guias, abra o *Módulo 0 - parte 1* no PrairieLearn e siga o handout. Cada problema tem um exercício de implementação em Java no PrairieLearn com testes automatizados que checam sua solução.
+    Feitos esses dois guias, abra o *Módulo 0 - parte 1* no PrairieLearn e siga o handout. Cada problema tem um exercício de implementação em Java no PrairieLearn com testes automatizados que checam sua solução. -->
 
 
 ## O esqueleto de um algoritmo

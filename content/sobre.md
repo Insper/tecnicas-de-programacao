@@ -9,15 +9,13 @@ O curso está organizado em Módulos, cada um focado em uma Técnica de Programa
 
 Teremos exercícios teóricos e de implementação. Toda a parte de avaliação e acompanhamento da disciplina estará na [área do curso no PrairieLearn]({{ PL_url_course }}). Em cada módulo a pontuação dos trabalhos é explicada com detalhes.
 
-
 ## Horários e datas
 
 - **QUARTA**: 13:30
 - **SEXTA**: 13:30
-- Atendimento **SEGUNDA** 09:45
+- Atendimento **QUARTA** 09:45
 
-Os temas das aulas estão disponíveis no arquivo [datas.ics](datas.ics), que pode ser importado no Google Calendar, Outlook e afins. Isso pode ajudar na organização pessoal de vocês e vale bastante a pena. Feriados e provas também estão inclusos. 
-
+Os temas das aulas estão disponíveis no arquivo [Plano de Aulas](plano-de-aulas.xlsx)
 
 ## Aprovação
 
@@ -30,9 +28,9 @@ NF = 25%APS + 25%PI + 50%PF
 Algumas condições são necessárias para aprovação
 
 1. `(PI+2*PF)/3 >= 5` 
-2. `PI >= 3.5 E PF >= 3.5`
+2. `PI >= 4 E PF >= 4`
 
-Caso a primeira condição seja verdade mas não a segunda, será possível fazer uma avaliação `DELTA` com o conteúdo da prova com nota `< 3.5`. Casos excepcionais podem ser considerados para `DELTA`
+Caso a primeira condição seja verdade mas não a segunda, será possível fazer uma avaliação `DELTA` com o conteúdo da prova com nota `< 4`. Casos excepcionais podem ser considerados para `DELTA`
 
 !!! warning "Atenção"
     A prova `DELTA` é no mesmo dia e horário da `SUB`. Ou seja, se não fez uma das provas não tem `DELTA`.

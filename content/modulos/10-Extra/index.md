@@ -1,6 +1,8 @@
 # Atividades Extra
 
-Esta página contém exercícios extra e material de estudo para as Provas.  
+Esta página contém exercícios extra e material de estudo para as Provas. Eles serão disponibilizados durante o semestre e conforme as dúvidas mais importantes forem aparecendo.
+
+<!--
 
 ## Exercícios extras
 
@@ -26,12 +28,13 @@ Os seguintes exercícios são úteis para estudar para a PI. Eles não valem not
 - [Missing Number](https://leetcode.com/problems/missing-number/description/)
 - [Majority Element](https://leetcode.com/problems/majority-element/description/)
 
+
 ## Preparação para PF
 
 O mesmo agora para a PF :)
 
 !!! warning "Atenção!"
-    Depois de revisar os conteúdos e fazer os exercícios abaixo, veja o [simulado da PF](https://us.prairielearn.com/pl/course_instance/146836/assessment/2420204). Ele é baseado em questões passadas de provas e será muito útil na preparação para a PF.
+    Depois de revisar os conteúdos e fazer os exercícios abaixo, veja o [simulado da PF](TODO). Ele é baseado em questões passadas de provas e será muito útil na preparação para a PF.
 
 **Busca em Profundidade**:
 
@@ -48,3 +51,4 @@ O mesmo agora para a PF :)
 - [01-matrix](https://leetcode.com/problems/01-matrix/description/)
 - [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
 
+-->

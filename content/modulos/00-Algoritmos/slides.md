@@ -85,7 +85,7 @@
 
 # Organização do curso
 
-- 7 módulos
+- 6 módulos
     - motivação com problema "real"
     - exercícios de sala (pseudo código)
     - APS para entregar (código Java)
@@ -96,16 +96,16 @@
 
 -------
 
-0. Algoritmos
-1. Tipos Abstratos de Dados
-2. Busca em Arrays
-3. Algoritmos em Strings
+0. Algoritmos básicos
+1. Busca em Arrays
+2. Ordenação
+3. Backtracking
 
 **PI**
 
-4. Ordenação
-5. Caminhos entre pontos
-6. Otimização com restrições
+3. Backtracking
+4. Buscas em Profundidade e Largura
+5. Tipos Abstratos de Dados
 
 **PF**
 
@@ -115,7 +115,7 @@
 
 - **QUARTA**: 13:30
 - **SEXTA**: 13:30
-- Atendimento **SEGUNDA**: 09:45
+- Atendimento **QUARTA**: 09:45
 
 
 -----

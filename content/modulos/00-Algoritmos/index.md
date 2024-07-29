@@ -7,15 +7,15 @@ No primeiro módulo do curso iremos fazer uma introdução a Algoritmos e Java.
 </center>
 
 
-## Atividades
+## Atividades (07/08 até 15/08)
 
-- [Atividade 01 - Pseudo-código](pseudo-codigo-e-java.md)
-- [Atividade 02 - Strings e Arrays](algoritmos-com-arrays-e-strings.md)
-- [Atividade 03 - Busca em Strings](algoritmos-basicos-strings.md)
-
-## Java
-
-Os guias de Java estão no menu do lado esquerdo. Eles serão referenciados dentro das atividades de aula. 
+- [:book: Atividade 01 - Iniciando com Java](java/primeiro-contato.md)
+- [:desktop: Atividade 02 - Executando código Java no Prairie Learn](java/infra.md)
+- [:pencil: Atividade 01 - Pseudo-código](pseudo-codigo-e-java.md)
+- [:book: Atividade 04 - Arrays](java/arrays.md)
+- [:book: Atividade 06 - Strings](java/strings.md)
+- [:pencil: Atividade 07 - Strings e Arrays](algoritmos-com-arrays-e-strings.md)
+- [:desktop: Atividade 08 - Busca em Strings](algoritmos-basicos-strings.md)
 
 ## Entregas
 
