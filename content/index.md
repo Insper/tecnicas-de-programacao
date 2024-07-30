@@ -8,12 +8,12 @@ Nossa disciplina tem um mascote: o **javaporco**. Ele foi escolhido em homenagem
 
 !!! people "Equipe 2024/2"
     - ![Igor](css/igor.png) **Igor Montagner** *Professor*
-    - **João Lucas Cadorniga** *Ninja*
-    - **Luca Feltrin** *Ninja*
+    - ![Jlucas](css/jlucas.jpg) **João Lucas Cadorniga** *Ninja*
+    - ![Luca](css/luca.jpg) **Luca Feltrin** *Ninja*
     
 !!! people "Oferecimentos anteriores"
     - ![Maciel](css/maciel.jpg) **Maciel Vidal** *Professor*
-    - **Eduardo Vaz** *Ninja*
+    - ![Vaz](css/vaz.jpg) **Eduardo Vaz** *Ninja*
     - **Alexandre Magno** *Ninja*
 
 ## Links importantes
