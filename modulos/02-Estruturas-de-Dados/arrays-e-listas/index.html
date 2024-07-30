@@ -254,7 +254,7 @@
 <p class="admonition-title">Important</p>
 <p>Como o vetor dinâmico implementa toda a ADT <code>List</code>, nesse guia iremos usar a letra <code>L</code> quando nos referirmos a um vetor dinâmico.</p>
 </div>
-<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/adt_lista_capacidade_tamanho_relembrar" id="adt_lista_capacidade_tamanho_relembrar_0">
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/adt_lista_capacidade_tamanho_relembrar" id="adt_lista_capacidade_tamanho_relembrar_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Quais são os atributos que o vetor dinâmico possui? Para que servem?</p>
@@ -286,7 +286,7 @@
 <p>insere o valor <code>V</code> na lista <code>L</code> na posição <code>i</code>. Os elementos a partir da posição <code>i</code> (inclusive) são "empurrados" para a direita. Essa operação incrementa o tamanho da lista.</p>
 </div>
 <p>O primeiro passo do algoritmo é "empurrar" todos elementos para a direita. Vamos inicialmente supor que a lista <code>L</code> tem espaço para colocar o elemento <code>V</code> na posição <code>i</code>. Ou seja, é verdade que <code>TAMANHO(L) + 1 &lt; capacidade = TAMANHO(A)</code>.</p>
-<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/algoritmo_desloca_array" id="algoritmo_desloca_array_0">
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/algoritmo_desloca_array" id="algoritmo_desloca_array_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Vamos rascunhar uma primeira versão desse algoritmo. Assim como nos nossos outros exercícios, deixaremos bem definido o nome da função e seus argumentos: <code>DESLOCA_DIREITA(L, N, i)</code>. </p>
@@ -343,7 +343,7 @@
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>FIM
 </code></pre></div>
 <p>Com essa rotina podemos implementar facilmente a inserção.</p>
-<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/lista_insercao_algo" id="lista_insercao_algo_0">
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/lista_insercao_algo" id="lista_insercao_algo_0">
 <p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva o algoritmo de inserção abaixo. Você deve usar a função <code>DESLOCA_DIREITA</code> criada acima. Não vamos mexer na <code>capacidade</code> de <code>A</code>, somente no <code>tamanho</code> de <code>L</code>.</p>
@@ -368,7 +368,7 @@
 <p>Note que a etapa de tradução do algoritmo acima para Java não é exatamente trivial e depende de um monte de outras definições. Trabalharemos isso no PrairieLearn deste módulo.</p>
 <h3 id="remocao">Remoção</h3>
 <p>O algoritmo de remoção é muito parecido com a inserção, mas agora faz o deslocamento à esquerda. Note que novamente não vamos mexer na <code>capacidade</code> de <code>A</code>, somente no <code>tamanho</code> de <code>L</code>.</p>
-<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/algo_desloca_esquera" id="algo_desloca_esquera_0">
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/algo_desloca_esquera" id="algo_desloca_esquera_0">
 <p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva o algoritmo <code>DESLOCA_ESQUERDA</code> que receba as entradas abaixo. </p>
@@ -413,7 +413,7 @@
 <p>Esse será feito na lousa. Aproveite para anotar o resultado.</p>
 </div>
 </div>
-<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/list_remove_algo" id="list_remove_algo_0">
+<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/arrays-e-listas/list_remove_algo" id="list_remove_algo_0">
 <p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Use a função acima para criar o algoritmo da operação <code>REMOVE(L, V)</code>.</p>
