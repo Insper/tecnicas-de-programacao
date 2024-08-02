@@ -22,17 +22,14 @@ Os temas das aulas estão disponíveis no arquivo [Plano de Aulas](plano-de-aula
 A nota final é calculada com a seguinte fórmula
 
 ```
-NF = 25%APS + 25%PI + 50%PF
+NF = 30% APS + 70% MP
 ```
 
-Algumas condições são necessárias para aprovação
+onde `MP = (2*PI + 5*PF) / 7` e desde que `MP >= 4,75`. Ou seja, precisa ter um desempenho OK em ambas partes da matéria. Também existe uma `PSUB` a ser feita por quem faltar em uma das provas e que pode cobrir todo o conteúdo do semestre. 
 
-1. `(PI+2*PF)/3 >= 5` 
-2. `PI >= 4 E PF >= 4`
-
-Caso a primeira condição seja verdade mas não a segunda, será possível fazer uma avaliação `DELTA` com o conteúdo da prova com nota `< 4`. Casos excepcionais podem ser considerados para `DELTA`
+<!-- Caso a primeira condição seja verdade mas não a segunda, será possível fazer uma avaliação `DELTA` com o conteúdo da prova com nota `< 4`. Casos excepcionais podem ser considerados para `DELTA`
 
 !!! warning "Atenção"
     A prova `DELTA` é no mesmo dia e horário da `SUB`. Ou seja, se não fez uma das provas não tem `DELTA`.
 
-
+ -->
