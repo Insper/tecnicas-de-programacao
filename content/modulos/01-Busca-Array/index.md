@@ -1,6 +1,6 @@
 # Introdução
 
-No terceiro módulo do curso iremos estudar o primeiro algoritmo clássico do curto, a *Busca Binária*.
+No segundo módulo do curso iremos estudar o primeiro algoritmo clássico do curto, a *Busca Binária*.
 
 
 <center>
@@ -15,8 +15,9 @@ Não usaremos nenhum recurso novo de Java neste módulo. Todos os nossos algorit
 ## Aulas
 
 - Aula 01
-    - [Buscas básicas](busca-frente-tras.md)
-    - [Busca binária (I)](busca-binaria-exemplo.md)
-- [Aula 02 - Comparando desempenho de algoritmos](desempenho.md)
+    - :book: :desktop: [Atividade 01 - Buscas básicas](busca-frente-tras.md)
+    - :book: :desktop: [Atividade 02 - Busca binária (I)](busca-binaria-exemplo.md)
+- Aula 02
+    - :book: :desktop: [Atividade 03 - Comparando desempenho de algoritmos](desempenho.md)
 
 

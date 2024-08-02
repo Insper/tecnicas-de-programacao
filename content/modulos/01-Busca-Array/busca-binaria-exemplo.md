@@ -1,4 +1,4 @@
-# Busca binária (I)
+# 02 - Busca binária (I)
 
 Agora que vimos na aula expositiva a intuição da busca binária vamos focar em formalização como algoritmo. Retomando, a proposta foi usar a seguinte ideia:
 

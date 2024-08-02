@@ -1,4 +1,4 @@
-# Comparando desempenho de algoritmos
+# 03 - Comparando desempenho de algoritmos
 
 <center>
 <embed width="500" height="400" src="../slides-desempenho.html"></embed>

@@ -1,4 +1,4 @@
-# Arrays
+# 04 -  Arrays
 
 Quando representamos algoritmos o tipo mais básico de dados compostos que temos é o *Array*, que representa uma coleção de objetos do mesmo tipo contínua indexada por um número inteiro começando em `0`. Tem tamanho fixo. As seguintes operações estão disponíveis em um `Array`.
 

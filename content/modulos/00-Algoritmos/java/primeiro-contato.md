@@ -1,4 +1,4 @@
-# Primeiro contato
+# 01 - Primeiro contato
 
 Vamos aprender a ler o básico de código Java antes de iniciarmos os exercícios. Não é exatamente complicado, mas tem muito mais código que um programa básico em Python e isso às vezes assusta quem está começando. Vamos lá:
 

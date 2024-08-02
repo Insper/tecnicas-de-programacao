@@ -1,4 +1,4 @@
-# Algoritmos com dados compostos
+# 06 - Algoritmos com dados compostos
 
 Até o momento todos nosso algoritmos usavam dados "simples": cada variável guarda somente um valor. Agora vamos desenvolver algoritmos com dados compostos: cada variável guarda uma coleção de valores. Os tipos compostos mais básicos são o *Array* e *Strings*.
 

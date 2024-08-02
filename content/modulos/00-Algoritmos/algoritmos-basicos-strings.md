@@ -1,4 +1,4 @@
-# Algoritmos básicos em Strings
+# 07 - Algoritmos básicos em Strings
 
 O problema básico da busca em strings é, dado um texto `T`, encontrar a primeira (ou todas) ocorrência de uma uma consulta `Q`. Apesar de simples, esse problema possui diversos algoritmos complexos e é um dos problemas fundamentais na área de algoritmos.
 

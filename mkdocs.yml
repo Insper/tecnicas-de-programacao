@@ -29,13 +29,12 @@ nav:
       - modulos/00-Algoritmos/algoritmos-basicos-strings.md
         
         # - modulos/00-Algoritmos/java/interfaces.md
-    # - "01 - Busca em vetor":
-    #   - modulos/01-Busca-Array/index.md
-    #   - "Aulas":
-    #     - "Aula 01":
-    #         - "Buscas básicas": modulos/01-Busca-Array/busca-frente-tras.md
-    #         - "Busca binária I": modulos/01-Busca-Array/busca-binaria-exemplo.md
-    #     - "Aula 02 - Comparando desempenho de algoritmos": modulos/01-Busca-Array/desempenho.md
+    - "01 - Busca em vetor":
+      - modulos/01-Busca-Array/index.md
+      - "Aula 01":
+            - "Buscas básicas": modulos/01-Busca-Array/busca-frente-tras.md
+            - "Busca binária I": modulos/01-Busca-Array/busca-binaria-exemplo.md
+      - "Aula 02 - Comparando desempenho de algoritmos": modulos/01-Busca-Array/desempenho.md
     # - "02 - Estruturas de Dados":
     #   - modulos/02-Estruturas-de-Dados/index.md
     #   - "Aulas":

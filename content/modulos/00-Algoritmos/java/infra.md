@@ -1,4 +1,4 @@
-# Codando algoritmos em Java
+# 02 - Codando algoritmos em Java
 
 Usaremos um tipo especial de exercício chamado **Workspace**, em que abriremos um ambiente do VSCode já configurado para programar. A princípio será um ambiente quase idêntico ao que seria instalado no PC de vocês, porém acessível via Browser e pré-configurado. 
 
