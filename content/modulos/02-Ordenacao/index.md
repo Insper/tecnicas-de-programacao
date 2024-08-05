@@ -13,4 +13,6 @@ O problema da APS deste módulo envolve [String](../00-Algoritmos/java/strings.m
 - Aula 02 - Divisão e conquista - [Quick sort](quick-sort.md)
 - Aula 03 - Divisão e conquista II - [Merge sort](merge-sort.md)
 
+## Entregas
 
+Cada aula tem uma atividade de implementação correspondente no PrairieLearn. 

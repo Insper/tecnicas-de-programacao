@@ -201,8 +201,3 @@ Os algoritmos acima são bem diferentes entre si.
 
     !!! answer
         Discutir no atendimento esse aqui ;)
-
-
-## Entregas
-
-Exercícios do módulo 3 parte 1 no PrairieLearn

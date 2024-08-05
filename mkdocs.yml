@@ -27,8 +27,6 @@ nav:
       - modulos/00-Algoritmos/algoritmos-com-arrays-e-strings.md
       - modulos/00-Algoritmos/java/strings.md
       - modulos/00-Algoritmos/algoritmos-basicos-strings.md
-        
-        # - modulos/00-Algoritmos/java/interfaces.md
     - "01 - Busca em vetor":
       - modulos/01-Busca-Array/index.md
       - "Aula 01":
@@ -41,6 +39,8 @@ nav:
         # - "01 - Primeiros algoritmos": modulos/02-Ordenacao/ordenacao-simples.md
         # - "02 - QuickSort": modulos/02-Ordenacao/quick-sort.md
         # - "03 - MergeSort": modulos/02-Ordenacao/merge-sort.md
+    
+
     # - "02 - Estruturas de Dados":
     #   - modulos/02-Estruturas-de-Dados/index.md
     #   - "Aulas":
