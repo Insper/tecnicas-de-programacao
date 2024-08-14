@@ -33,30 +33,30 @@ nav:
             - "Buscas básicas": modulos/01-Busca-Array/busca-frente-tras.md
             - "Busca binária I": modulos/01-Busca-Array/busca-binaria-exemplo.md
       - "Aula 02 - Comparando desempenho de algoritmos": modulos/01-Busca-Array/desempenho.md
-    # - "02 - Ordenação":
-      # - modulos/02-Ordenacao/index.md
-      # - "Aulas":
-        # - "01 - Primeiros algoritmos": modulos/02-Ordenacao/ordenacao-simples.md
-        # - "02 - QuickSort": modulos/02-Ordenacao/quick-sort.md
-        # - "03 - MergeSort": modulos/02-Ordenacao/merge-sort.md
-    
-
-    # - "02 - Estruturas de Dados":
-    #   - modulos/02-Estruturas-de-Dados/index.md
-    #   - "Aulas":
-    #     - "Aulas 01 e 02 - O tipo Lista": modulos/02-Estruturas-de-Dados/arrays-e-listas.md
-    #     - "Aula 03 - Dicionários": modulos/02-Estruturas-de-Dados/listas-e-dicionarios.md
-    # - "04 - Caminhos":
-    #   - modulos/04-Caminhos/index.md
-    #   - "Aulas":
-    #     - modulos/04-Caminhos/seguir-paredes.md
-    #     - modulos/04-Caminhos/dfs.md
-    #     - modulos/04-Caminhos/bfs.md
+    - "02 - Ordenação":
+      - modulos/02-Ordenacao/index.md
+      - "Aulas":
+        - "01 - Primeiros algoritmos": modulos/02-Ordenacao/ordenacao-simples.md
+        - "02 - QuickSort": modulos/02-Ordenacao/quick-sort.md
+        - "03 - MergeSort": modulos/02-Ordenacao/merge-sort.md
     # - "05 - Mochila":
     #   - modulos/05-Mochila/index.md
     #   - "Aulas":
     #       - "01 - Primeiras soluções": modulos/05-Mochila/inicio.md
     #       - "02 - A solução ótima": modulos/05-Mochila/backtracking.md
     #       - "03 - Acelerando a solução ótima": modulos/05-Mochila/branch-and-bound.md
+    #   - modulos/04-Caminhos/index.md
+    #   - "Aulas":
+    #     - modulos/04-Caminhos/seguir-paredes.md
+    #     - modulos/04-Caminhos/dfs.md
+    #     - modulos/04-Caminhos/bfs.md
+    # - "02 - Estruturas de Dados":
+    #   - modulos/02-Estruturas-de-Dados/index.md
+    #   - "Aulas":
+    #     - "Aulas 01 e 02 - O tipo Lista": modulos/02-Estruturas-de-Dados/arrays-e-listas.md
+    #     - "Aula 03 - Dicionários": modulos/02-Estruturas-de-Dados/listas-e-dicionarios.md
+    # - "04 - Caminhos":
+    
+
     - "10 - Extra": modulos/10-Extra/index.md
 
