@@ -2,13 +2,13 @@
 
 Esta página contém exercícios extra e material de estudo para as Provas. Eles serão disponibilizados durante o semestre e conforme as dúvidas mais importantes forem aparecendo.
 
-<!--
-
-## Exercícios extras
+<!--## Exercícios extras
 
 O módulo 10 no PrairieLearn contém exercícios extra que valerão como adicional na nota. Ou seja, se não tiverem conseguido entregar algo podem compensar fazendo algum dos extras. 
 
 O conteúdo deles por vezes é tangencial à matéria, então nada que for exclusivo ao módulo extra vai ser cobrado em prova. 
+-->
+
 
 ## Preparação para PI
 
@@ -29,6 +29,7 @@ Os seguintes exercícios são úteis para estudar para a PI. Eles não valem not
 - [Majority Element](https://leetcode.com/problems/majority-element/description/)
 
 
+<!--
 ## Preparação para PF
 
 O mesmo agora para a PF :)
