@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Slides - Técnicas de Programação</title>
+        <title>Aps - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -193,7 +193,7 @@
         
   
     <li>
-      <a href="../">Index</a>
+      <a href="../../01-Busca-Array/">Index</a>
     </li>
   
 
@@ -206,7 +206,7 @@
         
   
     <li>
-      <a href="../busca-frente-tras/">Buscas básicas</a>
+      <a href="../../01-Busca-Array/busca-frente-tras/">Buscas básicas</a>
     </li>
   
 
@@ -214,7 +214,7 @@
         
   
     <li>
-      <a href="../busca-binaria-exemplo/">Busca binária I</a>
+      <a href="../../01-Busca-Array/busca-binaria-exemplo/">Busca binária I</a>
     </li>
   
 
@@ -226,7 +226,7 @@
         
   
     <li>
-      <a href="../desempenho/">Aula 02 - Comparando desempenho de algoritmos</a>
+      <a href="../../01-Busca-Array/desempenho/">Aula 02 - Comparando desempenho de algoritmos</a>
     </li>
   
 
@@ -293,7 +293,7 @@
         
   
     <li>
-      <a href="../../03-Mochila/">Index</a>
+      <a href="../">Index</a>
     </li>
   
 
@@ -306,7 +306,7 @@
         
   
     <li>
-      <a href="../../03-Mochila/inicio/">01 - Primeiras soluções</a>
+      <a href="../inicio/">01 - Primeiras soluções</a>
     </li>
   
 
@@ -314,7 +314,7 @@
         
   
     <li>
-      <a href="../../03-Mochila/backtracking/">02 - A solução ótima</a>
+      <a href="../backtracking/">02 - A solução ótima</a>
     </li>
   
 
@@ -355,131 +355,19 @@
           </div>
           
             <section class="progress-section show">
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-
-<h1 id="tecnicas-de-programacao">Técnicas de Programação</h1>
-<h2 id="busca-em-vetores">Busca em vetores</h2>
-<hr />
-<h1 id="algoritmo-sequencia-de-passos-finita-para-resolver-um-problema">Algoritmo: sequência de passos (finita) para resolver um problema</h1>
-<ol>
-<li>escritos em pseudo-código </li>
-<li>focam na resolução do problema e não em detalhes de implementação</li>
-</ol>
-<hr />
-<h1 id="perguntas-importantes">Perguntas importantes</h1>
-<ol>
-<li>Como representar um algoritmo sem código?</li>
-<li>Quantas operações esse algoritmo realiza?</li>
-<li>Dado um algoritmo incorreto, como mostrar que ele está errado?</li>
-</ol>
-<hr />
-<h1 id="um-pouco-de-historia">Um pouco de história</h1>
-<!--15 min-->
-
-<hr />
-<p>Um dos seus clientes surge desesperado que a nova versão do software tem um bug que paralisou sua empresa. Após algumas investigações sua equipe consegue fazer um teste que reproduz o bug, mas ainda é necessário descobrir qual foi a mudança que o causou.</p>
-<p>Queremos descobrir qual foi o commit que introduziu esse bug, que sabemos não estar presente na última versão liberada.</p>
-<hr />
-<p>No commit mais novo tem bug</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>67957b0f23425 (HEAD -&gt; modulo2, origin/main, origin/HEAD, main) pequenas modificações
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>6fd3c935d611e Atualização javaporco
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>b3892f2f3bd23 PDF dos slides - aula 01
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>694b44015206e Módulo 0 - Algoritmos está pronto.
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>0c1797563ebfa APS01 - fim
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>cabbeafe683c1 Ajustes da APS01
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>....
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>465d185d60fd1 Organização do repositório
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>127d20a195e9f First
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>ddf34a8aa4919 Update README.md
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>d18b19257fccc Initial commit
-</code></pre></div>
-<p>No commit mais velho não tem bug</p>
-<hr />
-<h2 id="bug-presente">Bug presente?</h2>
-<p><img alt="width:600px center" src="../array-bug-1.png" /></p>
-<ul>
-<li><code>A[0]</code> representa o commit mais antigo</li>
-<li><code>A[N-1]</code> representa o commit mais novo</li>
-<li><code>A[I]</code> é<ul>
-<li><code>1</code> se o bug está presente</li>
-<li><code>0</code> caso contrário</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h1 id="uma-primeira-solucao">Uma primeira solução</h1>
-<p><strong>Em grupos</strong>:</p>
-<ul>
-<li>handout "Buscas básicas" (10 minutos)</li>
-</ul>
-<!--5 minutos + 10 de discussão-->
-
-<hr />
-<h1 id="uma-ideia-mais-sofisticada">Uma ideia mais sofisticada</h1>
-<p><img alt="width:600px center" src="../array-bug-1.png" /></p>
-<p>Esse vetor tem algo que chama a atenção?</p>
-<!--30 min + 15 de discussão-->
-
-<hr />
-<h1 id="uma-ideia-mais-sofisticada_1">Uma ideia mais sofisticada</h1>
-<p>Estar ordenado significa:</p>
-<p><img alt="width:600px center" src="../array-bug-2.png" /></p>
-<p>$$i \geq j \leftrightarrow A[i] \geq A[j]$$</p>
-<hr />
-<h1 id="uma-ideia-mais-sofisticada_2">Uma ideia mais sofisticada</h1>
-<p><img alt="width:600px center" src="../array-bug-2.png" /></p>
-<p>Para o índice <code>i</code> acima, o que posso dizer dos que estão à sua</p>
-<ul>
-<li>direita?</li>
-<li>esquerda?</li>
-</ul>
-<hr />
-<h1 id="uma-ideia-mais-sofisticada_3">Uma ideia mais sofisticada</h1>
-<p><img alt="width:600px center" src="../array-bug-2.png" /></p>
-<p>Para o índice <code>j</code> acima, o que posso dizer dos que estão à sua</p>
-<ul>
-<li>direita?</li>
-<li>esquerda?</li>
-</ul>
-<hr />
-<h1 id="busca-binaria-intuicao">Busca Binária (intuição)</h1>
-<p><img alt="width:700px center" src="../array-bug-3.png" /></p>
-<h2 id="e-escolhermos-um-indice-qualquer">E escolhermos um índice qualquer?</h2>
-<ul>
-<li>O que fazer se ele for <code>0</code>?</li>
-<li>E se for <code>1</code>?</li>
-</ul>
-<hr />
-<h1 id="busca-binaria-alto-nivel">Busca Binária (alto nível)</h1>
-<p>Vamos considerar a seguinte ideia:</p>
-<p><code>BUSCA_BINARIA_BUG(A)</code></p>
-<ol>
-<li>seleciona o elemento na posição exatamente no meio do vetor</li>
-<li>se esse elemento for <code>0</code>, continua procurando na metade da da direita do vetor</li>
-<li>se esse elemento for <code>1</code>, continua procurando na metade da esquerda do vetor</li>
-<li>repete esse procedimento até encontrar um elemento que é <code>1</code> e tem um vizinho que é <code>0</code>.</li>
-</ol>
-<hr />
-<h1 id="uma-ideia-mais-sofisticada_4">Uma ideia mais sofisticada</h1>
-<p><strong>Em grupos</strong>:</p>
-<ul>
-<li>handout "Busca binária" (20 minutos)</li>
-</ul>
-<hr />
-<h1 id="proximos-passos">Próximos passos</h1>
-<!--Fechamento 5 min-->
-
-<ul>
-<li>expandir essa ideia para buscas com valores quaisquer no vetor</li>
-<li>resolver exercícios que usem a ideia da busca binária</li>
-</ul>
+<h1 id="aps">APS</h1>
+<p>Neste módulo iremos implementar várias soluções para o problema da mochila binária. Nosso foco é eventualmente encontrar a melhor solução possível.</p>
+<h2 id="solucoes-simples">Soluções simples</h2>
+<p>Vimos na primeira aula algoritmos que selecionam primeiro os objetos <strong>mais caros</strong> e os objetos <strong>mais leves</strong>. Iremos implementar ambos nessa seção. Você deverá editar os arquivos correspondentes no pacote <code>br.edu.insper.tecprog.aps06</code> e usar os testes para validar suas soluções.</p>
+<div class="admonition tip">
+<p class="admonition-title">Dica 1</p>
+<p>Você pode usar os métodos da classe <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html"><code>Arrays</code></a> para facilitar sua vida. Em especial, busque como realizar <strong>ordenação indireta</strong> usando este módulo. </p>
+</div>
+<h2 id="solucao-otima">Solução ótima</h2>
+<p>Agora vamos implementar a solução ótima descrita em aula. Edite o arquivo correspondente no pacote <code>br.edu.insper.tecprog.aps06</code> e usar os testes para validar suas soluções.</p>
+<h2 id="branch-and-bound">Branch and Bound</h2>
+<p>Os testes finais deste módulo estão nos arquivos <code>TestGrandeSemBound</code>, <code>TestGrandePeso</code> e <code>TestGrandeFracionaria</code>. O primeiro usa a mochila binária simples e servirá para ver o tamanho dos ganhos de cada bound.</p>
+<p>Todos os testes devem passar para este item ser válido e devem respeitar os tempos limites de cada bound. As diferenças deverão ser significativas, com o bound usando a Mochila Fracionária tendo os melhores tempos. </p>
 
 
 </section>
