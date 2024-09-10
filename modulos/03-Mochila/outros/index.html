@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Slides - Técnicas de Programação</title>
+        <title>03 - Outros problemas de backtracking - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -108,7 +108,7 @@
 
             
               
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Módulos</span>
     <ul>
       
@@ -120,7 +120,7 @@
         
   
     <li>
-      <a href="../">Index</a>
+      <a href="../../00-Algoritmos/">Index</a>
     </li>
   
 
@@ -128,7 +128,7 @@
         
   
     <li>
-      <a href="../java/primeiro-contato/">Primeiro contato</a>
+      <a href="../../00-Algoritmos/java/primeiro-contato/">Primeiro contato</a>
     </li>
   
 
@@ -136,7 +136,7 @@
         
   
     <li>
-      <a href="../java/infra/">Infra</a>
+      <a href="../../00-Algoritmos/java/infra/">Infra</a>
     </li>
   
 
@@ -144,7 +144,7 @@
         
   
     <li>
-      <a href="../pseudo-codigo-e-java/">Pseudo codigo e java</a>
+      <a href="../../00-Algoritmos/pseudo-codigo-e-java/">Pseudo codigo e java</a>
     </li>
   
 
@@ -152,7 +152,7 @@
         
   
     <li>
-      <a href="../java/arrays/">Arrays</a>
+      <a href="../../00-Algoritmos/java/arrays/">Arrays</a>
     </li>
   
 
@@ -160,7 +160,7 @@
         
   
     <li>
-      <a href="../algoritmos-com-arrays-e-strings/">Algoritmos com arrays e strings</a>
+      <a href="../../00-Algoritmos/algoritmos-com-arrays-e-strings/">Algoritmos com arrays e strings</a>
     </li>
   
 
@@ -168,7 +168,7 @@
         
   
     <li>
-      <a href="../java/strings/">Strings</a>
+      <a href="../../00-Algoritmos/java/strings/">Strings</a>
     </li>
   
 
@@ -176,7 +176,7 @@
         
   
     <li>
-      <a href="../algoritmos-basicos-strings/">Algoritmos basicos strings</a>
+      <a href="../../00-Algoritmos/algoritmos-basicos-strings/">Algoritmos basicos strings</a>
     </li>
   
 
@@ -286,27 +286,27 @@
 
       
         
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">03 - Mochila</span>
     <ul>
       
         
   
     <li>
-      <a href="../../03-Mochila/">Index</a>
+      <a href="../">Index</a>
     </li>
   
 
       
         
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Aulas</span>
     <ul>
       
         
   
     <li>
-      <a href="../../03-Mochila/inicio/">01 - Primeiras soluções</a>
+      <a href="../inicio/">01 - Primeiras soluções</a>
     </li>
   
 
@@ -314,15 +314,31 @@
         
   
     <li>
-      <a href="../../03-Mochila/backtracking/">02 - A solução ótima</a>
+      <a href="../backtracking/">02 - A solução ótima</a>
     </li>
   
 
       
         
   
-    <li>
-      <a href="../../03-Mochila/outros/">03 - Outros problemas de backtracking</a>
+
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">03 - Outros problemas de backtracking</span>
+      <ul>
+        
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#problema-1-permutacoes">Problema 1 - permutações</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#outros-problemas-para-praticar">Outros problemas para praticar</a>
+              </li>
+            
+        
+      </ul>
     </li>
   
 
@@ -356,6 +372,18 @@
             <ul class="ah-breadcrumbs">
               
                 
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>03 - Mochila</li>
+                  
+                
+                  
+                    <li>Aulas</li>
+                  
+                
                 <li></li>
             </ul>
             
@@ -363,125 +391,48 @@
           </div>
           
             <section class="progress-section show">
-<h1 id="tecnicas-de-programacao">Técnicas de Programação</h1>
-<h2 id="introducao">Introdução</h2>
-<hr />
-<h1 id="o-que-e-um-algoritmo">O que é um algoritmo?</h1>
-<hr />
-<h1 id="algoritmo-sequencia-de-passos-finita-para-resolver-um-problema">Algoritmo: sequência de passos (finita) para resolver um problema</h1>
-<hr />
-<h1 id="algoritmos">Algoritmos</h1>
+<h1 id="outros-problemas-de-backtracking">Outros problemas de Backtracking</h1>
+<p>Vimos na última aula que  a solução ótima da mochila binária com $N$ objetos requer $\mathcal{O}(2^N)$ testes.  Também vimos que problemas de complexidade similar estão no conjunto <a href="todo: comp cplexity wikipedia">NP</a>,</p>
+<p>A principal técnica aplicada foi o <em>backtracking</em>, que consiste em tentar <strong>absolutamente todas</strong> soluções possíveis. Uma série de outros problemas computacionais requer o uso desta técnica e nesta aula iremos praticar  sua aplicação.</p>
+<h2 id="problema-1-permutacoes">Problema 1 - permutações</h2>
+<p>Nesta seção iremos examinar o problema <a href="https://leetcode.com/problems/permutations/">permutations</a>. Leia o enunciado e volte aqui quando acabar. </p>
+<h3 id="passo-1-entrada-e-saida">Passo 1 - entrada e saída</h3>
+<p>Responda mentalmente as seguintes perguntas antes de prosseguir:</p>
+<ol>
+<li>existem dois exemplos de entrada/saída. Você leu eles com cuidado?</li>
+<li>conseguiria chegar na saída esperada  nos exemplos simples do enunciado?</li>
+<li>existem limites nos valores da entrada? Quais?</li>
+<li>conseguiria criar um caso de teste similar aos do enunciado mas um pouquinho mais difícil?</li>
+</ol>
+<h3 id="passo-2-quantas-tentativas-serao-feitas">Passo 2 - quantas tentativas serão feitas?</h3>
+<p>Dados os exemplos de entrada do enunciado mais os que você montou no passo anterior, quantas permutações existem? Escreva em razão de <code>nums.length</code>.</p>
+<p>Saber esse número vai ajudar a entender se o algoritmo a ser usado envolverá <em>backtracking</em>. </p>
+<p>Também é importante verificar se esse é um algoritmo de <strong>otimização</strong> (somente uma solução é devolvida) ou de <strong>enumeração</strong> (todas as soluções devem ser devolvidas ou contadas).</p>
+<h3 id="passo-3-tente-encaixar-o-algoritmo-de-backtracking-no-problema">Passo 3 - tente encaixar o algoritmo de backtracking  no problema</h3>
+<p>Como temos um problema de <strong>enumeração</strong>, podemos encaixar no modelo de backtracking abaixo. Além das variáveis já listadas na <a href="../backtracking/">aula anterior</a>, temos também a lista <code>ALL_SOL</code>, que contém todas as soluções encontradas.</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BACKTRACKING_ENUMERA(...., N, ALL_SOL, SP, I)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    SE I = N ENTÃO
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        ADD SP na lista ALL_SOL
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    FIM
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    PARA CADA ESCOLHA POSSÍVEL NA ITERAÇÃO I FAÇA
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        ADICIONE ESSA ESCOLHA EM SP
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        BACKTRACKING_ENUMERA(...., N, ALL_SOL, SP, I+1)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        DESFAÇA a modificação feita acima em SP
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    FIM
+</code></pre></div>
+<h3 id="passo-4-hora-de-testar">Passo 4 - hora de testar!</h3>
+<p>Comece rodando com casos pequenos e simples. Se necessário, crie testes com poucos números para ajudar a encontrar problemas no seu código. </p>
+<h2 id="outros-problemas-para-praticar">Outros problemas para praticar</h2>
+<p>Os seguintes problemas são relacionados à aula de hoje e é esperado que consigam resolvê-los nesta disciplina. Usem eles como prática.</p>
 <ul>
-<li>é garantido que acaba</li>
-<li>dá a resposta correta 100% das vezes</li>
-<li>cada passo é bem definido</li>
-<li>dada uma entrada, devolve sempre a mesma resposta</li>
-<li>independe da linguagem de programação usada</li>
+<li><a href="https://leetcode.com/problems/fair-distribution-of-cookies">https://leetcode.com/problems/fair-distribution-of-cookies</a></li>
+<li><a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">https://leetcode.com/problems/letter-combinations-of-a-phone-number/</a></li>
+<li><a href="https://leetcode.com/problems/subsets/description/">https://leetcode.com/problems/subsets/description/</a></li>
 </ul>
-<hr />
-<h1 id="algoritmos-nao-sao">Algoritmos não são</h1>
-<ol>
-<li>misteriosos</li>
-<li>imprevisíveis</li>
-<li>inexplicáveis</li>
-<li>maliciosos</li>
-</ol>
-<hr />
-<h1 id="desenvolver-algoritmos-e-resolver-problemas">Desenvolver algoritmos é resolver problemas</h1>
-<hr />
-<h1 id="que-tipo-de-problemas">Que tipo de problemas?</h1>
-<ol>
-<li>Problemas de busca/decisão<ul>
-<li>Essa coleção de dados contém X?</li>
-<li>Dadas essas restrições, a situação Y é possível?</li>
-</ul>
-</li>
-<li>Problemas de Ordenação<ul>
-<li>Ranqueamento</li>
-<li>Comparações, Igualdades</li>
-</ul>
-</li>
-<li>Problemas de otimização<ul>
-<li>menor X, dado um conjunto de restrições</li>
-<li>maior Y, dado um conjunto de restrições</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h1 id="como-descrever-a-solucao-de-um-problema">Como descrever a solução de um problema?</h1>
-<hr />
-<h1 id="como-descrever-a-solucao-de-um-problema_1">Como descrever a solução de um problema?</h1>
-<ol>
-<li>Mudaremos a linguagem usada (Java)</li>
-<li>Escreveremos algoritmos em <em>Pseudo Código</em></li>
-</ol>
-<blockquote>
-<p>descrição de um algoritmo usando estruturas de controle simplificadas com o objetivo de ser legível para pessoas. Pode incluir trechos em linguagem natural e fórmulas matemáticas se isso ajudar a compreensão.</p>
-</blockquote>
-<hr />
-<h1 id="como-descrever-a-solucao-de-um-problema_2">Como descrever a solução de um problema?</h1>
-<p><strong>Escrever solução de maneira que uma pessoa sem conhecimento específico do algoritmo em questão consiga simular sua execução</strong></p>
-<hr />
-<h1 id="estrategias-de-solucao-de-problemas-computacionais">Estratégias de solução de problemas computacionais</h1>
-<ul>
-<li>estruturas de dados</li>
-<li>divisão e conquista</li>
-<li>buscas por largura e profundidade</li>
-<li>backtracking</li>
-</ul>
-<p><strong>Adaptar algoritmos clássicos que usem essas estratégias para resolver novos problemas</strong></p>
-<hr />
-<h1 id="burocracias">Burocracias</h1>
-<hr />
-<h1 id="organizacao-do-curso">Organização do curso</h1>
-<ul>
-<li>
-<p>6 módulos</p>
-<ul>
-<li>motivação com problema "real"</li>
-<li>exercícios de sala (pseudo código)</li>
-<li>APS para entregar (código Java)</li>
-</ul>
-</li>
-<li>
-<p>2 provas (PI e PF) e uma DELTA (no dia da sub).</p>
-</li>
-<li>regras completas na <a href="https://insper.github.io/tecnicas-de-programacao/sobre/">página da disciplina</a></li>
-</ul>
-<hr />
-<ol>
-<li>Algoritmos básicos</li>
-<li>Busca em Arrays</li>
-<li>Ordenação</li>
-<li>Backtracking</li>
-</ol>
-<p><strong>PI</strong></p>
-<ol>
-<li>Backtracking</li>
-<li>Buscas em Profundidade e Largura</li>
-<li>Tipos Abstratos de Dados</li>
-</ol>
-<p><strong>PF</strong></p>
-<hr />
-<h1 id="horarios">Horários</h1>
-<ul>
-<li><strong>QUARTA</strong>: 13:30</li>
-<li><strong>SEXTA</strong>: 13:30</li>
-<li>Atendimento <strong>QUARTA</strong>: 09:45</li>
-</ul>
-<hr />
-<h1 id="objetivos-de-aprendizagem-formal">Objetivos de Aprendizagem (formal)</h1>
-<ol>
-<li>Implementar em Java um algoritmo descrito em alto nível</li>
-<li>Empregar Backtracking para resolver problemas computacionais</li>
-<li>Empregar a técnica Divisão e Conquista para resolver problemas computacionais</li>
-<li>Empregar estruturas de dados lineares (listas, matrizes, pilhas, filas, mapeamentos, conjuntos) para resolver problemas computacionais de maneira eficiente</li>
-<li>Identificar como estratégias computacionais clássicas (busca, ordenação, otimização) podem ser adaptadas para resolver novos problemas computacionais</li>
-<li>Estimar a complexidade computacional de um algoritmo usando uma argumentação informal baseada na contagem de vezes que uma linha executa</li>
-</ol>
-<hr />
-<h1 id="atividades-modulo-00-algoritmos">Atividades: Módulo 00-Algoritmos</h1>
-<p>(mostrar site e projeto configurado do VSCode)</p>
 
 
 </section>
@@ -491,6 +442,20 @@
       <footer class="ah-footer ah-typeset">
         <div class="ah-footer-nav">
           
+            <a href="../backtracking/"
+               class="ah-prev"
+               title="02 - A solução ótima">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">02 - A solução ótima</span>
+            </a>
+          
+          
+            <a href="../../10-Extra/"
+               class="ah-next"
+               title="10 - Extra">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">10 - Extra</span>
+            </a>
           
         </div>
       </footer>
