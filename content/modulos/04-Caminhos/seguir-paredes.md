@@ -1,12 +1,11 @@
 # Aula 01 - Seguindo paredes com a mão direita
 
-
 Nesse handout iremos formalizar duas grandes ideias:
 
-- uma ADT para representar o labirinto
+- uma classe para representar o labirinto
 - como representar o algoritmo senso comum de sair do labirinto seguindo as paredes
 
-## A ADT Labirinto
+## A classe Labirinto
 
 Um primeiro passo para definirmos nossos algoritmos é definir como o labirinto será representado para nosso código. Vamos considerar um labirinto com as seguintes operações nesta atividade.
 
@@ -26,7 +25,7 @@ Usaremos o seguinte formato de texto para a criação do labirinto
 - cada linha contém somente caracteres `'.'` (livre) ou `'#'` (parede)
 - todas as linhas contém o mesmo número de caracteres
 
-Iremos representar o labirinto como um array `boolean casas[][]` em que a posição `casas[i][j]` contém `true` se a casa é parede e `false` caso contrário. Veja o item da ADT no PrairieLearn deste módulo para uma descrição mais completa da implementação.
+Iremos representar o labirinto como um array `boolean casas[][]` em que a posição `casas[i][j]` contém `true` se a casa é parede e `false` caso contrário. Veja o item da classe no PrairieLearn deste módulo para uma descrição mais completa da implementação.
 
 ## Algoritmo de Seguir Paredes
 
@@ -189,7 +188,7 @@ Vamos agora para um caso difícil:
         As posições `I,J` atuais mais a parede usada como referência para a mão direita. Podemos representar essa parede como uma direção dentre `CIMA, BAIXO, ESQUERDA, DIREITA`. 
 
 !!! exercise long
-    Agora temos que identificar o critério de parada: quando dizemos que o algoritmo termina? Coloque abaixo uma condição usando a ADT do labirinto.
+    Agora temos que identificar o critério de parada: quando dizemos que o algoritmo termina? Coloque abaixo uma condição usando a classe do labirinto.
 
     !!! answer
         Faça o exercício abaixo e revise sua resposta usando o botão "Editar"

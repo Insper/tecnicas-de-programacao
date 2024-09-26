@@ -45,9 +45,9 @@ nav:
           - "01 - Primeiras soluções": modulos/03-Mochila/inicio.md
           - "02 - A solução ótima": modulos/03-Mochila/backtracking.md
     #       - "03 - Acelerando a solução ótima": modulos/03-Mochila/branch-and-bound.md
-    #   - modulos/04-Caminhos/index.md
-    #   - "Aulas":
-    #     - modulos/04-Caminhos/seguir-paredes.md
+      - modulos/04-Caminhos/index.md
+      - "Aulas":
+        - modulos/04-Caminhos/seguir-paredes.md
     #     - modulos/04-Caminhos/dfs.md
     #     - modulos/04-Caminhos/bfs.md
     # - "02 - Estruturas de Dados":
