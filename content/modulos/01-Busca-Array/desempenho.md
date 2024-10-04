@@ -61,7 +61,7 @@ Agora finalmente vamos calcular o limite.
 Vamos agora comparar os dois algoritmos acima com o seguinte algoritmo. O array `ARR` está ordenado já.
 
 ```
-BUSCA_PULA2(ARR, VALOR)
+BUSCA_PULA2(A, VALOR)
 
 I := 0
 N := TAMANHO(A)
@@ -75,7 +75,7 @@ ENQUANTO I < N FAÇA
     DEVOLVA A[I-1] = VALOR
   FIM   
 
-  N := N + 2
+  I := I + 2
 FIM
 
 DEVOLVA N > 0 E A[N-1] = VALOR
