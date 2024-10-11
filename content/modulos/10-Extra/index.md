@@ -29,7 +29,6 @@ Os seguintes exercícios são úteis para estudar para a PI. Eles não valem not
 - [Majority Element](https://leetcode.com/problems/majority-element/description/)
 
 
-<!--
 ## Preparação para PF
 
 O mesmo agora para a PF :)
@@ -45,6 +44,7 @@ O mesmo agora para a PF :)
 - [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/)
 
+<!--
 **Busca em Largura**:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xOuCpay7rpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
