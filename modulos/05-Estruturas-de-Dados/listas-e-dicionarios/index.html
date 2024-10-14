@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
       
-        <title>Listas e dicionarios - Técnicas de Programação</title>
+        <title>Aula 03 - Dicionários - Técnicas de Programação</title>
       
     
     <link rel="stylesheet"
@@ -108,7 +108,7 @@
 
             
               
-  <li class="ah-togglable-item">
+  <li class="ah-togglable-item opened">
     <span class="ah-togglable-handle">Módulos</span>
     <ul>
       
@@ -378,6 +378,64 @@
 
       
         
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">05 - Estruturas de Dados</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../">Index</a>
+    </li>
+  
+
+      
+        
+  <li class="ah-togglable-item opened">
+    <span class="ah-togglable-handle">Aulas</span>
+    <ul>
+      
+        
+  
+    <li>
+      <a href="../arrays-e-listas/">Aulas 01 e 02 - O tipo Lista</a>
+    </li>
+  
+
+      
+        
+  
+
+    <li class="active ah-togglable-item opened">
+      <span class="ah-togglable-handle">Aula 03 - Dicionários</span>
+      <ul>
+        
+          
+            
+            
+              <li class="ah-toc-item">
+                <a href="#o-tipo-map">O tipo Map</a>
+              </li>
+            
+              <li class="ah-toc-item">
+                <a href="#construindo-em-cima-de-outras-adt">Construindo em cima de outras ADT</a>
+              </li>
+            
+        
+      </ul>
+    </li>
+  
+
+      
+    </ul>
+  </li>
+
+      
+    </ul>
+  </li>
+
+      
+        
   
     <li>
       <a href="../../10-Extra/">10 - Extra</a>
@@ -397,6 +455,18 @@
           <div class="ah-title-box">
             <ul class="ah-breadcrumbs">
               
+                
+                  
+                    <li>Módulos</li>
+                  
+                
+                  
+                    <li>05 - Estruturas de Dados</li>
+                  
+                
+                  
+                    <li>Aulas</li>
+                  
                 
                 <li></li>
             </ul>
@@ -428,7 +498,7 @@
 <li><code>KEYS(M)</code> é um <code>List</code> contendo uma lista de todas as chaves do <code>Map</code> <code>M</code></li>
 <li><code>VALUES(M)</code> é um <code>List</code> contendo uma lista de todas os valores do <code>Map</code> <code>M</code></li>
 </ul>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_ideia_indices" id="map_ideia_indices_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/map_ideia_indices" id="map_ideia_indices_0">
 <p class="admonition-title">Exercício 1<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Considere os seguintes pares chave-valor:</p>
@@ -457,7 +527,7 @@
 <p>A ordem aqui não importa, desde que sejamos consistentes e mantenhamos a equivalência de índices para que as chaves e valores continuem "casadas".</p>
 </div>
 </div>
-<div class="admonition exercise long tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/long_2" id="long_2_0">
+<div class="admonition exercise long tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/long_2" id="long_2_0">
 <p class="admonition-title">Exercício 2<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Vamos continuar com o exemplo acima.</p>
@@ -485,7 +555,7 @@
 <p>Eles são iguais! O conjunto de chaves de ambos é igual e para toda chave o valor devolvido é o mesmo. Para um <code>Map</code> a ordem não importa, somente a presença da chave e o valor associado a ela.</p>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/resumo_ideia_map" id="resumo_ideia_map_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/resumo_ideia_map" id="resumo_ideia_map_0">
 <p class="admonition-title">Exercício 3<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Dada as respostas dos exercícios anteriores, como você resumiria a ideia de usar duas listas para implementar o <code>Map</code>?</p>
@@ -516,7 +586,7 @@
 (K, V) \in M \Leftrightarrow \exists 0 \leq i &lt; N \;\;\text{ tal que }\;\; M_K[i] = K,\; M_V[i] = V
 $$</p>
 <p>Vamos agora desenvolver alguns algoritmos simples para nos familiarizarmos com essa dupla de listas.</p>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_indexof" id="map_indexof_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/map_indexof" id="map_indexof_0">
 <p class="admonition-title">Exercício 4<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Um algoritmo muito útil (e frequentemente disponível) é o <code>indexOf</code>, que devolve o índice da primeira ocorrência de um valor em uma lista.</p>
@@ -553,7 +623,7 @@ $$</p>
 </code></pre></div>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/get_usando_indexof" id="get_usando_indexof_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/get_usando_indexof" id="get_usando_indexof_0">
 <p class="admonition-title">Exercício 5<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Vamos agora trabalhar com as duas listas em conjunto. Use o algoritmo <code>indexOf</code> feito acima para implementar a operação <code>GET</code> do <code>Map</code>:</p>
@@ -571,7 +641,7 @@ $$</p>
 <p>Lousa</p>
 </div>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/set_map" id="set_map_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/set_map" id="set_map_0">
 <p class="admonition-title">Exercício 6<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>A operação <code>SET(M, K, V)</code></p>
@@ -592,7 +662,7 @@ $$</p>
 </div>
 </div>
 <p>As operações <code>REMOVE</code> e <code>TAMANHO</code> são variações dos que já foram construídos nessa aula. Para registrar, escreva-os abaixo.</p>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_remove" id="map_remove_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/map_remove" id="map_remove_0">
 <p class="admonition-title">Exercício 7<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o algoritmo para <code>REMOVE(M, K)</code>.</p>
@@ -603,7 +673,7 @@ $$</p>
 </div>
 </form>
 </div>
-<div class="admonition exercise long  tag-long-text tag-text-exercise editable" data-slug="modulos/02-Estruturas-de-Dados/listas-e-dicionarios/map_tamanho" id="map_tamanho_0">
+<div class="admonition exercise long  tag-text-exercise tag-long-text editable" data-slug="modulos/05-Estruturas-de-Dados/listas-e-dicionarios/map_tamanho" id="map_tamanho_0">
 <p class="admonition-title">Exercício 8<button class="editable-button"></button></p>
 <form class="exercise-form">
 <p>Escreva abaixo o algoritmo para <code>TAMANHO(M)</code>.</p>
@@ -624,6 +694,20 @@ $$</p>
       <footer class="ah-footer ah-typeset">
         <div class="ah-footer-nav">
           
+            <a href="../arrays-e-listas/"
+               class="ah-prev"
+               title="Aulas 01 e 02 - O tipo Lista">
+              <span class="nav-label">Anterior</span>
+              <span class="nav-title">Aulas 01 e 02 - O tipo Lista</span>
+            </a>
+          
+          
+            <a href="../../10-Extra/"
+               class="ah-next"
+               title="10 - Extra">
+              <span class="nav-label">Próximo</span>
+              <span class="nav-title">10 - Extra</span>
+            </a>
           
         </div>
       </footer>
