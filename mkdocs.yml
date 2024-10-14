@@ -51,11 +51,11 @@ nav:
         - "Algoritmo Mão Direita": modulos/04-Caminhos/seguir-paredes.md
         - "Busca em Profundidade": modulos/04-Caminhos/dfs.md
         - "Busca em Largura": modulos/04-Caminhos/bfs.md
-    # - "02 - Estruturas de Dados":
-    #   - modulos/02-Estruturas-de-Dados/index.md
-    #   - "Aulas":
-    #     - "Aulas 01 e 02 - O tipo Lista": modulos/02-Estruturas-de-Dados/arrays-e-listas.md
-    #     - "Aula 03 - Dicionários": modulos/02-Estruturas-de-Dados/listas-e-dicionarios.md
+    - "05 - Estruturas de Dados":
+      - modulos/05-Estruturas-de-Dados/index.md
+      - "Aulas":
+        - "Aulas 01 e 02 - O tipo Lista": modulos/05-Estruturas-de-Dados/arrays-e-listas.md
+        - "Aula 03 - Dicionários": modulos/05-Estruturas-de-Dados/listas-e-dicionarios.md
     
 
     - "10 - Extra": modulos/10-Extra/index.md
