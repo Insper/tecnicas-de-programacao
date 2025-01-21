@@ -25,7 +25,7 @@ A nota final é calculada com a seguinte fórmula
 NF = 30% APS + 70% MP
 ```
 
-onde `MP = (2*PI + 5*PF) / 7` e desde que `MP >= 4,75`. Ou seja, precisa ter um desempenho OK em ambas partes da matéria. Também existe uma `PSUB` a ser feita por quem faltar em uma das provas e que pode cobrir todo o conteúdo do semestre. 
+onde `MP = (2*PI + 5*PF) / 7` e desde que `MP >= 4,5`. Ou seja, precisa ter um desempenho OK em ambas partes da matéria. Também existe uma `PSUB` a ser feita por quem faltar em uma das provas e que pode cobrir todo o conteúdo do semestre. 
 
 <!-- Caso a primeira condição seja verdade mas não a segunda, será possível fazer uma avaliação `DELTA` com o conteúdo da prova com nota `< 4`. Casos excepcionais podem ser considerados para `DELTA`
 

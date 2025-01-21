@@ -4,8 +4,8 @@ site_name: Técnicas de Programação
 
 extra:
   custom_variables:
-    PL_url_course: https://us.prairielearn.com/pl/course_instance/158386
-    blackboard_url: TODO
+    PL_url_course: https://us.prairielearn.com/pl/course_instance/176470
+    blackboard_url: https://insper.blackboard.com/ultra/courses/_49976_1/announcements
 
 extra_javascript:
   - js/tabs.js
