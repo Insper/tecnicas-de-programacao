@@ -493,21 +493,26 @@
 <h2 id="a-fila">A fila</h2>
 <p>Usaremos uma ADT para fila com as seguintes opções:</p>
 <ul>
-<li><code>NOVA_FILA()</code></li>
-<li><code>REMOVE_PRIMEIRO(F)</code> - devolve o primeiro elemento da fila e o remove</li>
-<li><code>ADICIONA_NO_FIM(F, EL)</code> - adiciona um elemento no fim da fila</li>
+<li><code>NOVA_FILA(N_MAX)</code> - cria uma fila com capacidade para no máximo <code>N_MAX</code> elementos</li>
+<li><code>REMOVE_PRIMEIRO(F)</code> - devolve o primeiro elemento da fila e o remove.</li>
+<li><code>ADICIONA_NO_FIM(F, EL)</code> - adiciona um elemento no fim da fila.</li>
 <li><code>VAZIA(F)</code> - retorna <code>VERDADEIRO</code> se <code>F</code> estiver vazia</li>
 </ul>
+<p>A princípio, tudo o que vocês precisam para implementar uma fila já foi passado. Visite o exercício deste aula no PrairieLearn e faça os exercícios</p>
+<ol>
+<li><em>Desloca Esquerda</em></li>
+<li>Dentro do exercício de código <em>Busca em Largura</em>, implemente a classe <code>Fila</code>.</li>
+</ol>
 <h2 id="busca-em-largura-alto-nivel">Busca em Largura - alto nível</h2>
-<p>Na última aula fizemos simulações do funcionamento da busca em largura e criamos um pseudo código em alto nível na lousa. Vejamos as variáveis necessárias para seu funcionamento</p>
+<p>Vamos agora procurar entender a ideia da Busca em Largura usando um pseudo código em alto nível e simulações. Nosso algoritmo recebe as seguintes entradas.</p>
 <ul>
 <li><code>LABIRINTO L</code></li>
 <li><code>FILA F</code> - guarda a ordem em que visitaremos as casas</li>
-<li><code>DIST</code>- matriz que guarda a distância até a fonte. Tem valor -1 para casas não visitadas</li>
+<li><code>DIST</code>- matriz que guarda a distância de cada casa até a fonte. Tem valor -1 para casas não visitadas</li>
 <li><code>fI, fJ</code> - posição da fonte</li>
 <li><code>dI, dJ</code> - posição do destino</li>
 </ul>
-<p>O algoritmo era parecido com o seguinte:</p>
+<p>O primeiro passo será usar o pseudo código abaixo para fazer simulações da Busca em Largura. Vá até o PrairieLearn e faça o exercício <em>Simule o algoritmo BFS</em>.  </p>
 <div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BFS(L, fI, fJ, dI, dJ, DIST, F)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ADICIONA_NO_FIM(F, (fI, fJ))
@@ -531,7 +536,11 @@
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    RECRIE O CAMINHO &quot;ANDANDO PARA TRÁS&quot; NAS DISTÂNCIAS
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>FIM
 </code></pre></div>
-<p>Seu desafio será transformar esse pseudo código alto nível em uma implementação completa da busca em largura. Volte para o PrairieLearn e use os testes para verificar sua implementação.</p>
+<p>Agora que já fez algumas simulações e conhece um pouco melhor a ideia do algoritmo , seu desafio será transformar esse pseudo código alto nível em uma implementação completa da busca em largura. Volte para o PrairieLearn e use os testes para verificar sua implementação.</p>
+<div class="admonition done">
+<p class="admonition-title">Desafio</p>
+<p>Acabou a implementação básica? Vá então para o último exercício de código do módulo e use as ideias da Busca em Largura para resolvê-lo. </p>
+</div>
 
 
 </section>
