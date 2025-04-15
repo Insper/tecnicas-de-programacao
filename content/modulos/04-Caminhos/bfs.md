@@ -21,23 +21,29 @@ Um ponto importante aparece aqui: **saber as casas acessíveis usando caminhos d
 
 Usaremos uma ADT para fila com as seguintes opções:
 
-- `NOVA_FILA()`
-- `REMOVE_PRIMEIRO(F)` - devolve o primeiro elemento da fila e o remove
-- `ADICIONA_NO_FIM(F, EL)` - adiciona um elemento no fim da fila
+- `NOVA_FILA(N_MAX)` - cria uma fila com capacidade para no máximo `N_MAX` elementos
+- `REMOVE_PRIMEIRO(F)` - devolve o primeiro elemento da fila e o remove.
+- `ADICIONA_NO_FIM(F, EL)` - adiciona um elemento no fim da fila.
 - `VAZIA(F)` - retorna `VERDADEIRO` se `F` estiver vazia
+
+A princípio, tudo o que vocês precisam para implementar uma fila já foi passado. Visite o exercício deste aula no PrairieLearn e faça os exercícios
+
+1. *Desloca Esquerda*
+2. Dentro do exercício de código *Busca em Largura*, implemente a classe `Fila`.
 
 
 ## Busca em Largura - alto nível
 
-Na última aula fizemos simulações do funcionamento da busca em largura e criamos um pseudo código em alto nível na lousa. Vejamos as variáveis necessárias para seu funcionamento
+Vamos agora procurar entender a ideia da Busca em Largura usando um pseudo código em alto nível e simulações. Nosso algoritmo recebe as seguintes entradas.
 
 - `LABIRINTO L`
 - `FILA F` - guarda a ordem em que visitaremos as casas
-- `DIST`- matriz que guarda a distância até a fonte. Tem valor -1 para casas não visitadas
+- `DIST`- matriz que guarda a distância de cada casa até a fonte. Tem valor -1 para casas não visitadas
 - `fI, fJ` - posição da fonte
 - `dI, dJ` - posição do destino
 
-O algoritmo era parecido com o seguinte:
+O primeiro passo será usar o pseudo código abaixo para fazer simulações da Busca em Largura. Vá até o PrairieLearn e faça o exercício *Simule o algoritmo BFS*.  
+
 
 ```
 BFS(L, fI, fJ, dI, dJ, DIST, F)
@@ -64,4 +70,7 @@ SE CHEGOU NO DESTINO ENTÃO
 FIM
 ```
 
-Seu desafio será transformar esse pseudo código alto nível em uma implementação completa da busca em largura. Volte para o PrairieLearn e use os testes para verificar sua implementação.
+Agora que já fez algumas simulações e conhece um pouco melhor a ideia do algoritmo , seu desafio será transformar esse pseudo código alto nível em uma implementação completa da busca em largura. Volte para o PrairieLearn e use os testes para verificar sua implementação.
+
+!!! done "Desafio"
+    Acabou a implementação básica? Vá então para o último exercício de código do módulo e use as ideias da Busca em Largura para resolvê-lo. 
